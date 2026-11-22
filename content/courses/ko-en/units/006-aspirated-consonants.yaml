@@ -1,0 +1,87 @@
+id: ko-006-aspirated-consonants
+title:
+  en: Aspirated Consonants
+  id: Konsonan Aspirat
+level: topik1
+kind: script
+items:
+- id: ko.c.kieuk
+  type: char
+  text: ㅋ
+  roman: k
+  gloss:
+    en: consonant k (with a puff of air)
+    id: konsonan k (dengan hembusan napas)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.tieut
+  type: char
+  text: ㅌ
+  roman: t
+  gloss:
+    en: consonant t (with a puff of air)
+    id: konsonan t (dengan hembusan napas)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.pieup
+  type: char
+  text: ㅍ
+  roman: p
+  gloss:
+    en: consonant p (with a puff of air)
+    id: konsonan p (dengan hembusan napas)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.chieut
+  type: char
+  text: ㅊ
+  roman: ch
+  gloss:
+    en: consonant ch (with a puff of air)
+    id: konsonan c (dengan hembusan napas)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-ka
+  type: char
+  text: 카
+  roman: ka
+  gloss:
+    en: 'syllable ka: ㅋ + ㅏ'
+    id: 'suku kata ka: ㅋ + ㅏ'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-to
+  type: char
+  text: 토
+  roman: to
+  gloss:
+    en: 'syllable to: ㅌ + ㅗ'
+    id: 'suku kata to: ㅌ + ㅗ'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-pi
+  type: char
+  text: 피
+  roman: pi
+  gloss:
+    en: 'syllable pi: ㅍ + ㅣ'
+    id: 'suku kata pi: ㅍ + ㅣ'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-cha
+  type: char
+  text: 차
+  roman: cha
+  gloss:
+    en: 'syllable cha: ㅊ + ㅏ'
+    id: 'suku kata cha: ㅊ + ㅏ'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review

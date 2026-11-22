@@ -61,6 +61,18 @@ def _decompose(ch: str) -> Syllable | None:
     return [INITIALS[code // 588], VOWELS[code % 588 // 28], FINALS[code % 28]]
 
 
+def decompose(ch: str) -> tuple[str, str, str] | None:
+    """가 → (ㄱ, ㅏ, ""), 각 → (ㄱ, ㅏ, ㄱ); None for anything that isn't a Hangul syllable."""
+    parts = _decompose(ch)
+    return (parts[0], parts[1], parts[2]) if parts else None
+
+
+def compose(initial: str, vowel: str, final: str = "") -> str:
+    """(ㄱ, ㅏ, ㄱ) → 각, by the Unicode formula: 0xAC00 + (initial × 21 + vowel) × 28 + final."""
+    code = (INITIALS.index(initial) * 21 + VOWELS.index(vowel)) * 28 + FINALS.index(final)
+    return chr(0xAC00 + code)
+
+
 def _sound_changes(a: Syllable, b: Syllable) -> None:
     """Apply the sound changes between syllable a and the following syllable b, in place."""
     t, nxt = a[2], b[0]

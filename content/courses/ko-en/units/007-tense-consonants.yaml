@@ -1,0 +1,107 @@
+id: ko-007-tense-consonants
+title:
+  en: Tense Consonants
+  id: Konsonan Tegang
+level: topik1
+kind: script
+items:
+- id: ko.c.ssanggiyeok
+  type: char
+  text: ㄲ
+  roman: kk
+  gloss:
+    en: tense consonant kk (no air)
+    id: konsonan tegang kk (tanpa hembusan)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.ssangdigeut
+  type: char
+  text: ㄸ
+  roman: tt
+  gloss:
+    en: tense consonant tt (no air)
+    id: konsonan tegang tt (tanpa hembusan)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.ssangbieup
+  type: char
+  text: ㅃ
+  roman: pp
+  gloss:
+    en: tense consonant pp (no air)
+    id: konsonan tegang pp (tanpa hembusan)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.ssangsiot
+  type: char
+  text: ㅆ
+  roman: ss
+  gloss:
+    en: tense consonant ss
+    id: konsonan tegang ss
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.ssangjieut
+  type: char
+  text: ㅉ
+  roman: jj
+  gloss:
+    en: tense consonant jj (no air)
+    id: konsonan tegang jj (tanpa hembusan)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-kka
+  type: char
+  text: 까
+  roman: kka
+  gloss:
+    en: 'syllable kka: ㄲ + ㅏ'
+    id: 'suku kata kka: ㄲ + ㅏ'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-tto
+  type: char
+  text: 또
+  roman: tto
+  gloss:
+    en: 'syllable tto: ㄸ + ㅗ'
+    id: 'suku kata tto: ㄸ + ㅗ'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-ppa
+  type: char
+  text: 빠
+  roman: ppa
+  gloss:
+    en: 'syllable ppa: ㅃ + ㅏ'
+    id: 'suku kata ppa: ㅃ + ㅏ'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-ssa
+  type: char
+  text: 싸
+  roman: ssa
+  gloss:
+    en: 'syllable ssa: ㅆ + ㅏ'
+    id: 'suku kata ssa: ㅆ + ㅏ'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-jja
+  type: char
+  text: 짜
+  roman: jja
+  gloss:
+    en: 'syllable jja: ㅉ + ㅏ'
+    id: 'suku kata jja: ㅉ + ㅏ'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review

@@ -1,0 +1,127 @@
+id: ko-008-combined-vowels
+title:
+  en: Combined Vowels
+  id: Vokal Gabungan
+level: topik1
+kind: script
+items:
+- id: ko.c.wa
+  type: char
+  text: ㅘ
+  roman: wa
+  gloss:
+    en: vowel wa (ㅗ + ㅏ)
+    id: vokal wa (ㅗ + ㅏ)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.wo
+  type: char
+  text: ㅝ
+  roman: wo
+  gloss:
+    en: vowel wo (ㅜ + ㅓ)
+    id: vokal wo (ㅜ + ㅓ)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.oe
+  type: char
+  text: ㅚ
+  roman: oe
+  gloss:
+    en: vowel oe (ㅗ + ㅣ, sounds like 'we')
+    id: vokal oe (ㅗ + ㅣ, dibaca seperti 'we')
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.wi
+  type: char
+  text: ㅟ
+  roman: wi
+  gloss:
+    en: vowel wi (ㅜ + ㅣ)
+    id: vokal wi (ㅜ + ㅣ)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.ui
+  type: char
+  text: ㅢ
+  roman: ui
+  gloss:
+    en: vowel ui (ㅡ + ㅣ)
+    id: vokal ui (ㅡ + ㅣ)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.yae
+  type: char
+  text: ㅒ
+  roman: yae
+  gloss:
+    en: vowel yae (y + ㅐ)
+    id: vokal yae (y + ㅐ)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.ye
+  type: char
+  text: ㅖ
+  roman: ye
+  gloss:
+    en: vowel ye (y + ㅔ)
+    id: vokal ye (y + ㅔ)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.wae
+  type: char
+  text: ㅙ
+  roman: wae
+  gloss:
+    en: vowel wae (ㅗ + ㅐ)
+    id: vokal wae (ㅗ + ㅐ)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.we
+  type: char
+  text: ㅞ
+  roman: we
+  gloss:
+    en: vowel we (ㅜ + ㅔ)
+    id: vokal we (ㅜ + ㅔ)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-wa
+  type: char
+  text: 와
+  roman: wa
+  gloss:
+    en: 'syllable wa: ㅇ + ㅘ'
+    id: 'suku kata wa: ㅇ + ㅘ'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-wo
+  type: char
+  text: 워
+  roman: wo
+  gloss:
+    en: 'syllable wo: ㅇ + ㅝ'
+    id: 'suku kata wo: ㅇ + ㅝ'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-ui
+  type: char
+  text: 의
+  roman: ui
+  gloss:
+    en: 'syllable ui: ㅇ + ㅢ'
+    id: 'suku kata ui: ㅇ + ㅢ'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review

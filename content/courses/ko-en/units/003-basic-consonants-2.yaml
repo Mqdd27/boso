@@ -1,0 +1,57 @@
+id: ko-003-basic-consonants-2
+title:
+  en: Basic Consonants 2
+  id: Konsonan Dasar 2
+level: topik1
+kind: script
+items:
+- id: ko.c.bieup
+  type: char
+  text: ㅂ
+  roman: b/p
+  gloss:
+    en: consonant b (p at the end)
+    id: konsonan b (p di akhir)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.siot
+  type: char
+  text: ㅅ
+  roman: s
+  gloss:
+    en: consonant s
+    id: konsonan s
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.ieung
+  type: char
+  text: ㅇ
+  roman: silent / ng
+  gloss:
+    en: silent before a vowel, ng at the end
+    id: tidak berbunyi di awal, ng di akhir
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.jieut
+  type: char
+  text: ㅈ
+  roman: j
+  gloss:
+    en: consonant j
+    id: konsonan j
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.hieut
+  type: char
+  text: ㅎ
+  roman: h
+  gloss:
+    en: consonant h
+    id: konsonan h
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review

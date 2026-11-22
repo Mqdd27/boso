@@ -1,0 +1,107 @@
+id: ko-005-y-vowels
+title:
+  en: Y Vowels and ㅐ ㅔ
+  id: Vokal Y dan ㅐ ㅔ
+level: topik1
+kind: script
+items:
+- id: ko.c.ya
+  type: char
+  text: ㅑ
+  roman: ya
+  gloss:
+    en: vowel ya (y + ㅏ)
+    id: vokal ya (y + ㅏ)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.yeo
+  type: char
+  text: ㅕ
+  roman: yeo
+  gloss:
+    en: vowel yeo (y + ㅓ)
+    id: vokal yeo (y + ㅓ)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.yo
+  type: char
+  text: ㅛ
+  roman: yo
+  gloss:
+    en: vowel yo (y + ㅗ)
+    id: vokal yo (y + ㅗ)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.yu
+  type: char
+  text: ㅠ
+  roman: yu
+  gloss:
+    en: vowel yu (y + ㅜ)
+    id: vokal yu (y + ㅜ)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.ae
+  type: char
+  text: ㅐ
+  roman: ae
+  gloss:
+    en: vowel ae (as in bed)
+    id: vokal ae (e seperti pada 'bebek')
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.e
+  type: char
+  text: ㅔ
+  roman: e
+  gloss:
+    en: vowel e (as in bed; today sounds like ㅐ)
+    id: vokal e (sekarang bunyinya sama dengan ㅐ)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-ya
+  type: char
+  text: 야
+  roman: ya
+  gloss:
+    en: 'syllable ya: ㅇ + ㅑ'
+    id: 'suku kata ya: ㅇ + ㅑ'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-yeo
+  type: char
+  text: 여
+  roman: yeo
+  gloss:
+    en: 'syllable yeo: ㅇ + ㅕ'
+    id: 'suku kata yeo: ㅇ + ㅕ'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-gae
+  type: char
+  text: 개
+  roman: gae
+  gloss:
+    en: 'syllable gae: ㄱ + ㅐ'
+    id: 'suku kata gae: ㄱ + ㅐ'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-ne
+  type: char
+  text: 네
+  roman: ne
+  gloss:
+    en: 'syllable ne: ㄴ + ㅔ'
+    id: 'suku kata ne: ㄴ + ㅔ'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review

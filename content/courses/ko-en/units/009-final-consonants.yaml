@@ -1,0 +1,97 @@
+id: ko-009-final-consonants
+title:
+  en: Final Consonants (Batchim)
+  id: Konsonan Akhir (Batchim)
+level: topik1
+kind: script
+items:
+- id: ko.c.syl-gak
+  type: char
+  text: 각
+  roman: gak
+  gloss:
+    en: 'syllable gak: ㄱ + ㅏ + final ㄱ, read k'
+    id: 'suku kata gak: ㄱ + ㅏ + akhir ㄱ, dibaca k'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-an
+  type: char
+  text: 안
+  roman: an
+  gloss:
+    en: 'syllable an: ㅇ + ㅏ + final ㄴ, read n'
+    id: 'suku kata an: ㅇ + ㅏ + akhir ㄴ, dibaca n'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-ot
+  type: char
+  text: 옷
+  roman: ot
+  gloss:
+    en: 'syllable ot: ㅇ + ㅗ + final ㅅ, read t'
+    id: 'suku kata ot: ㅇ + ㅗ + akhir ㅅ, dibaca t'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-mul
+  type: char
+  text: 물
+  roman: mul
+  gloss:
+    en: 'syllable mul: ㅁ + ㅜ + final ㄹ, read l'
+    id: 'suku kata mul: ㅁ + ㅜ + akhir ㄹ, dibaca l'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-bam
+  type: char
+  text: 밤
+  roman: bam
+  gloss:
+    en: 'syllable bam: ㅂ + ㅏ + final ㅁ, read m'
+    id: 'suku kata bam: ㅂ + ㅏ + akhir ㅁ, dibaca m'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-bap
+  type: char
+  text: 밥
+  roman: bap
+  gloss:
+    en: 'syllable bap: ㅂ + ㅏ + final ㅂ, read p'
+    id: 'suku kata bap: ㅂ + ㅏ + akhir ㅂ, dibaca p'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-gang
+  type: char
+  text: 강
+  roman: gang
+  gloss:
+    en: 'syllable gang: ㄱ + ㅏ + final ㅇ, read ng'
+    id: 'suku kata gang: ㄱ + ㅏ + akhir ㅇ, dibaca ng'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-bak
+  type: char
+  text: 밖
+  roman: bak
+  gloss:
+    en: 'syllable bak: ㅂ + ㅏ + final ㄲ, read k'
+    id: 'suku kata bak: ㅂ + ㅏ + akhir ㄲ, dibaca k'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.syl-kkot
+  type: char
+  text: 꽃
+  roman: kkot
+  gloss:
+    en: 'syllable kkot: ㄲ + ㅗ + final ㅊ, read t'
+    id: 'suku kata kkot: ㄲ + ㅗ + akhir ㅊ, dibaca t'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review

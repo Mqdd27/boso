@@ -24,6 +24,11 @@ SOURCES = {
         "author": "국립국어원 (National Institute of Korean Language)",
         "url": "https://krdict.korean.go.kr",
     },
+    "boso": {
+        "name": "boso (written for this course)",
+        "author": "boso contributors",
+        "url": "https://github.com/Mqdd27/boso",
+    },
 }
 
 

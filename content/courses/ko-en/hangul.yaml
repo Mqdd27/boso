@@ -1,0 +1,87 @@
+# Hangul script course (units 001–009), written by boso (CC BY-SA 4.0), no external source, no LLM.
+# `uv run pipeline hangul ko-en` turns this into units/001-…yaml to 009-…yaml + readings.yaml.
+# Letters: slug (item id ko.c.<slug>), roman (Revised Romanization sound), en / id explanation.
+# Syllables: roman comes from pipeline/nlp/ko.py, the gloss is generated.
+
+letters:
+  # vowels
+  ㅏ: { slug: a, roman: a, en: "vowel a (as in father)", id: "vokal a" }
+  ㅓ: { slug: eo, roman: eo, en: "vowel eo (open o, like 'uh')", id: "vokal eo (o terbuka, seperti 'o' pada 'pot')" }
+  ㅗ: { slug: o, roman: o, en: "vowel o (rounded o)", id: "vokal o (o bulat, seperti 'o' pada 'toko')" }
+  ㅜ: { slug: u, roman: u, en: "vowel u (as in moon)", id: "vokal u" }
+  ㅡ: { slug: eu, roman: eu, en: "vowel eu (unrounded u)", id: "vokal eu (seperti 'e' pada 'emas', bibir datar)" }
+  ㅣ: { slug: i, roman: i, en: "vowel i (as in see)", id: "vokal i" }
+  ㅑ: { slug: ya, roman: ya, en: "vowel ya (y + ㅏ)", id: "vokal ya (y + ㅏ)" }
+  ㅕ: { slug: yeo, roman: yeo, en: "vowel yeo (y + ㅓ)", id: "vokal yeo (y + ㅓ)" }
+  ㅛ: { slug: yo, roman: yo, en: "vowel yo (y + ㅗ)", id: "vokal yo (y + ㅗ)" }
+  ㅠ: { slug: yu, roman: yu, en: "vowel yu (y + ㅜ)", id: "vokal yu (y + ㅜ)" }
+  ㅐ: { slug: ae, roman: ae, en: "vowel ae (as in bed)", id: "vokal ae (e seperti pada 'bebek')" }
+  ㅔ: { slug: e, roman: e, en: "vowel e (as in bed; today sounds like ㅐ)", id: "vokal e (sekarang bunyinya sama dengan ㅐ)" }
+  ㅘ: { slug: wa, roman: wa, en: "vowel wa (ㅗ + ㅏ)", id: "vokal wa (ㅗ + ㅏ)" }
+  ㅝ: { slug: wo, roman: wo, en: "vowel wo (ㅜ + ㅓ)", id: "vokal wo (ㅜ + ㅓ)" }
+  ㅚ: { slug: oe, roman: oe, en: "vowel oe (ㅗ + ㅣ, sounds like 'we')", id: "vokal oe (ㅗ + ㅣ, dibaca seperti 'we')" }
+  ㅟ: { slug: wi, roman: wi, en: "vowel wi (ㅜ + ㅣ)", id: "vokal wi (ㅜ + ㅣ)" }
+  ㅢ: { slug: ui, roman: ui, en: "vowel ui (ㅡ + ㅣ)", id: "vokal ui (ㅡ + ㅣ)" }
+  ㅒ: { slug: yae, roman: yae, en: "vowel yae (y + ㅐ)", id: "vokal yae (y + ㅐ)" }
+  ㅖ: { slug: ye, roman: ye, en: "vowel ye (y + ㅔ)", id: "vokal ye (y + ㅔ)" }
+  ㅙ: { slug: wae, roman: wae, en: "vowel wae (ㅗ + ㅐ)", id: "vokal wae (ㅗ + ㅐ)" }
+  ㅞ: { slug: we, roman: we, en: "vowel we (ㅜ + ㅔ)", id: "vokal we (ㅜ + ㅔ)" }
+  # consonants
+  ㄱ: { slug: giyeok, roman: g/k, en: "consonant g (k at the end)", id: "konsonan g (k di akhir)" }
+  ㄴ: { slug: nieun, roman: "n", en: "consonant n", id: "konsonan n" }
+  ㄷ: { slug: digeut, roman: d/t, en: "consonant d (t at the end)", id: "konsonan d (t di akhir)" }
+  ㄹ: { slug: rieul, roman: r/l, en: "consonant r (l at the end)", id: "konsonan r (l di akhir)" }
+  ㅁ: { slug: mieum, roman: m, en: "consonant m", id: "konsonan m" }
+  ㅂ: { slug: bieup, roman: b/p, en: "consonant b (p at the end)", id: "konsonan b (p di akhir)" }
+  ㅅ: { slug: siot, roman: s, en: "consonant s", id: "konsonan s" }
+  ㅇ: { slug: ieung, roman: "silent / ng", en: "silent before a vowel, ng at the end", id: "tidak berbunyi di awal, ng di akhir" }
+  ㅈ: { slug: jieut, roman: j, en: "consonant j", id: "konsonan j" }
+  ㅎ: { slug: hieut, roman: h, en: "consonant h", id: "konsonan h" }
+  ㅋ: { slug: kieuk, roman: k, en: "consonant k (with a puff of air)", id: "konsonan k (dengan hembusan napas)" }
+  ㅌ: { slug: tieut, roman: t, en: "consonant t (with a puff of air)", id: "konsonan t (dengan hembusan napas)" }
+  ㅍ: { slug: pieup, roman: p, en: "consonant p (with a puff of air)", id: "konsonan p (dengan hembusan napas)" }
+  ㅊ: { slug: chieut, roman: ch, en: "consonant ch (with a puff of air)", id: "konsonan c (dengan hembusan napas)" }
+  ㄲ: { slug: ssanggiyeok, roman: kk, en: "tense consonant kk (no air)", id: "konsonan tegang kk (tanpa hembusan)" }
+  ㄸ: { slug: ssangdigeut, roman: tt, en: "tense consonant tt (no air)", id: "konsonan tegang tt (tanpa hembusan)" }
+  ㅃ: { slug: ssangbieup, roman: pp, en: "tense consonant pp (no air)", id: "konsonan tegang pp (tanpa hembusan)" }
+  ㅆ: { slug: ssangsiot, roman: ss, en: "tense consonant ss", id: "konsonan tegang ss" }
+  ㅉ: { slug: ssangjieut, roman: jj, en: "tense consonant jj (no air)", id: "konsonan tegang jj (tanpa hembusan)" }
+
+# What a final consonant (batchim) sounds like: 7 sounds.
+finals:
+  ㄱ: k
+  ㄲ: k
+  ㅋ: k
+  ㄴ: "n"
+  ㄷ: t
+  ㅅ: t
+  ㅆ: t
+  ㅈ: t
+  ㅊ: t
+  ㅌ: t
+  ㅎ: t
+  ㄹ: l
+  ㅁ: m
+  ㅂ: p
+  ㅍ: p
+  ㅇ: ng
+
+units:
+  - { number: 1, slug: basic-vowels, title: { en: Basic Vowels, id: Vokal Dasar },
+      letters: [ㅏ, ㅓ, ㅗ, ㅜ, ㅡ, ㅣ] }
+  - { number: 2, slug: basic-consonants-1, title: { en: Basic Consonants 1, id: Konsonan Dasar 1 },
+      letters: [ㄱ, ㄴ, ㄷ, ㄹ, ㅁ] }
+  - { number: 3, slug: basic-consonants-2, title: { en: Basic Consonants 2, id: Konsonan Dasar 2 },
+      letters: [ㅂ, ㅅ, ㅇ, ㅈ, ㅎ] }
+  - { number: 4, slug: syllable-blocks, title: { en: Syllable Blocks, id: Blok Suku Kata },
+      syllables: [가, 너, 도, 루, 므, 비, 소, 주, 하] }
+  - { number: 5, slug: y-vowels, title: { en: Y Vowels and ㅐ ㅔ, id: Vokal Y dan ㅐ ㅔ },
+      letters: [ㅑ, ㅕ, ㅛ, ㅠ, ㅐ, ㅔ], syllables: [야, 여, 개, 네] }
+  - { number: 6, slug: aspirated-consonants, title: { en: Aspirated Consonants, id: Konsonan Aspirat },
+      letters: [ㅋ, ㅌ, ㅍ, ㅊ], syllables: [카, 토, 피, 차] }
+  - { number: 7, slug: tense-consonants, title: { en: Tense Consonants, id: Konsonan Tegang },
+      letters: [ㄲ, ㄸ, ㅃ, ㅆ, ㅉ], syllables: [까, 또, 빠, 싸, 짜] }
+  - { number: 8, slug: combined-vowels, title: { en: Combined Vowels, id: Vokal Gabungan },
+      letters: [ㅘ, ㅝ, ㅚ, ㅟ, ㅢ, ㅒ, ㅖ, ㅙ, ㅞ], syllables: [와, 워, 의] }
+  - { number: 9, slug: final-consonants, title: { en: Final Consonants (Batchim), id: Konsonan Akhir (Batchim) },
+      syllables: [각, 안, 옷, 물, 밤, 밥, 강, 밖, 꽃] }

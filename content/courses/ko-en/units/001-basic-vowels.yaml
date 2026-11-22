@@ -1,0 +1,67 @@
+id: ko-001-basic-vowels
+title:
+  en: Basic Vowels
+  id: Vokal Dasar
+level: topik1
+kind: script
+items:
+- id: ko.c.a
+  type: char
+  text: ㅏ
+  roman: a
+  gloss:
+    en: vowel a (as in father)
+    id: vokal a
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.eo
+  type: char
+  text: ㅓ
+  roman: eo
+  gloss:
+    en: vowel eo (open o, like 'uh')
+    id: vokal eo (o terbuka, seperti 'o' pada 'pot')
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.o
+  type: char
+  text: ㅗ
+  roman: o
+  gloss:
+    en: vowel o (rounded o)
+    id: vokal o (o bulat, seperti 'o' pada 'toko')
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.u
+  type: char
+  text: ㅜ
+  roman: u
+  gloss:
+    en: vowel u (as in moon)
+    id: vokal u
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.eu
+  type: char
+  text: ㅡ
+  roman: eu
+  gloss:
+    en: vowel eu (unrounded u)
+    id: vokal eu (seperti 'e' pada 'emas', bibir datar)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.i
+  type: char
+  text: ㅣ
+  roman: i
+  gloss:
+    en: vowel i (as in see)
+    id: vokal i
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review

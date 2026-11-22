@@ -55,6 +55,20 @@ def cmd_pack(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_hangul(args: argparse.Namespace) -> int:
+    from pipeline.build import COURSES
+    from pipeline.hangul import generate
+
+    summary = generate(COURSES / args.course, dry_run=args.dry_run)
+    prefix = "would write" if args.dry_run else "wrote"
+    for rel in summary.written:
+        print(f"{prefix} {rel}")
+    for rel in summary.kept:
+        print(f"kept {rel}: differs from hangul.yaml (edited by hand?), not rewritten")
+    print(f"{len(summary.unchanged)} unit(s) unchanged, {summary.readings} new reading(s)")
+    return 0
+
+
 def cmd_tts(args: argparse.Namespace) -> int:
     from pipeline import tts
     from pipeline.build import COURSES
@@ -108,6 +122,10 @@ def main(argv: list[str] | None = None) -> int:
     pack = sub.add_parser("pack", help="write dist/<course>/course.json + manifest.json")
     pack.add_argument("course")
     pack.set_defaults(func=cmd_pack)
+    hangul = sub.add_parser("hangul", help="write the Hangul script units from hangul.yaml")
+    hangul.add_argument("course", choices=["ko-en"])
+    hangul.add_argument("--dry-run", action="store_true", help="print, don't write")
+    hangul.set_defaults(func=cmd_hangul)
     tts = sub.add_parser("tts", help="generate missing audio (MeloTTS env in content/tts/)")
     tts.add_argument("course", choices=["ko-en"])
     tts.add_argument("--sample", type=int, metavar="N", help="only the first N items, to listen to")

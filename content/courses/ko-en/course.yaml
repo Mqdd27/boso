@@ -9,8 +9,17 @@ glosses:
 levels:
 - topik1
 - topik2
-version: 0.0.1
+version: 0.1.0
 units:
+- units/001-basic-vowels.yaml
+- units/002-basic-consonants-1.yaml
+- units/003-basic-consonants-2.yaml
+- units/004-syllable-blocks.yaml
+- units/005-y-vowels.yaml
+- units/006-aspirated-consonants.yaml
+- units/007-tense-consonants.yaml
+- units/008-combined-vowels.yaml
+- units/009-final-consonants.yaml
 - units/010-greetings-and-manners.yaml
 - units/011-native-numbers-one-to-five.yaml
 - units/012-native-numbers-six-to-ten.yaml

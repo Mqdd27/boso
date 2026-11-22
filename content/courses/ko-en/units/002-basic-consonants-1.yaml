@@ -1,0 +1,57 @@
+id: ko-002-basic-consonants-1
+title:
+  en: Basic Consonants 1
+  id: Konsonan Dasar 1
+level: topik1
+kind: script
+items:
+- id: ko.c.giyeok
+  type: char
+  text: ㄱ
+  roman: g/k
+  gloss:
+    en: consonant g (k at the end)
+    id: konsonan g (k di akhir)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.nieun
+  type: char
+  text: ㄴ
+  roman: n
+  gloss:
+    en: consonant n
+    id: konsonan n
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.digeut
+  type: char
+  text: ㄷ
+  roman: d/t
+  gloss:
+    en: consonant d (t at the end)
+    id: konsonan d (t di akhir)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.rieul
+  type: char
+  text: ㄹ
+  roman: r/l
+  gloss:
+    en: consonant r (l at the end)
+    id: konsonan r (l di akhir)
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: ko.c.mieum
+  type: char
+  text: ㅁ
+  roman: m
+  gloss:
+    en: consonant m
+    id: konsonan m
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
