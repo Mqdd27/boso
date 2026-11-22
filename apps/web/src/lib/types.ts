@@ -14,8 +14,13 @@ export type Item = {
 	license: string;
 	author?: string;
 	source_ref?: string;
+	tokens?: string[];
+	gloss_sources?: Partial<Record<GlossLang, Credit>>;
+	hints?: { token: string; gloss: Localized }[];
 	review: 'needs_review' | 'reviewed';
 };
+
+export type Credit = { source: string; license: string; author?: string; source_ref?: string };
 
 export type Unit = {
 	id: string;

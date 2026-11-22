@@ -33,6 +33,9 @@
 						</li>
 					{/each}
 				</ul>
+				{#if course.units.some( (u) => u.items.some( (i) => Object.values(i.gloss_sources ?? {}).some((c) => c.source === 'boso') ) )}
+					<p class="mt-2">{m.credits_translations()}</p>
+				{/if}
 				{#if course.units.some((u) => u.items.some((i) => i.audio))}
 					<p class="mt-2">{m.credits_audio()}</p>
 				{/if}

@@ -108,5 +108,12 @@
 	"prompt_match_sound": "Pasangkan huruf dengan bunyinya",
 	"build_initial": "Konsonan",
 	"build_vowel": "Vokal",
-	"build_final": "Konsonan akhir (batchim)"
+	"build_final": "Konsonan akhir (batchim)",
+	"prompt_sentence": "Apa arti kalimat ini?",
+	"prompt_arrange": "Tulis dalam bahasa Korea",
+	"prompt_arrange_listen": "Tulis yang kamu dengar",
+	"arrange_answer": "Jawabanmu",
+	"arrange_bank": "Bank kata",
+	"hint_label": "Arti {word}",
+	"credits_translations": "Terjemahan kalimat dari boso dibuat untuk kursus ini."
 }

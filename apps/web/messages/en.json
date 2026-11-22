@@ -108,5 +108,12 @@
 	"prompt_match_sound": "Match letters to sounds",
 	"build_initial": "Consonant",
 	"build_vowel": "Vowel",
-	"build_final": "Final consonant (batchim)"
+	"build_final": "Final consonant (batchim)",
+	"prompt_sentence": "What does this sentence mean?",
+	"prompt_arrange": "Write this in Korean",
+	"prompt_arrange_listen": "Write what you hear",
+	"arrange_answer": "Your answer",
+	"arrange_bank": "Word bank",
+	"hint_label": "Meaning of {word}",
+	"credits_translations": "Sentence translations marked as boso were made for this course."
 }

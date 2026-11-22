@@ -9,7 +9,8 @@ export type Exercise =
 	| { kind: 'intro'; item: Item }
 	| { kind: Kind; item: Item; options: Item[] }
 	| { kind: 'match'; items: Item[]; right: Item[] }
-	| { kind: 'build'; item: Item; listen: boolean; tiles: Tiles };
+	| { kind: 'build'; item: Item; listen: boolean; tiles: Tiles }
+	| { kind: 'arrange'; item: Item; listen: boolean; bank: string[] }; // sentence from a word bank
 
 export type ItemStat = {
 	id: string;
@@ -31,6 +32,17 @@ export type LessonInput = {
 
 export const LESSON_SIZE = 11; // graded exercises per lesson (intro cards come on top)
 export const MATCH_PAIRS = 5;
+export const SENTENCES_PER_LESSON = 3; // in lesson 2 and practice, when the unit has sentences
+export const DECOYS = 2; // extra word-bank cards from other sentences
+
+export const isSentence = (item: Item) => item.type === 'sentence';
+
+/** Word-bank cards of a sentence (its eojeols without punctuation). */
+export const cards = (item: Item) => item.tokens ?? [item.text];
+
+/** A word-bank answer is right when it reads as the sentence: duplicate cards can go either way. */
+export const arrangedRight = (picked: string[], item: Item) =>
+	picked.join(' ') === cards(item).join(' ');
 
 export const isScript = (unit: Unit) => unit.kind === 'script';
 
@@ -146,6 +158,17 @@ function build(item: Item, pool: Item[], listen: boolean, rand: () => number): E
 	};
 }
 
+/** The sentence's cards plus up to DECOYS cards from other sentences that it doesn't use. */
+function bank(item: Item, sentences: Item[], rand: () => number): string[] {
+	const own = cards(item);
+	const others = [...new Set(sentences.filter((s) => s.id !== item.id).flatMap(cards))].sort();
+	const decoys = shuffle(
+		others.filter((t) => !own.includes(t)),
+		rand
+	).slice(0, DECOYS);
+	return shuffle([...own, ...decoys], rand);
+}
+
 type Mode = Kind | 'build';
 
 export function generateLesson(input: LessonInput): Exercise[] {
@@ -154,7 +177,13 @@ export function generateLesson(input: LessonInput): Exercise[] {
 	const script = isScript(unit);
 	const key = (item: Item) => label(item, lang, script);
 	// Options come from units of the same kind only: no Hangul letters among vocab answers.
-	const pool = [unit, ...earlier.filter((u) => isScript(u) === script)].flatMap((u) => u.items);
+	const all = [unit, ...earlier.filter((u) => isScript(u) === script)].flatMap((u) => u.items);
+	// Words and sentences are asked separately: a sentence is never an option for a word.
+	const pool = all.filter((i) => !isSentence(i));
+	const sentencePool = all.filter(isSentence);
+	const words = unit.items.filter((i) => !isSentence(i));
+	const sentences = lesson === 2 ? unit.items.filter(isSentence) : [];
+	const size = LESSON_SIZE - Math.min(SENTENCES_PER_LESSON, sentences.length);
 	const block = (item: Item) => script && decompose(item.text) !== null;
 	const kindsOf = (item: Item): Mode[] => {
 		const base: Mode[] = block(item) ? ['build', 'meaning', 'word'] : ['meaning', 'word'];
@@ -183,27 +212,27 @@ export function generateLesson(input: LessonInput): Exercise[] {
 
 	if (lesson === 1) {
 		// Every new item: intro card, then recognise (or build) it. Then pairs, then mixed practice.
-		unit.items.forEach((item, n) => add(block(item) ? 'build' : n % 2 ? 'word' : 'meaning', item));
-		const pairs = match(unit.items, key, rand);
+		words.forEach((item, n) => add(block(item) ? 'build' : n % 2 ? 'word' : 'meaning', item));
+		const pairs = match(words, key, rand);
 		if (pairs) {
 			out.push(pairs);
 			graded++;
 		}
-		for (const item of shuffle(unit.items, rand)) {
-			if (graded >= LESSON_SIZE) break;
+		for (const item of shuffle(words, rand)) {
+			if (graded >= size) break;
 			add(next(item), item);
 		}
 	} else {
 		// Weak items first (more wrong than right), each item at least once, pairs in the middle.
 		const weakness = (i: Item) => (stats[i.id]?.wrong ?? 0) - (stats[i.id]?.correct ?? 0);
-		const order = shuffle(unit.items, rand).sort((a, b) => weakness(b) - weakness(a));
+		const order = shuffle(words, rand).sort((a, b) => weakness(b) - weakness(a));
 		const weak = order.filter((i) => weakness(i) > 0);
-		const queue = [...order, ...weak, ...shuffle(unit.items, rand)];
-		const pairsAt = Math.floor(LESSON_SIZE / 2);
+		const queue = [...order, ...weak, ...shuffle(words, rand)];
+		const pairsAt = Math.floor(size / 2);
 		for (const item of queue) {
-			if (graded >= LESSON_SIZE) break;
+			if (graded >= size) break;
 			if (graded === pairsAt) {
-				const pairs = match(unit.items, key, rand);
+				const pairs = match(words, key, rand);
 				if (pairs) {
 					out.push(pairs);
 					graded++;
@@ -211,6 +240,23 @@ export function generateLesson(input: LessonInput): Exercise[] {
 			}
 			add(next(item), item);
 		}
+		// Then sentences (weakest first): build it from the word bank, from its meaning or by ear,
+		// or pick its meaning. No intro cards: every word in them is known, or has a hint.
+		const picked = shuffle(sentences, rand)
+			.sort((a, b) => weakness(b) - weakness(a))
+			.slice(0, SENTENCES_PER_LESSON);
+		const glossKey = (i: Item) => gloss(i, lang);
+		picked.forEach((item, n) => {
+			const others = distractors(item, sentencePool, glossKey, rand);
+			const mode = n % 3 === 1 && others.length ? 'meaning' : 'arrange';
+			if (mode === 'meaning') {
+				out.push({ kind: 'meaning', item, options: shuffle([item, ...others], rand) });
+			} else {
+				const listen = canListen && n % 3 === 2;
+				out.push({ kind: 'arrange', item, listen, bank: bank(item, sentencePool, rand) });
+			}
+			graded++;
+		});
 	}
 	return out;
 }

@@ -4,6 +4,7 @@
 	import { db, recordLesson } from '#lib/db.js';
 	import {
 		generateLesson,
+		arrangedRight,
 		isScript,
 		label,
 		lessonXp,
@@ -16,6 +17,8 @@
 	import { dailyTotals, localDate, streak } from '#lib/stats.js';
 	import { localized, type GlossLang, type Item, type Unit } from '#lib/types.js';
 	import BuildSyllable from './BuildSyllable.svelte';
+	import Sentence from './Sentence.svelte';
+	import WordBank from './WordBank.svelte';
 	import Badge from './Badge.svelte';
 	import Confirm from './Confirm.svelte';
 	import IntroCard from './IntroCard.svelte';
@@ -59,6 +62,7 @@
 	let index = $state(0);
 	let selected = $state<number | null>(null);
 	let built = $state<string | null>(null);
+	let arranged = $state<string[]>([]);
 	let checked = $state(false);
 	let matchMistakes = $state<Set<string> | null>(null);
 	let confirmExit = $state(false);
@@ -80,9 +84,17 @@
 	const correct = $derived(
 		ex?.kind === 'build'
 			? built === ex.item.text
-			: !!ex && 'options' in ex && selected !== null && ex.options[selected].id === ex.item.id
+			: ex?.kind === 'arrange'
+				? arrangedRight(arranged, ex.item)
+				: !!ex && 'options' in ex && selected !== null && ex.options[selected].id === ex.item.id
 	);
-	const answered = $derived(ex?.kind === 'build' ? built !== null : selected !== null);
+	const answered = $derived(
+		ex?.kind === 'build'
+			? built !== null
+			: ex?.kind === 'arrange'
+				? arranged.length > 0
+				: selected !== null
+	);
 
 	function say(item: Item, rate = 1) {
 		void play(item, course, voice, rate);
@@ -91,7 +103,8 @@
 
 	$effect(() => {
 		// Autoplay once per exercise (listening always: it has nothing else to show).
-		if (ex?.kind === 'listen' || (ex?.kind === 'build' && ex.listen)) say(ex.item);
+		if (ex?.kind === 'listen' || ((ex?.kind === 'build' || ex?.kind === 'arrange') && ex.listen))
+			say(ex.item);
 		else if (ex?.kind === 'intro' && settings.autoplay) say(ex.item);
 	});
 
@@ -127,6 +140,7 @@
 			index++;
 			selected = null;
 			built = null;
+			arranged = [];
 			checked = false;
 			matchMistakes = null;
 			return;
@@ -231,6 +245,7 @@
 		class="flex flex-1 flex-col"
 		data-testid="exercise"
 		data-kind={ex.kind}
+		data-listen={'listen' in ex ? ex.listen : undefined}
 		data-step={index}
 	>
 		{#if ex.kind === 'intro'}
@@ -249,25 +264,35 @@
 			{/key}
 		{:else}
 			<h2 class="mb-3 text-xl font-semibold">
-				{ex.kind === 'build'
-					? m.prompt_build()
-					: ex.kind === 'meaning'
-						? script
-							? m.prompt_sound()
-							: m.prompt_meaning()
-						: ex.kind === 'word'
+				{ex.kind === 'arrange'
+					? ex.listen
+						? m.prompt_arrange_listen()
+						: m.prompt_arrange()
+					: ex.kind === 'build'
+						? m.prompt_build()
+						: ex.kind === 'meaning'
 							? script
-								? m.prompt_letter()
-								: m.prompt_word()
-							: script
-								? m.prompt_listen_letter()
-								: m.prompt_listen()}
+								? m.prompt_sound()
+								: ex.item.type === 'sentence'
+									? m.prompt_sentence()
+									: m.prompt_meaning()
+							: ex.kind === 'word'
+								? script
+									? m.prompt_letter()
+									: m.prompt_word()
+								: script
+									? m.prompt_listen_letter()
+									: m.prompt_listen()}
 			</h2>
 			<div class="mb-5 flex flex-col items-center gap-2 text-center" data-testid="prompt">
 				{#if ex.kind === 'meaning'}
-					<p class="text-5xl font-bold" lang="ko">{ex.item.text}</p>
+					{#if ex.item.type === 'sentence'}
+						<Sentence item={ex.item} {lang} />
+					{:else}
+						<p class="text-5xl font-bold" lang="ko">{ex.item.text}</p>
+					{/if}
 					{#if roman}<p class="opacity-80" data-testid="roman">{ex.item.roman}</p>{/if}
-				{:else if ex.kind === 'word' || (ex.kind === 'build' && !ex.listen)}
+				{:else if ex.kind === 'word' || ((ex.kind === 'build' || ex.kind === 'arrange') && !ex.listen)}
 					<p class="text-3xl font-semibold" data-testid={script ? 'sound' : undefined}>
 						{sound(ex.item)}
 					</p>
@@ -295,6 +320,10 @@
 			{#if ex.kind === 'build'}
 				{#key index}
 					<BuildSyllable tiles={ex.tiles} disabled={checked} bind:value={built} />
+				{/key}
+			{:else if ex.kind === 'arrange'}
+				{#key index}
+					<WordBank bank={ex.bank} disabled={checked} bind:value={arranged} />
 				{/key}
 			{:else}
 				<ol class="flex flex-col gap-2">
