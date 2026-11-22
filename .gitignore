@@ -1,0 +1,27 @@
+# node / web
+node_modules/
+.turbo/
+build/
+.svelte-kit/
+dist/
+test-results/
+playwright-report/
+
+# go server
+apps/server/boso
+apps/server/web/dist/
+
+# data and course packs
+/data/
+*.course.zip
+
+# content pipeline (content/)
+sources/
+cache/
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+
+.env
+.DS_Store
