@@ -1,9 +1,46 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/nunito';
 
 /* Theme: html.dark is set from Settings → Theme (system / light / dark). */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Colour roles. Each role has: fill (button face), shade (its 3D edge), on (text on the fill),
+   ink (text/icons on the page ground), soft (tinted ground for selected / feedback states). */
 :root {
+	--bg: #ffffff;
+	--raised: #f7f7f7;
+	--line: #e5e5e5;
+	--ink: #1f2a30;
+	--muted: #5d6b72;
+
+	--green-fill: #358a07;
+	--green-shade: #24600a;
+	--green-ink: #2b6a07;
+	--green-soft: #d7ffb8;
+	--blue-fill: #1479c9;
+	--blue-shade: #0d5a96;
+	--blue-ink: #0f6bb5;
+	--blue-soft: #ddf4ff;
+	--red-fill: #d33131;
+	--red-shade: #9e1f1f;
+	--red-ink: #b42020;
+	--red-soft: #ffdfe0;
+	--orange-fill: #c2570a;
+	--orange-shade: #8f3f05;
+	--orange-ink: #b54d00;
+	--purple-fill: #7a4fd6;
+	--purple-shade: #5a35a8;
+	--purple-ink: #6a3fcf;
+	--purple-soft: #efe8ff;
+	--gold-fill: #ffc800;
+	--gold-shade: #cc9a00;
+	--gold-on: #3d2a00;
+	--gold-ink: #8a6100;
+	--gold-soft: #fff4cc;
+	--locked-fill: #e5e5e5;
+	--locked-shade: #c4c4c4;
+	--locked-on: #6f7c82;
+
 	--heat-0: #ebedf0;
 	--heat-1: #9be9a8;
 	--heat-2: #40c463;
@@ -14,7 +51,28 @@
 }
 
 :root.dark {
-	--heat-0: #161b22;
+	--bg: #131f24;
+	--raised: #1c2b32;
+	--line: #37464f;
+	--ink: #eef3f5;
+	--muted: #8fa3ad;
+
+	--green-ink: #79d634;
+	--green-soft: #1b3a12;
+	--blue-ink: #4fb4f5;
+	--blue-soft: #12324a;
+	--red-ink: #ff7b7b;
+	--red-soft: #3d1518;
+	--orange-ink: #ff9f43;
+	--purple-ink: #b89bff;
+	--purple-soft: #2a2146;
+	--gold-ink: #ffd23f;
+	--gold-soft: #3a3110;
+	--locked-fill: #37464f;
+	--locked-shade: #26333a;
+	--locked-on: #9aabb3;
+
+	--heat-0: #1c2b32;
 	--heat-1: #0e4429;
 	--heat-2: #006d32;
 	--heat-3: #26a641;
@@ -23,6 +81,180 @@
 	color-scheme: dark;
 }
 
+@theme inline {
+	--font-sans: 'Nunito Variable', ui-sans-serif, system-ui, sans-serif;
+	--font-cjk:
+		'Apple SD Gothic Neo', 'Noto Sans KR', 'Noto Sans CJK KR', 'Malgun Gothic', 'PingFang SC',
+		'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+
+	--color-bg: var(--bg);
+	--color-raised: var(--raised);
+	--color-line: var(--line);
+	--color-ink: var(--ink);
+	--color-muted: var(--muted);
+	--color-green-fill: var(--green-fill);
+	--color-green-shade: var(--green-shade);
+	--color-green-ink: var(--green-ink);
+	--color-green-soft: var(--green-soft);
+	--color-blue-fill: var(--blue-fill);
+	--color-blue-shade: var(--blue-shade);
+	--color-blue-ink: var(--blue-ink);
+	--color-blue-soft: var(--blue-soft);
+	--color-red-fill: var(--red-fill);
+	--color-red-shade: var(--red-shade);
+	--color-red-ink: var(--red-ink);
+	--color-red-soft: var(--red-soft);
+	--color-orange-fill: var(--orange-fill);
+	--color-orange-ink: var(--orange-ink);
+	--color-purple-fill: var(--purple-fill);
+	--color-purple-shade: var(--purple-shade);
+	--color-purple-ink: var(--purple-ink);
+	--color-purple-soft: var(--purple-soft);
+	--color-gold-fill: var(--gold-fill);
+	--color-gold-shade: var(--gold-shade);
+	--color-gold-on: var(--gold-on);
+	--color-gold-ink: var(--gold-ink);
+	--color-gold-soft: var(--gold-soft);
+	--color-locked-fill: var(--locked-fill);
+	--color-locked-shade: var(--locked-shade);
+	--color-locked-on: var(--locked-on);
+
+	--radius-chip: 12px;
+	--radius-card: 16px;
+	--ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 body {
-	@apply bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100;
+	@apply bg-bg font-sans text-ink antialiased;
+}
+
+[lang='ko'],
+[lang='zh'] {
+	font-family: var(--font-cjk);
+}
+
+::selection {
+	background: var(--blue-soft);
+	color: var(--ink);
+}
+
+:focus-visible {
+	outline: 3px solid var(--blue-ink);
+	outline-offset: 2px;
+}
+
+@layer components {
+	/* Chunky 3D button: a 4px darker edge underneath; pressed, the face sinks onto it. */
+	.btn {
+		--face: var(--green-fill);
+		--edge: var(--green-shade);
+		--on: #ffffff;
+		display: inline-flex;
+		min-height: 3rem;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		border-radius: var(--radius-card);
+		border: 2px solid var(--face);
+		border-bottom-width: 6px;
+		border-bottom-color: var(--edge);
+		background: var(--face);
+		background-clip: padding-box;
+		padding: 0.5rem 1.25rem;
+		color: var(--on);
+		font-size: 1.1875rem;
+		font-weight: 800;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		transition:
+			transform 100ms var(--ease-out-expo),
+			filter 150ms;
+		cursor: pointer;
+	}
+	.btn:hover:not(:disabled) {
+		filter: brightness(1.08);
+	}
+	.btn:active:not(:disabled) {
+		transform: translateY(4px);
+		border-bottom-color: transparent;
+	}
+	.btn-blue {
+		--face: var(--blue-fill);
+		--edge: var(--blue-shade);
+	}
+	.btn-red {
+		--face: var(--red-fill);
+		--edge: var(--red-shade);
+	}
+	.btn-gold {
+		--face: var(--gold-fill);
+		--edge: var(--gold-shade);
+		--on: var(--gold-on);
+	}
+	.btn-outline {
+		--face: var(--bg);
+		--edge: var(--line);
+		--on: var(--blue-ink);
+		border-color: var(--line);
+	}
+	.btn:disabled {
+		--face: var(--locked-fill);
+		--edge: var(--locked-fill);
+		--on: var(--locked-on);
+		cursor: default;
+	}
+
+	/* Answer card / word chip: outlined with a thicker bottom edge; state via data-state. */
+	.card {
+		border-radius: var(--radius-card);
+		border: 2px solid var(--line);
+		border-bottom-width: 4px;
+		background: var(--bg);
+		background-clip: padding-box;
+		transition:
+			transform 100ms var(--ease-out-expo),
+			background-color 150ms,
+			border-color 150ms;
+	}
+	.chip {
+		border-radius: var(--radius-chip);
+	}
+	button.card:active:not(:disabled) {
+		transform: translateY(2px);
+	}
+	.card[aria-pressed='true'],
+	.card[data-state='selected'] {
+		border-color: var(--blue-ink);
+		background-color: var(--blue-soft);
+		color: var(--blue-ink);
+	}
+	.card[data-state='right'] {
+		border-color: var(--green-ink);
+		background-color: var(--green-soft);
+		color: var(--green-ink);
+	}
+	.card[data-state='wrong'] {
+		border-color: var(--red-ink);
+		background-color: var(--red-soft);
+		color: var(--red-ink);
+	}
+
+	/* Small uppercase label ("SECTION 1, UNIT 2"). */
+	.label {
+		font-size: 0.8125rem;
+		font-weight: 800;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 1ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 1ms !important;
+		scroll-behavior: auto !important;
+	}
 }
