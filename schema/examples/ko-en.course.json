@@ -4,8 +4,25 @@
   "title": { "en": "Korean for English speakers", "id": "Bahasa Korea untuk penutur bahasa Inggris" },
   "glosses": ["en", "id"],
   "levels": ["topik1", "topik2"],
-  "version": "0.0.1",
+  "version": "0.1.0",
   "units": [
+    {
+      "id": "ko-001-basic-vowels",
+      "title": { "en": "Basic Vowels", "id": "Vokal Dasar" },
+      "level": "topik1",
+      "kind": "script",
+      "items": [
+        { "id": "ko.c.a", "type": "char", "text": "ㅏ", "roman": "a",
+          "gloss": { "en": "vowel a (as in father)", "id": "vokal a" },
+          "source": "boso", "license": "CC BY-SA 4.0", "review": "needs_review" },
+        { "id": "ko.c.giyeok", "type": "char", "text": "ㄱ", "roman": "g/k",
+          "gloss": { "en": "consonant g (k at the end)", "id": "konsonan g (k di akhir)" },
+          "source": "boso", "license": "CC BY-SA 4.0", "review": "needs_review" },
+        { "id": "ko.c.syl-ga", "type": "char", "text": "가", "roman": "ga",
+          "gloss": { "en": "syllable ga: ㄱ + ㅏ", "id": "suku kata ga: ㄱ + ㅏ" },
+          "source": "boso", "license": "CC BY-SA 4.0", "review": "needs_review" }
+      ]
+    },
     {
       "id": "ko-010",
       "title": { "en": "Greetings", "id": "Salam" },

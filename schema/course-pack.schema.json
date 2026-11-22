@@ -74,6 +74,10 @@
         "id": { "type": "string", "pattern": "^(ko|zh)-[a-z0-9-]+$" },
         "title": { "$ref": "#/$defs/localizedText" },
         "level": { "type": "string" },
+        "kind": {
+          "description": "script: learn the writing system (Hangul). Missing means vocab.",
+          "enum": ["vocab", "script"]
+        },
         "items": {
           "type": "array",
           "items": { "$ref": "#/$defs/item" },
@@ -90,8 +94,11 @@
     "item": {
       "type": "object",
       "properties": {
-        "id": { "type": "string", "pattern": "^(ko|zh)\\.(w|p|s|g)\\.[a-z0-9-]+$" },
-        "type": { "enum": ["word", "phrase", "sentence"] },
+        "id": { "type": "string", "pattern": "^(ko|zh)\\.(w|p|s|g|c)\\.[a-z0-9-]+$" },
+        "type": {
+          "description": "char: a letter or syllable of a script unit (Hangul jamo, 가).",
+          "enum": ["word", "phrase", "sentence", "char"]
+        },
         "text": { "type": "string", "minLength": 1 },
         "roman": { "type": "string", "minLength": 1 },
         "tones": {
@@ -126,6 +133,10 @@
         {
           "if": { "properties": { "type": { "const": "sentence" } } },
           "then": { "properties": { "id": { "pattern": "^[a-z]+\\.s\\." } } }
+        },
+        {
+          "if": { "properties": { "type": { "const": "char" } } },
+          "then": { "properties": { "id": { "pattern": "^[a-z]+\\.c\\." } } }
         },
         {
           "if": { "properties": { "id": { "pattern": "^ko\\." } } },
