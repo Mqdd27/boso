@@ -1,0 +1,14 @@
+{
+	"$schema": "https://turborepo.com/schema.json",
+	"tasks": {
+		"web#build": { "outputs": ["../server/web/dist/**"] },
+		"server#build": { "dependsOn": ["web#build"], "outputs": ["boso"] },
+		"test": {},
+		"lint": {},
+		"dev": {
+			"cache": false,
+			"persistent": true,
+			"passThroughEnv": ["BOSO_*"]
+		}
+	}
+}
