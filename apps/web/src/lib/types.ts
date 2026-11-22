@@ -4,7 +4,7 @@ export type Localized = { en: string; id?: string };
 
 export type Item = {
 	id: string;
-	type: 'word' | 'phrase' | 'sentence';
+	type: 'word' | 'phrase' | 'sentence' | 'char';
 	text: string;
 	roman: string;
 	tones?: string;
@@ -17,7 +17,13 @@ export type Item = {
 	review: 'needs_review' | 'reviewed';
 };
 
-export type Unit = { id: string; title: Localized; level: string; items: Item[] };
+export type Unit = {
+	id: string;
+	title: Localized;
+	level: string;
+	kind?: 'vocab' | 'script';
+	items: Item[];
+};
 
 export type CourseMeta = {
 	id: string;

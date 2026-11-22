@@ -7,7 +7,7 @@ const clone = <T>(x: T): T => structuredClone(x);
 
 describe('pack validation', () => {
 	it('accepts the fixture pack', () => {
-		expect(validatePack(clone(course), clone(manifest)).course.units).toHaveLength(2);
+		expect(validatePack(clone(course), clone(manifest)).course.units).toHaveLength(5);
 	});
 
 	const broken: [string, (c: typeof course, m: typeof manifest) => void, RegExp][] = [
@@ -19,8 +19,20 @@ describe('pack validation', () => {
 			(_, m) => ((m as { schema_version: number }).schema_version = 2),
 			/manifest/
 		],
+		[
+			'unknown unit kind',
+			(c) => ((c.units[2] as { kind: string }).kind = 'lesson'),
+			/kind|allowed/
+		],
+		['char item without a ko.c. id', (c) => (c.units[0].items[0].type = 'char'), /pattern/],
 		['duplicate id', (c) => (c.units[1].items[0].id = c.units[0].items[0].id), /duplicate/]
 	];
+	it('accepts an old unit without kind', () => {
+		const c = clone(course);
+		delete (c.units[2] as { kind?: string }).kind;
+		expect(() => validatePack(c, clone(manifest))).not.toThrow();
+	});
+
 	for (const [name, mutate, message] of broken) {
 		it(`rejects a pack with ${name}`, () => {
 			const c = clone(course);

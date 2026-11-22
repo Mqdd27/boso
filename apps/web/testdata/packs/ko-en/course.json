@@ -7,7 +7,7 @@
 	},
 	"glosses": ["en", "id"],
 	"levels": ["topik1"],
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"units": [
 		{
 			"id": "ko-010-greetings",
@@ -194,6 +194,247 @@
 					"source": "krdict",
 					"license": "CC BY-SA 2.0 KR",
 					"source_ref": "krdict:23504#1",
+					"review": "needs_review"
+				}
+			]
+		},
+		{
+			"id": "ko-001-basic-vowels",
+			"title": {
+				"en": "Basic Vowels",
+				"id": "Vokal Dasar"
+			},
+			"level": "topik1",
+			"kind": "script",
+			"items": [
+				{
+					"id": "ko.c.a",
+					"type": "char",
+					"text": "ㅏ",
+					"roman": "a",
+					"gloss": {
+						"en": "vowel a (as in father)",
+						"id": "vokal a"
+					},
+					"source": "boso",
+					"license": "CC BY-SA 4.0",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.c.eo",
+					"type": "char",
+					"text": "ㅓ",
+					"roman": "eo",
+					"gloss": {
+						"en": "vowel eo (open o, like 'uh')",
+						"id": "vokal eo (o terbuka, seperti 'o' pada 'pot')"
+					},
+					"source": "boso",
+					"license": "CC BY-SA 4.0",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.c.o",
+					"type": "char",
+					"text": "ㅗ",
+					"roman": "o",
+					"gloss": {
+						"en": "vowel o (rounded o)",
+						"id": "vokal o (o bulat, seperti 'o' pada 'toko')"
+					},
+					"source": "boso",
+					"license": "CC BY-SA 4.0",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.c.u",
+					"type": "char",
+					"text": "ㅜ",
+					"roman": "u",
+					"gloss": {
+						"en": "vowel u (as in moon)",
+						"id": "vokal u"
+					},
+					"source": "boso",
+					"license": "CC BY-SA 4.0",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.c.eu",
+					"type": "char",
+					"text": "ㅡ",
+					"roman": "eu",
+					"gloss": {
+						"en": "vowel eu (unrounded u)",
+						"id": "vokal eu (seperti 'e' pada 'emas', bibir datar)"
+					},
+					"source": "boso",
+					"license": "CC BY-SA 4.0",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.c.i",
+					"type": "char",
+					"text": "ㅣ",
+					"roman": "i",
+					"gloss": {
+						"en": "vowel i (as in see)",
+						"id": "vokal i"
+					},
+					"source": "boso",
+					"license": "CC BY-SA 4.0",
+					"review": "needs_review"
+				}
+			]
+		},
+		{
+			"id": "ko-002-basic-consonants-1",
+			"title": {
+				"en": "Basic Consonants 1",
+				"id": "Konsonan Dasar 1"
+			},
+			"level": "topik1",
+			"kind": "script",
+			"items": [
+				{
+					"id": "ko.c.giyeok",
+					"type": "char",
+					"text": "ㄱ",
+					"roman": "g/k",
+					"gloss": {
+						"en": "consonant g (k at the end)",
+						"id": "konsonan g (k di akhir)"
+					},
+					"source": "boso",
+					"license": "CC BY-SA 4.0",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.c.nieun",
+					"type": "char",
+					"text": "ㄴ",
+					"roman": "n",
+					"gloss": {
+						"en": "consonant n",
+						"id": "konsonan n"
+					},
+					"source": "boso",
+					"license": "CC BY-SA 4.0",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.c.digeut",
+					"type": "char",
+					"text": "ㄷ",
+					"roman": "d/t",
+					"gloss": {
+						"en": "consonant d (t at the end)",
+						"id": "konsonan d (t di akhir)"
+					},
+					"source": "boso",
+					"license": "CC BY-SA 4.0",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.c.rieul",
+					"type": "char",
+					"text": "ㄹ",
+					"roman": "r/l",
+					"gloss": {
+						"en": "consonant r (l at the end)",
+						"id": "konsonan r (l di akhir)"
+					},
+					"source": "boso",
+					"license": "CC BY-SA 4.0",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.c.mieum",
+					"type": "char",
+					"text": "ㅁ",
+					"roman": "m",
+					"gloss": {
+						"en": "consonant m",
+						"id": "konsonan m"
+					},
+					"source": "boso",
+					"license": "CC BY-SA 4.0",
+					"review": "needs_review"
+				}
+			]
+		},
+		{
+			"id": "ko-004-syllable-blocks",
+			"title": {
+				"en": "Syllable Blocks",
+				"id": "Blok Suku Kata"
+			},
+			"level": "topik1",
+			"kind": "script",
+			"items": [
+				{
+					"id": "ko.c.syl-ga",
+					"type": "char",
+					"text": "가",
+					"roman": "ga",
+					"gloss": {
+						"en": "syllable ga: ㄱ + ㅏ",
+						"id": "suku kata ga: ㄱ + ㅏ"
+					},
+					"source": "boso",
+					"license": "CC BY-SA 4.0",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.c.syl-neo",
+					"type": "char",
+					"text": "너",
+					"roman": "neo",
+					"gloss": {
+						"en": "syllable neo: ㄴ + ㅓ",
+						"id": "suku kata neo: ㄴ + ㅓ"
+					},
+					"source": "boso",
+					"license": "CC BY-SA 4.0",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.c.syl-do",
+					"type": "char",
+					"text": "도",
+					"roman": "do",
+					"gloss": {
+						"en": "syllable do: ㄷ + ㅗ",
+						"id": "suku kata do: ㄷ + ㅗ"
+					},
+					"source": "boso",
+					"license": "CC BY-SA 4.0",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.c.syl-ru",
+					"type": "char",
+					"text": "루",
+					"roman": "ru",
+					"gloss": {
+						"en": "syllable ru: ㄹ + ㅜ",
+						"id": "suku kata ru: ㄹ + ㅜ"
+					},
+					"source": "boso",
+					"license": "CC BY-SA 4.0",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.c.syl-meu",
+					"type": "char",
+					"text": "므",
+					"roman": "meu",
+					"gloss": {
+						"en": "syllable meu: ㅁ + ㅡ",
+						"id": "suku kata meu: ㅁ + ㅡ"
+					},
+					"source": "boso",
+					"license": "CC BY-SA 4.0",
 					"review": "needs_review"
 				}
 			]

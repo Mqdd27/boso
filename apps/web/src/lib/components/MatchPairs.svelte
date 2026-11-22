@@ -1,16 +1,16 @@
 <script lang="ts">
-	import { gloss, type GlossLang, type Item } from '#lib/types.js';
+	import type { Item } from '#lib/types.js';
 
 	let {
 		items,
 		right,
-		lang,
+		label,
 		roman,
 		ondone
 	}: {
 		items: Item[];
 		right: Item[];
-		lang: GlossLang;
+		label: (item: Item) => string; // what each item is matched with: gloss, or sound in script units
 		roman: boolean;
 		ondone: (mistakes: Set<string>) => void;
 	} = $props();
@@ -67,7 +67,7 @@
 					data-gloss={item.id}
 					onclick={() => pickRight(item.id)}
 				>
-					{gloss(item, lang)}
+					{label(item)}
 					{#if wrong === item.id}<span class="sr-only">✗</span>{/if}
 				</button>
 			</li>

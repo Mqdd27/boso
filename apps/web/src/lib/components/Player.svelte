@@ -2,12 +2,20 @@
 	import { resolve } from '$app/paths';
 	import { goto } from '$app/navigation';
 	import { db, recordLesson } from '#lib/db.js';
-	import { generateLesson, lessonXp, requeue, type Exercise } from '#lib/lesson.js';
+	import {
+		generateLesson,
+		isScript,
+		label,
+		lessonXp,
+		requeue,
+		type Exercise
+	} from '#lib/lesson.js';
 	import { m } from '#lib/paraglide/messages.js';
 	import { settings, showRoman } from '#lib/settings.svelte.js';
 	import { canListen, pickSource, play, SLOW } from '#lib/audio.js';
 	import { dailyTotals, localDate, streak } from '#lib/stats.js';
-	import { gloss, localized, type GlossLang, type Item, type Unit } from '#lib/types.js';
+	import { localized, type GlossLang, type Item, type Unit } from '#lib/types.js';
+	import BuildSyllable from './BuildSyllable.svelte';
 	import Badge from './Badge.svelte';
 	import Confirm from './Confirm.svelte';
 	import IntroCard from './IntroCard.svelte';
@@ -50,6 +58,7 @@
 	);
 	let index = $state(0);
 	let selected = $state<number | null>(null);
+	let built = $state<string | null>(null);
 	let checked = $state(false);
 	let matchMistakes = $state<Set<string> | null>(null);
 	let confirmExit = $state(false);
@@ -63,10 +72,17 @@
 	const results: { id: string; correct: boolean }[] = [];
 
 	const ex = $derived(queue[index]);
-	const roman = $derived(showRoman(course));
+	// Script units (Hangul) ask for sounds, so romanization is the answer there: always shown where
+	// it is the answer, never where it would give the answer away.
+	const script = $derived(isScript(unit));
+	const roman = $derived(!script && showRoman(course));
+	const sound = (item: Item) => label(item, lang, script);
 	const correct = $derived(
-		ex && 'options' in ex && selected !== null && ex.options[selected].id === ex.item.id
+		ex?.kind === 'build'
+			? built === ex.item.text
+			: !!ex && 'options' in ex && selected !== null && ex.options[selected].id === ex.item.id
 	);
+	const answered = $derived(ex?.kind === 'build' ? built !== null : selected !== null);
 
 	function say(item: Item, rate = 1) {
 		void play(item, course, voice, rate);
@@ -75,7 +91,8 @@
 
 	$effect(() => {
 		// Autoplay once per exercise (listening always: it has nothing else to show).
-		if (ex?.kind === 'listen' || (ex?.kind === 'intro' && settings.autoplay)) say(ex.item);
+		if (ex?.kind === 'listen' || (ex?.kind === 'build' && ex.listen)) say(ex.item);
+		else if (ex?.kind === 'intro' && settings.autoplay) say(ex.item);
 	});
 
 	function grade(ok: boolean, ids: string[]) {
@@ -89,7 +106,7 @@
 	}
 
 	function check() {
-		if (!ex || !('options' in ex) || selected === null || checked) return;
+		if (!ex || ex.kind === 'intro' || ex.kind === 'match' || !answered || checked) return;
 		checked = true;
 		grade(correct, [ex.item.id]);
 	}
@@ -109,6 +126,7 @@
 		if (index + 1 < queue.length) {
 			index++;
 			selected = null;
+			built = null;
 			checked = false;
 			matchMistakes = null;
 			return;
@@ -219,28 +237,40 @@
 			<IntroCard
 				item={ex.item}
 				{lang}
-				{roman}
+				roman={roman || script}
 				onlisten={audible(ex.item) ? (rate?: number) => say(ex.item, rate) : undefined}
 			/>
 		{:else if ex.kind === 'match'}
-			<h2 class="mb-3 text-xl font-semibold">{m.prompt_match()}</h2>
+			<h2 class="mb-3 text-xl font-semibold">
+				{script ? m.prompt_match_sound() : m.prompt_match()}
+			</h2>
 			{#key index}
-				<MatchPairs items={ex.items} right={ex.right} {lang} {roman} ondone={onMatchDone} />
+				<MatchPairs items={ex.items} right={ex.right} label={sound} {roman} ondone={onMatchDone} />
 			{/key}
 		{:else}
 			<h2 class="mb-3 text-xl font-semibold">
-				{ex.kind === 'meaning'
-					? m.prompt_meaning()
-					: ex.kind === 'word'
-						? m.prompt_word()
-						: m.prompt_listen()}
+				{ex.kind === 'build'
+					? m.prompt_build()
+					: ex.kind === 'meaning'
+						? script
+							? m.prompt_sound()
+							: m.prompt_meaning()
+						: ex.kind === 'word'
+							? script
+								? m.prompt_letter()
+								: m.prompt_word()
+							: script
+								? m.prompt_listen_letter()
+								: m.prompt_listen()}
 			</h2>
 			<div class="mb-5 flex flex-col items-center gap-2 text-center" data-testid="prompt">
 				{#if ex.kind === 'meaning'}
 					<p class="text-5xl font-bold" lang="ko">{ex.item.text}</p>
 					{#if roman}<p class="opacity-80" data-testid="roman">{ex.item.roman}</p>{/if}
-				{:else if ex.kind === 'word'}
-					<p class="text-3xl font-semibold">{gloss(ex.item, lang)}</p>
+				{:else if ex.kind === 'word' || (ex.kind === 'build' && !ex.listen)}
+					<p class="text-3xl font-semibold" data-testid={script ? 'sound' : undefined}>
+						{sound(ex.item)}
+					</p>
 				{:else}
 					<button
 						type="button"
@@ -262,38 +292,44 @@
 				{/if}
 				<Badge item={ex.item} />
 			</div>
-			<ol class="flex flex-col gap-2">
-				{#each ex.options as option, n (option.id)}
-					<li>
-						<button
-							type="button"
-							class="flex min-h-12 w-full items-center gap-3 rounded-xl border-2 px-3 py-2 text-left {optionClass(
-								n
-							)}"
-							disabled={checked}
-							aria-pressed={n === selected}
-							data-option={option.id}
-							onclick={() => (selected = n)}
-						>
-							<kbd class="hidden rounded border px-1.5 text-xs opacity-60 sm:inline">{n + 1}</kbd>
-							{#if ex.kind === 'meaning'}
-								<span>{gloss(option, lang)}</span>
-							{:else}
-								<span class="text-lg font-semibold" lang="ko">{option.text}</span>
-								{#if roman}<span class="text-sm opacity-70" data-testid="roman">
-										{option.roman}
-									</span>{/if}
-							{/if}
-						</button>
-					</li>
-				{/each}
-			</ol>
-			<p class="mt-3 hidden text-xs opacity-60 sm:block">{m.keyboard_hint()}</p>
+			{#if ex.kind === 'build'}
+				{#key index}
+					<BuildSyllable tiles={ex.tiles} disabled={checked} bind:value={built} />
+				{/key}
+			{:else}
+				<ol class="flex flex-col gap-2">
+					{#each ex.options as option, n (option.id)}
+						<li>
+							<button
+								type="button"
+								class="flex min-h-12 w-full items-center gap-3 rounded-xl border-2 px-3 py-2 text-left {optionClass(
+									n
+								)}"
+								disabled={checked}
+								aria-pressed={n === selected}
+								data-option={option.id}
+								onclick={() => (selected = n)}
+							>
+								<kbd class="hidden rounded border px-1.5 text-xs opacity-60 sm:inline">{n + 1}</kbd>
+								{#if ex.kind === 'meaning'}
+									<span class={script ? 'text-lg font-semibold' : ''}>{sound(option)}</span>
+								{:else}
+									<span class="text-lg font-semibold" lang="ko">{option.text}</span>
+									{#if roman}<span class="text-sm opacity-70" data-testid="roman">
+											{option.roman}
+										</span>{/if}
+								{/if}
+							</button>
+						</li>
+					{/each}
+				</ol>
+				<p class="mt-3 hidden text-xs opacity-60 sm:block">{m.keyboard_hint()}</p>
+			{/if}
 		{/if}
 	</section>
 
 	<footer class="sticky bottom-0 mt-4 bg-white pt-2 pb-4 dark:bg-zinc-950">
-		{#if checked && 'options' in ex}
+		{#if checked && ex.kind !== 'intro' && ex.kind !== 'match'}
 			<div
 				class="mb-2 rounded-xl p-3 {correct
 					? 'bg-green-100 text-green-900 dark:bg-green-950 dark:text-green-100'
@@ -306,7 +342,9 @@
 				{#if !correct}
 					<p>
 						<span lang="ko">{ex.item.text}</span>
-						{#if roman}({ex.item.roman}){/if} = {gloss(ex.item, lang)}
+						{#if roman}({ex.item.roman}){/if} = {script
+							? `${ex.item.roman} · ${localized(ex.item.gloss, lang)}`
+							: sound(ex.item)}
 					</p>
 				{/if}
 			</div>
@@ -328,7 +366,7 @@
 			<button
 				type="button"
 				class="min-h-12 w-full rounded-xl bg-green-600 font-semibold text-white disabled:opacity-40"
-				disabled={selected === null}
+				disabled={!answered}
 				onclick={check}
 			>
 				{m.check()}

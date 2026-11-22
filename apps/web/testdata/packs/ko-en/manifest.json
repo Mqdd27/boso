@@ -9,7 +9,7 @@
 		},
 		"glosses": ["en", "id"],
 		"levels": ["topik1"],
-		"version": "0.0.1"
+		"version": "0.1.0"
 	},
 	"build_date": "2026-11-22T00:00:00Z",
 	"attribution": [
@@ -26,6 +26,12 @@
 			"items": 1,
 			"url": "https://krdict.korean.go.kr",
 			"authors": ["국립국어원 (National Institute of Korean Language)"]
+		},
+		{
+			"source": "boso",
+			"license": "CC BY-SA 4.0",
+			"items": 16,
+			"url": "https://github.com/Mqdd27/boso"
 		}
 	]
 }

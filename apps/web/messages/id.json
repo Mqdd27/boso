@@ -95,5 +95,18 @@
 	"credits_built": "Versi pack {version}, dibuat {date}",
 	"listen_slow": "Dengar pelan",
 	"settings_autoplay": "Putar audio otomatis",
-	"credits_audio": "Audio dibuat dengan MeloTTS (MIT) dari MyShell.ai."
+	"credits_audio": "Audio dibuat dengan MeloTTS (MIT) dari MyShell.ai.",
+	"section_hangul": "Hangul",
+	"section_vocab": "Kosakata",
+	"section_hangul_hint": "Mulai dari sini: belajar membaca huruf Korea. Tidak wajib, tapi membantu.",
+	"unit_letters": "{count} huruf",
+	"new_letter": "Huruf baru",
+	"prompt_sound": "Apa bunyinya?",
+	"prompt_letter": "Pilih huruf untuk bunyi ini",
+	"prompt_listen_letter": "Mana yang kamu dengar?",
+	"prompt_build": "Rakit suku katanya",
+	"prompt_match_sound": "Pasangkan huruf dengan bunyinya",
+	"build_initial": "Konsonan",
+	"build_vowel": "Vokal",
+	"build_final": "Konsonan akhir (batchim)"
 }

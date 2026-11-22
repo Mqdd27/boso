@@ -6,7 +6,8 @@
 	import { getLocale } from '#lib/paraglide/runtime.js';
 	import { settings } from '#lib/settings.svelte.js';
 	import { dailyTotals, localDate, streak } from '#lib/stats.js';
-	import { localized, type Pack } from '#lib/types.js';
+	import { isScript, section } from '#lib/lesson.js';
+	import { localized, type Pack, type Unit } from '#lib/types.js';
 
 	const lang = getLocale();
 	const data = Promise.all([db.activity.toArray(), db.unitProgress.toArray()]).then(
@@ -22,7 +23,7 @@
 	);
 
 	type Status = 'locked' | 'open' | 'done';
-	function statuses(course: string, units: { id: string }[], progress: Map<string, UnitProgress>) {
+	function statuses(course: string, units: Unit[], progress: Map<string, UnitProgress>) {
 		let prevDone = true;
 		return units.map((u): Status => {
 			const p = progress.get(`${course}/${u.id}`);
@@ -55,51 +56,68 @@
 			</section>
 
 			{#each packs as { course } (course.id)}
-				{@const status = statuses(course.id, course.units, d.progress)}
+				{@const sections = [true, false]
+					.map((script) => ({ script, units: section(course.units, script) }))
+					.filter((s) => s.units.length)}
 				<h1 class="mb-3 text-2xl font-bold">
 					{course.title ? localized(course.title, lang) : course.id}
 				</h1>
-				<ol class="flex flex-col gap-2" data-testid="units">
-					{#each course.units as unit, n (unit.id)}
-						{@const p = d.progress.get(`${course.id}/${unit.id}`)}
-						<li data-unit={unit.id} data-status={status[n]}>
-							{#if status[n] === 'locked'}
-								<div
-									class="flex min-h-16 items-center justify-between gap-3 rounded-2xl border p-4 opacity-50"
-								>
-									<span class="font-semibold">{localized(unit.title, lang)}</span>
-									<span class="text-sm">🔒 {m.unit_locked()}</span>
-								</div>
-							{:else}
-								<a
-									href={resolve('/learn/[course]/[unit]', { course: course.id, unit: unit.id })}
-									class="flex min-h-16 items-center justify-between gap-3 rounded-2xl border-2 p-4 {status[
-										n
-									] === 'done'
-										? 'border-green-600'
-										: 'border-sky-500'}"
-								>
-									<span>
-										<span class="block font-semibold">{localized(unit.title, lang)}</span>
-										<span class="text-sm opacity-70">
-											{m.unit_words({ count: unit.items.length })} · {m.unit_lessons({
-												done: p?.lessons.length ?? 0,
-												total: LESSONS_PER_UNIT
-											})}
+				{#each sections as { script, units } (script)}
+					{@const status = statuses(course.id, units, d.progress)}
+					{#if course.units.some(isScript)}
+						<h2 class="mt-4 mb-1 text-lg font-semibold">
+							{script ? m.section_hangul() : m.section_vocab()}
+						</h2>
+						{#if script}<p class="mb-2 text-sm opacity-70">{m.section_hangul_hint()}</p>{/if}
+					{/if}
+					<ol
+						class="flex flex-col gap-2"
+						data-testid="units"
+						data-section={script ? 'script' : 'vocab'}
+					>
+						{#each units as unit, n (unit.id)}
+							{@const p = d.progress.get(`${course.id}/${unit.id}`)}
+							<li data-unit={unit.id} data-status={status[n]}>
+								{#if status[n] === 'locked'}
+									<div
+										class="flex min-h-16 items-center justify-between gap-3 rounded-2xl border p-4 opacity-50"
+									>
+										<span class="font-semibold">{localized(unit.title, lang)}</span>
+										<span class="text-sm">🔒 {m.unit_locked()}</span>
+									</div>
+								{:else}
+									<a
+										href={resolve('/learn/[course]/[unit]', { course: course.id, unit: unit.id })}
+										class="flex min-h-16 items-center justify-between gap-3 rounded-2xl border-2 p-4 {status[
+											n
+										] === 'done'
+											? 'border-green-600'
+											: 'border-sky-500'}"
+									>
+										<span>
+											<span class="block font-semibold">{localized(unit.title, lang)}</span>
+											<span class="text-sm opacity-70">
+												{script
+													? m.unit_letters({ count: unit.items.length })
+													: m.unit_words({ count: unit.items.length })} · {m.unit_lessons({
+													done: p?.lessons.length ?? 0,
+													total: LESSONS_PER_UNIT
+												})}
+											</span>
 										</span>
-									</span>
-									<span class="text-sm font-semibold">
-										{status[n] === 'done'
-											? `✓ ${m.unit_done()}`
-											: p?.lessons.length
-												? m.unit_continue()
-												: m.unit_open()}
-									</span>
-								</a>
-							{/if}
-						</li>
-					{/each}
-				</ol>
+										<span class="text-sm font-semibold">
+											{status[n] === 'done'
+												? `✓ ${m.unit_done()}`
+												: p?.lessons.length
+													? m.unit_continue()
+													: m.unit_open()}
+										</span>
+									</a>
+								{/if}
+							</li>
+						{/each}
+					</ol>
+				{/each}
 			{/each}
 		{/await}
 	{/snippet}

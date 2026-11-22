@@ -7,6 +7,7 @@
 	import { m } from '#lib/paraglide/messages.js';
 	import { getLocale } from '#lib/paraglide/runtime.js';
 	import { koreanVoice } from '#lib/audio.js';
+	import { isScript, section } from '#lib/lesson.js';
 	import type { Pack } from '#lib/types.js';
 
 	const courseId = page.params.course ?? '';
@@ -31,7 +32,9 @@
 		{#await setup then s}
 			{#if course && index >= 0}
 				{@const p = s.progress.get(unitId)}
-				{@const prev = index === 0 || !!s.progress.get(course.units[index - 1].id)?.completedAt}
+				{@const units = section(course.units, isScript(course.units[index]))}
+				{@const n = units.indexOf(course.units[index])}
+				{@const prev = n === 0 || !!s.progress.get(units[n - 1].id)?.completedAt}
 				{#if !prev}
 					<p class="py-8">
 						🔒 {m.unit_locked()} · <a class="underline" href={resolve('/')}>{m.done_home()}</a>

@@ -95,5 +95,18 @@
 	"credits_built": "Pack version {version}, built {date}",
 	"listen_slow": "Listen slowly",
 	"settings_autoplay": "Play audio automatically",
-	"credits_audio": "Audio generated with MeloTTS (MIT) by MyShell.ai."
+	"credits_audio": "Audio generated with MeloTTS (MIT) by MyShell.ai.",
+	"section_hangul": "Hangul",
+	"section_vocab": "Vocabulary",
+	"section_hangul_hint": "Start here: learn to read Korean letters. Optional, but it helps.",
+	"unit_letters": "{count} characters",
+	"new_letter": "New letter",
+	"prompt_sound": "What sound is this?",
+	"prompt_letter": "Pick the letter for this sound",
+	"prompt_listen_letter": "Which one do you hear?",
+	"prompt_build": "Build the syllable",
+	"prompt_match_sound": "Match letters to sounds",
+	"build_initial": "Consonant",
+	"build_vowel": "Vowel",
+	"build_final": "Final consonant (batchim)"
 }

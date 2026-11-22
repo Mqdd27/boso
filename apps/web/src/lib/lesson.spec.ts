@@ -1,10 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import pack from '../../testdata/packs/ko-en/course.json';
 import { distractors, generateLesson, LESSON_SIZE, lessonXp, requeue, rng } from './lesson.js';
+import { compose, decompose } from './hangul.js';
 import { gloss, type Course, type GlossLang } from './types.js';
 
 const course = pack as Course;
-const [greetings, family] = course.units;
+const [greetings, family, vowels, consonants, blocks] = course.units;
 const base = {
 	earlier: [greetings],
 	stats: {},
@@ -28,7 +29,7 @@ describe('generateLesson', () => {
 					const graded = exercises.filter((e) => e.kind !== 'intro');
 					expect(graded.length).toBe(LESSON_SIZE);
 					for (const e of exercises) {
-						if (e.kind === 'intro') continue;
+						if (e.kind === 'intro' || e.kind === 'build') continue;
 						const items = e.kind === 'match' ? e.items : e.options;
 						if (e.kind !== 'match') expect(items.map((o) => o.id)).toContain(e.item.id);
 						expect(new Set(items.map((o) => gloss(o, lang))).size).toBe(items.length);
@@ -43,12 +44,14 @@ describe('generateLesson', () => {
 		const nuna = family.items.find((i) => i.text === '누나')!;
 		const pool = [...family.items, ...greetings.items];
 		for (let seed = 0; seed < 100; seed++) {
-			expect(distractors(nuna, pool, 'id', rng(seed)).map((i) => i.text)).not.toContain('언니');
+			expect(
+				distractors(nuna, pool, (i) => gloss(i, 'id'), rng(seed)).map((i) => i.text)
+			).not.toContain('언니');
 		}
 		// In English they differ ("elder sister" / "older sister"), so 언니 may appear.
 		const seen = new Set<string>();
 		for (let seed = 0; seed < 100; seed++) {
-			for (const i of distractors(nuna, pool, 'en', rng(seed))) seen.add(i.text);
+			for (const i of distractors(nuna, pool, (i) => gloss(i, 'en'), rng(seed))) seen.add(i.text);
 		}
 		expect(seen).toContain('언니');
 	});
@@ -102,5 +105,60 @@ describe('requeue + xp', () => {
 	it('gives 10 XP, 15 without mistakes', () => {
 		expect(lessonXp(0)).toBe(15);
 		expect(lessonXp(2)).toBe(10);
+	});
+});
+
+describe('script units', () => {
+	const script = { ...base, earlier: [vowels, consonants], unit: blocks };
+	const graded = (seed: number, lesson: 1 | 2 = 1) =>
+		generateLesson({ ...script, seed, lesson }).filter((e) => e.kind !== 'intro');
+
+	it('is deterministic for a seed', () => {
+		expect(graded(3)).toEqual(graded(3));
+		expect(graded(3)).not.toEqual(graded(4));
+	});
+
+	it('never offers two options with the same sound, nor vocab words', () => {
+		for (let seed = 0; seed < 50; seed++) {
+			for (const lesson of [1, 2] as const) {
+				for (const e of graded(seed, lesson)) {
+					if (e.kind === 'build') continue;
+					const items = e.kind === 'match' ? e.items : e.options;
+					expect(new Set(items.map((o) => o.roman)).size).toBe(items.length);
+					expect(items.every((o) => o.type === 'char')).toBe(true);
+				}
+			}
+		}
+	});
+
+	it('builds every block from tiles that contain its parts', () => {
+		const builds = graded(1).filter((e) => e.kind === 'build');
+		expect(builds.length).toBeGreaterThanOrEqual(blocks.items.length);
+		for (const e of builds) {
+			const parts = decompose(e.item.text)!;
+			expect(e.tiles.initial).toContain(parts.initial);
+			expect(e.tiles.vowel).toContain(parts.vowel);
+			expect(e.tiles.final).toEqual([]);
+			expect(compose(parts.initial, parts.vowel)).toBe(e.item.text);
+		}
+	});
+
+	it('asks vowels among vowels in a letter unit', () => {
+		const lesson = generateLesson({ ...script, earlier: [], unit: vowels, lesson: 1 });
+		for (const e of lesson) {
+			if (e.kind === 'meaning' || e.kind === 'word' || e.kind === 'listen')
+				expect(e.options.every((o) => vowels.items.includes(o))).toBe(true);
+		}
+	});
+
+	it('vocab lessons never offer Hangul letters', () => {
+		const lesson = generateLesson({
+			...base,
+			earlier: [greetings, vowels],
+			unit: family,
+			lesson: 1
+		});
+		for (const e of lesson)
+			if ('options' in e) expect(e.options.every((o) => o.type !== 'char')).toBe(true);
 	});
 });
