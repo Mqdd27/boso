@@ -21,7 +21,7 @@ def cmd_validate(args: argparse.Namespace) -> int:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="pipeline", description="boso course-pack pipeline")
     sub = parser.add_subparsers(dest="command", required=True)
-    validate = sub.add_parser("validate", help="schema-check courses/ and schema/examples/")
+    validate = sub.add_parser("validate", help="schema-check content/courses/ and schema/examples/")
     validate.add_argument("--root", type=Path, default=ROOT, help="repo root (default: this repo)")
     validate.set_defaults(func=cmd_validate)
     args = parser.parse_args(argv)

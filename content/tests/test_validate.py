@@ -91,7 +91,7 @@ def test_invalid_manifest_fails(tmp_path, mutate):
 
 def test_course_dir_with_units(tmp_path):
     course_dir = tmp_path / "ko-en"
-    shutil.copytree(ROOT / "courses" / "ko-en", course_dir)
+    shutil.copytree(ROOT / "content" / "courses" / "ko-en", course_dir)
     (course_dir / "units").mkdir()
     unit = copy.deepcopy(KO["units"][0])
     (course_dir / "units" / "010-greetings.yaml").write_text(json.dumps(unit), encoding="utf-8")

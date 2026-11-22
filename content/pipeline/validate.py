@@ -9,7 +9,7 @@ import yaml
 from jsonschema import Draft202012Validator
 from referencing import Registry, Resource
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]  # repo root
 SCHEMA_PATH = ROOT / "schema" / "course-pack.schema.json"
 
 
@@ -85,10 +85,10 @@ def validate_pack_file(path: Path) -> list[str]:
 
 
 def validate_all(root: Path = ROOT) -> tuple[list[str], dict[str, int]]:
-    """Validate courses/*/ and schema/examples/*.json under `root`."""
+    """Validate content/courses/*/ and schema/examples/*.json under repo `root`."""
     errors: list[str] = []
     stats = {"courses": 0, "units": 0, "items": 0, "examples": 0}
-    for course_file in sorted(root.glob("courses/*/course.yaml")):
+    for course_file in sorted(root.glob("content/courses/*/course.yaml")):
         course_errors, units = validate_course_dir(course_file.parent)
         errors += course_errors
         stats["courses"] += 1
