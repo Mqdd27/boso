@@ -1,0 +1,1274 @@
+{
+ "LexicalResource": {
+  "Lexicon": {
+   "LexicalEntry": [
+    {
+     "Lemma": {
+      "feat": {
+       "att": "writtenForm",
+       "val": "눈"
+      }
+     },
+     "att": "id",
+     "val": "72704",
+     "feat": [
+      {
+       "att": "homonym_number",
+       "val": "1"
+      },
+      {
+       "att": "lexicalUnit",
+       "val": "단어"
+      },
+      {
+       "att": "partOfSpeech",
+       "val": "명사"
+      },
+      {
+       "att": "vocabularyLevel",
+       "val": "초급"
+      },
+      {
+       "att": "semanticCategory",
+       "val": "사람 > 신체 부위"
+      }
+     ],
+     "Sense": [
+      {
+       "att": "id",
+       "val": "1",
+       "feat": [
+        {
+         "att": "definition",
+         "val": "..."
+        }
+       ],
+       "Equivalent": [
+        {
+         "feat": [
+          {
+           "att": "language",
+           "val": "영어"
+          },
+          {
+           "att": "lemma",
+           "val": "eye"
+          },
+          {
+           "att": "definition",
+           "val": "..."
+          }
+         ]
+        },
+        {
+         "feat": [
+          {
+           "att": "language",
+           "val": "인도네시아어"
+          },
+          {
+           "att": "lemma",
+           "val": "mata"
+          },
+          {
+           "att": "definition",
+           "val": "..."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "att": "id",
+       "val": "2",
+       "feat": [
+        {
+         "att": "definition",
+         "val": "..."
+        }
+       ],
+       "Equivalent": [
+        {
+         "feat": [
+          {
+           "att": "language",
+           "val": "영어"
+          },
+          {
+           "att": "lemma",
+           "val": "eyesight"
+          },
+          {
+           "att": "definition",
+           "val": "..."
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "WordForm": {
+      "feat": [
+       {
+        "att": "type",
+        "val": "발음"
+       },
+       {
+        "att": "pronunciation",
+        "val": "눈"
+       },
+       {
+        "att": "sound",
+        "val": "http://example.invalid/x.wav"
+       }
+      ]
+     }
+    },
+    {
+     "Lemma": {
+      "feat": {
+       "att": "writtenForm",
+       "val": "눈"
+      }
+     },
+     "att": "id",
+     "val": "20198",
+     "feat": [
+      {
+       "att": "homonym_number",
+       "val": "4"
+      },
+      {
+       "att": "lexicalUnit",
+       "val": "단어"
+      },
+      {
+       "att": "partOfSpeech",
+       "val": "명사"
+      },
+      {
+       "att": "vocabularyLevel",
+       "val": "초급"
+      },
+      {
+       "att": "semanticCategory",
+       "val": "자연 > 날씨"
+      }
+     ],
+     "Sense": {
+      "att": "id",
+      "val": "1",
+      "feat": [
+       {
+        "att": "definition",
+        "val": "..."
+       }
+      ],
+      "Equivalent": [
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "영어"
+         },
+         {
+          "att": "lemma",
+          "val": "snow"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       },
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "인도네시아어"
+         },
+         {
+          "att": "lemma",
+          "val": "salju"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       }
+      ]
+     },
+     "WordForm": {
+      "feat": [
+       {
+        "att": "type",
+        "val": "발음"
+       },
+       {
+        "att": "pronunciation",
+        "val": "눈ː"
+       },
+       {
+        "att": "sound",
+        "val": "http://example.invalid/x.wav"
+       }
+      ]
+     }
+    },
+    {
+     "Lemma": {
+      "feat": {
+       "att": "writtenForm",
+       "val": "같이"
+      }
+     },
+     "att": "id",
+     "val": "26799",
+     "feat": [
+      {
+       "att": "homonym_number",
+       "val": "0"
+      },
+      {
+       "att": "lexicalUnit",
+       "val": "단어"
+      },
+      {
+       "att": "partOfSpeech",
+       "val": "부사"
+      },
+      {
+       "att": "vocabularyLevel",
+       "val": "초급"
+      },
+      {
+       "att": "semanticCategory",
+       "val": "개념 > 방법"
+      }
+     ],
+     "Sense": {
+      "att": "id",
+      "val": "1",
+      "feat": [
+       {
+        "att": "definition",
+        "val": "..."
+       }
+      ],
+      "Equivalent": [
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "영어"
+         },
+         {
+          "att": "lemma",
+          "val": "together"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       },
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "인도네시아어"
+         },
+         {
+          "att": "lemma",
+          "val": "bersama "
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       }
+      ]
+     },
+     "WordForm": {
+      "feat": [
+       {
+        "att": "type",
+        "val": "발음"
+       },
+       {
+        "att": "pronunciation",
+        "val": "가치"
+       },
+       {
+        "att": "sound",
+        "val": "http://example.invalid/x.wav"
+       }
+      ]
+     }
+    },
+    {
+     "Lemma": {
+      "feat": {
+       "att": "writtenForm",
+       "val": "먹다"
+      }
+     },
+     "att": "id",
+     "val": "58272",
+     "feat": [
+      {
+       "att": "homonym_number",
+       "val": "0"
+      },
+      {
+       "att": "lexicalUnit",
+       "val": "단어"
+      },
+      {
+       "att": "partOfSpeech",
+       "val": "동사"
+      },
+      {
+       "att": "vocabularyLevel",
+       "val": "초급"
+      },
+      {
+       "att": "semanticCategory",
+       "val": "식생활 > 식사"
+      }
+     ],
+     "Sense": {
+      "att": "id",
+      "val": "1",
+      "feat": [
+       {
+        "att": "definition",
+        "val": "..."
+       }
+      ],
+      "Equivalent": [
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "영어"
+         },
+         {
+          "att": "lemma",
+          "val": "eat; have; consume"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       },
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "인도네시아어"
+         },
+         {
+          "att": "lemma",
+          "val": "makan"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       }
+      ]
+     },
+     "WordForm": {
+      "feat": [
+       {
+        "att": "type",
+        "val": "발음"
+       },
+       {
+        "att": "pronunciation",
+        "val": "먹따"
+       },
+       {
+        "att": "sound",
+        "val": "http://example.invalid/x.wav"
+       }
+      ]
+     }
+    },
+    {
+     "Lemma": {
+      "feat": {
+       "att": "writtenForm",
+       "val": "좋다"
+      }
+     },
+     "att": "id",
+     "val": "79033",
+     "feat": [
+      {
+       "att": "homonym_number",
+       "val": "0"
+      },
+      {
+       "att": "lexicalUnit",
+       "val": "단어"
+      },
+      {
+       "att": "partOfSpeech",
+       "val": "형용사"
+      },
+      {
+       "att": "vocabularyLevel",
+       "val": "초급"
+      },
+      {
+       "att": "semanticCategory",
+       "val": "개념 > 상태"
+      }
+     ],
+     "Sense": {
+      "att": "id",
+      "val": "1",
+      "feat": [
+       {
+        "att": "definition",
+        "val": "..."
+       }
+      ],
+      "Equivalent": [
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "영어"
+         },
+         {
+          "att": "lemma",
+          "val": "good; great; excellent"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       },
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "인도네시아어"
+         },
+         {
+          "att": "lemma",
+          "val": "bagus, baik"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       }
+      ]
+     },
+     "WordForm": {
+      "feat": [
+       {
+        "att": "type",
+        "val": "발음"
+       },
+       {
+        "att": "pronunciation",
+        "val": "조ː타"
+       },
+       {
+        "att": "sound",
+        "val": "http://example.invalid/x.wav"
+       }
+      ]
+     }
+    },
+    {
+     "Lemma": {
+      "feat": {
+       "att": "writtenForm",
+       "val": "하나"
+      }
+     },
+     "att": "id",
+     "val": "20283",
+     "feat": [
+      {
+       "att": "homonym_number",
+       "val": "0"
+      },
+      {
+       "att": "lexicalUnit",
+       "val": "단어"
+      },
+      {
+       "att": "partOfSpeech",
+       "val": "수사"
+      },
+      {
+       "att": "vocabularyLevel",
+       "val": "초급"
+      },
+      {
+       "att": "semanticCategory",
+       "val": "개념 > 수"
+      }
+     ],
+     "Sense": {
+      "att": "id",
+      "val": "1",
+      "feat": [
+       {
+        "att": "definition",
+        "val": "..."
+       }
+      ],
+      "Equivalent": [
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "영어"
+         },
+         {
+          "att": "lemma",
+          "val": "one"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       }
+      ]
+     },
+     "WordForm": {
+      "feat": [
+       {
+        "att": "type",
+        "val": "발음"
+       },
+       {
+        "att": "pronunciation",
+        "val": "하나"
+       },
+       {
+        "att": "sound",
+        "val": "http://example.invalid/x.wav"
+       }
+      ]
+     }
+    },
+    {
+     "Lemma": {
+      "feat": {
+       "att": "writtenForm",
+       "val": "물"
+      }
+     },
+     "att": "id",
+     "val": "10001",
+     "feat": [
+      {
+       "att": "homonym_number",
+       "val": "0"
+      },
+      {
+       "att": "lexicalUnit",
+       "val": "단어"
+      },
+      {
+       "att": "partOfSpeech",
+       "val": "명사"
+      },
+      {
+       "att": "vocabularyLevel",
+       "val": "초급"
+      },
+      {
+       "att": "semanticCategory",
+       "val": "식생활 > 음료"
+      }
+     ],
+     "Sense": {
+      "att": "id",
+      "val": "1",
+      "feat": [
+       {
+        "att": "definition",
+        "val": "..."
+       }
+      ],
+      "Equivalent": [
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "영어"
+         },
+         {
+          "att": "lemma",
+          "val": "water"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       },
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "인도네시아어"
+         },
+         {
+          "att": "lemma",
+          "val": "air"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       }
+      ]
+     },
+     "WordForm": {
+      "feat": [
+       {
+        "att": "type",
+        "val": "발음"
+       },
+       {
+        "att": "pronunciation",
+        "val": "물"
+       },
+       {
+        "att": "sound",
+        "val": "http://example.invalid/x.wav"
+       }
+      ]
+     }
+    },
+    {
+     "Lemma": {
+      "feat": {
+       "att": "writtenForm",
+       "val": "밥"
+      }
+     },
+     "att": "id",
+     "val": "10002",
+     "feat": [
+      {
+       "att": "homonym_number",
+       "val": "0"
+      },
+      {
+       "att": "lexicalUnit",
+       "val": "단어"
+      },
+      {
+       "att": "partOfSpeech",
+       "val": "명사"
+      },
+      {
+       "att": "vocabularyLevel",
+       "val": "초급"
+      },
+      {
+       "att": "semanticCategory",
+       "val": "식생활 > 음식"
+      }
+     ],
+     "Sense": {
+      "att": "id",
+      "val": "1",
+      "feat": [
+       {
+        "att": "definition",
+        "val": "..."
+       }
+      ],
+      "Equivalent": [
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "영어"
+         },
+         {
+          "att": "lemma",
+          "val": "rice"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       },
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "인도네시아어"
+         },
+         {
+          "att": "lemma",
+          "val": "nasi"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       }
+      ]
+     },
+     "WordForm": {
+      "feat": [
+       {
+        "att": "type",
+        "val": "발음"
+       },
+       {
+        "att": "pronunciation",
+        "val": "밥"
+       },
+       {
+        "att": "sound",
+        "val": "http://example.invalid/x.wav"
+       }
+      ]
+     }
+    },
+    {
+     "Lemma": {
+      "feat": {
+       "att": "writtenForm",
+       "val": "-님"
+      }
+     },
+     "att": "id",
+     "val": "10003",
+     "feat": [
+      {
+       "att": "homonym_number",
+       "val": "0"
+      },
+      {
+       "att": "lexicalUnit",
+       "val": "단어"
+      },
+      {
+       "att": "partOfSpeech",
+       "val": "접사"
+      },
+      {
+       "att": "vocabularyLevel",
+       "val": "초급"
+      },
+      {
+       "att": "semanticCategory",
+       "val": "사람 > 신체 부위"
+      }
+     ],
+     "Sense": {
+      "att": "id",
+      "val": "1",
+      "feat": [
+       {
+        "att": "definition",
+        "val": "..."
+       }
+      ],
+      "Equivalent": [
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "영어"
+         },
+         {
+          "att": "lemma",
+          "val": "Mr.; Ms."
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "Lemma": {
+      "feat": {
+       "att": "writtenForm",
+       "val": "를"
+      }
+     },
+     "att": "id",
+     "val": "10004",
+     "feat": [
+      {
+       "att": "homonym_number",
+       "val": "0"
+      },
+      {
+       "att": "lexicalUnit",
+       "val": "단어"
+      },
+      {
+       "att": "partOfSpeech",
+       "val": "조사"
+      },
+      {
+       "att": "vocabularyLevel",
+       "val": "초급"
+      },
+      {
+       "att": "semanticCategory",
+       "val": "사람 > 신체 부위"
+      }
+     ],
+     "Sense": {
+      "att": "id",
+      "val": "1",
+      "feat": [
+       {
+        "att": "definition",
+        "val": "..."
+       }
+      ],
+      "Equivalent": [
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "영어"
+         },
+         {
+          "att": "lemma",
+          "val": "(no equivalent)"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "Lemma": {
+      "feat": {
+       "att": "writtenForm",
+       "val": "말다"
+      }
+     },
+     "att": "id",
+     "val": "10005",
+     "feat": [
+      {
+       "att": "homonym_number",
+       "val": "0"
+      },
+      {
+       "att": "lexicalUnit",
+       "val": "단어"
+      },
+      {
+       "att": "partOfSpeech",
+       "val": "보조 동사"
+      },
+      {
+       "att": "vocabularyLevel",
+       "val": "초급"
+      },
+      {
+       "att": "semanticCategory",
+       "val": "사람 > 신체 부위"
+      }
+     ],
+     "Sense": {
+      "att": "id",
+      "val": "1",
+      "feat": [
+       {
+        "att": "definition",
+        "val": "..."
+       }
+      ],
+      "Equivalent": [
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "영어"
+         },
+         {
+          "att": "lemma",
+          "val": "stop"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       }
+      ]
+     },
+     "WordForm": {
+      "feat": [
+       {
+        "att": "type",
+        "val": "발음"
+       },
+       {
+        "att": "pronunciation",
+        "val": "말ː다"
+       },
+       {
+        "att": "sound",
+        "val": "http://example.invalid/x.wav"
+       }
+      ]
+     }
+    },
+    {
+     "Lemma": {
+      "feat": {
+       "att": "writtenForm",
+       "val": "잘 지내다"
+      }
+     },
+     "att": "id",
+     "val": "10006",
+     "feat": [
+      {
+       "att": "homonym_number",
+       "val": "0"
+      },
+      {
+       "att": "lexicalUnit",
+       "val": "구"
+      },
+      {
+       "att": "partOfSpeech",
+       "val": "동사"
+      },
+      {
+       "att": "vocabularyLevel",
+       "val": "초급"
+      },
+      {
+       "att": "semanticCategory",
+       "val": "사람 > 신체 부위"
+      }
+     ],
+     "Sense": {
+      "att": "id",
+      "val": "1",
+      "feat": [
+       {
+        "att": "definition",
+        "val": "..."
+       }
+      ],
+      "Equivalent": [
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "영어"
+         },
+         {
+          "att": "lemma",
+          "val": "be well"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "Lemma": {
+      "feat": {
+       "att": "writtenForm",
+       "val": "가다"
+      }
+     },
+     "att": "id",
+     "val": "10007",
+     "feat": [
+      {
+       "att": "homonym_number",
+       "val": "0"
+      },
+      {
+       "att": "lexicalUnit",
+       "val": "단어"
+      },
+      {
+       "att": "partOfSpeech",
+       "val": "동사"
+      },
+      {
+       "att": "vocabularyLevel",
+       "val": "초급"
+      },
+      {
+       "att": "semanticCategory",
+       "val": "동작 > 이동"
+      }
+     ],
+     "Sense": {
+      "att": "id",
+      "val": "1",
+      "feat": [
+       {
+        "att": "definition",
+        "val": "..."
+       }
+      ],
+      "Equivalent": [
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "영어"
+         },
+         {
+          "att": "lemma",
+          "val": "(no equivalent)"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       }
+      ]
+     },
+     "WordForm": {
+      "feat": [
+       {
+        "att": "type",
+        "val": "발음"
+       },
+       {
+        "att": "pronunciation",
+        "val": "가다"
+       },
+       {
+        "att": "sound",
+        "val": "http://example.invalid/x.wav"
+       }
+      ]
+     }
+    },
+    {
+     "Lemma": {
+      "feat": {
+       "att": "writtenForm",
+       "val": "사과"
+      }
+     },
+     "att": "id",
+     "val": "10008",
+     "feat": [
+      {
+       "att": "homonym_number",
+       "val": "0"
+      },
+      {
+       "att": "lexicalUnit",
+       "val": "단어"
+      },
+      {
+       "att": "partOfSpeech",
+       "val": "명사"
+      },
+      {
+       "att": "vocabularyLevel",
+       "val": "중급"
+      },
+      {
+       "att": "semanticCategory",
+       "val": "식생활 > 음식"
+      }
+     ],
+     "Sense": {
+      "att": "id",
+      "val": "1",
+      "feat": [
+       {
+        "att": "definition",
+        "val": "..."
+       }
+      ],
+      "Equivalent": [
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "영어"
+         },
+         {
+          "att": "lemma",
+          "val": "apple"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       },
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "인도네시아어"
+         },
+         {
+          "att": "lemma",
+          "val": "apel"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       }
+      ]
+     },
+     "WordForm": {
+      "feat": [
+       {
+        "att": "type",
+        "val": "발음"
+       },
+       {
+        "att": "pronunciation",
+        "val": "사과"
+       },
+       {
+        "att": "sound",
+        "val": "http://example.invalid/x.wav"
+       }
+      ]
+     }
+    },
+    {
+     "Lemma": {
+      "feat": {
+       "att": "writtenForm",
+       "val": "오다"
+      }
+     },
+     "att": "id",
+     "val": "10009",
+     "feat": [
+      {
+       "att": "homonym_number",
+       "val": "0"
+      },
+      {
+       "att": "lexicalUnit",
+       "val": "단어"
+      },
+      {
+       "att": "partOfSpeech",
+       "val": "동사"
+      },
+      {
+       "att": "vocabularyLevel",
+       "val": "초급"
+      },
+      {
+       "att": "semanticCategory",
+       "val": "동작 > 이동"
+      }
+     ],
+     "Sense": {
+      "att": "id",
+      "val": "1",
+      "feat": [
+       {
+        "att": "definition",
+        "val": "..."
+       }
+      ],
+      "Equivalent": [
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "영어"
+         },
+         {
+          "att": "lemma",
+          "val": "come"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       },
+       {
+        "feat": [
+         {
+          "att": "language",
+          "val": "인도네시아어"
+         },
+         {
+          "att": "lemma",
+          "val": "datang"
+         },
+         {
+          "att": "definition",
+          "val": "..."
+         }
+        ]
+       }
+      ]
+     },
+     "WordForm": {
+      "feat": [
+       {
+        "att": "type",
+        "val": "발음"
+       },
+       {
+        "att": "pronunciation",
+        "val": "오다"
+       },
+       {
+        "att": "sound",
+        "val": "http://example.invalid/x.wav"
+       }
+      ]
+     }
+    }
+   ]
+  }
+ }
+}
