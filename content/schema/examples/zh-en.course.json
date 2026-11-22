@@ -1,0 +1,47 @@
+{
+  "id": "zh-en",
+  "target": "zh",
+  "glosses": ["en", "id"],
+  "levels": ["hsk1", "hsk2"],
+  "version": "0.0.1",
+  "units": [
+    {
+      "id": "zh-010",
+      "title": { "en": "Greetings", "id": "Salam" },
+      "level": "hsk1",
+      "items": [
+        {
+          "id": "zh.w.nihao",
+          "type": "word",
+          "text": "你好",
+          "roman": "nǐ hǎo",
+          "tones": "ni3 hao3",
+          "gloss": { "en": "hello", "id": "halo" },
+          "audio": "zh/zh.w.nihao.opus",
+          "source": "example",
+          "license": "CC BY-SA 4.0",
+          "review": "needs_review"
+        },
+        {
+          "id": "zh.p.xiexie-ni",
+          "type": "phrase",
+          "text": "谢谢你",
+          "roman": "xièxie nǐ",
+          "tones": "xie4 xie5 ni3",
+          "gloss": { "en": "thank you" },
+          "tokens": ["谢谢", "你"],
+          "source": "example",
+          "license": "CC BY-SA 4.0",
+          "review": "needs_review"
+        }
+      ],
+      "grammar": [
+        {
+          "id": "zh.g.ma",
+          "body": { "en": "Put 吗 at the end of a statement to make a yes/no question." },
+          "review": "needs_review"
+        }
+      ]
+    }
+  ]
+}

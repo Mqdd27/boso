@@ -1,0 +1,13 @@
+# raw downloads, caches, build output
+sources/
+cache/
+dist/
+
+# python
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+
+.env
+.DS_Store
