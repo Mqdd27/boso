@@ -1,0 +1,31 @@
+{
+	"schema_version": 1,
+	"course": {
+		"id": "ko-en",
+		"target": "ko",
+		"title": {
+			"en": "Korean",
+			"id": "Bahasa Korea"
+		},
+		"glosses": ["en", "id"],
+		"levels": ["topik1"],
+		"version": "0.0.1"
+	},
+	"build_date": "2026-11-22T00:00:00Z",
+	"attribution": [
+		{
+			"source": "krdict",
+			"license": "CC BY-SA 2.0 KR",
+			"items": 11,
+			"url": "https://krdict.korean.go.kr",
+			"authors": ["국립국어원 (National Institute of Korean Language)"]
+		},
+		{
+			"source": "krdict (modified)",
+			"license": "CC BY-SA 2.0 KR",
+			"items": 1,
+			"url": "https://krdict.korean.go.kr",
+			"authors": ["국립국어원 (National Institute of Korean Language)"]
+		}
+	]
+}

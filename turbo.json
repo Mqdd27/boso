@@ -1,7 +1,10 @@
 {
 	"$schema": "https://turborepo.com/schema.json",
 	"tasks": {
-		"web#build": { "outputs": ["../server/web/dist/**"] },
+		"web#build": {
+			"inputs": ["$TURBO_DEFAULT$", "$TURBO_ROOT$/schema/**", "$TURBO_ROOT$/content/dist/**"],
+			"outputs": ["../server/web/dist/**"]
+		},
 		"server#build": { "dependsOn": ["web#build"], "outputs": ["boso"] },
 		"test": {},
 		"lint": {},

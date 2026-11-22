@@ -1,0 +1,200 @@
+{
+	"id": "ko-en",
+	"target": "ko",
+	"title": {
+		"en": "Korean",
+		"id": "Bahasa Korea"
+	},
+	"glosses": ["en", "id"],
+	"levels": ["topik1"],
+	"version": "0.0.1",
+	"units": [
+		{
+			"id": "ko-010-greetings",
+			"title": {
+				"en": "Greetings",
+				"id": "Salam"
+			},
+			"level": "topik1",
+			"items": [
+				{
+					"id": "ko.w.annyeong",
+					"type": "word",
+					"text": "안녕",
+					"roman": "annyeong",
+					"gloss": {
+						"en": "hello",
+						"id": "halo"
+					},
+					"source": "krdict",
+					"license": "CC BY-SA 2.0 KR",
+					"source_ref": "krdict:59259#1",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.w.ne",
+					"type": "word",
+					"text": "네",
+					"roman": "ne",
+					"gloss": {
+						"en": "yes",
+						"id": "ya"
+					},
+					"source": "krdict",
+					"license": "CC BY-SA 2.0 KR",
+					"source_ref": "krdict:97674#1",
+					"review": "reviewed"
+				},
+				{
+					"id": "ko.w.aniyo",
+					"type": "word",
+					"text": "아니요",
+					"roman": "aniyo",
+					"gloss": {
+						"en": "no",
+						"id": "tidak"
+					},
+					"source": "krdict",
+					"license": "CC BY-SA 2.0 KR",
+					"source_ref": "krdict:35704#1",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.w.gomapda",
+					"type": "word",
+					"text": "고맙다",
+					"roman": "gomapda",
+					"gloss": {
+						"en": "thankful",
+						"id": "terima kasih"
+					},
+					"source": "krdict",
+					"license": "CC BY-SA 2.0 KR",
+					"source_ref": "krdict:98313#1",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.w.mianhada",
+					"type": "word",
+					"text": "미안하다",
+					"roman": "mianhada",
+					"gloss": {
+						"en": "sorry",
+						"id": "maaf"
+					},
+					"source": "krdict",
+					"license": "CC BY-SA 2.0 KR",
+					"source_ref": "krdict:18477#1",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.w.chingu",
+					"type": "word",
+					"text": "친구",
+					"roman": "chingu",
+					"gloss": {
+						"en": "friend"
+					},
+					"source": "krdict",
+					"license": "CC BY-SA 2.0 KR",
+					"source_ref": "krdict:67700#1",
+					"review": "needs_review"
+				}
+			]
+		},
+		{
+			"id": "ko-011-family",
+			"title": {
+				"en": "Family",
+				"id": "Keluarga"
+			},
+			"level": "topik1",
+			"items": [
+				{
+					"id": "ko.w.gajok",
+					"type": "word",
+					"text": "가족",
+					"roman": "gajok",
+					"gloss": {
+						"en": "family",
+						"id": "keluarga"
+					},
+					"source": "krdict",
+					"license": "CC BY-SA 2.0 KR",
+					"source_ref": "krdict:14535#1",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.w.eomma",
+					"type": "word",
+					"text": "엄마",
+					"roman": "eomma",
+					"gloss": {
+						"en": "mom",
+						"id": "ibu"
+					},
+					"source": "krdict",
+					"license": "CC BY-SA 2.0 KR",
+					"source_ref": "krdict:16932#1",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.w.appa",
+					"type": "word",
+					"text": "아빠",
+					"roman": "appa",
+					"gloss": {
+						"en": "dad",
+						"id": "ayah (panggilan akrab, papa)"
+					},
+					"source": "krdict (modified)",
+					"license": "CC BY-SA 2.0 KR",
+					"source_ref": "krdict:97222#1",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.w.nuna",
+					"type": "word",
+					"text": "누나",
+					"roman": "nuna",
+					"gloss": {
+						"en": "elder sister",
+						"id": "kakak perempuan"
+					},
+					"source": "krdict",
+					"license": "CC BY-SA 2.0 KR",
+					"source_ref": "krdict:68844#1",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.w.eonni",
+					"type": "word",
+					"text": "언니",
+					"roman": "eonni",
+					"gloss": {
+						"en": "older sister",
+						"id": "kakak perempuan"
+					},
+					"source": "krdict",
+					"license": "CC BY-SA 2.0 KR",
+					"source_ref": "krdict:24946#1",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.w.dongsaeng",
+					"type": "word",
+					"text": "동생",
+					"roman": "dongsaeng",
+					"gloss": {
+						"en": "younger sibling",
+						"id": "adik"
+					},
+					"source": "krdict",
+					"license": "CC BY-SA 2.0 KR",
+					"source_ref": "krdict:23504#1",
+					"review": "needs_review"
+				}
+			]
+		}
+	]
+}

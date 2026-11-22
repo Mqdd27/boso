@@ -5,6 +5,8 @@ import adapter from '@sveltejs/adapter-static';
 import { sveltekit } from '@sveltejs/kit/vite';
 
 export default defineConfig({
+	// The course-pack schema lives at the repo root (schema/) and is imported, not copied.
+	server: { fs: { allow: ['../../schema'] } },
 	plugins: [
 		tailwindcss(),
 		sveltekit({

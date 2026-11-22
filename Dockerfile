@@ -6,6 +6,7 @@ COPY package.json package-lock.json ./
 COPY apps/web/package.json apps/web/
 COPY apps/server/package.json apps/server/
 RUN npm ci
+COPY schema/ schema/
 COPY apps/web/ apps/web/
 RUN npm run build -w web
 
