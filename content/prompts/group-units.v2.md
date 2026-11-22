@@ -8,7 +8,8 @@ and drink, time and days, places, school and work, everyday verbs, describing th
 Rules:
 - Use only IDs from the candidate list. Never invent words or IDs. Each ID at most once.
 - Each unit has 5 to 8 words that clearly belong to its theme.
-- Not every candidate has to be used.
+- These core words MUST each be used in some unit: {required}
+- Other candidates are optional; not every candidate has to be used.
 - Avoid themes that already exist: {existing_titles}
 - `slug`: short English theme in lower case, words joined by "-" (e.g. "food-and-drink").
 - `title_en`: short English title. `title_id`: the same title in natural Indonesian.

@@ -18,7 +18,7 @@ from pydantic import BaseModel, Field, ValidationError
 CONTENT = Path(__file__).resolve().parents[1]
 PROMPTS = CONTENT / "prompts"
 LLM_CACHE = CONTENT / "cache" / "llm"
-GROUP_TEMPLATE = "group-units.v1"
+GROUP_TEMPLATE = "group-units.v2"
 SENSE_TEMPLATE = "pick-senses.v1"
 MAX_SENSES = 8  # senses shown per word; the first ones are the common ones
 
@@ -74,8 +74,11 @@ def _ask[T](
     if cached.is_file():
         return parse(cached.read_text(encoding="utf-8"))
     error = None
-    for _ in range(2):  # one retry, then fail loudly
-        reply = run(prompt)
+    for attempt in range(2):  # one retry that names the problem, then fail loudly
+        retry = (
+            f"\n\nYour previous reply was invalid: {error}\nReply again, fixed." if attempt else ""
+        )
+        reply = run(prompt + retry)
         try:
             result = parse(reply)
         except ValueError as e:
@@ -91,7 +94,9 @@ def _template(name: str) -> str:
     return (PROMPTS / f"{name}.md").read_text(encoding="utf-8")
 
 
-def parse_plan(text: str, pool: set[str], n_units: int) -> list[UnitPlan]:
+def parse_plan(
+    text: str, pool: set[str], n_units: int, required: frozenset[str] = frozenset()
+) -> list[UnitPlan]:
     """Validate a unit plan. Raises ValueError on anything off."""
     try:
         plan = Plan.model_validate_json(_json_object(text))
@@ -111,6 +116,8 @@ def parse_plan(text: str, pool: set[str], n_units: int) -> list[UnitPlan]:
             if item in seen:
                 raise ValueError(f"id {item} used twice")
             seen.add(item)
+    if missing := sorted(required - seen):
+        raise ValueError(f"core words missing from every unit: {', '.join(missing)}")
     return plan.units
 
 
@@ -120,8 +127,12 @@ def group(
     existing_titles: list[str],
     run: Callable[[str], str] = run_claude,
     cache_dir: Path = LLM_CACHE,
+    required: frozenset[str] = frozenset(),
 ) -> list[UnitPlan]:
-    """Plan `n_units` units from `candidates` ({id, text, pos, gloss, category})."""
+    """Plan `n_units` units from `candidates` ({id, text, pos, gloss, category}).
+
+    Every ID in `required` (the core words) must end up in a unit."""
+    words = {c["id"]: c["text"] for c in candidates}
     lines = [
         f"{c['id']} | {c['text']} | {c['pos']} | {c['gloss']} | {c['category'] or '-'}"
         for c in candidates
@@ -129,10 +140,12 @@ def group(
     prompt = _template(GROUP_TEMPLATE).format(
         n_units=n_units,
         existing_titles=", ".join(existing_titles) or "(none)",
+        required=", ".join(f"{i} ({words[i]})" for i in sorted(required)) or "(none)",
         candidates="\n".join(lines),
     )
     pool = {c["id"] for c in candidates}
-    return _ask(GROUP_TEMPLATE, prompt, lambda t: parse_plan(t, pool, n_units), run, cache_dir)
+    parse = lambda t: parse_plan(t, pool, n_units, required)  # noqa: E731
+    return _ask(GROUP_TEMPLATE, prompt, parse, run, cache_dir)
 
 
 def parse_senses(text: str, choices: dict[str, set[int]]) -> dict[str, int]:

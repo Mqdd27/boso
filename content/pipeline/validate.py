@@ -9,6 +9,8 @@ import yaml
 from jsonschema import Draft202012Validator
 from referencing import Registry, Resource
 
+from pipeline import overrides
+
 ROOT = Path(__file__).resolve().parents[2]  # repo root
 SCHEMA_PATH = ROOT / "schema" / "course-pack.schema.json"
 
@@ -72,6 +74,7 @@ def validate_course_dir(course_dir: Path) -> tuple[list[str], list[dict]]:
         if path.resolve() not in listed:
             errors.append(f"{path}: not listed in {course_file}")
     errors += cross_check(course, units, str(course_file))
+    errors += overrides.check(course_dir, units)
     return errors, units
 
 

@@ -33,6 +33,10 @@ def cmd_build(args: argparse.Namespace) -> int:
     for key, value in sorted(summary.stats.items()):
         print(f"{key}: {value}")
     print(f"pool: {summary.pool}, existing units: {summary.existing_units}")
+    for item_id in summary.overridden:
+        print(f"{'would apply' if args.dry_run else 'applied'} override to {item_id}")
+    for item_id in summary.kept:
+        print(f"kept {item_id}: reviewed or edited by hand, override not applied")
     prefix = "would write" if args.dry_run else "wrote"
     for rel, n in summary.new_units:
         print(f"{prefix} {rel} ({n} words)")

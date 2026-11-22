@@ -10,7 +10,7 @@ from pathlib import Path
 
 import yaml
 
-from pipeline import fetch
+from pipeline import fetch, overrides
 from pipeline.importers import krdict
 from pipeline.validate import validate_course_dir
 
@@ -91,10 +91,13 @@ def lint(course_dir: Path, entries: list[krdict.KrdictEntry]) -> list[Finding]:
     for e in entries:
         by_word.setdefault(e.word, []).append(e)
 
+    ovs = overrides.load(course_dir)
     findings = []
     for unit in units:
         seen: dict[tuple[str, str], str] = {}
         for item in unit["items"]:
+            if overrides.find(ovs, item):  # already fixed on purpose
+                continue
             gloss = item.get("gloss", {})
             for lang in ("en", "id"):
                 for problem in gloss_problems(lang, gloss.get(lang)):

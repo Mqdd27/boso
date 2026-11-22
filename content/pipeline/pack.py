@@ -8,6 +8,7 @@ from pathlib import Path
 
 import yaml
 
+from pipeline.overrides import SUFFIX
 from pipeline.validate import ROOT, check, cross_check, validate_course_dir
 
 CONTENT = ROOT / "content"
@@ -41,7 +42,7 @@ def attribution(units: list[dict]) -> list[dict]:
     out = []
     for (source, license_), n in sorted(counts.items()):
         entry = {"source": source, "license": license_, "items": n}
-        if info := SOURCES.get(source):
+        if info := SOURCES.get(source.removesuffix(SUFFIX)):
             entry["url"] = info["url"]
             entry["authors"] = [info["author"]]
         out.append(entry)
@@ -93,10 +94,16 @@ def write_attribution(courses: Path = CONTENT / "courses", path: Path = ATTRIBUT
         if not entries:
             lines += ["No third-party content yet.", ""]
         for e in entries:
-            info = SOURCES.get(e["source"], {})
+            info = SOURCES.get(e["source"].removesuffix(SUFFIX), {})
             name = info.get("name", e["source"])
             credit = f"[{name}]({info['url']})" if info else name
             by = f" by {info['author']}" if info else ""
-            lines.append(f"- {credit}{by}, {e['license']}: {e['items']} items")
+            line = f"- {credit}{by}, {e['license']}: {e['items']} items"
+            if e["source"].endswith(SUFFIX):
+                line += (
+                    f", glosses modified by boso (see courses/{course['id']}/overrides.yaml"
+                    " for what changed and why)"
+                )
+            lines.append(line)
         lines.append("")
     path.write_text("\n".join(lines), encoding="utf-8")

@@ -268,3 +268,86 @@ def test_parse_senses_rejects_bad_picks():
     ]:
         with pytest.raises(ValueError, match=message):
             parse_senses(text, choices)
+
+
+def write_overrides(courses, *entries):
+    data = {"overrides": [dict(e) for e in entries]}
+    path = courses / "ko-en" / "overrides.yaml"
+    path.write_text(yaml.safe_dump(data, allow_unicode=True), encoding="utf-8")
+
+
+MUL = {"item": "물#10001", "gloss": {"id": "air minum"}, "reason": "Test fix."}
+JOTA = {"item": "ko.w.jota", "gloss": {"en": "good"}, "reason": "Test fix."}
+
+
+def items_by_id(courses):
+    _, units = validate_course_dir(courses / "ko-en")
+    return {i["id"]: i for u in units for i in u["items"]}
+
+
+def test_overrides_apply_to_new_and_existing_items(dump, courses, tmp_path, monkeypatch):
+    cache = tmp_path / "cache"
+    build("ko-en", 1, run=fake_claude(PLAN), courses=courses, cache=cache, source_zip=dump)
+    write_overrides(courses, JOTA)
+    summary = build("ko-en", 1, run=fake_claude([]), courses=courses, cache=cache, source_zip=dump)
+    assert summary.overridden == ["ko.w.jota"]  # existing item
+    items = items_by_id(courses)
+    assert items["ko.w.jota"]["gloss"] == {"en": "good", "id": "bagus, baik"}
+    assert items["ko.w.jota"]["source"] == "krdict (modified)"
+    assert items["ko.w.jota"]["review"] == "needs_review"
+
+    # A second build changes nothing.
+    files = {p: p.read_bytes() for p in (courses / "ko-en").rglob("*.yaml")}
+    build("ko-en", 1, run=fake_claude([]), courses=courses, cache=cache, source_zip=dump)
+    assert {p: p.read_bytes() for p in (courses / "ko-en").rglob("*.yaml")} == files
+
+    monkeypatch.setenv("SOURCE_DATE_EPOCH", "1795000000")
+    attribution = tmp_path / "ATTRIBUTION.md"
+    write_attribution(courses, attribution)
+    assert "glosses modified by boso" in attribution.read_text()
+
+
+def test_override_for_a_new_unit(dump, courses, tmp_path):
+    write_overrides(courses, {**MUL, "item": "ko.w.mul"})
+    plan = [["ko.w.hana", "ko.w.mul", "ko.w.bap", "ko.w.oda", "ko.w.gachi"]]
+    build("ko-en", 1, run=fake_claude(plan), courses=courses, cache=tmp_path, source_zip=dump)
+    mul = items_by_id(courses)["ko.w.mul"]
+    assert mul["gloss"] == {"en": "water", "id": "air minum"}
+    assert mul["source"] == "krdict (modified)"
+
+
+def test_override_for_unknown_item_fails_validate(dump, courses, tmp_path):
+    build("ko-en", 1, run=fake_claude(PLAN), courses=courses, cache=tmp_path, source_zip=dump)
+    write_overrides(courses, {**JOTA, "item": "ko.w.nope"})
+    errors, _ = validate_course_dir(courses / "ko-en")
+    assert any("'ko.w.nope' matches no item" in e for e in errors)
+    write_overrides(courses, {"item": "ko.w.jota", "gloss": {"en": "good"}})  # no reason
+    errors, _ = validate_course_dir(courses / "ko-en")
+    assert any("reason" in e for e in errors)
+
+
+def test_override_keeps_reviewed_and_hand_edited_items(dump, courses, tmp_path):
+    cache = tmp_path / "cache"
+    build("ko-en", 1, run=fake_claude(PLAN), courses=courses, cache=cache, source_zip=dump)
+    unit_file = courses / "ko-en" / "units" / "010-theme-0.yaml"
+    unit = yaml.safe_load(unit_file.read_text(encoding="utf-8"))
+    by_id = {i["id"]: i for i in unit["items"]}
+    by_id["ko.w.jota"]["review"] = "reviewed"
+    by_id["ko.w.gachi"]["gloss"]["en"] = "together with"  # hand edit
+    unit_file.write_text(yaml.safe_dump(unit, allow_unicode=True, sort_keys=False), "utf-8")
+    before = unit_file.read_bytes()
+    gachi = {"item": "ko.w.gachi", "gloss": {"en": "along"}, "reason": "Test fix."}
+    write_overrides(courses, JOTA, gachi)
+    summary = build("ko-en", 1, run=fake_claude([]), courses=courses, cache=cache, source_zip=dump)
+    assert summary.overridden == [] and sorted(summary.kept) == ["ko.w.gachi", "ko.w.jota"]
+    assert unit_file.read_bytes() == before
+
+
+def test_missing_core_word_retries_with_its_name_then_fails(dump, courses, tmp_path):
+    (courses / "ko-en" / "core-words.yaml").write_text("words: [하나]\n", encoding="utf-8")
+    run = fake_claude(PLAN)  # PLAN has no 하나
+    with pytest.raises(RuntimeError, match="core words missing from every unit: ko.w.hana"):
+        build("ko-en", 1, run=run, courses=courses, cache=tmp_path, source_zip=dump)
+    assert len(run.prompts) == 2
+    assert "MUST each be used in some unit: ko.w.hana (하나)" in run.prompts[0]
+    assert "previous reply was invalid: core words missing" in run.prompts[1]

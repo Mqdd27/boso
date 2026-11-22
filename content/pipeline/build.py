@@ -8,7 +8,7 @@ from pathlib import Path
 
 import yaml
 
-from pipeline import fetch
+from pipeline import fetch, overrides
 from pipeline.group import group, pick_senses, run_claude
 from pipeline.importers import krdict
 from pipeline.nlp.ko import romanize, slugify
@@ -27,6 +27,8 @@ class Summary:
     pool: int = 0
     existing_units: int = 0
     new_units: list[tuple[str, int]] = field(default_factory=list)  # (file, item count)
+    overridden: list[str] = field(default_factory=list)  # existing items an override was applied to
+    kept: list[str] = field(default_factory=list)  # overrides skipped: item reviewed or hand-edited
 
 
 def load_yaml(path: Path):
@@ -93,9 +95,61 @@ def to_item(entry: krdict.KrdictEntry, item_id: str, roman: str, sense_number: i
     }
 
 
+def apply_overrides(
+    course_dir: Path,
+    rels: list[str],
+    units: list[dict],
+    ovs: list[overrides.Override],
+    by_code: dict[int, krdict.KrdictEntry],
+    summary: Summary,
+    dry_run: bool,
+) -> None:
+    """Apply overrides to existing items that still hold their generated krdict value.
+
+    Reviewed items and hand-edited items (anything else) are left alone.
+    """
+    for rel, unit in zip(rels, units, strict=True):
+        changed = False
+        for n, item in enumerate(unit["items"]):
+            o = overrides.find(ovs, item)
+            if not o:
+                continue
+            plain = _regenerate(item, by_code)
+            target = overrides.apply(o, plain) if plain else None
+            if item == target:
+                continue
+            if item["review"] == "reviewed" or item != plain:
+                summary.kept.append(item["id"])
+                continue
+            unit["items"][n] = target
+            summary.overridden.append(item["id"])
+            changed = True
+        if changed and not dry_run:
+            dump_yaml(unit, course_dir / rel)
+
+
+def _regenerate(item: dict, by_code: dict[int, krdict.KrdictEntry]) -> dict | None:
+    """The item as `build` generated it from its krdict source_ref (None if not from krdict)."""
+    code, _, sense = (
+        str(item.get("source_ref", "")).removeprefix(f"{krdict.SOURCE}:").partition("#")
+    )
+    entry = by_code.get(int(code)) if code.isdigit() else None
+    if not entry or not sense.isdigit() or int(sense) not in {s.number for s in entry.senses}:
+        return None
+    fresh = to_item(entry, item["id"], item["roman"], int(sense))
+    return {**item, "gloss": fresh["gloss"], "source": fresh["source"]}
+
+
 def _senses(entry: krdict.KrdictEntry) -> list[tuple[int, str, str | None]]:
     """The senses a word can be taught with: those with an English gloss."""
     return [(s.number, s.en, s.id) for s in entry.senses if s.en]
+
+
+def _new_item(entry_roman: tuple, item_id: str, senses: dict, ovs: list) -> dict:
+    entry, roman = entry_roman
+    item = to_item(entry, item_id, roman, senses.get(item_id, entry.senses[0].number))
+    o = overrides.find(ovs, item)
+    return overrides.apply(o, item) if o else item
 
 
 def assign_ids(pool: list, taken: set[str]) -> list[tuple[krdict.KrdictEntry, str, str]]:
@@ -132,9 +186,9 @@ def build(
 
     course_file = course_dir / "course.yaml"
     course = load_yaml(course_file)
-    # ponytail: existing units are never rewritten, only new units are appended. That keeps reviewed
-    # items and manual edits safe, but krdict updates don't reach existing items; add a snapshot
-    # diff (regenerate only items still equal to their last generated value) if that matters.
+    # Existing units are never regenerated, only new units are appended, so reviewed items and
+    # manual edits stay safe. The one exception is overrides.yaml (see apply_overrides).
+    # ponytail: krdict updates don't reach existing items; reuse _regenerate if that matters.
     existing = [load_yaml(course_dir / rel) for rel in course["units"]]
     items = [i for u in existing for i in u["items"]]
     used = {str(i.get("source_ref", "")).split("#")[0] for i in items}  # krdict:<target_code>
@@ -149,6 +203,9 @@ def build(
     rest = [e for e in fresh if e.target_code not in core_codes]
     pool = core + select_pool(rest, POOL_SIZE - len(core))
     summary = Summary(stats=stats, pool=len(pool), existing_units=len(existing))
+    ovs = overrides.load(course_dir)
+    by_code = {e.target_code: e for e in beginner}
+    apply_overrides(course_dir, course["units"], existing, ovs, by_code, summary, dry_run)
     missing = n_units - len(existing)
     if missing <= 0:
         return summary
@@ -165,7 +222,9 @@ def build(
         }
         for e, i, _ in assigned
     ]
-    plans = group(prompt_rows, missing, [u["title"]["en"] for u in existing], run, cache / "llm")
+    required = frozenset(i for e, i, _ in assigned if e.target_code in core_codes)
+    titles = [u["title"]["en"] for u in existing]
+    plans = group(prompt_rows, missing, titles, run, cache / "llm", required)
 
     titled = [
         {
@@ -187,10 +246,7 @@ def build(
             "id": f"ko-{name}",
             "title": {"en": plan.title_en, "id": plan.title_id},
             "level": LEVEL,
-            "items": [
-                to_item(by_id[i][0], i, by_id[i][1], senses.get(i, by_id[i][0].senses[0].number))
-                for i in plan.items
-            ],
+            "items": [_new_item(by_id[i], i, senses, ovs) for i in plan.items],
         }
         rel = f"units/{name}.yaml"
         summary.new_units.append((rel, len(unit["items"])))
