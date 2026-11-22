@@ -203,7 +203,7 @@ def test_group_retries_once_then_uses_cache(dump, courses, tmp_path):
 def test_pack_is_valid(dump, courses, tmp_path, monkeypatch):
     monkeypatch.setenv("SOURCE_DATE_EPOCH", "1795000000")
     build("ko-en", 1, run=fake_claude(PLAN), courses=courses, cache=tmp_path / "c", source_zip=dump)
-    out = pack("ko-en", courses=courses, dist=tmp_path / "dist")
+    out, _, _ = pack("ko-en", courses=courses, dist=tmp_path / "dist", tts_cache=tmp_path / "tts")
     manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
     course = json.loads((out / "course.json").read_text(encoding="utf-8"))
     assert len(course["units"][0]["items"]) == 5

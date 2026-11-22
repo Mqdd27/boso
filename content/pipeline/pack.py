@@ -1,13 +1,15 @@
-"""`pipeline pack <course>`: validate, then write dist/<course>/course.json + manifest.json."""
+"""`pipeline pack <course>`: validate, then write dist/<course>/ (JSON + audio/)."""
 
 import json
 import os
+import shutil
 from collections import Counter
 from datetime import UTC, datetime
 from pathlib import Path
 
 import yaml
 
+from pipeline import tts
 from pipeline.overrides import SUFFIX
 from pipeline.validate import ROOT, check, cross_check, validate_course_dir
 
@@ -58,8 +60,40 @@ def load_course(course_dir: Path) -> dict:
     return {**{k: v for k, v in meta.items() if k != "units"}, "units": units}
 
 
-def pack(course_id: str, courses: Path = CONTENT / "courses", dist: Path = DIST) -> Path:
+def add_audio(course: dict, course_dir: Path, out: Path, cache: Path) -> int:
+    """Copy generated audio (cache/tts/) into out/audio/ and set `item.audio`, only for items
+    whose file exists. Returns how many items got audio."""
+    audio_dir = out / "audio"
+    shutil.rmtree(audio_dir, ignore_errors=True)  # no stale files from renamed or removed items
+    lang = course["target"]
+    if lang not in tts.VOICES:
+        return 0
+    read = tts.readings(course_dir)
+    n = 0
+    for unit in course["units"]:
+        for item in unit["items"]:
+            src = cache / f"{tts.cache_key(read.get(item['id'], item['text']), lang)}.opus"
+            if not src.is_file():
+                continue
+            rel = tts.audio_path(item["id"])
+            (audio_dir / rel).parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(src, audio_dir / rel)
+            item["audio"] = rel
+            n += 1
+    return n
+
+
+def pack(
+    course_id: str,
+    courses: Path = CONTENT / "courses",
+    dist: Path = DIST,
+    tts_cache: Path = tts.CACHE,
+) -> tuple[Path, int, int]:
+    """Write the pack. Returns (output dir, items with audio, items)."""
     course = load_course(courses / course_id)
+    out = dist / course_id
+    out.mkdir(parents=True, exist_ok=True)
+    audio = add_audio(course, courses / course_id, out, tts_cache)
     meta = {k: v for k, v in course.items() if k != "units"}
     manifest = {
         "schema_version": 1,
@@ -71,12 +105,10 @@ def pack(course_id: str, courses: Path = CONTENT / "courses", dist: Path = DIST)
     errors += cross_check(course, course["units"], "course.json")
     if errors:
         raise ValueError("\n".join(errors))
-    out = dist / course_id
-    out.mkdir(parents=True, exist_ok=True)
     for name, data in [("course.json", course), ("manifest.json", manifest)]:
         text = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
         (out / name).write_text(text, encoding="utf-8")
-    return out
+    return out, audio, sum(len(u["items"]) for u in course["units"])
 
 
 def write_attribution(courses: Path = CONTENT / "courses", path: Path = ATTRIBUTION) -> None:

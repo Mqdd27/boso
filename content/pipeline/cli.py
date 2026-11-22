@@ -46,9 +46,32 @@ def cmd_build(args: argparse.Namespace) -> int:
 def cmd_pack(args: argparse.Namespace) -> int:
     from pipeline.pack import pack, write_attribution
 
-    out = pack(args.course)
+    out, audio, items = pack(args.course)
     write_attribution()
     print(f"wrote {out}/course.json, {out}/manifest.json and ATTRIBUTION.md")
+    print(f"audio: {audio}/{items} items")
+    if audio < items:
+        print(f"warning: {items - audio} item(s) without audio (run `pipeline tts {args.course}`)")
+    return 0
+
+
+def cmd_tts(args: argparse.Namespace) -> int:
+    from pipeline import tts
+    from pipeline.build import COURSES
+
+    try:
+        tts.check_tools()
+    except RuntimeError as e:
+        print(f"error: {e}", file=sys.stderr)
+        return 1
+    report = tts.generate(args.course, COURSES, sample=args.sample, only=args.only)
+    size = sum(f.stat().st_size for f in report.files)
+    print(
+        f"{len(report.files)} files ({len(report.made)} new, {report.cached} cached), "
+        f"{size / 1024:.0f} KB, {report.seconds:.0f}s"
+    )
+    if args.sample:
+        print(f"samples: {tts.SAMPLES}  (listen: open {tts.SAMPLES})")
     return 0
 
 
@@ -85,6 +108,11 @@ def main(argv: list[str] | None = None) -> int:
     pack = sub.add_parser("pack", help="write dist/<course>/course.json + manifest.json")
     pack.add_argument("course")
     pack.set_defaults(func=cmd_pack)
+    tts = sub.add_parser("tts", help="generate missing audio (MeloTTS env in content/tts/)")
+    tts.add_argument("course", choices=["ko-en"])
+    tts.add_argument("--sample", type=int, metavar="N", help="only the first N items, to listen to")
+    tts.add_argument("--only", metavar="ID", help="regenerate one item")
+    tts.set_defaults(func=cmd_tts)
     lint = sub.add_parser("lint", help="warn about suspicious glosses (no LLM, no edits)")
     lint.add_argument("course")
     lint.add_argument("--strict", action="store_true", help="exit 1 if there are warnings")
