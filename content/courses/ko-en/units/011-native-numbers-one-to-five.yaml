@@ -88,3 +88,140 @@ items:
   author: XZJqz
   source_ref: tatoeba:12993391
   review: needs_review
+- id: ko.s.t1535365
+  type: sentence
+  text: 둘 중 하나를 선택하세요.
+  roman: dul jung hanareul seontaekaseyo.
+  tokens:
+  - 둘
+  - 중
+  - 하나를
+  - 선택하세요
+  gloss:
+    en: Choose either one or the other.
+    id: Pilih salah satu dari keduanya.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:72931
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 선택하세요
+    gloss:
+      en: choose, make a choice
+      id: memilih
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: mysonhs
+  source_ref: tatoeba:1535365
+  review: needs_review
+- id: ko.s.t4965204
+  type: sentence
+  text: 하나만 약속해 줘.
+  roman: hanaman yaksokae jwo.
+  tokens:
+  - 하나만
+  - 약속해
+  - 줘
+  gloss:
+    en: Promise me just one thing.
+    id: Janji satu hal saja sama aku.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 약속해
+    gloss:
+      en: promise, pledge
+      id: janji, berjanji
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: rainbow4us
+  source_ref: tatoeba:4965204
+  review: needs_review
+- id: ko.s.t10587632
+  type: sentence
+  text: 둘 중 하나는 스파이다.
+  roman: dul jung hananeun seupaida.
+  tokens:
+  - 둘
+  - 중
+  - 하나는
+  - 스파이다
+  gloss:
+    en: One of the two is a spy.
+    id: Salah satu dari mereka berdua adalah mata-mata.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: ssuss32
+  source_ref: tatoeba:10587632
+  review: needs_review
+- id: ko.s.k34869-1-1
+  type: sentence
+  text: 셋에서 둘을 빼면 하나이다.
+  roman: seseseo dureul ppaemyeon hanaida.
+  tokens:
+  - 셋에서
+  - 둘을
+  - 빼면
+  - 하나이다
+  gloss:
+    en: Three minus two is one.
+    id: Tiga dikurangi dua sama dengan satu.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 빼면
+    gloss: &id001
+      en: take out, draw
+      id: mencabut, mengeluarkan
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:34869#1/1
+  review: needs_review
+- id: ko.s.k34873-1-1
+  type: sentence
+  text: 다섯에서 넷을 빼면 하나이다.
+  roman: daseoseseo neseul ppaemyeon hanaida.
+  tokens:
+  - 다섯에서
+  - 넷을
+  - 빼면
+  - 하나이다
+  gloss:
+    en: Five minus four is one.
+    id: Lima dikurangi empat sama dengan satu.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 빼면
+    gloss: *id001
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:34873#1/1
+  review: needs_review

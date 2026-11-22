@@ -117,3 +117,121 @@ items:
   author: atitarev
   source_ref: tatoeba:13228488
   review: needs_review
+- id: ko.s.t1533087
+  type: sentence
+  text: 이 씨디들은 내 꺼야.
+  roman: i ssidideureun nae kkeoya.
+  tokens:
+  - 이
+  - 씨디들은
+  - 내
+  - 꺼야
+  gloss:
+    en: Those are my CDs.
+    id: CD-CD ini punyaku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:67003
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: mysonhs
+  source_ref: tatoeba:1533087
+  review: needs_review
+- id: ko.s.t1870364
+  type: sentence
+  text: 이 책은 내 것입니다.
+  roman: i chaegeun nae geosimnida.
+  tokens:
+  - 이
+  - 책은
+  - 내
+  - 것입니다
+  gloss:
+    en: This book is mine.
+    id: Buku ini punyaku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: kebukebu
+      source_ref: tatoeba:516622
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 책은
+    gloss:
+      en: books, publications
+      id: buku
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fercheung
+  source_ref: tatoeba:1870364
+  review: needs_review
+- id: ko.s.t7342940
+  type: sentence
+  text: 이 사전은 내 것이다.
+  roman: i sajeoneun nae geosida.
+  tokens:
+  - 이
+  - 사전은
+  - 내
+  - 것이다
+  gloss:
+    en: This dictionary is mine.
+    id: Kamus ini punyaku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:1766709
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 사전은
+    gloss:
+      en: dictionary
+      id: kamus
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: yesjustryan
+  source_ref: tatoeba:7342940
+  review: needs_review
+- id: ko.s.t11110296
+  type: sentence
+  text: 이 자전거는 우리 동생 거야.
+  roman: i jajeongeoneun uri dongsaeng geoya.
+  tokens:
+  - 이
+  - 자전거는
+  - 우리
+  - 동생
+  - 거야
+  gloss:
+    en: This bike is my little brother's.
+    id: Sepeda ini punya adikku.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 자전거는
+    gloss:
+      en: bicycle
+      id: sepeda
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Eunhee
+  source_ref: tatoeba:11110296
+  review: needs_review

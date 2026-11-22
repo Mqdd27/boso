@@ -113,3 +113,141 @@ items:
   license: CC BY-SA 2.0 KR
   source_ref: krdict:17872#1/2
   review: needs_review
+- id: ko.s.t13259036
+  type: sentence
+  text: 와주셔서 감사합니다.
+  roman: wajusyeoseo gamsahamnida.
+  tokens:
+  - 와주셔서
+  - 감사합니다
+  gloss:
+    en: Thank you for coming.
+    id: Terima kasih sudah datang.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:64536
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 와주셔서
+    gloss:
+      en: come
+      id: datang, kemari
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: atitarev
+  source_ref: tatoeba:13259036
+  review: needs_review
+- id: ko.s.t4861573
+  type: sentence
+  text: 무섭게 해서 미안해.
+  roman: museopge haeseo mianhae.
+  tokens:
+  - 무섭게
+  - 해서
+  - 미안해
+  gloss:
+    en: Sorry for frightening you.
+    id: Maaf sudah bikin kamu takut.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: minmin123
+      source_ref: tatoeba:4910937
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 무섭게
+    gloss:
+      en: fearful, scared of
+      id: takut, menakutkan
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: rainbow4us
+  source_ref: tatoeba:4861573
+  review: needs_review
+- id: ko.s.t8327170
+  type: sentence
+  text: 답장해주셔서 감사합니다
+  roman: dapjanghaejusyeoseo gamsahamnida
+  tokens:
+  - 답장해주셔서
+  - 감사합니다
+  gloss:
+    en: Thank you for your reply
+    id: Terima kasih sudah membalas
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 답장해주셔서
+    gloss:
+      en: reply, answer
+      id: membalas, menjawab
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: ljj
+  source_ref: tatoeba:8327170
+  review: needs_review
+- id: ko.s.t13010642
+  type: sentence
+  text: 걱정해 줘서 고마워요.
+  roman: geokjeonghae jwoseo gomawoyo.
+  tokens:
+  - 걱정해
+  - 줘서
+  - 고마워요
+  gloss:
+    en: Thank you for worrying about me.
+    id: Terima kasih sudah mengkhawatirkan saya.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 걱정해
+    gloss:
+      en: worry, be worried
+      id: khawatir
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: LeeSooHa
+  source_ref: tatoeba:13010642
+  review: needs_review
+- id: ko.s.t11105608
+  type: sentence
+  text: 도전해보고 싶어?
+  roman: dojeonhaebogo sipeo?
+  tokens:
+  - 도전해보고
+  - 싶어
+  gloss:
+    en: Do you want to try it?
+    id: Kamu mau mencobanya?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:1886032
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: intertime
+  source_ref: tatoeba:11105608
+  review: needs_review

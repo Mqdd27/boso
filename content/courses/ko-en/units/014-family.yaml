@@ -140,3 +140,115 @@ items:
   author: Eunhee
   source_ref: tatoeba:10152625
   review: needs_review
+- id: ko.s.t8396641
+  type: sentence
+  text: 내 형은 교수야.
+  roman: nae hyeongeun gyosuya.
+  tokens:
+  - 내
+  - 형은
+  - 교수야
+  gloss:
+    en: My brother is a professor.
+    id: Kakak laki-lakiku seorang profesor.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CM
+      source_ref: tatoeba:873456
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 교수야
+    gloss:
+      en: teaching, instruction
+      id: pengajaran
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Eunhee
+  source_ref: tatoeba:8396641
+  review: needs_review
+- id: ko.s.t8368448
+  type: sentence
+  text: 나는 우리 아빠를 닮았어.
+  roman: naneun uri appareul dalmasseo.
+  tokens:
+  - 나는
+  - 우리
+  - 아빠를
+  - 닮았어
+  gloss:
+    en: I am like my father.
+    id: Aku mirip ayahku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Amastan
+      source_ref: tatoeba:1741261
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 닮았어
+    gloss:
+      en: resemble
+      id: mirip, serupa
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Eunhee
+  source_ref: tatoeba:8368448
+  review: needs_review
+- id: ko.s.t10607053
+  type: sentence
+  text: 우리 아빠는 나가셨다.
+  roman: uri appaneun nagasyeotda.
+  tokens:
+  - 우리
+  - 아빠는
+  - 나가셨다
+  gloss:
+    en: My dad went out.
+    id: Ayahku sedang keluar.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 나가셨다
+    gloss:
+      en: go out, leave
+      id: keluar
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: ssuss32
+  source_ref: tatoeba:10607053
+  review: needs_review
+- id: ko.s.t911187
+  type: sentence
+  text: 부모를 공경해야 한다.
+  roman: bumoreul gonggyeonghaeya handa.
+  tokens:
+  - 부모를
+  - 공경해야
+  - 한다
+  gloss:
+    en: You should respect your parents.
+    id: Kita harus menghormati orang tua.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Sudajaengi
+  source_ref: tatoeba:911187
+  review: needs_review
