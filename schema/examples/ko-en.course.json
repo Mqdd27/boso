@@ -1,0 +1,58 @@
+{
+  "id": "ko-en",
+  "target": "ko",
+  "title": { "en": "Korean for English speakers", "id": "Bahasa Korea untuk penutur bahasa Inggris" },
+  "glosses": ["en", "id"],
+  "levels": ["topik1", "topik2"],
+  "version": "0.0.1",
+  "units": [
+    {
+      "id": "ko-010",
+      "title": { "en": "Greetings", "id": "Salam" },
+      "level": "topik1",
+      "items": [
+        {
+          "id": "ko.w.annyeonghaseyo",
+          "type": "word",
+          "text": "안녕하세요",
+          "roman": "annyeonghaseyo",
+          "gloss": { "en": "Hello", "id": "Halo" },
+          "audio": "ko/ko.w.annyeonghaseyo.opus",
+          "source": "example",
+          "license": "CC BY-SA 4.0",
+          "review": "needs_review"
+        },
+        {
+          "id": "ko.w.gamsahamnida",
+          "type": "word",
+          "text": "감사합니다",
+          "roman": "gamsahamnida",
+          "gloss": { "en": "Thank you" },
+          "source": "example",
+          "license": "CC BY-SA 4.0",
+          "author": "boso",
+          "review": "reviewed"
+        },
+        {
+          "id": "ko.s.annyeonghaseyo-gamsahamnida",
+          "type": "sentence",
+          "text": "안녕하세요, 감사합니다.",
+          "roman": "annyeonghaseyo, gamsahamnida.",
+          "gloss": { "en": "Hello, thank you.", "id": "Halo, terima kasih." },
+          "tokens": ["안녕하세요", "감사합니다"],
+          "source": "example",
+          "license": "CC BY-SA 4.0",
+          "source_ref": "example:1",
+          "review": "needs_review"
+        }
+      ],
+      "grammar": [
+        {
+          "id": "ko.g.yo",
+          "body": { "en": "-요 makes a sentence polite.", "id": "-요 membuat kalimat jadi sopan." },
+          "review": "needs_review"
+        }
+      ]
+    }
+  ]
+}

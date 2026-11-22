@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "course": {
+    "id": "ko-en",
+    "target": "ko",
+    "glosses": ["en", "id"],
+    "levels": ["topik1", "topik2"],
+    "version": "0.0.1"
+  },
+  "build_date": "2026-11-22T00:00:00Z",
+  "attribution": [
+    { "source": "example", "license": "CC BY-SA 4.0", "items": 3 },
+    {
+      "source": "tatoeba",
+      "license": "CC BY 2.0 FR",
+      "url": "https://tatoeba.org",
+      "authors": ["example-user"],
+      "items": 0
+    }
+  ]
+}

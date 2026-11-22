@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:boso:schema:course-pack",
+  "title": "boso course pack",
+  "description": "Schema version 1. Entry points: #/$defs/courseSource (courses/<id>/course.yaml), #/$defs/unit (courses/<id>/units/*.yaml), #/$defs/course (course.json inside a pack, units inlined), #/$defs/manifest (manifest.json inside a pack). The root validates a pack course.",
+  "$ref": "#/$defs/course",
+  "$defs": {
+    "lang": { "enum": ["ko", "zh"] },
+    "glossLang": { "enum": ["en", "id"] },
+    "localizedText": {
+      "type": "object",
+      "properties": {
+        "en": { "type": "string", "minLength": 1 },
+        "id": { "type": "string", "minLength": 1 }
+      },
+      "required": ["en"],
+      "additionalProperties": false
+    },
+    "review": { "enum": ["needs_review", "reviewed"] },
+    "courseMeta": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^(ko|zh)-(en)$" },
+        "target": { "$ref": "#/$defs/lang" },
+        "title": { "$ref": "#/$defs/localizedText" },
+        "glosses": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/glossLang" },
+          "contains": { "const": "en" },
+          "uniqueItems": true
+        },
+        "levels": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+        }
+      },
+      "required": ["id", "target", "glosses", "levels", "version"]
+    },
+    "courseSource": {
+      "description": "courses/<id>/course.yaml: units are paths relative to the course directory.",
+      "$ref": "#/$defs/courseMeta",
+      "properties": {
+        "units": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^units/[a-z0-9-]+\\.yaml$" },
+          "uniqueItems": true
+        }
+      },
+      "required": ["units"],
+      "unevaluatedProperties": false
+    },
+    "course": {
+      "description": "course.json inside a pack: units inlined, in learning order.",
+      "$ref": "#/$defs/courseMeta",
+      "properties": {
+        "units": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/unit" },
+          "minItems": 1
+        }
+      },
+      "required": ["units"],
+      "unevaluatedProperties": false
+    },
+    "unit": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^(ko|zh)-[a-z0-9-]+$" },
+        "title": { "$ref": "#/$defs/localizedText" },
+        "level": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/item" },
+          "minItems": 1
+        },
+        "grammar": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/grammarNote" }
+        }
+      },
+      "required": ["id", "title", "level", "items"],
+      "additionalProperties": false
+    },
+    "item": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^(ko|zh)\\.(w|p|s|g)\\.[a-z0-9-]+$" },
+        "type": { "enum": ["word", "phrase", "sentence"] },
+        "text": { "type": "string", "minLength": 1 },
+        "roman": { "type": "string", "minLength": 1 },
+        "tones": {
+          "description": "Mandarin only: numbered pinyin, e.g. ni3 hao3.",
+          "type": "string",
+          "pattern": "^[a-zü:v]+[1-5]?( [a-zü:v]+[1-5]?)*$"
+        },
+        "gloss": { "$ref": "#/$defs/localizedText" },
+        "audio": { "type": "string", "pattern": "^(ko|zh)/[a-z0-9.-]+\\.opus$" },
+        "tokens": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1
+        },
+        "source": { "type": "string", "minLength": 1 },
+        "license": { "type": "string", "minLength": 1 },
+        "author": { "type": "string", "minLength": 1 },
+        "source_ref": { "type": "string", "minLength": 1 },
+        "review": { "$ref": "#/$defs/review" }
+      },
+      "required": ["id", "type", "text", "roman", "gloss", "source", "license", "review"],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "const": "word" } } },
+          "then": { "properties": { "id": { "pattern": "^[a-z]+\\.w\\." } } }
+        },
+        {
+          "if": { "properties": { "type": { "const": "phrase" } } },
+          "then": { "properties": { "id": { "pattern": "^[a-z]+\\.p\\." } } }
+        },
+        {
+          "if": { "properties": { "type": { "const": "sentence" } } },
+          "then": { "properties": { "id": { "pattern": "^[a-z]+\\.s\\." } } }
+        },
+        {
+          "if": { "properties": { "id": { "pattern": "^ko\\." } } },
+          "then": { "not": { "required": ["tones"] } }
+        }
+      ]
+    },
+    "grammarNote": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^(ko|zh)\\.g\\.[a-z0-9-]+$" },
+        "body": { "$ref": "#/$defs/localizedText" },
+        "source": { "type": "string", "minLength": 1 },
+        "license": { "type": "string", "minLength": 1 },
+        "author": { "type": "string", "minLength": 1 },
+        "review": { "$ref": "#/$defs/review" }
+      },
+      "required": ["id", "body", "review"],
+      "additionalProperties": false
+    },
+    "manifest": {
+      "description": "manifest.json at the root of <course>.course.zip.",
+      "type": "object",
+      "properties": {
+        "schema_version": { "const": 1 },
+        "course": {
+          "$ref": "#/$defs/courseMeta",
+          "unevaluatedProperties": false
+        },
+        "build_date": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+        },
+        "attribution": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": { "type": "string", "minLength": 1 },
+              "license": { "type": "string", "minLength": 1 },
+              "url": { "type": "string", "pattern": "^https?://" },
+              "authors": {
+                "type": "array",
+                "items": { "type": "string", "minLength": 1 },
+                "uniqueItems": true
+              },
+              "items": { "type": "integer", "minimum": 0 }
+            },
+            "required": ["source", "license"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["schema_version", "course", "build_date", "attribution"],
+      "additionalProperties": false
+    }
+  }
+}
