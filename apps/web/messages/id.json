@@ -115,5 +115,6 @@
 	"arrange_answer": "Jawabanmu",
 	"arrange_bank": "Bank kata",
 	"hint_label": "Arti {word}",
-	"credits_translations": "Terjemahan kalimat dari boso dibuat untuk kursus ini."
+	"credits_translations": "Terjemahan kalimat dari boso dibuat untuk kursus ini.",
+	"nav_label": "Utama"
 }

@@ -115,5 +115,6 @@
 	"arrange_answer": "Your answer",
 	"arrange_bank": "Word bank",
 	"hint_label": "Meaning of {word}",
-	"credits_translations": "Sentence translations marked as boso were made for this course."
+	"credits_translations": "Sentence translations marked as boso were made for this course.",
+	"nav_label": "Main"
 }
