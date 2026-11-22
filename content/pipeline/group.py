@@ -1,4 +1,11 @@
-"""Group candidate words into themed units with the Claude Code CLI (build time only)."""
+"""LLM steps of the build, via the Claude Code CLI (build time only).
+
+- `group`: themed units from a pool of candidate word IDs.
+- `pick_senses`: for words with several krdict senses, the sense that fits the unit's theme.
+
+The LLM only picks from what it is given (IDs, sense numbers); every reply is validated, retried
+once, then the build fails. Replies are cached by hash(template version + prompt).
+"""
 
 import hashlib
 import json
@@ -9,9 +16,11 @@ from pathlib import Path
 from pydantic import BaseModel, Field, ValidationError
 
 CONTENT = Path(__file__).resolve().parents[1]
-TEMPLATE = CONTENT / "prompts" / "group-units.v1.md"
-TEMPLATE_VERSION = "group-units.v1"
+PROMPTS = CONTENT / "prompts"
 LLM_CACHE = CONTENT / "cache" / "llm"
+GROUP_TEMPLATE = "group-units.v1"
+SENSE_TEMPLATE = "pick-senses.v1"
+MAX_SENSES = 8  # senses shown per word; the first ones are the common ones
 
 
 class UnitPlan(BaseModel):
@@ -23,6 +32,10 @@ class UnitPlan(BaseModel):
 
 class Plan(BaseModel):
     units: list[UnitPlan]
+
+
+class SensePicks(BaseModel):
+    senses: dict[str, int]
 
 
 def run_claude(prompt: str) -> str:
@@ -42,25 +55,46 @@ def run_claude(prompt: str) -> str:
     return result["result"]
 
 
-def render(candidates: list[dict], n_units: int, existing_titles: list[str]) -> str:
-    lines = [
-        f"{c['id']} | {c['text']} | {c['pos']} | {c['gloss']['en']} | {c['category'] or '-'}"
-        for c in candidates
-    ]
-    return TEMPLATE.read_text(encoding="utf-8").format(
-        n_units=n_units,
-        existing_titles=", ".join(existing_titles) or "(none)",
-        candidates="\n".join(lines),
-    )
-
-
-def parse_plan(text: str, pool: set[str], n_units: int) -> list[UnitPlan]:
-    """Validate the LLM reply. Raises ValueError on anything off."""
+def _json_object(text: str) -> str:
     start, end = text.find("{"), text.rfind("}")
     if start < 0 or end < start:
         raise ValueError("no JSON object in reply")
+    return text[start : end + 1]
+
+
+def _ask[T](
+    template: str,
+    prompt: str,
+    parse: Callable[[str], T],
+    run: Callable[[str], str],
+    cache_dir: Path,
+) -> T:
+    key = hashlib.sha256(f"{template}\n{prompt}".encode()).hexdigest()
+    cached = cache_dir / f"{key}.json"
+    if cached.is_file():
+        return parse(cached.read_text(encoding="utf-8"))
+    error = None
+    for _ in range(2):  # one retry, then fail loudly
+        reply = run(prompt)
+        try:
+            result = parse(reply)
+        except ValueError as e:
+            error = e
+            continue
+        cache_dir.mkdir(parents=True, exist_ok=True)
+        cached.write_text(_json_object(reply) + "\n", encoding="utf-8")
+        return result
+    raise RuntimeError(f"Claude returned an invalid reply for {template} twice: {error}")
+
+
+def _template(name: str) -> str:
+    return (PROMPTS / f"{name}.md").read_text(encoding="utf-8")
+
+
+def parse_plan(text: str, pool: set[str], n_units: int) -> list[UnitPlan]:
+    """Validate a unit plan. Raises ValueError on anything off."""
     try:
-        plan = Plan.model_validate_json(text[start : end + 1])
+        plan = Plan.model_validate_json(_json_object(text))
     except ValidationError as e:
         raise ValueError(str(e)) from e
     if len(plan.units) != n_units:
@@ -87,22 +121,58 @@ def group(
     run: Callable[[str], str] = run_claude,
     cache_dir: Path = LLM_CACHE,
 ) -> list[UnitPlan]:
-    """Plan `n_units` units from `candidates`. Cached by hash(template version + prompt)."""
-    prompt = render(candidates, n_units, existing_titles)
-    key = hashlib.sha256(f"{TEMPLATE_VERSION}\n{prompt}".encode()).hexdigest()
-    cached = cache_dir / f"{key}.json"
+    """Plan `n_units` units from `candidates` ({id, text, pos, gloss, category})."""
+    lines = [
+        f"{c['id']} | {c['text']} | {c['pos']} | {c['gloss']} | {c['category'] or '-'}"
+        for c in candidates
+    ]
+    prompt = _template(GROUP_TEMPLATE).format(
+        n_units=n_units,
+        existing_titles=", ".join(existing_titles) or "(none)",
+        candidates="\n".join(lines),
+    )
     pool = {c["id"] for c in candidates}
-    if cached.is_file():
-        return parse_plan(cached.read_text(encoding="utf-8"), pool, n_units)
-    error = None
-    for _ in range(2):  # one retry, then fail loudly
-        reply = run(prompt)
-        try:
-            units = parse_plan(reply, pool, n_units)
-        except ValueError as e:
-            error = e
-            continue
-        cache_dir.mkdir(parents=True, exist_ok=True)
-        cached.write_text(Plan(units=units).model_dump_json(indent=2), encoding="utf-8")
-        return units
-    raise RuntimeError(f"Claude returned an invalid unit plan twice: {error}")
+    return _ask(GROUP_TEMPLATE, prompt, lambda t: parse_plan(t, pool, n_units), run, cache_dir)
+
+
+def parse_senses(text: str, choices: dict[str, set[int]]) -> dict[str, int]:
+    """Validate sense picks: exactly the asked IDs, each with one of its offered numbers."""
+    try:
+        picks = SensePicks.model_validate_json(_json_object(text)).senses
+    except ValidationError as e:
+        raise ValueError(str(e)) from e
+    if set(picks) != set(choices):
+        missing, extra = sorted(set(choices) - set(picks)), sorted(set(picks) - set(choices))
+        raise ValueError(f"sense picks don't match: missing {missing}, extra {extra}")
+    for item_id, number in picks.items():
+        if number not in choices[item_id]:
+            raise ValueError(f"sense {number} is not offered for {item_id}")
+    return picks
+
+
+def pick_senses(
+    units: list[dict],
+    run: Callable[[str], str] = run_claude,
+    cache_dir: Path = LLM_CACHE,
+) -> dict[str, int]:
+    """{item id: sense number} for every word with more than one sense offered.
+
+    `units` is [{title, words: [{id, text, senses: [(number, en, id), ...]}]}]. Words with a
+    single sense are not asked about.
+    """
+    blocks, choices = [], {}
+    for unit in units:
+        lines = []
+        for w in unit["words"]:
+            senses = w["senses"][:MAX_SENSES]
+            if len(senses) < 2:
+                continue
+            choices[w["id"]] = {n for n, _, _ in senses}
+            options = "; ".join(f"{n}: {en}" + (f" ({i})" if i else "") for n, en, i in senses)
+            lines.append(f"  {w['id']} | {w['text']} | {options}")
+        if lines:
+            blocks.append(f"Unit: {unit['title']}\n" + "\n".join(lines))
+    if not choices:
+        return {}
+    prompt = _template(SENSE_TEMPLATE).format(units="\n\n".join(blocks))
+    return _ask(SENSE_TEMPLATE, prompt, lambda t: parse_senses(t, choices), run, cache_dir)

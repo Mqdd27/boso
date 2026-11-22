@@ -1,4 +1,4 @@
-"""`pipeline build ko-en`: krdict → romanize → group (claude -p) → units/*.yaml + course.yaml."""
+"""`pipeline build ko-en`: krdict → romanize → group + pick senses (claude -p) → units/*.yaml."""
 
 from collections import Counter
 from collections.abc import Callable
@@ -9,7 +9,7 @@ from pathlib import Path
 import yaml
 
 from pipeline import fetch
-from pipeline.group import group, run_claude
+from pipeline.group import group, pick_senses, run_claude
 from pipeline.importers import krdict
 from pipeline.nlp.ko import romanize, slugify
 
@@ -38,6 +38,24 @@ def dump_yaml(data, path: Path) -> None:
     path.write_text(text, encoding="utf-8")
 
 
+def core_entries(words: list[str], entries: list[krdict.KrdictEntry]) -> list:
+    """Resolve core-words.yaml: `word` must match one candidate, `word#target_code` pins one."""
+    by_word: dict[str, list] = {}
+    for e in entries:
+        by_word.setdefault(e.word, []).append(e)
+    out = []
+    for spec in words:
+        word, _, code = str(spec).partition("#")
+        matches = [e for e in by_word.get(word, []) if not code or str(e.target_code) == code]
+        if len(matches) != 1:
+            codes = ", ".join(f"{e.target_code} ({e.pos})" for e in by_word.get(word, []))
+            raise ValueError(
+                f"core word {spec!r} matches {len(matches)} candidates: {codes or '-'}"
+            )
+        out.append(matches[0])
+    return out
+
+
 def select_pool(entries: list[krdict.KrdictEntry], size: int = POOL_SIZE) -> list:
     """Deterministic pool of the most basic words.
 
@@ -57,8 +75,8 @@ def select_pool(entries: list[krdict.KrdictEntry], size: int = POOL_SIZE) -> lis
     return picked[:size]
 
 
-def to_item(entry: krdict.KrdictEntry, item_id: str, roman: str) -> dict:
-    sense = entry.senses[0]
+def to_item(entry: krdict.KrdictEntry, item_id: str, roman: str, sense_number: int) -> dict:
+    sense = next(s for s in entry.senses if s.number == sense_number)
     gloss = {"en": sense.en}
     if sense.id:
         gloss["id"] = sense.id
@@ -70,9 +88,14 @@ def to_item(entry: krdict.KrdictEntry, item_id: str, roman: str) -> dict:
         "gloss": gloss,
         "source": krdict.SOURCE,
         "license": krdict.LICENSE,
-        "source_ref": entry.source_ref,
+        "source_ref": f"{krdict.SOURCE}:{entry.target_code}#{sense.number}",
         "review": "needs_review",
     }
+
+
+def _senses(entry: krdict.KrdictEntry) -> list[tuple[int, str, str | None]]:
+    """The senses a word can be taught with: those with an English gloss."""
+    return [(s.number, s.en, s.id) for s in entry.senses if s.en]
 
 
 def assign_ids(pool: list, taken: set[str]) -> list[tuple[krdict.KrdictEntry, str, str]]:
@@ -114,10 +137,17 @@ def build(
     # diff (regenerate only items still equal to their last generated value) if that matters.
     existing = [load_yaml(course_dir / rel) for rel in course["units"]]
     items = [i for u in existing for i in u["items"]]
-    used_refs = {i.get("source_ref") for i in items}
+    used = {str(i.get("source_ref", "")).split("#")[0] for i in items}  # krdict:<target_code>
     taken = {i["id"] for i in items} | {u["id"] for u in existing}
 
-    pool = select_pool([e for e in candidates if e.source_ref not in used_refs])
+    fresh = [e for e in candidates if f"{krdict.SOURCE}:{e.target_code}" not in used]
+    core_file = course_dir / "core-words.yaml"
+    core_words = load_yaml(core_file)["words"] if core_file.is_file() else []
+    fresh_codes = {e.target_code for e in fresh}
+    core = [e for e in core_entries(core_words, candidates) if e.target_code in fresh_codes]
+    core_codes = {e.target_code for e in core}
+    rest = [e for e in fresh if e.target_code not in core_codes]
+    pool = core + select_pool(rest, POOL_SIZE - len(core))
     summary = Summary(stats=stats, pool=len(pool), existing_units=len(existing))
     missing = n_units - len(existing)
     if missing <= 0:
@@ -130,12 +160,24 @@ def build(
             "id": i,
             "text": e.word,
             "pos": e.pos,
-            "gloss": {"en": e.senses[0].en},
+            "gloss": e.senses[0].en,
             "category": e.category,
         }
         for e, i, _ in assigned
     ]
     plans = group(prompt_rows, missing, [u["title"]["en"] for u in existing], run, cache / "llm")
+
+    titled = [
+        {
+            "title": plan.title_en,
+            "words": [
+                {"id": i, "text": by_id[i][0].word, "senses": _senses(by_id[i][0])}
+                for i in plan.items
+            ],
+        }
+        for plan in plans
+    ]
+    senses = pick_senses(titled, run, cache / "llm")
 
     numbers = [int(Path(rel).name[:3]) for rel in course["units"] if Path(rel).name[:3].isdigit()]
     number = max([FIRST_UNIT - 1, *numbers]) + 1
@@ -145,7 +187,10 @@ def build(
             "id": f"ko-{name}",
             "title": {"en": plan.title_en, "id": plan.title_id},
             "level": LEVEL,
-            "items": [to_item(by_id[i][0], i, by_id[i][1]) for i in plan.items],
+            "items": [
+                to_item(by_id[i][0], i, by_id[i][1], senses.get(i, by_id[i][0].senses[0].number))
+                for i in plan.items
+            ],
         }
         rel = f"units/{name}.yaml"
         summary.new_units.append((rel, len(unit["items"])))

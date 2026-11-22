@@ -1,4 +1,5 @@
 import json
+import re
 import zipfile
 from pathlib import Path
 
@@ -39,10 +40,19 @@ def courses(tmp_path) -> Path:
     return tmp_path / "courses"
 
 
-def fake_claude(units):
+def fake_senses(prompt: str, picks: dict[str, int]) -> str:
+    """Reply to a pick-senses prompt: `picks`, else the first offered sense of each word."""
+    offered = re.findall(r"^  (ko\.w\.[a-z0-9-]+) \| .*? \| (\d+):", prompt, re.M)
+    return json.dumps({"senses": {i: picks.get(i, int(n)) for i, n in offered}})
+
+
+def fake_claude(units, senses=None):
     """A stand-in for `claude -p`: returns `units` (lists of IDs) as a plan, records prompts."""
 
     def run(prompt: str) -> str:
+        if "dictionary senses" in prompt:
+            run.sense_prompts.append(prompt)
+            return fake_senses(prompt, senses or {})
         run.prompts.append(prompt)
         plan = [
             {"slug": f"theme-{n}", "title_en": f"Theme {n}", "title_id": f"Tema {n}", "items": ids}
@@ -50,7 +60,7 @@ def fake_claude(units):
         ]
         return "Here you go:\n" + json.dumps({"units": plan})
 
-    run.prompts = []
+    run.prompts, run.sense_prompts = [], []
     return run
 
 
@@ -95,14 +105,16 @@ PLAN = [["ko.w.nun", "ko.w.nun-20198", "ko.w.gachi", "ko.w.meokda", "ko.w.jota"]
 
 
 def test_build_writes_valid_units_with_stable_ids(dump, courses, tmp_path):
-    run = fake_claude(PLAN)
+    run = fake_claude(PLAN, senses={"ko.w.nun": 2})
     summary = build("ko-en", 1, run=run, courses=courses, cache=tmp_path / "cache", source_zip=dump)
     assert summary.new_units == [("units/010-theme-0.yaml", 5)]
     errors, units = validate_course_dir(courses / "ko-en")
     assert errors == []
     items = {i["id"]: i for i in units[0]["items"]}
     assert units[0]["id"] == "ko-010-theme-0"
-    assert items["ko.w.nun"]["source_ref"] == "krdict:72704#1"  # first in pool order
+    assert items["ko.w.nun"]["source_ref"] == "krdict:72704#2"  # sense picked by "Claude"
+    assert items["ko.w.nun"]["gloss"] == {"en": "eyesight"}  # sense 2 has no id gloss
+    assert run.sense_prompts[0].count("\n  ko.w.") == 1  # only 눈 72704 has several senses
     assert items["ko.w.nun-20198"]["gloss"] == {"en": "snow", "id": "salju"}
     assert items["ko.w.gachi"]["roman"] == "gachi"
     assert all(
@@ -175,6 +187,8 @@ def test_group_retries_once_then_uses_cache(dump, courses, tmp_path):
     calls = []
 
     def run(prompt):
+        if "dictionary senses" in prompt:
+            return fake_senses(prompt, {})
         calls.append(prompt)
         return next(replies)
 
@@ -223,3 +237,34 @@ def test_krdict_json_seq():
     html = """<button onclick="batchDownload('221')"><i></i> 엑셀 전체 내려받기</button>
     <button onclick="batchDownload('223')" style="x"><i></i> Json 전체 내려받기</button>"""
     assert fetch.krdict_json_seq(html) == "223"
+
+
+def test_core_words_come_first_and_must_be_unambiguous(dump, courses, tmp_path):
+    core = courses / "ko-en" / "core-words.yaml"
+    core.write_text("words: [눈]\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="'눈' matches 2 candidates: 72704"):
+        build("ko-en", 1, run=fake_claude(PLAN), courses=courses, cache=tmp_path, source_zip=dump)
+    core.write_text("words: [하나, 눈#20198]\n", encoding="utf-8")
+    run = fake_claude([])
+    with pytest.raises(RuntimeError):  # the empty plan is invalid; we only want the prompt
+        build("ko-en", 1, run=run, courses=courses, cache=tmp_path, source_zip=dump)
+    rows = [line for line in run.prompts[0].splitlines() if line.startswith("ko.w.")]
+    assert [r.split(" | ")[1] for r in rows[:2]] == ["하나", "눈"]
+    assert rows[1].startswith("ko.w.nun |")  # core words get the plain ID first
+
+
+def test_parse_senses_rejects_bad_picks():
+    from pipeline.group import parse_senses
+
+    choices = {"ko.w.a": {1, 2}, "ko.w.b": {1, 3}}
+    assert parse_senses('{"senses": {"ko.w.a": 2, "ko.w.b": 3}}', choices) == {
+        "ko.w.a": 2,
+        "ko.w.b": 3,
+    }
+    for text, message in [
+        ('{"senses": {"ko.w.a": 2}}', "missing"),
+        ('{"senses": {"ko.w.a": 2, "ko.w.b": 2}}', "not offered"),
+        ('{"senses": {"ko.w.a": 1, "ko.w.b": 1, "ko.w.c": 1}}', "extra"),
+    ]:
+        with pytest.raises(ValueError, match=message):
+            parse_senses(text, choices)
