@@ -1,0 +1,94 @@
+id: ko-018-clothes
+title:
+  en: Clothes
+  id: Pakaian
+level: topik1
+items:
+- id: ko.w.ot
+  type: word
+  text: 옷
+  roman: ot
+  gloss:
+    en: clothes, garment
+    id: baju, pakaian
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:30159#1
+  review: needs_review
+- id: ko.w.ipda
+  type: word
+  text: 입다
+  roman: ipda
+  gloss:
+    en: wear, be dressed
+    id: memakai, mengenakan
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:17174#1
+  review: needs_review
+- id: ko.w.sinda
+  type: word
+  text: 신다
+  roman: sinda
+  gloss:
+    en: put on, wear
+    id: memakai, mengenakan
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:17192#1
+  review: needs_review
+- id: ko.w.beotda
+  type: word
+  text: 벗다
+  roman: beotda
+  gloss:
+    en: take off
+    id: melepaskan
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:58494#1
+  review: needs_review
+- id: ko.w.gabang
+  type: word
+  text: 가방
+  roman: gabang
+  gloss:
+    en: bag
+    id: tas
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:18259#1
+  review: needs_review
+- id: ko.w.nektai
+  type: word
+  text: 넥타이
+  roman: nektai
+  gloss:
+    en: necktie
+    id: dasi
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:17258#1
+  review: needs_review
+- id: ko.w.danchu
+  type: word
+  text: 단추
+  roman: danchu
+  gloss:
+    en: button
+    id: kancing
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:28375#1
+  review: needs_review
+- id: ko.w.mokgeori
+  type: word
+  text: 목걸이
+  roman: mokgeori
+  gloss:
+    en: necklace
+    id: kalung
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:16150#1
+  review: needs_review

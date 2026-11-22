@@ -1,0 +1,94 @@
+id: ko-017-shopping-and-money
+title:
+  en: Shopping and Money
+  id: Belanja dan Uang
+level: topik1
+items:
+- id: ko.w.sada
+  type: word
+  text: 사다
+  roman: sada
+  gloss:
+    en: buy, purchase
+    id: membeli
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:49419#1
+  review: needs_review
+- id: ko.w.palda
+  type: word
+  text: 팔다
+  roman: palda
+  gloss:
+    en: sell
+    id: menjual
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:71482#1
+  review: needs_review
+- id: ko.w.gap
+  type: word
+  text: 값
+  roman: gap
+  gloss:
+    en: price
+    id: harga
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:20178#1
+  review: needs_review
+- id: ko.w.bissada
+  type: word
+  text: 비싸다
+  roman: bissada
+  gloss:
+    en: expensive, costly
+    id: mahal
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:66318#1
+  review: needs_review
+- id: ko.w.kadeu
+  type: word
+  text: 카드
+  roman: kadeu
+  gloss:
+    en: card
+    id: kartu
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:71472#1
+  review: needs_review
+- id: ko.w.mulgeon
+  type: word
+  text: 물건
+  roman: mulgeon
+  gloss:
+    en: article, thing
+    id: benda
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:66247#1
+  review: needs_review
+- id: ko.w.gyesan
+  type: word
+  text: 계산
+  roman: gyesan
+  gloss:
+    en: calculation
+    id: hitungan, penghitungan
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:26229#1
+  review: needs_review
+- id: ko.w.billida
+  type: word
+  text: 빌리다
+  roman: billida
+  gloss:
+    en: borrow, rent
+    id: meminjam, menyewa
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:17824#1
+  review: needs_review

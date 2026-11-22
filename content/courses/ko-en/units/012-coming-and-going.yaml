@@ -1,0 +1,94 @@
+id: ko-012-coming-and-going
+title:
+  en: Coming and Going
+  id: Datang dan Pergi
+level: topik1
+items:
+- id: ko.w.gada
+  type: word
+  text: 가다
+  roman: gada
+  gloss:
+    en: go, travel
+    id: pergi
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:27500#1
+  review: needs_review
+- id: ko.w.oda
+  type: word
+  text: 오다
+  roman: oda
+  gloss:
+    en: come
+    id: datang, kemari
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:69514#1
+  review: needs_review
+- id: ko.w.deureogada
+  type: word
+  text: 들어가다
+  roman: deureogada
+  gloss:
+    en: enter, go into
+    id: masuk
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:67877#1
+  review: needs_review
+- id: ko.w.nagada
+  type: word
+  text: 나가다
+  roman: nagada
+  gloss:
+    en: go out, leave
+    id: keluar
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:71456#1
+  review: needs_review
+- id: ko.w.naoda
+  type: word
+  text: 나오다
+  roman: naoda
+  gloss:
+    en: come out, get out
+    id: keluar
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:62233#1
+  review: needs_review
+- id: ko.w.ollagada
+  type: word
+  text: 올라가다
+  roman: ollagada
+  gloss:
+    en: go up, rise
+    id: naik
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:89867#1
+  review: needs_review
+- id: ko.w.naeryeogada
+  type: word
+  text: 내려가다
+  roman: naeryeogada
+  gloss:
+    en: go down, step down
+    id: turun
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:63723#1
+  review: needs_review
+- id: ko.w.tada-17160
+  type: word
+  text: 타다
+  roman: tada
+  gloss:
+    en: ride, get on
+    id: naik
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:17160#1
+  review: needs_review

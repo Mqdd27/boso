@@ -1,0 +1,94 @@
+id: ko-019-weather
+title:
+  en: Weather
+  id: Cuaca
+level: topik1
+items:
+- id: ko.w.deopda
+  type: word
+  text: 덥다
+  roman: deopda
+  gloss:
+    en: hot
+    id: panas
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:44484#1
+  review: needs_review
+- id: ko.w.ttatteutada
+  type: word
+  text: 따뜻하다
+  roman: ttatteutada
+  gloss:
+    en: warm
+    id: hangat
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:57297#1
+  review: needs_review
+- id: ko.w.ssalssalhada
+  type: word
+  text: 쌀쌀하다
+  roman: ssalssalhada
+  gloss:
+    en: chilly, rather cold
+    id: dingin
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:66104#1
+  review: needs_review
+- id: ko.w.makda
+  type: word
+  text: 맑다
+  roman: makda
+  gloss:
+    en: clean, clear
+    id: jernih, terang
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:66031#1
+  review: needs_review
+- id: ko.w.heurida
+  type: word
+  text: 흐리다
+  roman: heurida
+  gloss:
+    en: dim, vague
+    id: berkabut, tidak jelas
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:89184#1
+  review: needs_review
+- id: ko.w.baram
+  type: word
+  text: 바람
+  roman: baram
+  gloss:
+    en: wind
+    id: angin
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:85627#1
+  review: needs_review
+- id: ko.w.haneul
+  type: word
+  text: 하늘
+  roman: haneul
+  gloss:
+    en: sky
+    id: langit
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:20311#1
+  review: needs_review
+- id: ko.w.hae
+  type: word
+  text: 해
+  roman: hae
+  gloss:
+    en: sun
+    id: matahari
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:72468#1
+  review: needs_review

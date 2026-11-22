@@ -1,0 +1,94 @@
+id: ko-011-food-and-drink
+title:
+  en: Food and Drink
+  id: Makanan dan Minuman
+level: topik1
+items:
+- id: ko.w.bap
+  type: word
+  text: 밥
+  roman: bap
+  gloss:
+    en: steamed rice, rice
+    id: nasi
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:62683#1
+  review: needs_review
+- id: ko.w.mul
+  type: word
+  text: 물
+  roman: mul
+  gloss:
+    en: water
+    id: air
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:17596#1
+  review: needs_review
+- id: ko.w.keop
+  type: word
+  text: 컵
+  roman: keop
+  gloss:
+    en: cup
+    id: gelas
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:32792#1
+  review: needs_review
+- id: ko.w.meokda
+  type: word
+  text: 먹다
+  roman: meokda
+  gloss:
+    en: eat, have
+    id: makan
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:58272#1
+  review: needs_review
+- id: ko.w.yori
+  type: word
+  text: 요리
+  roman: yori
+  gloss:
+    en: cooking
+    id: masakan
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:30199#1
+  review: needs_review
+- id: ko.w.maepda
+  type: word
+  text: 맵다
+  roman: maepda
+  gloss:
+    en: spicy, hot
+    id: pedas
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:74131#1
+  review: needs_review
+- id: ko.w.dalda
+  type: word
+  text: 달다
+  roman: dalda
+  gloss:
+    en: sweet
+    id: manis
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:62741#1
+  review: needs_review
+- id: ko.w.sikida
+  type: word
+  text: 시키다
+  roman: sikida
+  gloss:
+    en: order
+    id: menyuruh, memerintah
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:29769#1
+  review: needs_review

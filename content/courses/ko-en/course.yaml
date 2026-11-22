@@ -1,7 +1,25 @@
 id: ko-en
 target: ko
-title: { en: Korean for English speakers, id: Bahasa Korea untuk penutur bahasa Inggris }
-glosses: [en, id]
-levels: [topik1, topik2]
+title:
+  en: Korean for English speakers
+  id: Bahasa Korea untuk penutur bahasa Inggris
+glosses:
+- en
+- id
+levels:
+- topik1
+- topik2
 version: 0.0.1
-units: []
+units:
+- units/010-everyday-basics.yaml
+- units/011-food-and-drink.yaml
+- units/012-coming-and-going.yaml
+- units/013-people-and-jobs.yaml
+- units/014-home.yaml
+- units/015-school.yaml
+- units/016-places-in-town.yaml
+- units/017-shopping-and-money.yaml
+- units/018-clothes.yaml
+- units/019-weather.yaml
+- units/020-animals-and-plants.yaml
+- units/021-describing-things.yaml

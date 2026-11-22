@@ -1,0 +1,94 @@
+id: ko-020-animals-and-plants
+title:
+  en: Animals and Plants
+  id: Hewan dan Tumbuhan
+level: topik1
+items:
+- id: ko.w.gae
+  type: word
+  text: 개
+  roman: gae
+  gloss:
+    en: dog
+    id: anjing
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:64115#1
+  review: needs_review
+- id: ko.w.gangaji
+  type: word
+  text: 강아지
+  roman: gangaji
+  gloss:
+    en: puppy
+    id: anak anjing
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:15689#1
+  review: needs_review
+- id: ko.w.dwaeji
+  type: word
+  text: 돼지
+  roman: dwaeji
+  gloss:
+    en: pig
+    id: babi
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:62269#1
+  review: needs_review
+- id: ko.w.horangi
+  type: word
+  text: 호랑이
+  roman: horangi
+  gloss:
+    en: tiger
+    id: harimau
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:74128#1
+  review: needs_review
+- id: ko.w.dongmul
+  type: word
+  text: 동물
+  roman: dongmul
+  gloss:
+    en: animal
+    id: hewan, binatang
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:70747#1
+  review: needs_review
+- id: ko.w.kkot
+  type: word
+  text: 꽃
+  roman: kkot
+  gloss:
+    en: flower
+    id: bunga, kembang
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:62838#1
+  review: needs_review
+- id: ko.w.namu
+  type: word
+  text: 나무
+  roman: namu
+  gloss:
+    en: tree
+    id: pohon
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:32750#1
+  review: needs_review
+- id: ko.w.beol
+  type: word
+  text: 벌
+  roman: beol
+  gloss:
+    en: bee
+    id: lebah, tawon
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:14447#1
+  review: needs_review
