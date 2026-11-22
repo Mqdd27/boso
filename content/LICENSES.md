@@ -41,6 +41,10 @@ Status: **ok** = can be used and redistributed in course packs (with the listed 
 - **CC BY-SA 2.0 KR → CC BY-SA 4.0:** BY-SA 2.0 lets adaptations be released under "a later version of this
   License with the same License Elements", so krdict-derived content can go into our CC BY-SA 4.0 packs.
   CC BY 2.0 FR (Tatoeba) has no share-alike, so it can be included in BY-SA 4.0 as long as authors are credited.
+- **Sentence translations made by boso:** krdict examples have no translations in the dump, and Tatoeba has
+  few Indonesian ones. Those translations are made at build time with `claude -p`, released as CC BY-SA 4.0 by
+  boso and recorded per item in `gloss_sources` (`source: boso`). The Korean sentence keeps its own source and
+  license (krdict CC BY-SA 2.0 KR, Tatoeba CC BY 2.0 FR / CC0 with the author).
 - **MeloTTS voice training data** is not documented on the model cards. MIT on the weights is what we rely on.
 
 ## Decisions

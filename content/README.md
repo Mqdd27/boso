@@ -80,6 +80,36 @@ uv run pipeline pack ko-en            # validate + write dist/ko-en/{course,mani
 - **Merging:** `build` only appends new units. Existing unit files, reviewed items and manual edits
   are never rewritten, and words already in the course are not offered again.
 
+### Sentences
+
+```bash
+uv run pipeline fetch tatoeba          # Tatoeba exports (Korean + their en/id translations, ~44 MB)
+uv run pipeline sentences ko-en --dry-run   # coverage per unit, nothing written
+uv run pipeline sentences ko-en        # append sentences to the vocab units
+```
+
+- **Sources:** Tatoeba Korean sentences (with their author; orphans, sentences tagged `@…` or
+  `non-sentence`, and their translations likewise are dropped; Tatoeba audio is never used) and
+  the 문장 examples of krdict's 초급 entries. Korean text is never written by an LLM.
+- **Placement:** [Kiwi](https://github.com/bab2min/kiwipiepy) splits each sentence into morphemes.
+  A sentence goes into the earliest vocab unit where at most `--max-unknown` (1) content words
+  (nouns, verbs and adjectives as `-다` lemmas, adverbs, numerals, determiners) are not taught yet,
+  and at least `--min-known-ratio` (0.9) of all morphemes are known (particles and endings count as
+  known). Words are matched with their word class, so 일 "one" is not 일 "work". Sentences with
+  Latin letters, hanja or digits are skipped, as are one-word ones and ones over `--max-eojeol`.
+  Hangul units get none.
+- **Choice:** at most `--per-unit` (6) per unit: sentences using the unit's own words first, then
+  ones with a human English translation, then the shortest. One sentence per set of content words
+  and per English gloss in a unit (밥 먹었어? / 밥 먹었어요? are one).
+- **Translations:** Tatoeba's own `eng` / `ind` translations when linked (with their author).
+  Missing ones (all krdict examples, almost every Indonesian gloss) come from `claude -p`
+  (`prompts/translate-sentences.v1.md`), validated and cached like the other LLM steps, and are
+  credited to boso in `gloss_sources`.
+- **Hints:** words of a sentence that are not taught yet get krdict's gloss in `hints` (shown on
+  tap in the app).
+- **Merging:** sentences are only appended to units; existing items are never changed, and
+  sentences close to one already in the unit are not added.
+
 ## Audio (MeloTTS)
 
 Audio is generated once on the maintainer's machine and shipped in the pack; the app and the server

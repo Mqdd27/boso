@@ -142,3 +142,50 @@ def vocabulary_candidates(entries: list[KrdictEntry]) -> tuple[list[KrdictEntry]
     stats["candidates"] = len(out)
     stats["with id gloss"] = sum(1 for e in out if e.senses[0].id)
     return out, stats
+
+
+class Example(BaseModel):
+    """A 문장 example of one sense of a 초급 entry. The dump has no translations for these."""
+
+    target_code: int
+    sense: int
+    n: int  # position among that sense's sentence examples, from 1
+    text: str
+
+    @property
+    def source_ref(self) -> str:
+        return f"{SOURCE}:{self.target_code}#{self.sense}/{self.n}"
+
+
+def parse_examples(raw: dict) -> list[Example]:
+    out = []
+    for s in _list(raw.get("Sense")):
+        sense = int(s.get("val", 0))
+        sentences = [
+            e["example"][0]
+            for e in map(_feats, _list(s.get("SenseExample")))
+            if e["type"] == ["문장"] and e["example"]
+        ]
+        out += [
+            Example(target_code=int(raw["val"]), sense=sense, n=n, text=text.strip())
+            for n, text in enumerate(sentences, 1)
+        ]
+    return out
+
+
+def load_examples(zip_path: Path, cache: Path | None = None) -> list[Example]:
+    """Sentence examples of 초급 entries (cached by checksum, like load_beginner)."""
+    if cache and cache.is_file():
+        return [Example.model_validate(e) for e in json.loads(cache.read_text(encoding="utf-8"))]
+    out = []
+    with zipfile.ZipFile(zip_path) as z:
+        for name in sorted(z.namelist()):
+            if name.endswith(".json"):
+                data = json.loads(z.read(name))
+                for raw in data["LexicalResource"]["Lexicon"]["LexicalEntry"]:
+                    if _feats(raw)["vocabularyLevel"] == ["초급"]:
+                        out += parse_examples(raw)
+    if cache:
+        cache.parent.mkdir(parents=True, exist_ok=True)
+        cache.write_text(json.dumps([e.model_dump() for e in out], ensure_ascii=False), "utf-8")
+    return out

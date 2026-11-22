@@ -4,5 +4,59 @@
     "sha256": "347fe2d225ff2adb48e4ca04fc7ad2004ff4b051b16925b3f43f4d8ce9584adc",
     "url": "manual download from https://krdict.korean.go.kr (사전 전체 내려받기)",
     "fetched": "2026-11-22"
+  },
+  "tatoeba:kor_sentences_detailed": {
+    "file": "tatoeba/kor_sentences_detailed.tsv.bz2",
+    "sha256": "0974a2c2915d0e8179fe50b0eeacf7e1b1fc81b2a8b709505348466c1cdff85e",
+    "url": "https://downloads.tatoeba.org/exports/per_language/kor/kor_sentences_detailed.tsv.bz2",
+    "fetched": "2026-11-22"
+  },
+  "tatoeba:kor-eng_links": {
+    "file": "tatoeba/kor-eng_links.tsv.bz2",
+    "sha256": "6d0815b117f1ae04fe3f90b93c3cd0eb72165b4f805d6444db272dceaaaa83e4",
+    "url": "https://downloads.tatoeba.org/exports/per_language/kor/kor-eng_links.tsv.bz2",
+    "fetched": "2026-11-22"
+  },
+  "tatoeba:kor-ind_links": {
+    "file": "tatoeba/kor-ind_links.tsv.bz2",
+    "sha256": "fb73c81bc5979c46e8e18b0439baf9866053d3d04033087f7a3f18ab2ac15b35",
+    "url": "https://downloads.tatoeba.org/exports/per_language/kor/kor-ind_links.tsv.bz2",
+    "fetched": "2026-11-22"
+  },
+  "tatoeba:kor_tags": {
+    "file": "tatoeba/kor_tags.tsv.bz2",
+    "sha256": "f30931b05381ace5e464bd3dc1a4f494349a1bbc1dc676708665d732a109978b",
+    "url": "https://downloads.tatoeba.org/exports/per_language/kor/kor_tags.tsv.bz2",
+    "fetched": "2026-11-22"
+  },
+  "tatoeba:eng_sentences_detailed": {
+    "file": "tatoeba/eng_sentences_detailed.tsv.bz2",
+    "sha256": "3a0e7a2fdd7cbad76f226de4c28371a15a2fc4d115001617288b16a35c6293db",
+    "url": "https://downloads.tatoeba.org/exports/per_language/eng/eng_sentences_detailed.tsv.bz2",
+    "fetched": "2026-11-22"
+  },
+  "tatoeba:eng_tags": {
+    "file": "tatoeba/eng_tags.tsv.bz2",
+    "sha256": "f7683a50d9cb56b618a85e6035ba93c7aab18660e6ad920003457f7689a01c23",
+    "url": "https://downloads.tatoeba.org/exports/per_language/eng/eng_tags.tsv.bz2",
+    "fetched": "2026-11-22"
+  },
+  "tatoeba:ind_sentences_detailed": {
+    "file": "tatoeba/ind_sentences_detailed.tsv.bz2",
+    "sha256": "aba11ea6be934d540f8464d631718da226c677ae8843e085e766dc090330787a",
+    "url": "https://downloads.tatoeba.org/exports/per_language/ind/ind_sentences_detailed.tsv.bz2",
+    "fetched": "2026-11-22"
+  },
+  "tatoeba:ind_tags": {
+    "file": "tatoeba/ind_tags.tsv.bz2",
+    "sha256": "2fe041be10877480b8c0b1b07303283f84a2895bf922c7e30f0d581d47cf6701",
+    "url": "https://downloads.tatoeba.org/exports/per_language/ind/ind_tags.tsv.bz2",
+    "fetched": "2026-11-22"
+  },
+  "tatoeba:sentences_CC0": {
+    "file": "tatoeba/sentences_CC0.tar.bz2",
+    "sha256": "ffece08afdd32f25cf1ae12040a41991e757df322eef93fbde40d51f0cd205bb",
+    "url": "https://downloads.tatoeba.org/exports/sentences_CC0.tar.bz2",
+    "fetched": "2026-11-22"
   }
 }

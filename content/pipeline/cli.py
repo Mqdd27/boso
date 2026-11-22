@@ -21,6 +21,10 @@ def cmd_validate(args: argparse.Namespace) -> int:
 def cmd_fetch(args: argparse.Namespace) -> int:
     from pipeline import fetch
 
+    if args.source == "tatoeba":
+        for path in fetch.fetch_tatoeba(force=args.force):
+            print(f"tatoeba: {path.name} ({path.stat().st_size // 1024} KB)")
+        return 0
     path = fetch.fetch_krdict(args.src)
     print(f"krdict: {path} ({fetch.read_lock()['krdict']['sha256']})")
     return 0
@@ -69,6 +73,31 @@ def cmd_hangul(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_sentences(args: argparse.Namespace) -> int:
+    from pipeline.sentences import generate
+
+    s = generate(
+        args.course,
+        max_unknown=args.max_unknown,
+        min_known_ratio=args.min_known_ratio,
+        max_eojeol=args.max_eojeol,
+        per_unit=args.per_unit,
+        dry_run=args.dry_run,
+    )
+    for key, value in s.sources.items():
+        print(f"{key}: {value}")
+    print("placed per vocab unit (tatoeba/krdict), by --max-unknown:")
+    for n, per_unit in sorted(s.coverage.items()):
+        cells = " ".join(f"{c['tatoeba']}/{c['krdict']}" for c in per_unit)
+        print(f"  {n}: {cells}  (units with none: {sum(not c for c in per_unit)})")
+    verb = "would add" if args.dry_run else "added"
+    for rel, ids in s.added.items():
+        print(f"{verb} {len(ids)} to {rel}: {', '.join(ids)}")
+    if not args.dry_run:
+        print(f"translations from claude -p: {s.translated}")
+    return 0
+
+
 def cmd_tts(args: argparse.Namespace) -> int:
     from pipeline import tts
     from pipeline.build import COURSES
@@ -111,7 +140,8 @@ def main(argv: list[str] | None = None) -> int:
     validate.add_argument("--root", type=Path, default=ROOT, help="repo root (default: this repo)")
     validate.set_defaults(func=cmd_validate)
     fetch = sub.add_parser("fetch", help="download a source into sources/ and pin it")
-    fetch.add_argument("source", choices=["krdict"])
+    fetch.add_argument("source", choices=["krdict", "tatoeba"])
+    fetch.add_argument("--force", action="store_true", help="download again (tatoeba)")
     fetch.add_argument("--from", dest="src", type=Path, help="use a manually downloaded file")
     fetch.set_defaults(func=cmd_fetch)
     build = sub.add_parser("build", help="generate new units into courses/<course>/")
@@ -126,6 +156,14 @@ def main(argv: list[str] | None = None) -> int:
     hangul.add_argument("course", choices=["ko-en"])
     hangul.add_argument("--dry-run", action="store_true", help="print, don't write")
     hangul.set_defaults(func=cmd_hangul)
+    sentences = sub.add_parser("sentences", help="add Tatoeba + krdict sentences to vocab units")
+    sentences.add_argument("course", choices=["ko-en"])
+    sentences.add_argument("--max-unknown", type=int, default=1, help="new content words allowed")
+    sentences.add_argument("--min-known-ratio", type=float, default=0.9)
+    sentences.add_argument("--max-eojeol", type=int, default=8, help="longest sentence, in words")
+    sentences.add_argument("--per-unit", type=int, default=6, help="sentences per unit at most")
+    sentences.add_argument("--dry-run", action="store_true", help="print, don't translate or write")
+    sentences.set_defaults(func=cmd_sentences)
     tts = sub.add_parser("tts", help="generate missing audio (MeloTTS env in content/tts/)")
     tts.add_argument("course", choices=["ko-en"])
     tts.add_argument("--sample", type=int, metavar="N", help="only the first N items, to listen to")

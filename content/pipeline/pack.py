@@ -3,7 +3,6 @@
 import json
 import os
 import shutil
-from collections import Counter
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -24,8 +23,12 @@ SOURCES = {
         "author": "국립국어원 (National Institute of Korean Language)",
         "url": "https://krdict.korean.go.kr",
     },
+    "tatoeba": {
+        "name": "Tatoeba",
+        "url": "https://tatoeba.org",
+    },
     "boso": {
-        "name": "boso (written for this course)",
+        "name": "boso (written or translated for this course)",
         "author": "boso contributors",
         "url": "https://github.com/Mqdd27/boso",
     },
@@ -40,17 +43,29 @@ def _build_date() -> str:
 
 
 def attribution(units: list[dict]) -> list[dict]:
-    counts = Counter(
-        (x["source"], x["license"])
-        for u in units
-        for x in [*u["items"], *u.get("grammar", [])]
-        if "source" in x
-    )
+    """One entry per (source, license): how many items use it and who wrote them.
+
+    A sentence can credit several sources: its own (the Korean text) and one per gloss language
+    in `gloss_sources` (a Tatoeba translation by another author, or a boso translation)."""
+    items: dict[tuple[str, str], set[str]] = {}
+    authors: dict[tuple[str, str], set[str]] = {}
+    for u in units:
+        for x in [*u["items"], *u.get("grammar", [])]:
+            credits = [x, *x.get("gloss_sources", {}).values()] if "source" in x else []
+            for c in credits:
+                key = (c["source"], c["license"])
+                items.setdefault(key, set()).add(x["id"])
+                if "author" in c:
+                    authors.setdefault(key, set()).add(c["author"])
     out = []
-    for (source, license_), n in sorted(counts.items()):
-        entry = {"source": source, "license": license_, "items": n}
-        if info := SOURCES.get(source.removesuffix(SUFFIX)):
+    for (source, license_), ids in sorted(items.items()):
+        entry = {"source": source, "license": license_, "items": len(ids)}
+        info = SOURCES.get(source.removesuffix(SUFFIX), {})
+        if "url" in info:
             entry["url"] = info["url"]
+        if names := authors.get((source, license_)):
+            entry["authors"] = sorted(names)
+        elif "author" in info:
             entry["authors"] = [info["author"]]
         out.append(entry)
     return out
@@ -134,7 +149,7 @@ def write_attribution(courses: Path = CONTENT / "courses", path: Path = ATTRIBUT
             info = SOURCES.get(e["source"].removesuffix(SUFFIX), {})
             name = info.get("name", e["source"])
             credit = f"[{name}]({info['url']})" if info else name
-            by = f" by {info['author']}" if info else ""
+            by = f" by {', '.join(e['authors'])}" if e.get("authors") else ""
             line = f"- {credit}{by}, {e['license']}: {e['items']} items"
             if e["source"].endswith(SUFFIX):
                 line += (

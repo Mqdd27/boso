@@ -17,6 +17,20 @@ KRDICT_DOWNLOAD = "https://krdict.korean.go.kr/dicBatchDownload?seq={seq}"
 KRDICT_FILE = "krdict/krdict-json.zip"
 USER_AGENT = "boso-content-pipeline"
 
+TATOEBA = "https://downloads.tatoeba.org/exports/"
+# Per-language exports keep the download small; the CC0 list only exists as one global file.
+TATOEBA_FILES = [
+    "per_language/kor/kor_sentences_detailed.tsv.bz2",
+    "per_language/kor/kor-eng_links.tsv.bz2",
+    "per_language/kor/kor-ind_links.tsv.bz2",
+    "per_language/kor/kor_tags.tsv.bz2",
+    "per_language/eng/eng_sentences_detailed.tsv.bz2",
+    "per_language/eng/eng_tags.tsv.bz2",
+    "per_language/ind/ind_sentences_detailed.tsv.bz2",
+    "per_language/ind/ind_tags.tsv.bz2",
+    "sentences_CC0.tar.bz2",
+]
+
 
 def sha256(path: Path) -> str:
     h = hashlib.sha256()
@@ -64,6 +78,39 @@ def fetch_krdict(src: Path | None = None, sources: Path = SOURCES, lock: Path = 
     }
     lock.write_text(json.dumps(entries, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return dest
+
+
+def tatoeba_key(remote: str) -> str:
+    """sources.lock key of one Tatoeba export: tatoeba:kor_sentences_detailed."""
+    return "tatoeba:" + Path(remote).name.split(".")[0]
+
+
+def fetch_tatoeba(sources: Path = SOURCES, lock: Path = LOCK, force: bool = False) -> list[Path]:
+    """Download the Tatoeba exports (skipping files already on disk unless `force`)."""
+    entries = read_lock(lock)
+    out = []
+    for remote in TATOEBA_FILES:
+        rel = f"tatoeba/{Path(remote).name}"
+        dest = sources / rel
+        downloaded = force or not dest.is_file()
+        if downloaded:
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            with (
+                urllib.request.urlopen(_get(TATOEBA + remote), timeout=600) as r,
+                dest.open("wb") as f,
+            ):
+                shutil.copyfileobj(r, f)
+        today = datetime.now(UTC).date().isoformat()
+        old = entries.get(tatoeba_key(remote), {}).get("fetched", today)
+        entries[tatoeba_key(remote)] = {
+            "file": rel,
+            "sha256": sha256(dest),
+            "url": TATOEBA + remote,
+            "fetched": today if downloaded else old,
+        }
+        out.append(dest)
+    lock.write_text(json.dumps(entries, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return out
 
 
 def check(name: str, sources: Path = SOURCES, lock: Path = LOCK) -> Path:
