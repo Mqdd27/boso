@@ -1,0 +1,69 @@
+import { expect, test, type Page } from '@playwright/test';
+import { buildSyllable, course, mockSpeech, playLesson } from './helpers';
+
+const unit = (page: Page, id: string) => page.locator(`[data-unit="${id}"]`);
+
+test.beforeEach(async ({ page }) => {
+	await mockSpeech(page);
+});
+
+test('home has a Hangul and a vocabulary section that unlock separately', async ({ page }) => {
+	await page.goto('/');
+	await expect(page.getByRole('heading', { name: 'Hangul' })).toBeVisible();
+	await expect(page.getByRole('heading', { name: 'Vocabulary' })).toBeVisible();
+	await expect(unit(page, 'ko-001-basic-vowels')).toHaveAttribute('data-status', 'open');
+	await expect(unit(page, 'ko-002-basic-consonants-1')).toHaveAttribute('data-status', 'locked');
+	// Vocabulary does not wait for Hangul.
+	await expect(unit(page, 'ko-010-greetings')).toHaveAttribute('data-status', 'open');
+	await unit(page, 'ko-010-greetings').getByRole('link').click();
+	await expect(page.getByTestId('exercise')).toBeVisible();
+});
+
+test('finish unit 001 → unit 002 opens', async ({ page }) => {
+	await page.goto('/');
+	await unit(page, 'ko-001-basic-vowels').getByRole('link').click();
+	// Intro card of a letter: sound always shown, explanation, listen buttons.
+	await expect(page.getByText('New letter')).toBeVisible();
+	await expect(page.getByTestId('intro').getByTestId('roman')).toHaveText('a');
+	await expect(page.getByTestId('listen-slow')).toBeVisible();
+	await playLesson(page);
+	await page.getByRole('button', { name: 'Next lesson' }).click();
+	await playLesson(page);
+	await page.getByTestId('back-home').click();
+	await expect(unit(page, 'ko-001-basic-vowels')).toHaveAttribute('data-status', 'done');
+	await expect(unit(page, 'ko-002-basic-consonants-1')).toHaveAttribute('data-status', 'open');
+});
+
+test('build a syllable from letter tiles', async ({ page }) => {
+	await page.goto('/');
+	await expect(unit(page, 'ko-001-basic-vowels')).toBeVisible();
+	// Units 001 and 002 already done.
+	await page.evaluate(
+		(units) =>
+			new Promise<void>((done, fail) => {
+				const open = indexedDB.open('boso');
+				open.onsuccess = () => {
+					const tx = open.result.transaction('unitProgress', 'readwrite');
+					for (const unit of units)
+						tx.objectStore('unitProgress').put({
+							course: 'ko-en',
+							unit,
+							lessons: [1, 2],
+							completedAt: new Date().toISOString()
+						});
+					tx.oncomplete = () => done();
+					tx.onerror = () => fail(new Error(String(tx.error)));
+				};
+			}),
+		['ko-001-basic-vowels', 'ko-002-basic-consonants-1']
+	);
+	await page.goto('/learn/ko-en/ko-004-syllable-blocks');
+	await page.getByRole('button', { name: 'Continue' }).click(); // intro card
+	const ex = page.getByTestId('exercise');
+	await expect(ex).toHaveAttribute('data-kind', 'build');
+	const block = course.units.find((u) => u.id === 'ko-004-syllable-blocks')!.items[0].text;
+	await expect(page.getByTestId('block')).toHaveText('?');
+	await buildSyllable(page, block);
+	await page.getByRole('button', { name: 'Check' }).click();
+	await expect(page.getByTestId('feedback')).toHaveAttribute('data-correct', 'true');
+});
