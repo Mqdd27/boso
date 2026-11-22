@@ -10,6 +10,7 @@ First courses: Korean (`ko-en`) and Mandarin (`zh-en`).
 ```
 courses/     human-editable YAML per course (course.yaml + units/*.yaml), CC BY-SA 4.0
 pipeline/    Python package with the `pipeline` CLI
+tts/         separate MeloTTS env (Python 3.10, torch) used by `pipeline tts`
 tests/       pytest
 LICENSES.md  license check of every data source and tool
 ../schema/   course-pack JSON Schema (shared with the app) + examples
@@ -78,6 +79,30 @@ uv run pipeline pack ko-en            # validate + write dist/ko-en/{course,mani
   other krdict senses as suggestions. It never edits files. `--strict` exits 1 on warnings.
 - **Merging:** `build` only appends new units. Existing unit files, reviewed items and manual edits
   are never rewritten, and words already in the course are not offered again.
+
+## Audio (MeloTTS)
+
+Audio is generated once on the maintainer's machine and shipped in the pack; the app and the server
+never run TTS. MeloTTS needs torch and old pins, so it lives in its own env (`tts/`), not in the
+pipeline's dependencies (CI never installs it).
+
+```bash
+brew install ffmpeg
+tts/setup.sh                          # one time: uv sync in tts/, unidic + model download (~2 GB)
+uv run pipeline tts ko-en --sample 5  # first 5 items → cache/tts-sample/<id>.opus, listen first
+uv run pipeline tts ko-en             # everything missing (cached: re-runs only make new items)
+uv run pipeline tts ko-en --only ko.w.ne  # remake one item
+uv run pipeline pack ko-en            # copies audio into dist/ko-en/audio/ and sets item.audio
+```
+
+- Voice: MeloTTS-Korean, speaker `KR`, speed 0.9. Then ffmpeg trims silence, normalises loudness to
+  -16 LUFS and encodes mono Opus at 32 kbps (~3–6 KB per word).
+- Files are cached in `cache/tts/` by hash of the text read and every setting, so changing a
+  setting only remakes the files it affects.
+- `courses/<course>/readings.yaml` (optional, `item id: text`) sets what is read aloud when it
+  differs from `text`, e.g. a Hangul letter ㄱ read as 기역.
+- `item.audio` is a build artefact: it is set in the pack only, never written into `courses/`.
+  `pack` without generated audio still works (warning); the app then uses the browser's voice.
 
 ## Course pack format
 

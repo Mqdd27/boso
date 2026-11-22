@@ -1,0 +1,23 @@
+# Separate env for MeloTTS: torch + old pins stay out of boso-pipeline (and out of CI).
+# Set up with ./setup.sh; `pipeline tts` calls synth.py in this env via subprocess.
+[project]
+name = "boso-tts"
+version = "0.0.1"
+license = "Unlicense"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+    "melotts @ git+https://github.com/myshell-ai/MeloTTS@209145371cff8fc3bd60d7be902ea69cbdb7965a",
+    # MeloTTS pins librosa 0.9.1, which imports pkg_resources (gone in setuptools 81) and
+    # predates numpy 2.
+    "setuptools<81",
+    "numpy<2",
+    # g2pkk (Korean G2P inside MeloTTS) needs a Korean mecab; it would pip-install this at runtime.
+    "python-mecab-ko",
+]
+
+[tool.uv]
+package = false
+# mecab-python3 (Japanese, `MeCab/`) and python-mecab-ko (`mecab/`) are the same folder on a
+# case-insensitive macOS disk and overwrite each other. We only speak Korean: drop the Japanese one
+# (synth.py stubs `MeCab` for MeloTTS's unconditional Japanese import).
+override-dependencies = ["mecab-python3; sys_platform == 'never'"]
