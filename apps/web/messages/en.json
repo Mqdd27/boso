@@ -1,0 +1,9 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"app_name": "boso",
+	"tagline": "Learn Korean and Mandarin, step by step.",
+	"status": "Pre-alpha. Nothing to learn here yet.",
+	"language_label": "Language",
+	"language_en": "English",
+	"language_id": "Bahasa Indonesia"
+}
