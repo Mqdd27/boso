@@ -1,0 +1,15 @@
+**/node_modules
+**/.svelte-kit
+**/build
+.turbo
+.git
+.data
+content
+apps/server/boso
+apps/server/web/dist
+apps/web/test-results
+apps/web/playwright-report
+CLAUDE.md
+SPEC.md
+.claude
+apps/web/src/lib/paraglide
