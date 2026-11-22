@@ -1,6 +1,5 @@
 import copy
 import json
-import shutil
 
 import pytest
 
@@ -91,15 +90,12 @@ def test_invalid_manifest_fails(tmp_path, mutate):
 
 def test_course_dir_with_units(tmp_path):
     course_dir = tmp_path / "ko-en"
-    shutil.copytree(ROOT / "content" / "courses" / "ko-en", course_dir)
-    (course_dir / "units").mkdir()
+    (course_dir / "units").mkdir(parents=True)
     unit = copy.deepcopy(KO["units"][0])
     (course_dir / "units" / "010-greetings.yaml").write_text(json.dumps(unit), encoding="utf-8")
-    course_yaml = course_dir / "course.yaml"
-    text = course_yaml.read_text(encoding="utf-8").replace(
-        "units: []", "units: [units/010-greetings.yaml]"
-    )
-    course_yaml.write_text(text, encoding="utf-8")
+    meta = {k: v for k, v in KO.items() if k != "units"}
+    meta["units"] = ["units/010-greetings.yaml"]
+    (course_dir / "course.yaml").write_text(json.dumps(meta), encoding="utf-8")
 
     errors, units = validate_course_dir(course_dir)
     assert errors == []
