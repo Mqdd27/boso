@@ -36,6 +36,31 @@ uv run ruff check .
 uv run ruff format --check .
 ```
 
+## Building the Korean course (ko-en)
+
+```bash
+uv run pipeline fetch krdict          # download the full krdict JSON dump into sources/
+uv run pipeline build ko-en           # add vocab units to courses/ko-en/ (default: up to 12 units)
+uv run pipeline build ko-en --dry-run # show what would be written
+uv run pipeline pack ko-en            # validate + write dist/ko-en/{course,manifest}.json, ATTRIBUTION.md
+```
+
+- **krdict dump:** `fetch` downloads 한국어기초사전's "사전 전체 내려받기" (JSON, ~85 MB zip, no key
+  needed) and pins its sha256 in `sources.lock`. If the download fails, get it by hand from
+  https://krdict.korean.go.kr (footer → 사전 전체 내려받기 → Json) and run
+  `uv run pipeline fetch krdict --from <file.zip>`. `build` refuses a dump that doesn't match the lock.
+  The dump already has English and Indonesian equivalents, so no `KRDICT_API_KEY` is needed.
+- **Words:** 초급 (TOPIK I) single words with an English equivalent; affixes, particles, auxiliary
+  verbs and phrases are dropped. `en` / `id` glosses are krdict's equivalents for the first sense,
+  `roman` is Revised Romanization from krdict's pronunciation.
+- **Units:** a deterministic pool of 250 basic words (spread over krdict's semantic categories, most
+  senses first) is grouped into themed units of 5–8 words by `claude -p` (Claude Code CLI) with
+  `prompts/group-units.v1.md`. The reply is validated (only pool IDs, no duplicates) and cached in
+  `cache/llm/`, so rebuilds don't call Claude again. Generated items are `review: needs_review`; set
+  `review: reviewed` after checking them.
+- **Merging:** `build` only appends new units. Existing unit files, reviewed items and manual edits
+  are never rewritten, and words already in the course are not offered again.
+
 ## Course pack format
 
 `../schema/course-pack.schema.json` (JSON Schema draft 2020-12) defines:

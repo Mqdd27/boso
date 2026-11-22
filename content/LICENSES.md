@@ -28,6 +28,7 @@ Status: **ok** = can be used and redistributed in course packs (with the listed 
 | ↳ ZH BERT `hfl/chinese-roberta-wwm-ext-large` | Apache-2.0 | https://huggingface.co/hfl/chinese-roberta-wwm-ext-large | Yes | None for generated audio | ok |
 | kiwipiepy + kiwipiepy_model | Apache-2.0 | https://github.com/bab2min/kiwipiepy, https://pypi.org/project/kiwipiepy-model/ | Yes | None for output | ok |
 | jieba | MIT | https://github.com/fxsjy/jieba | Yes | None for output | ok |
+| Korean Revised Romanization (`pipeline/nlp/ko.py`) | Unlicense (own code, follows the RR rules of 국립국어원) | https://www.korean.go.kr/front_eng/roman/roman_01.do | Yes | None | ok |
 | pypinyin | MIT | https://github.com/mozillazg/python-pinyin | Yes | None for output | ok |
 
 ## Notes
