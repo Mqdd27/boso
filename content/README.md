@@ -57,6 +57,14 @@ uv run pipeline pack ko-en            # validate + write dist/ko-en/{course,mani
   `claude -p` (Claude Code CLI) with `prompts/group-units.v1.md`. The pool starts with
   `courses/ko-en/core-words.yaml` (greetings, numbers, family: edit it to add must-have words) and
   is filled up from krdict's semantic categories, most senses first.
+- **Core words must land in a unit:** the grouping reply is rejected if a core word is missing;
+  Claude gets one retry that names the missing words, then the build fails.
+- **Overrides:** `courses/ko-en/overrides.yaml` fixes krdict glosses that are wrong (e.g. 만 =
+  "puluh ribu" → "sepuluh ribu"). Each entry names an item (id or `text#target_code`), the new
+  `en`/`id` gloss and a one-sentence reason. `build` applies it to items that still hold their
+  generated value (never to reviewed or hand-edited items) and sets `source: krdict (modified)`;
+  `ATTRIBUTION.md` notes the change, as CC BY-SA requires. `validate` fails on an override that
+  matches no item.
 - **Senses:** for words with several krdict senses, `claude -p` picks the one that fits the unit
   (`prompts/pick-senses.v1.md`: 시키다 in a food unit → "order (food)"). It only picks a sense
   number; the gloss text is still krdict's.
