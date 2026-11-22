@@ -1,0 +1,72 @@
+id: ko-013-me-and-others
+title:
+  en: Me and Others
+  id: Aku dan Orang Lain
+level: topik1
+items:
+- id: ko.w.na
+  type: word
+  text: 나
+  roman: na
+  gloss:
+    en: I
+    id: aku
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:60931#1
+  review: needs_review
+- id: ko.w.jeo
+  type: word
+  text: 저
+  roman: jeo
+  gloss:
+    en: I, me
+    id: saya
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:44506#1
+  review: needs_review
+- id: ko.w.uri
+  type: word
+  text: 우리
+  roman: uri
+  gloss:
+    en: we
+    id: kita
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:17182#1
+  review: needs_review
+- id: ko.w.chingu
+  type: word
+  text: 친구
+  roman: chingu
+  gloss:
+    en: friend
+    id: teman, kawan
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:29742#1
+  review: needs_review
+- id: ko.w.saram
+  type: word
+  text: 사람
+  roman: saram
+  gloss:
+    en: human, man
+    id: manusia, orang
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:58161#1
+  review: needs_review
+- id: ko.w.ireum
+  type: word
+  text: 이름
+  roman: ireum
+  gloss:
+    en: name, given name
+    id: nama, nama diri
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:71692#2
+  review: needs_review

@@ -1,0 +1,94 @@
+id: ko-014-family
+title:
+  en: Family
+  id: Keluarga
+level: topik1
+items:
+- id: ko.w.gajok
+  type: word
+  text: 가족
+  roman: gajok
+  gloss:
+    en: family
+    id: keluarga atau anggota keluarga
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:44487#1
+  review: needs_review
+- id: ko.w.bumonim
+  type: word
+  text: 부모님
+  roman: bumonim
+  gloss:
+    en: parents
+    id: orang tua
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:62272#1
+  review: needs_review
+- id: ko.w.abeoji
+  type: word
+  text: 아버지
+  roman: abeoji
+  gloss:
+    en: father, male parent
+    id: ayah, bapak
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:71343#1
+  review: needs_review
+- id: ko.w.eomeoni
+  type: word
+  text: 어머니
+  roman: eomeoni
+  gloss:
+    en: mother
+    id: ibu
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:74361#1
+  review: needs_review
+- id: ko.w.appa
+  type: word
+  text: 아빠
+  roman: appa
+  gloss:
+    en: dad, daddy
+    id: ayah, bapak
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:26148#1
+  review: needs_review
+- id: ko.w.eomma
+  type: word
+  text: 엄마
+  roman: eomma
+  gloss:
+    en: mom
+    id: mama
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:67098#1
+  review: needs_review
+- id: ko.w.hyeong
+  type: word
+  text: 형
+  roman: hyeong
+  gloss:
+    en: older brother
+    id: kakak laki-laki
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:20286#1
+  review: needs_review
+- id: ko.w.oppa
+  type: word
+  text: 오빠
+  roman: oppa
+  gloss:
+    en: elder brother
+    id: kakak laki-laki, abang
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:68006#1
+  review: needs_review

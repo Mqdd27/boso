@@ -1,0 +1,61 @@
+id: ko-011-native-numbers-one-to-five
+title:
+  en: Native Numbers 1–5
+  id: Angka Asli Korea 1–5
+level: topik1
+items:
+- id: ko.w.hana
+  type: word
+  text: 하나
+  roman: hana
+  gloss:
+    en: one
+    id: satu
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:20279#1
+  review: needs_review
+- id: ko.w.dul
+  type: word
+  text: 둘
+  roman: dul
+  gloss:
+    en: two
+    id: dua
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:34869#1
+  review: needs_review
+- id: ko.w.set
+  type: word
+  text: 셋
+  roman: set
+  gloss:
+    en: three
+    id: tiga
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:29602#1
+  review: needs_review
+- id: ko.w.net
+  type: word
+  text: 넷
+  roman: net
+  gloss:
+    en: four
+    id: empat
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:34873#1
+  review: needs_review
+- id: ko.w.daseot
+  type: word
+  text: 다섯
+  roman: daseot
+  gloss:
+    en: five
+    id: lima
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:58111#1
+  review: needs_review

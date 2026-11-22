@@ -1,0 +1,94 @@
+id: ko-019-everyday-verbs
+title:
+  en: Everyday Verbs
+  id: Kata Kerja Sehari-hari
+level: topik1
+items:
+- id: ko.w.gada
+  type: word
+  text: 가다
+  roman: gada
+  gloss:
+    en: go, travel
+    id: pergi
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:27500#1
+  review: needs_review
+- id: ko.w.oda
+  type: word
+  text: 오다
+  roman: oda
+  gloss:
+    en: come
+    id: datang, kemari
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:69514#1
+  review: needs_review
+- id: ko.w.hada
+  type: word
+  text: 하다
+  roman: hada
+  gloss:
+    en: do, perform
+    id: melakukan, mengerjakan
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:73277#1
+  review: needs_review
+- id: ko.w.boda
+  type: word
+  text: 보다
+  roman: boda
+  gloss:
+    en: see, look at
+    id: melihat
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:61190#1
+  review: needs_review
+- id: ko.w.salda
+  type: word
+  text: 살다
+  roman: salda
+  gloss:
+    en: live, be alive
+    id: hidup
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:69579#1
+  review: needs_review
+- id: ko.w.mannada
+  type: word
+  text: 만나다
+  roman: mannada
+  gloss:
+    en: meet, meet with
+    id: bertemu, menemui
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:66591#2
+  review: needs_review
+- id: ko.w.juda
+  type: word
+  text: 주다
+  roman: juda
+  gloss:
+    en: give
+    id: kasih, memberi
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:82136#1
+  review: needs_review
+- id: ko.w.batda
+  type: word
+  text: 받다
+  roman: batda
+  gloss:
+    en: receive, get
+    id: menerima, mendapat
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:66636#1
+  review: needs_review

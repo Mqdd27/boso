@@ -1,0 +1,72 @@
+id: ko-017-big-numbers
+title:
+  en: Zero, Nine and Big Numbers
+  id: Nol, Sembilan, dan Angka Besar
+level: topik1
+items:
+- id: ko.w.yeong
+  type: word
+  text: 영
+  roman: yeong
+  gloss:
+    en: zero
+    id: nol, kosong
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:21845#1
+  review: needs_review
+- id: ko.w.gu
+  type: word
+  text: 구
+  roman: gu
+  gloss:
+    en: nine
+    id: sembilan
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:34882#1
+  review: needs_review
+- id: ko.w.sip
+  type: word
+  text: 십
+  roman: sip
+  gloss:
+    en: ten
+    id: sepuluh, puluh
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:28847#1
+  review: needs_review
+- id: ko.w.baek
+  type: word
+  text: 백
+  roman: baek
+  gloss:
+    en: hundred
+    id: seratus
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:36019#1
+  review: needs_review
+- id: ko.w.cheon
+  type: word
+  text: 천
+  roman: cheon
+  gloss:
+    en: thousand
+    id: seribu
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:17167#1
+  review: needs_review
+- id: ko.w.man
+  type: word
+  text: 만
+  roman: man
+  gloss:
+    en: ten thousand
+    id: puluh ribu
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:64558#1
+  review: needs_review

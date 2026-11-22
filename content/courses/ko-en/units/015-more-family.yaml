@@ -1,0 +1,83 @@
+id: ko-015-more-family
+title:
+  en: More Family
+  id: Keluarga (Lanjutan)
+level: topik1
+items:
+- id: ko.w.nuna
+  type: word
+  text: 누나
+  roman: nuna
+  gloss:
+    en: elder sister
+    id: kakak perempuan
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:32205#1
+  review: needs_review
+- id: ko.w.eonni
+  type: word
+  text: 언니
+  roman: eonni
+  gloss:
+    en: older sister
+    id: kakak perempuan
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:31971#1
+  review: needs_review
+- id: ko.w.dongsaeng
+  type: word
+  text: 동생
+  roman: dongsaeng
+  gloss:
+    en: brother, sister
+    id: adik
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:70748#1
+  review: needs_review
+- id: ko.w.harabeoji
+  type: word
+  text: 할아버지
+  roman: harabeoji
+  gloss:
+    en: grandfather, grandpa
+    id: kakek
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:74121#1
+  review: needs_review
+- id: ko.w.halmeoni
+  type: word
+  text: 할머니
+  roman: halmeoni
+  gloss:
+    en: grandmother, granny
+    id: nenek
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:27375#1
+  review: needs_review
+- id: ko.w.adeul
+  type: word
+  text: 아들
+  roman: adeul
+  gloss:
+    en: son
+    id: anak laki-laki
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:20240#1
+  review: needs_review
+- id: ko.w.ttal
+  type: word
+  text: 딸
+  roman: ttal
+  gloss:
+    en: daughter
+    id: anak perempuan
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:30210#1
+  review: needs_review

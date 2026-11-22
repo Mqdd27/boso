@@ -1,0 +1,94 @@
+id: ko-010-greetings-and-manners
+title:
+  en: Greetings and Manners
+  id: Salam dan Sopan Santun
+level: topik1
+items:
+- id: ko.w.annyeong
+  type: word
+  text: 안녕
+  roman: annyeong
+  gloss:
+    en: hello, hi
+    id: hai, dadah
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:17298#1
+  review: needs_review
+- id: ko.w.annyeonghi
+  type: word
+  text: 안녕히
+  roman: annyeonghi
+  gloss:
+    en: in peace
+    id: dengan tentram, dengan tenang
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:28415#1
+  review: needs_review
+- id: ko.w.gomapda
+  type: word
+  text: 고맙다
+  roman: gomapda
+  gloss:
+    en: thankful, grateful
+    id: terima kasih
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:20041#1
+  review: needs_review
+- id: ko.w.gamsahada
+  type: word
+  text: 감사하다
+  roman: gamsahada
+  gloss:
+    en: thankful, grateful
+    id: terima kasih, berterima kasih
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:63820#1
+  review: needs_review
+- id: ko.w.mianhada
+  type: word
+  text: 미안하다
+  roman: mianhada
+  gloss:
+    en: I am sorry
+    id: maaf
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:67883#2
+  review: needs_review
+- id: ko.w.joesonghada
+  type: word
+  text: 죄송하다
+  roman: joesonghada
+  gloss:
+    en: sorry
+    id: merasa bersalah
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:91763#1
+  review: needs_review
+- id: ko.w.ne
+  type: word
+  text: 네
+  roman: ne
+  gloss:
+    en: yes, yes sir
+    id: ya
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:17294#1
+  review: needs_review
+- id: ko.w.aniyo
+  type: word
+  text: 아니요
+  roman: aniyo
+  gloss:
+    en: no, no sir
+    id: tidak, belum
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:17189#1
+  review: needs_review

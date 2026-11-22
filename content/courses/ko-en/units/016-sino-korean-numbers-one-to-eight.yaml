@@ -1,0 +1,94 @@
+id: ko-016-sino-korean-numbers-one-to-eight
+title:
+  en: Sino-Korean Numbers 1–8
+  id: Angka Sino-Korea 1–8
+level: topik1
+items:
+- id: ko.w.il
+  type: word
+  text: 일
+  roman: il
+  gloss:
+    en: one
+    id: satu
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:31523#1
+  review: needs_review
+- id: ko.w.i
+  type: word
+  text: 이
+  roman: i
+  gloss:
+    en: two
+    id: dua
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:71125#1
+  review: needs_review
+- id: ko.w.sam
+  type: word
+  text: 삼
+  roman: sam
+  gloss:
+    en: three
+    id: tiga
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:61854#1
+  review: needs_review
+- id: ko.w.sa
+  type: word
+  text: 사
+  roman: sa
+  gloss:
+    en: four
+    id: empat
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:58114#1
+  review: needs_review
+- id: ko.w.o
+  type: word
+  text: 오
+  roman: o
+  gloss:
+    en: five
+    id: lima
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:31635#1
+  review: needs_review
+- id: ko.w.yuk
+  type: word
+  text: 육
+  roman: yuk
+  gloss:
+    en: six
+    id: enam
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:70820#1
+  review: needs_review
+- id: ko.w.chil
+  type: word
+  text: 칠
+  roman: chil
+  gloss:
+    en: seven
+    id: tujuh
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:71470#1
+  review: needs_review
+- id: ko.w.pal
+  type: word
+  text: 팔
+  roman: pal
+  gloss:
+    en: eight
+    id: delapan
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:31598#1
+  review: needs_review

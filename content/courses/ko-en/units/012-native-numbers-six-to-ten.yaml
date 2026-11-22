@@ -1,0 +1,61 @@
+id: ko-012-native-numbers-six-to-ten
+title:
+  en: Native Numbers 6–10
+  id: Angka Asli Korea 6–10
+level: topik1
+items:
+- id: ko.w.yeoseot
+  type: word
+  text: 여섯
+  roman: yeoseot
+  gloss:
+    en: six
+    id: enam
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:29614#1
+  review: needs_review
+- id: ko.w.ilgop
+  type: word
+  text: 일곱
+  roman: ilgop
+  gloss:
+    en: seven
+    id: tujuh
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:70778#1
+  review: needs_review
+- id: ko.w.yeodeol
+  type: word
+  text: 여덟
+  roman: yeodeol
+  gloss:
+    en: eight
+    id: delapan
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:17284#1
+  review: needs_review
+- id: ko.w.ahop
+  type: word
+  text: 아홉
+  roman: ahop
+  gloss:
+    en: nine
+    id: sembilan
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:29609#1
+  review: needs_review
+- id: ko.w.yeol
+  type: word
+  text: 열
+  roman: yeol
+  gloss:
+    en: ten
+    id: sepuluh
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:67805#1
+  review: needs_review
