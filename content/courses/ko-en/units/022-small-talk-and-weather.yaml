@@ -1,0 +1,94 @@
+id: ko-022-small-talk-and-weather
+title:
+  en: Small Talk and Weather
+  id: Basa-basi dan Cuaca
+level: topik1
+items:
+- id: ko.w.bangapda
+  type: word
+  text: 반갑다
+  roman: bangapda
+  gloss:
+    en: glad, joyful
+    id: senang, bahagia
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:70861#1
+  review: needs_review
+- id: ko.w.gwaenchanta
+  type: word
+  text: 괜찮다
+  roman: gwaenchanta
+  gloss:
+    en: nice, fine
+    id: lumayan baik, tidak apa-apa
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:60097#1
+  review: needs_review
+- id: ko.w.jal
+  type: word
+  text: 잘
+  roman: jal
+  gloss:
+    en: well
+    id: dengan baik/bagus/pintar
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:58939#1
+  review: needs_review
+- id: ko.w.deopda
+  type: word
+  text: 덥다
+  roman: deopda
+  gloss:
+    en: hot
+    id: panas
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:44484#1
+  review: needs_review
+- id: ko.w.ttatteutada
+  type: word
+  text: 따뜻하다
+  roman: ttatteutada
+  gloss:
+    en: warm
+    id: hangat
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:57297#1
+  review: needs_review
+- id: ko.w.siwonhada
+  type: word
+  text: 시원하다
+  roman: siwonhada
+  gloss:
+    en: cool
+    id: sejuk, segar
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:71281#1
+  review: needs_review
+- id: ko.w.ssalssalhada
+  type: word
+  text: 쌀쌀하다
+  roman: ssalssalhada
+  gloss:
+    en: chilly, rather cold
+    id: dingin
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:66104#1
+  review: needs_review
+- id: ko.w.makda
+  type: word
+  text: 맑다
+  roman: makda
+  gloss:
+    en: clear, fine
+    id: cerah, terang
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:66031#2
+  review: needs_review
