@@ -70,3 +70,157 @@ items:
   license: CC BY-SA 2.0 KR
   source_ref: krdict:71692#2
   review: needs_review
+- id: ko.s.t13130036
+  type: sentence
+  text: 제 것입니다.
+  roman: je geosimnida.
+  tokens:
+  - 제
+  - 것입니다
+  gloss:
+    en: It's mine.
+    id: Itu punya saya.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2123592
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: atitarev
+  source_ref: tatoeba:13130036
+  review: needs_review
+- id: ko.s.t11105447
+  type: sentence
+  text: 나는 사람이다.
+  roman: naneun saramida.
+  tokens:
+  - 나는
+  - 사람이다
+  gloss:
+    en: I'm a human.
+    id: Aku manusia.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Alkrasnov
+      source_ref: tatoeba:433600
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: intertime
+  source_ref: tatoeba:11105447
+  review: needs_review
+- id: ko.s.t1054275
+  type: sentence
+  text: 우리는 사람입니다.
+  roman: urineun saramimnida.
+  tokens:
+  - 우리는
+  - 사람입니다
+  gloss:
+    en: We are human.
+    id: Kami manusia.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: sundown
+      source_ref: tatoeba:247772
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Brian255
+  source_ref: tatoeba:1054275
+  review: needs_review
+- id: ko.s.t8361471
+  type: sentence
+  text: 난 피폐해질 거야.
+  roman: nan pipyehaejil geoya.
+  tokens:
+  - 난
+  - 피폐해질
+  - 거야
+  gloss:
+    en: I'd be devastated.
+    id: Aku bakal hancur.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2247649
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Eunhee
+  source_ref: tatoeba:8361471
+  review: needs_review
+- id: ko.s.t4739071
+  type: sentence
+  text: 우리 중 하나가 선택될꺼야.
+  roman: uri jung hanaga seontaekdoelkkeoya.
+  tokens:
+  - 우리
+  - 중
+  - 하나가
+  - 선택될꺼야
+  gloss:
+    en: Either one of us will be chosen.
+    id: Salah satu dari kita bakal dipilih.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Swift
+      source_ref: tatoeba:545678
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 선택될꺼야
+    gloss:
+      en: choose, make a choice
+      id: memilih
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: kumdonghee
+  source_ref: tatoeba:4739071
+  review: needs_review
+- id: ko.s.t7851105
+  type: sentence
+  text: 나는 포기하지 않을 것이다.
+  roman: naneun pogihaji aneul geosida.
+  tokens:
+  - 나는
+  - 포기하지
+  - 않을
+  - 것이다
+  gloss:
+    en: I'm not going to give up.
+    id: Aku nggak akan menyerah.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2952797
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: yesjustryan
+  source_ref: tatoeba:7851105
+  review: needs_review

@@ -92,3 +92,51 @@ items:
   license: CC BY-SA 2.0 KR
   source_ref: krdict:68006#1
   review: needs_review
+- id: ko.s.t4708228
+  type: sentence
+  text: 엄마, 미안해요.
+  roman: eomma, mianhaeyo.
+  tokens:
+  - 엄마
+  - 미안해요
+  gloss:
+    en: I'm sorry Mother.
+    id: Ibu, maaf ya.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Spamster
+      source_ref: tatoeba:1513356
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: rainbow4us
+  source_ref: tatoeba:4708228
+  review: needs_review
+- id: ko.s.t10152625
+  type: sentence
+  text: 내 형을 격려하던 참이야.
+  roman: nae hyeongeul gyeongnyeohadeon chamiya.
+  tokens:
+  - 내
+  - 형을
+  - 격려하던
+  - 참이야
+  gloss:
+    en: I was just encouraging my older brother.
+    id: Aku tadi lagi menyemangati kakakku.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Eunhee
+  source_ref: tatoeba:10152625
+  review: needs_review

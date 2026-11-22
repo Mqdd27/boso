@@ -70,3 +70,155 @@ items:
   license: CC BY-SA 2.0 KR
   source_ref: krdict:64558#1
   review: needs_review
+- id: ko.s.t5339280
+  type: sentence
+  text: 일년은 십이개월이다.
+  roman: illyeoneun sibigaeworida.
+  tokens:
+  - 일년은
+  - 십이개월이다
+  gloss:
+    en: A year has twelve months.
+    id: Satu tahun ada dua belas bulan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CM
+      source_ref: tatoeba:73060
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Sudajaengi
+  source_ref: tatoeba:5339280
+  review: needs_review
+- id: ko.s.t11106559
+  type: sentence
+  text: 오 곱하기 칠은 삼십오이다.
+  roman: o gopagi chireun samsiboida.
+  tokens:
+  - 오
+  - 곱하기
+  - 칠은
+  - 삼십오이다
+  gloss:
+    en: Five times seven is thirty-five.
+    id: Lima kali tujuh sama dengan tiga puluh lima.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Shady_arc
+      source_ref: tatoeba:673868
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: intertime
+  source_ref: tatoeba:11106559
+  review: needs_review
+- id: ko.s.t2834030
+  type: sentence
+  text: 할아버지가 팔십 구 세 돼셨어요.
+  roman: harabeojiga palsip gu se dwaesyeosseoyo.
+  tokens:
+  - 할아버지가
+  - 팔십
+  - 구
+  - 세
+  - 돼셨어요
+  gloss:
+    en: My grandfather turned 89 years old.
+    id: Kakek saya sudah berumur delapan puluh sembilan tahun.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CS
+      source_ref: tatoeba:2833862
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 돼셨어요
+    gloss:
+      en: become
+      id: menjadi
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: 0ni
+  source_ref: tatoeba:2834030
+  review: needs_review
+- id: ko.s.t2749691
+  type: sentence
+  text: 일 분은 육십 초예요.
+  roman: il buneun yuksip choyeyo.
+  tokens:
+  - 일
+  - 분은
+  - 육십
+  - 초예요
+  gloss:
+    en: One minute is sixty seconds.
+    id: Satu menit itu enam puluh detik.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Natalia_Su
+  source_ref: tatoeba:2749691
+  review: needs_review
+- id: ko.s.k31648-1-1
+  type: sentence
+  text: 십에 십을 더하면 이십이다.
+  roman: sibe sibeul deohamyeon isibida.
+  tokens:
+  - 십에
+  - 십을
+  - 더하면
+  - 이십이다
+  gloss:
+    en: Ten plus ten is twenty.
+    id: Sepuluh ditambah sepuluh sama dengan dua puluh.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:31648#1/1
+  review: needs_review
+- id: ko.s.k58123-1-1
+  type: sentence
+  text: 다섯에 여덟을 곱하면 사십이다.
+  roman: daseose yeodeolbeul gopamyeon sasibida.
+  tokens:
+  - 다섯에
+  - 여덟을
+  - 곱하면
+  - 사십이다
+  gloss:
+    en: Five times eight is forty.
+    id: Lima dikali delapan sama dengan empat puluh.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:58123#1/1
+  review: needs_review

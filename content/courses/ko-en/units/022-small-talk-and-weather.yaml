@@ -92,3 +92,147 @@ items:
   license: CC BY-SA 2.0 KR
   source_ref: krdict:66031#2
   review: needs_review
+- id: ko.s.t13174804
+  type: sentence
+  text: 잘 가!
+  roman: jal ga!
+  tokens:
+  - 잘
+  - 가
+  gloss:
+    en: Goodbye!
+    id: Dadah!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: minshirui
+      source_ref: tatoeba:516745
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: atitarev
+  source_ref: tatoeba:13174804
+  review: needs_review
+- id: ko.s.t8363410
+  type: sentence
+  text: 잘 봐.
+  roman: jal bwa.
+  tokens:
+  - 잘
+  - 봐
+  gloss:
+    en: Watch carefully.
+    id: Lihat baik-baik.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2107662
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Eunhee
+  source_ref: tatoeba:8363410
+  review: needs_review
+- id: ko.s.t13192783
+  type: sentence
+  text: 잘 먹어.
+  roman: jal meogeo.
+  tokens:
+  - 잘
+  - 먹어
+  gloss:
+    en: Enjoy your meal!
+    id: Selamat makan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2370
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: atitarev
+  source_ref: tatoeba:13192783
+  review: needs_review
+- id: ko.s.t8368162
+  type: sentence
+  text: 잘 했어!
+  roman: jal haesseo!
+  tokens:
+  - 잘
+  - 했어
+  gloss:
+    en: Well done!
+    id: Kerja bagus!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: lukaszpp
+      source_ref: tatoeba:464478
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Eunhee
+  source_ref: tatoeba:8368162
+  review: needs_review
+- id: ko.s.t11105978
+  type: sentence
+  text: 물이 따뜻하다.
+  roman: muri ttatteutada.
+  tokens:
+  - 물이
+  - 따뜻하다
+  gloss:
+    en: The water is warm.
+    id: Airnya hangat.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Spamster
+      source_ref: tatoeba:1984000
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: intertime
+  source_ref: tatoeba:11105978
+  review: needs_review
+- id: ko.s.t11917295
+  type: sentence
+  text: 괜찮을 거예요.
+  roman: gwaenchaneul geoyeyo.
+  tokens:
+  - 괜찮을
+  - 거예요
+  gloss:
+    en: You'll do fine.
+    id: Pasti baik-baik saja.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2255351
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: flame0d
+  source_ref: tatoeba:11917295
+  review: needs_review

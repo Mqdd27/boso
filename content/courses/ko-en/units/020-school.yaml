@@ -92,3 +92,168 @@ items:
   license: CC BY-SA 2.0 KR
   source_ref: krdict:61281#1
   review: needs_review
+- id: ko.s.t10605315
+  type: sentence
+  text: 우리는 대학생이다.
+  roman: urineun daehaksaengida.
+  tokens:
+  - 우리는
+  - 대학생이다
+  gloss:
+    en: We're university students.
+    id: Kami mahasiswa.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Luiaard
+      source_ref: tatoeba:7097782
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: ssuss32
+  source_ref: tatoeba:10605315
+  review: needs_review
+- id: ko.s.t11105433
+  type: sentence
+  text: 나는 선생님이 아니다.
+  roman: naneun seonsaengnimi anida.
+  tokens:
+  - 나는
+  - 선생님이
+  - 아니다
+  gloss:
+    en: I'm not a teacher.
+    id: Aku bukan guru.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: oldfashioned
+      source_ref: tatoeba:2332108
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: intertime
+  source_ref: tatoeba:11105433
+  review: needs_review
+- id: ko.s.t961880
+  type: sentence
+  text: 선생님을 만나고 싶어요.
+  roman: seonsaengnimeul mannago sipeoyo.
+  tokens:
+  - 선생님을
+  - 만나고
+  - 싶어요
+  gloss:
+    en: I want to meet the teacher.
+    id: Saya mau ketemu gurunya.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Eevee
+      source_ref: tatoeba:961881
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Eevee
+  source_ref: tatoeba:961880
+  review: needs_review
+- id: ko.s.t11104619
+  type: sentence
+  text: 선생이 할 일은 가르치는 것이다.
+  roman: seonsaengi hal ireun gareuchineun geosida.
+  tokens:
+  - 선생이
+  - 할
+  - 일은
+  - 가르치는
+  - 것이다
+  gloss:
+    en: The teacher's work is teaching.
+    id: Tugas guru itu mengajar.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: vvv123
+      source_ref: tatoeba:3615924
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 일은
+    gloss:
+      en: work, labor
+      id: pekerjaan
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: intertime
+  source_ref: tatoeba:11104619
+  review: needs_review
+- id: ko.s.k78628-3-1
+  type: sentence
+  text: 나는 친구와 수영을 배우기로 했다.
+  roman: naneun chinguwa suyeongeul baeugiro haetda.
+  tokens:
+  - 나는
+  - 친구와
+  - 수영을
+  - 배우기로
+  - 했다
+  gloss:
+    en: I decided to learn swimming with my friend.
+    id: Aku memutuskan belajar renang sama teman.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 수영을
+    gloss:
+      en: swimming
+      id: renang
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:78628#3/1
+  review: needs_review
+- id: ko.s.t11104771
+  type: sentence
+  text: 선생님, 저와 게임 하나 하시겠습니까?
+  roman: seonsaengnim, jeowa geim hana hasigetseumnikka?
+  tokens:
+  - 선생님
+  - 저와
+  - 게임
+  - 하나
+  - 하시겠습니까
+  gloss:
+    en: Teacher, would you like to play a game with me?
+    id: Guru, mau main satu game sama saya?
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 게임
+    gloss:
+      en: game
+      id: permainan, pertandingan
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: intertime
+  source_ref: tatoeba:11104771
+  review: needs_review

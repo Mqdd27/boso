@@ -81,3 +81,166 @@ items:
   license: CC BY-SA 2.0 KR
   source_ref: krdict:47384#1
   review: needs_review
+- id: ko.s.t3581328
+  type: sentence
+  text: 나는 좋다!
+  roman: naneun jota!
+  tokens:
+  - 나는
+  - 좋다
+  gloss:
+    en: I'm good!
+    id: Aku baik-baik aja!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: garydale
+      source_ref: tatoeba:1674433
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: cueyayotl
+  source_ref: tatoeba:3581328
+  review: needs_review
+- id: ko.s.t11105152
+  type: sentence
+  text: 우리는 좋은 친구다.
+  roman: urineun joeun chinguda.
+  tokens:
+  - 우리는
+  - 좋은
+  - 친구다
+  gloss:
+    en: We are good friends.
+    id: Kami teman baik.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:249493
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: intertime
+  source_ref: tatoeba:11105152
+  review: needs_review
+- id: ko.s.t983696
+  type: sentence
+  text: 아버지는 좋은 사람입니다.
+  roman: abeojineun joeun saramimnida.
+  tokens:
+  - 아버지는
+  - 좋은
+  - 사람입니다
+  gloss:
+    en: Father is a good person.
+    id: Ayah orang yang baik.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: meiko452
+      source_ref: tatoeba:762160
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Arraroak
+  source_ref: tatoeba:983696
+  review: needs_review
+- id: ko.s.t11105345
+  type: sentence
+  text: 내가 뭘 해줬으면 좋겠어?
+  roman: naega mwol haejwosseumyeon jokesseo?
+  tokens:
+  - 내가
+  - 뭘
+  - 해줬으면
+  - 좋겠어
+  gloss:
+    en: What is it that you want me to do?
+    id: Kamu mau aku ngapain?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:17835
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 뭘
+    gloss:
+      en: what
+      id: apa
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: intertime
+  source_ref: tatoeba:11105345
+  review: needs_review
+- id: ko.s.t4751779
+  type: sentence
+  text: 내가 외동이었으면 좋았을 텐데.
+  roman: naega oedongieosseumyeon joasseul tende.
+  tokens:
+  - 내가
+  - 외동이었으면
+  - 좋았을
+  - 텐데
+  gloss:
+    en: I wish I were an only child.
+    id: Andai aku anak tunggal.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: WestofEden
+      source_ref: tatoeba:3054089
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: kimhkng
+  source_ref: tatoeba:4751779
+  review: needs_review
+- id: ko.s.t13755061
+  type: sentence
+  text: 좋아, 뭐 해야 할지 얘기해보자.
+  roman: joa, mwo haeya halji yaegihaeboja.
+  tokens:
+  - 좋아
+  - 뭐
+  - 해야
+  - 할지
+  - 얘기해보자
+  gloss:
+    en: OK, let's discuss what needs to be done.
+    id: Oke, ayo kita bahas apa yang harus dilakukan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:9637976
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 얘기해보자
+    gloss:
+      en: tell, say
+      id: menceritakan, mengatakan
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: qlTmalffk
+  source_ref: tatoeba:13755061
+  review: needs_review

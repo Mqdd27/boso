@@ -92,3 +92,154 @@ items:
   license: CC BY-SA 2.0 KR
   source_ref: krdict:60102#1
   review: needs_review
+- id: ko.s.t6304355
+  type: sentence
+  text: 먹지 마.
+  roman: meokji ma.
+  tokens:
+  - 먹지
+  - 마
+  gloss:
+    en: Don't eat it.
+    id: Jangan dimakan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:6274938
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Queserasera
+  source_ref: tatoeba:6304355
+  review: needs_review
+- id: ko.s.t13218449
+  type: sentence
+  text: 밥 먹었어?
+  roman: bap meogeosseo?
+  tokens:
+  - 밥
+  - 먹었어
+  gloss:
+    en: Have you eaten?
+    id: Sudah makan?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:953286
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: atitarev
+  source_ref: tatoeba:13218449
+  review: needs_review
+- id: ko.s.t8365170
+  type: sentence
+  text: 난 그걸 먹지 말았어야 했어.
+  roman: nan geugeol meokji marasseoya haesseo.
+  tokens:
+  - 난
+  - 그걸
+  - 먹지
+  - 말았어야
+  - 했어
+  gloss:
+    en: I shouldn't've eaten that.
+    id: Harusnya aku nggak makan itu.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:8364869
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Eunhee
+  source_ref: tatoeba:8365170
+  review: needs_review
+- id: ko.s.t10587712
+  type: sentence
+  text: 나는 먹는다.
+  roman: naneun meongneunda.
+  tokens:
+  - 나는
+  - 먹는다
+  gloss:
+    en: I eat.
+    id: Aku makan.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: ssuss32
+  source_ref: tatoeba:10587712
+  review: needs_review
+- id: ko.s.t11128407
+  type: sentence
+  text: 여섯 시에 먹을 거야.
+  roman: yeoseot sie meogeul geoya.
+  tokens:
+  - 여섯
+  - 시에
+  - 먹을
+  - 거야
+  gloss:
+    en: I'm going to eat at six.
+    id: Aku mau makan jam enam.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Eunhee
+  source_ref: tatoeba:11128407
+  review: needs_review
+- id: ko.s.t10608923
+  type: sentence
+  text: 우리는 일곱 시에 점심을 먹었다.
+  roman: urineun ilgop sie jeomsimeul meogeotda.
+  tokens:
+  - 우리는
+  - 일곱
+  - 시에
+  - 점심을
+  - 먹었다
+  gloss:
+    en: We ate lunch at seven.
+    id: Kami makan siang jam tujuh.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  hints:
+  - token: 점심을
+    gloss:
+      en: lunch
+      id: makan siang
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: ssuss32
+  source_ref: tatoeba:10608923
+  review: needs_review

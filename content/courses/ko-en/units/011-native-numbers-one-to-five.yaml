@@ -59,3 +59,32 @@ items:
   license: CC BY-SA 2.0 KR
   source_ref: krdict:58111#1
   review: needs_review
+- id: ko.s.t12993391
+  type: sentence
+  text: 하나, 둘, 셋, 넷, 다섯.
+  roman: hana, dul, set, net, daseot.
+  tokens:
+  - 하나
+  - 둘
+  - 셋
+  - 넷
+  - 다섯
+  gloss:
+    en: One, two, three, four, five.
+    id: Satu, dua, tiga, empat, lima.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: XZJqz
+      source_ref: tatoeba:12993387
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: HAGNi
+      source_ref: tatoeba:13012298
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: XZJqz
+  source_ref: tatoeba:12993391
+  review: needs_review

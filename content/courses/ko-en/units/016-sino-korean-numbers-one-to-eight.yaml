@@ -92,3 +92,28 @@ items:
   license: CC BY-SA 2.0 KR
   source_ref: krdict:31598#1
   review: needs_review
+- id: ko.s.t13228488
+  type: sentence
+  text: 이분은 제 친구입니다.
+  roman: ibuneun je chinguimnida.
+  tokens:
+  - 이분은
+  - 제
+  - 친구입니다
+  gloss:
+    en: This is my friend.
+    id: Ini teman saya.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:675960
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: atitarev
+  source_ref: tatoeba:13228488
+  review: needs_review

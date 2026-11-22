@@ -9,7 +9,7 @@ glosses:
 levels:
 - topik1
 - topik2
-version: 0.1.0
+version: 0.2.0
 units:
 - units/001-basic-vowels.yaml
 - units/002-basic-consonants-1.yaml

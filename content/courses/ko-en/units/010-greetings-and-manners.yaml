@@ -92,3 +92,24 @@ items:
   license: CC BY-SA 2.0 KR
   source_ref: krdict:17189#1
   review: needs_review
+- id: ko.s.k17872-1-2
+  type: sentence
+  text: 와, 고마워요.
+  roman: wa, gomawoyo.
+  tokens:
+  - 와
+  - 고마워요
+  gloss:
+    en: Wow, thank you.
+    id: Wah, terima kasih.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: krdict
+  license: CC BY-SA 2.0 KR
+  source_ref: krdict:17872#1/2
+  review: needs_review

@@ -92,3 +92,147 @@ items:
   license: CC BY-SA 2.0 KR
   source_ref: krdict:66636#1
   review: needs_review
+- id: ko.s.t13174362
+  type: sentence
+  text: 하지 마!
+  roman: haji ma!
+  tokens:
+  - 하지
+  - 마
+  gloss:
+    en: Don't do it!
+    id: Jangan lakuin itu!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Scott
+      source_ref: tatoeba:1110626
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: atitarev
+  source_ref: tatoeba:13174362
+  review: needs_review
+- id: ko.s.t12212429
+  type: sentence
+  text: 물 주세요.
+  roman: mul juseyo.
+  tokens:
+  - 물
+  - 주세요
+  gloss:
+    en: Water, please.
+    id: Minta air.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: AlanF_US
+      source_ref: tatoeba:2132096
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Adelpa
+  source_ref: tatoeba:12212429
+  review: needs_review
+- id: ko.s.t1225850
+  type: sentence
+  text: 가고 싶어.
+  roman: gago sipeo.
+  tokens:
+  - 가고
+  - 싶어
+  gloss:
+    en: I'd like to go.
+    id: Aku pengin pergi.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:241063
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Brian255
+  source_ref: tatoeba:1225850
+  review: needs_review
+- id: ko.s.t13182098
+  type: sentence
+  text: 보고 싶어!
+  roman: bogo sipeo!
+  tokens:
+  - 보고
+  - 싶어
+  gloss:
+    en: I miss you!
+    id: Aku kangen kamu!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: sergiomelo
+      source_ref: tatoeba:6055899
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: atitarev
+  source_ref: tatoeba:13182098
+  review: needs_review
+- id: ko.s.t10664881
+  type: sentence
+  text: 안녕히 가세요.
+  roman: annyeonghi gaseyo.
+  tokens:
+  - 안녕히
+  - 가세요
+  gloss:
+    en: Goodbye.
+    id: Selamat jalan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: tanay
+      source_ref: tatoeba:2591566
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Adelpa
+  source_ref: tatoeba:10664881
+  review: needs_review
+- id: ko.s.t11107050
+  type: sentence
+  text: 우리를 보세요.
+  roman: urireul boseyo.
+  tokens:
+  - 우리를
+  - 보세요
+  gloss:
+    en: Look at us.
+    id: Lihat kami.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2249552
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: intertime
+  source_ref: tatoeba:11107050
+  review: needs_review

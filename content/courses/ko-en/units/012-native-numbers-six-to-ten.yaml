@@ -59,3 +59,49 @@ items:
   license: CC BY-SA 2.0 KR
   source_ref: krdict:67805#1
   review: needs_review
+- id: ko.s.t13132002
+  type: sentence
+  text: 일곱 살이에요.
+  roman: ilgop sarieyo.
+  tokens:
+  - 일곱
+  - 살이에요
+  gloss:
+    en: He's seven years old.
+    id: Umurnya tujuh tahun.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: rul
+      source_ref: tatoeba:13120160
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: atitarev
+  source_ref: tatoeba:13132002
+  review: needs_review
+- id: ko.s.t11101344
+  type: sentence
+  text: 열 살이니?
+  roman: yeol sarini?
+  tokens:
+  - 열
+  - 살이니
+  gloss:
+    en: Are you ten years old?
+    id: Kamu umur sepuluh tahun?
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Eunhee
+  source_ref: tatoeba:11101344
+  review: needs_review

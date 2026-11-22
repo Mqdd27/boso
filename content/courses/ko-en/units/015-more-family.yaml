@@ -81,3 +81,151 @@ items:
   license: CC BY-SA 2.0 KR
   source_ref: krdict:30210#1
   review: needs_review
+- id: ko.s.t13259303
+  type: sentence
+  text: 내 딸이야.
+  roman: nae ttariya.
+  tokens:
+  - 내
+  - 딸이야
+  gloss:
+    en: She is my daughter.
+    id: Ini anak perempuanku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CM
+      source_ref: tatoeba:724404
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: atitarev
+  source_ref: tatoeba:13259303
+  review: needs_review
+- id: ko.s.t13259272
+  type: sentence
+  text: 내 아들이에요.
+  roman: nae adeurieyo.
+  tokens:
+  - 내
+  - 아들이에요
+  gloss:
+    en: He's my son.
+    id: Ini anak laki-laki saya.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CH
+      source_ref: tatoeba:4703087
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: atitarev
+  source_ref: tatoeba:13259272
+  review: needs_review
+- id: ko.s.t911969
+  type: sentence
+  text: 아들이야, 딸이야?
+  roman: adeuriya, ttariya?
+  tokens:
+  - 아들이야
+  - 딸이야
+  gloss:
+    en: Is it a son or a daughter?
+    id: Anaknya laki-laki atau perempuan?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: imjcooper
+      source_ref: tatoeba:4573417
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Sudajaengi
+  source_ref: tatoeba:911969
+  review: needs_review
+- id: ko.s.t11105879
+  type: sentence
+  text: 저에겐 딸이 셋입니다.
+  roman: jeoegen ttari sesimnida.
+  tokens:
+  - 저에겐
+  - 딸이
+  - 셋입니다
+  gloss:
+    en: I have three daughters.
+    id: Saya punya tiga anak perempuan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:4499834
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: intertime
+  source_ref: tatoeba:11105879
+  review: needs_review
+- id: ko.s.t4705812
+  type: sentence
+  text: 그녀는 내 언니가 아니라 어머니예요.
+  roman: geunyeoneun nae eonniga anira eomeoniyeyo.
+  tokens:
+  - 그녀는
+  - 내
+  - 언니가
+  - 아니라
+  - 어머니예요
+  gloss:
+    en: She is not my sister but my mother.
+    id: Dia bukan kakakku, tapi ibuku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:314334
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: rainbow4us
+  source_ref: tatoeba:4705812
+  review: needs_review
+- id: ko.s.t10152622
+  type: sentence
+  text: 내 동생을 격려하던 참이야.
+  roman: nae dongsaengeul gyeongnyeohadeon chamiya.
+  tokens:
+  - 내
+  - 동생을
+  - 격려하던
+  - 참이야
+  gloss:
+    en: I was just encouraging my younger sibling.
+    id: Aku tadi lagi menyemangati adikku.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Eunhee
+  source_ref: tatoeba:10152622
+  review: needs_review
