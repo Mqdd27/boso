@@ -8,6 +8,7 @@ export type Settings = {
 	weekStart: 0 | 1;
 	theme: Theme;
 	contributor: boolean;
+	autoplay: boolean;
 };
 
 export const DAILY_GOALS = [10, 20, 30, 50];
@@ -17,7 +18,8 @@ const defaults: Settings = {
 	dailyGoal: 20,
 	weekStart: 1,
 	theme: 'system',
-	contributor: false
+	contributor: false,
+	autoplay: true
 };
 
 export const settings: Settings = $state({ ...defaults });

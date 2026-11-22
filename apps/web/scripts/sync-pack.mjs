@@ -20,6 +20,8 @@ for (const course of existsSync(src) ? readdirSync(src) : []) {
 	if (!files.every((f) => existsSync(join(src, course, f)))) continue;
 	mkdirSync(join(out, course));
 	for (const f of files) cpSync(join(src, course, f), join(out, course, f));
+	const audio = join(src, course, 'audio');
+	if (existsSync(audio)) cpSync(audio, join(out, course, 'audio'), { recursive: true });
 	courses.push(course);
 }
 courses.sort();

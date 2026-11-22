@@ -92,5 +92,8 @@
 	"credits_items": "{count} items",
 	"credits_modified": "Some glosses were corrected by boso (see overrides.yaml in the course source).",
 	"credits_app": "The boso app is released into the public domain (Unlicense).",
-	"credits_built": "Pack version {version}, built {date}"
+	"credits_built": "Pack version {version}, built {date}",
+	"listen_slow": "Listen slowly",
+	"settings_autoplay": "Play audio automatically",
+	"credits_audio": "Audio generated with MeloTTS (MIT) by MyShell.ai."
 }

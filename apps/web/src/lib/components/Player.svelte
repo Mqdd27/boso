@@ -5,7 +5,7 @@
 	import { generateLesson, lessonXp, requeue, type Exercise } from '#lib/lesson.js';
 	import { m } from '#lib/paraglide/messages.js';
 	import { settings, showRoman } from '#lib/settings.svelte.js';
-	import { speak } from '#lib/speech.js';
+	import { canListen, pickSource, play, SLOW } from '#lib/audio.js';
 	import { dailyTotals, localDate, streak } from '#lib/stats.js';
 	import { gloss, localized, type GlossLang, type Item, type Unit } from '#lib/types.js';
 	import Badge from './Badge.svelte';
@@ -38,7 +38,15 @@
 	// The lesson is generated once, when the player mounts.
 	// svelte-ignore state_referenced_locally
 	let queue: Exercise[] = $state(
-		generateLesson({ unit, earlier, stats, lesson, seed, lang, canListen: !!voice })
+		generateLesson({
+			unit,
+			earlier,
+			stats,
+			lesson,
+			seed,
+			lang,
+			canListen: canListen([...unit.items, ...earlier.flatMap((u) => u.items)], voice)
+		})
 	);
 	let index = $state(0);
 	let selected = $state<number | null>(null);
@@ -60,12 +68,14 @@
 		ex && 'options' in ex && selected !== null && ex.options[selected].id === ex.item.id
 	);
 
-	function say(item: Item) {
-		if (voice) speak(item.text, voice);
+	function say(item: Item, rate = 1) {
+		void play(item, course, voice, rate);
 	}
+	const audible = (item: Item) => pickSource(item, voice) !== 'none';
 
 	$effect(() => {
-		if (ex?.kind === 'listen') say(ex.item);
+		// Autoplay once per exercise (listening always: it has nothing else to show).
+		if (ex?.kind === 'listen' || (ex?.kind === 'intro' && settings.autoplay)) say(ex.item);
 	});
 
 	function grade(ok: boolean, ids: string[]) {
@@ -206,7 +216,12 @@
 		data-step={index}
 	>
 		{#if ex.kind === 'intro'}
-			<IntroCard item={ex.item} {lang} {roman} onlisten={voice ? () => say(ex.item) : undefined} />
+			<IntroCard
+				item={ex.item}
+				{lang}
+				{roman}
+				onlisten={audible(ex.item) ? (rate?: number) => say(ex.item, rate) : undefined}
+			/>
 		{:else if ex.kind === 'match'}
 			<h2 class="mb-3 text-xl font-semibold">{m.prompt_match()}</h2>
 			{#key index}
@@ -234,6 +249,15 @@
 						onclick={() => say(ex.item)}
 					>
 						🔊
+					</button>
+					<button
+						type="button"
+						class="min-h-11 min-w-11 rounded-full border text-xl"
+						aria-label={m.listen_slow()}
+						data-testid="listen-slow"
+						onclick={() => say(ex.item, SLOW)}
+					>
+						🐢
 					</button>
 				{/if}
 				<Badge item={ex.item} />

@@ -73,6 +73,11 @@
 	{/each}
 </div>
 
+<label class="{field} flex-row items-center">
+	<input type="checkbox" class="size-5" bind:checked={settings.autoplay} />
+	{m.settings_autoplay()}
+</label>
+
 <fieldset class={field}>
 	<legend class="mb-2 font-semibold">{m.settings_daily_goal()}</legend>
 	<div class="flex flex-wrap gap-2">

@@ -6,7 +6,7 @@
 	import { db } from '#lib/db.js';
 	import { m } from '#lib/paraglide/messages.js';
 	import { getLocale } from '#lib/paraglide/runtime.js';
-	import { koreanVoice } from '#lib/speech.js';
+	import { koreanVoice } from '#lib/audio.js';
 	import type { Pack } from '#lib/types.js';
 
 	const courseId = page.params.course ?? '';

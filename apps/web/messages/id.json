@@ -92,5 +92,8 @@
 	"credits_items": "{count} item",
 	"credits_modified": "Sebagian arti dikoreksi oleh boso (lihat overrides.yaml di sumber course).",
 	"credits_app": "Aplikasi boso dirilis ke domain publik (Unlicense).",
-	"credits_built": "Versi pack {version}, dibuat {date}"
+	"credits_built": "Versi pack {version}, dibuat {date}",
+	"listen_slow": "Dengar pelan",
+	"settings_autoplay": "Putar audio otomatis",
+	"credits_audio": "Audio dibuat dengan MeloTTS (MIT) dari MyShell.ai."
 }

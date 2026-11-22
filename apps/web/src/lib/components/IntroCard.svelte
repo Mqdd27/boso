@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { m } from '#lib/paraglide/messages.js';
 	import { gloss, type GlossLang, type Item } from '#lib/types.js';
+	import { SLOW } from '#lib/audio.js';
 	import Badge from './Badge.svelte';
 
 	let {
@@ -8,7 +9,7 @@
 		lang,
 		roman,
 		onlisten
-	}: { item: Item; lang: GlossLang; roman: boolean; onlisten?: () => void } = $props();
+	}: { item: Item; lang: GlossLang; roman: boolean; onlisten?: (rate?: number) => void } = $props();
 </script>
 
 <div class="flex flex-col items-center gap-3 py-6 text-center" data-testid="intro">
@@ -18,8 +19,19 @@
 	<p class="text-2xl">{gloss(item, lang)}</p>
 	<Badge {item} />
 	{#if onlisten}
-		<button type="button" class="min-h-11 rounded-xl border px-4" onclick={onlisten}>
-			🔊 {m.listen()}
-		</button>
+		<div class="flex gap-2">
+			<button type="button" class="min-h-11 rounded-xl border px-4" onclick={() => onlisten()}>
+				🔊 {m.listen()}
+			</button>
+			<button
+				type="button"
+				class="min-h-11 min-w-11 rounded-xl border"
+				aria-label={m.listen_slow()}
+				data-testid="listen-slow"
+				onclick={() => onlisten(SLOW)}
+			>
+				🐢
+			</button>
+		</div>
 	{/if}
 </div>

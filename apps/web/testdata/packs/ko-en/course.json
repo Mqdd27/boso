@@ -29,7 +29,8 @@
 					"source": "krdict",
 					"license": "CC BY-SA 2.0 KR",
 					"source_ref": "krdict:59259#1",
-					"review": "needs_review"
+					"review": "needs_review",
+					"audio": "ko/w.annyeong.opus"
 				},
 				{
 					"id": "ko.w.ne",
@@ -43,7 +44,8 @@
 					"source": "krdict",
 					"license": "CC BY-SA 2.0 KR",
 					"source_ref": "krdict:97674#1",
-					"review": "reviewed"
+					"review": "reviewed",
+					"audio": "ko/w.ne.opus"
 				},
 				{
 					"id": "ko.w.aniyo",

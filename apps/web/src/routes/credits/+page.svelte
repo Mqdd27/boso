@@ -33,6 +33,9 @@
 						</li>
 					{/each}
 				</ul>
+				{#if course.units.some((u) => u.items.some((i) => i.audio))}
+					<p class="mt-2">{m.credits_audio()}</p>
+				{/if}
 				<p class="mt-2 text-sm opacity-70">
 					{m.credits_built({ version: course.version, date: manifest.build_date.slice(0, 10) })}
 				</p>

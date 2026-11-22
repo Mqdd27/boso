@@ -1,6 +1,10 @@
-// Web Speech API fallback until M3 ships audio files.
+// Item audio: the pack's pre-generated .opus file, else the Web Speech API (ko-KR), else nothing.
+import type { Item } from './types.js';
 
-/** A Korean voice, or null if the device has none (then listening exercises are skipped). */
+export type Source = 'file' | 'speech' | 'none';
+export const SLOW = 0.7;
+
+/** A Korean voice, or null if the device has none. */
 export async function koreanVoice(): Promise<SpeechSynthesisVoice | null> {
 	if (typeof speechSynthesis === 'undefined') return null;
 	let voices = speechSynthesis.getVoices();
@@ -15,11 +19,41 @@ export async function koreanVoice(): Promise<SpeechSynthesisVoice | null> {
 	return voices.find((v) => v.lang.replace('_', '-').toLowerCase().startsWith('ko')) ?? null;
 }
 
-export function speak(text: string, voice: SpeechSynthesisVoice) {
-	speechSynthesis.cancel();
-	const u = new SpeechSynthesisUtterance(text);
+export const pickSource = (item: Item, voice: SpeechSynthesisVoice | null): Source =>
+	item.audio ? 'file' : voice ? 'speech' : 'none';
+
+/** Listening exercises need a sound for every item of the unit. */
+export const canListen = (items: Item[], voice: SpeechSynthesisVoice | null) =>
+	items.every((i) => pickSource(i, voice) !== 'none');
+
+let current: HTMLAudioElement | null = null;
+
+/** Play an item. A missing or broken file falls back to speech; a blocked autoplay (iOS before
+ *  the first tap) stays silent, the listen button still works afterwards. */
+export async function play(
+	item: Item,
+	course: string,
+	voice: SpeechSynthesisVoice | null,
+	rate = 1
+): Promise<Source> {
+	current?.pause();
+	if (typeof speechSynthesis !== 'undefined') speechSynthesis.cancel();
+	if (item.audio) {
+		const audio = new Audio(`/packs/${course}/audio/${item.audio}`);
+		audio.playbackRate = rate;
+		current = audio;
+		try {
+			await audio.play();
+			return 'file';
+		} catch (e) {
+			if ((e as Error).name === 'NotAllowedError') return 'none';
+		}
+	}
+	if (!voice) return 'none';
+	const u = new SpeechSynthesisUtterance(item.text);
 	u.voice = voice;
 	u.lang = voice.lang;
-	u.rate = 0.9;
+	u.rate = 0.9 * rate;
 	speechSynthesis.speak(u);
+	return 'speech';
 }
