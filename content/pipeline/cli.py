@@ -48,6 +48,21 @@ def cmd_pack(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_lint(args: argparse.Namespace) -> int:
+    from pipeline.build import CACHE, COURSES
+    from pipeline.lint import lint, load_entries
+
+    entries = load_entries(None, CACHE)
+    if not entries:
+        print("note: krdict dump not found, no suggestions (run `pipeline fetch krdict`)")
+    findings = lint(COURSES / args.course, entries)
+    for f in findings:
+        line = f"warning: {f.unit} | {f.item} | {f.problem}"
+        print(line + (f" | try {f.suggestion}" if f.suggestion else ""))
+    print(f"{len(findings)} warning(s)")
+    return 1 if args.strict and findings else 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="pipeline", description="boso course-pack pipeline")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -66,6 +81,10 @@ def main(argv: list[str] | None = None) -> int:
     pack = sub.add_parser("pack", help="write dist/<course>/course.json + manifest.json")
     pack.add_argument("course")
     pack.set_defaults(func=cmd_pack)
+    lint = sub.add_parser("lint", help="warn about suspicious glosses (no LLM, no edits)")
+    lint.add_argument("course")
+    lint.add_argument("--strict", action="store_true", help="exit 1 if there are warnings")
+    lint.set_defaults(func=cmd_lint)
     args = parser.parse_args(argv)
     return args.func(args)
 
