@@ -1,0 +1,8 @@
+{
+  "krdict": {
+    "file": "krdict/krdict-json.zip",
+    "sha256": "347fe2d225ff2adb48e4ca04fc7ad2004ff4b051b16925b3f43f4d8ce9584adc",
+    "url": "manual download from https://krdict.korean.go.kr (사전 전체 내려받기)",
+    "fetched": "2026-11-22"
+  }
+}
