@@ -116,5 +116,11 @@
 	"arrange_bank": "Word bank",
 	"hint_label": "Meaning of {word}",
 	"credits_translations": "Sentence translations marked as boso were made for this course.",
-	"nav_label": "Main"
+	"nav_label": "Main",
+	"path_unit": "Section {section}, unit {unit}",
+	"node_start": "Start",
+	"node_practice": "Practice",
+	"node_lesson": "Lesson {lesson} of {total}",
+	"node_label": "Lesson {lesson}, {unit}",
+	"node_locked": "Finish the lessons before this one to unlock it."
 }

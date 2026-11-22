@@ -186,6 +186,10 @@ body {
 		--face: var(--red-fill);
 		--edge: var(--red-shade);
 	}
+	.btn-purple {
+		--face: var(--purple-fill);
+		--edge: var(--purple-shade);
+	}
 	.btn-gold {
 		--face: var(--gold-fill);
 		--edge: var(--gold-shade);

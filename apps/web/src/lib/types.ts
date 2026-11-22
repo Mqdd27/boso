@@ -64,3 +64,6 @@ export function localized(text: Localized, lang: GlossLang): string {
 }
 
 export const gloss = (item: Item, lang: GlossLang) => localized(item.gloss, lang);
+
+/** A lesson node on the home path. */
+export type NodeState = 'locked' | 'active' | 'done';

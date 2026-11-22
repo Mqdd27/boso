@@ -116,5 +116,11 @@
 	"arrange_bank": "Bank kata",
 	"hint_label": "Arti {word}",
 	"credits_translations": "Terjemahan kalimat dari boso dibuat untuk kursus ini.",
-	"nav_label": "Utama"
+	"nav_label": "Utama",
+	"path_unit": "Bagian {section}, unit {unit}",
+	"node_start": "Mulai",
+	"node_practice": "Latihan",
+	"node_lesson": "Lesson {lesson} dari {total}",
+	"node_label": "Lesson {lesson}, {unit}",
+	"node_locked": "Selesaikan lesson sebelumnya untuk membuka yang ini."
 }
