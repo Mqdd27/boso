@@ -1,6 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import pack from '../../testdata/packs/ko-en/course.json';
-import { distractors, generateLesson, LESSON_SIZE, lessonXp, requeue, rng } from './lesson.js';
+import {
+	arrangedRight,
+	distractors,
+	generateLesson,
+	LESSON_SIZE,
+	lessonXp,
+	requeue,
+	rng
+} from './lesson.js';
 import { compose, decompose } from './hangul.js';
 import { gloss, type Course, type GlossLang } from './types.js';
 
@@ -29,7 +37,7 @@ describe('generateLesson', () => {
 					const graded = exercises.filter((e) => e.kind !== 'intro');
 					expect(graded.length).toBe(LESSON_SIZE);
 					for (const e of exercises) {
-						if (e.kind === 'intro' || e.kind === 'build') continue;
+						if (e.kind === 'intro' || e.kind === 'build' || e.kind === 'arrange') continue;
 						const items = e.kind === 'match' ? e.items : e.options;
 						if (e.kind !== 'match') expect(items.map((o) => o.id)).toContain(e.item.id);
 						expect(new Set(items.map((o) => gloss(o, lang))).size).toBe(items.length);
@@ -59,7 +67,8 @@ describe('generateLesson', () => {
 	it('introduces new words once, before their first exercise', () => {
 		const exercises = generateLesson({ ...base, unit: greetings, earlier: [], lesson: 1 });
 		const intros = exercises.filter((e) => e.kind === 'intro').map((e) => e.item.id);
-		expect(intros.sort()).toEqual(greetings.items.map((i) => i.id).sort());
+		const words = greetings.items.filter((i) => i.type === 'word');
+		expect(intros.sort()).toEqual(words.map((i) => i.id).sort());
 		const seen = Object.fromEntries(
 			greetings.items.map((i) => [i.id, { id: i.id, seen: 1, correct: 1, wrong: 0, lastSeen: '' }])
 		);
@@ -122,7 +131,7 @@ describe('script units', () => {
 		for (let seed = 0; seed < 50; seed++) {
 			for (const lesson of [1, 2] as const) {
 				for (const e of graded(seed, lesson)) {
-					if (e.kind === 'build') continue;
+					if (e.kind === 'build' || e.kind === 'arrange') continue;
 					const items = e.kind === 'match' ? e.items : e.options;
 					expect(new Set(items.map((o) => o.roman)).size).toBe(items.length);
 					expect(items.every((o) => o.type === 'char')).toBe(true);
@@ -160,5 +169,54 @@ describe('script units', () => {
 		});
 		for (const e of lesson)
 			if ('options' in e) expect(e.options.every((o) => o.type !== 'char')).toBe(true);
+	});
+});
+
+describe('sentences', () => {
+	const sentences = greetings.items.filter((i) => i.type === 'sentence');
+	const lesson2 = (seed: number, lesson: 1 | 2 = 2) =>
+		generateLesson({ ...base, earlier: [], unit: greetings, lesson, seed });
+
+	it('come only in lesson 2, at the end, deterministically, within the lesson size', () => {
+		expect(lesson2(1, 1).some((e) => 'item' in e && e.item.type === 'sentence')).toBe(false);
+		for (let seed = 0; seed < 30; seed++) {
+			const graded = lesson2(seed).filter((e) => e.kind !== 'intro');
+			expect(graded).toHaveLength(LESSON_SIZE);
+			const tail = graded.slice(-sentences.length);
+			expect(tail.every((e) => e.kind !== 'match' && e.item.type === 'sentence')).toBe(true);
+			expect(lesson2(seed)).toEqual(lesson2(seed));
+		}
+	});
+
+	it('word banks hold every card of the sentence plus decoys it does not use', () => {
+		for (let seed = 0; seed < 30; seed++) {
+			for (const e of lesson2(seed)) {
+				if (e.kind !== 'arrange') continue;
+				const own = e.item.tokens!;
+				expect(e.bank.filter((t) => own.includes(t)).length).toBe(own.length);
+				expect(e.bank.length - own.length).toBeLessThanOrEqual(2);
+				expect(arrangedRight(own, e.item)).toBe(true);
+			}
+		}
+	});
+
+	it('meaning options are sentences with different glosses', () => {
+		const meanings = Array.from({ length: 30 }, (_, seed) => lesson2(seed))
+			.flat()
+			.filter((e) => e.kind === 'meaning' && e.item.type === 'sentence');
+		expect(meanings.length).toBeGreaterThan(0);
+		for (const e of meanings) {
+			if (e.kind !== 'meaning') continue;
+			expect(e.options.every((o) => o.type === 'sentence')).toBe(true);
+			expect(new Set(e.options.map((o) => o.gloss.en)).size).toBe(e.options.length);
+		}
+	});
+
+	it('checks a word-bank answer by its text, so duplicate cards can go either way', () => {
+		const item = { ...sentences[0], tokens: ['네', '네', '고마워요'] };
+		expect(arrangedRight(['네', '네', '고마워요'], item)).toBe(true);
+		expect(arrangedRight(['네', '고마워요', '네'], item)).toBe(false);
+		expect(arrangedRight(['네', '고마워요'], item)).toBe(false);
+		expect(arrangedRight(['네', '네', '고마워요', '친구'], item)).toBe(false);
 	});
 });

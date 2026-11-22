@@ -67,13 +67,31 @@ export async function buildSyllable(page: Page, block: string) {
 	await expect(page.getByTestId('block')).toHaveText(block);
 }
 
-/** Answer every exercise of the current lesson correctly, until the end screen. */
-export async function playLesson(page: Page) {
+const flat = (text: string) => text.replace(/\s+/g, '');
+
+/** Tap the word-bank cards of `item` in order (with duplicates, any free copy will do). */
+export async function arrange(page: Page, item: Item) {
+	for (const token of item.tokens!) {
+		await page.locator(`[data-card="${token}"]:not([disabled])`).first().click();
+	}
+	await expect(page.getByTestId('arranged')).toHaveText(new RegExp(item.tokens!.join('\\s*')));
+}
+
+/** The sentence an arrange exercise asks for: from its gloss, or by ear. */
+export async function asked(page: Page): Promise<Item> {
+	const ex = page.getByTestId('exercise');
+	if ((await ex.getAttribute('data-listen')) === 'true') return heard(page);
+	const shown = (await page.getByTestId('prompt').locator('p').first().innerText()).trim();
+	return items.find((i) => i.type === 'sentence' && [i.gloss.en, i.gloss.id].includes(shown))!;
+}
+
+/** Answer every exercise of the current lesson correctly, until the end screen (or `steps`). */
+export async function playLesson(page: Page, steps = 60) {
 	const done = page.getByTestId('lesson-done');
 	const ex = page.getByTestId('exercise');
 	const check = page.getByRole('button', { name: /^(Check|Cek)$/ });
 	let step = '';
-	for (let n = 0; n < 60; n++) {
+	for (let n = 0; n < steps; n++) {
 		// Wait for the next exercise (or the end screen) before reading it.
 		await expect(done.or(ex.and(page.locator(`:not([data-step="${step}"])`)))).toBeVisible();
 		if (await done.isVisible()) return;
@@ -99,11 +117,14 @@ export async function playLesson(page: Page) {
 				: await heard(page);
 			await buildSyllable(page, item.text);
 			await check.click();
+		} else if (kind === 'arrange') {
+			await arrange(page, await asked(page));
+			await check.click();
 		} else {
 			let answer: string | undefined;
 			if (kind === 'meaning') {
-				const text = await prompt.locator('[lang="ko"]').innerText();
-				answer = items.find((i) => i.text === text)?.id;
+				const text = flat(await prompt.locator('[lang="ko"]').first().innerText());
+				answer = items.find((i) => flat(i.text) === text)?.id;
 			} else if (kind === 'listen') {
 				answer = (await heard(page)).id;
 			} else {
@@ -120,5 +141,5 @@ export async function playLesson(page: Page) {
 		}
 		await page.getByRole('button', { name: /^(Continue|Lanjut)$/ }).click();
 	}
-	throw new Error('lesson did not finish');
+	if (steps === 60) throw new Error('lesson did not finish');
 }

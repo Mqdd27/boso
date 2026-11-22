@@ -9,14 +9,14 @@
 		},
 		"glosses": ["en", "id"],
 		"levels": ["topik1"],
-		"version": "0.1.0"
+		"version": "0.2.0"
 	},
 	"build_date": "2026-11-22T00:00:00Z",
 	"attribution": [
 		{
 			"source": "krdict",
 			"license": "CC BY-SA 2.0 KR",
-			"items": 11,
+			"items": 12,
 			"url": "https://krdict.korean.go.kr",
 			"authors": ["국립국어원 (National Institute of Korean Language)"]
 		},
@@ -30,8 +30,15 @@
 		{
 			"source": "boso",
 			"license": "CC BY-SA 4.0",
-			"items": 16,
+			"items": 20,
 			"url": "https://github.com/Mqdd27/boso"
+		},
+		{
+			"source": "tatoeba",
+			"license": "CC BY 2.0 FR",
+			"items": 3,
+			"url": "https://tatoeba.org",
+			"authors": ["fixture_en", "fixture_ko"]
 		}
 	]
 }

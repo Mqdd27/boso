@@ -7,7 +7,7 @@
 	},
 	"glosses": ["en", "id"],
 	"levels": ["topik1"],
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"units": [
 		{
 			"id": "ko-010-greetings",
@@ -100,6 +100,96 @@
 					"source": "krdict",
 					"license": "CC BY-SA 2.0 KR",
 					"source_ref": "krdict:67700#1",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.s.t101",
+					"type": "sentence",
+					"text": "안녕, 친구!",
+					"roman": "annyeong, chingu!",
+					"tokens": ["안녕", "친구"],
+					"gloss": {
+						"en": "Hi, friend!",
+						"id": "Halo, teman!"
+					},
+					"gloss_sources": {
+						"en": {
+							"source": "tatoeba",
+							"license": "CC BY 2.0 FR",
+							"author": "fixture_en",
+							"source_ref": "tatoeba:201"
+						},
+						"id": {
+							"source": "boso",
+							"license": "CC BY-SA 4.0"
+						}
+					},
+					"source": "tatoeba",
+					"license": "CC BY 2.0 FR",
+					"author": "fixture_ko",
+					"source_ref": "tatoeba:101",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.s.t102",
+					"type": "sentence",
+					"text": "네, 고마워요.",
+					"roman": "ne, gomawoyo.",
+					"tokens": ["네", "고마워요"],
+					"gloss": {
+						"en": "Yes, thank you.",
+						"id": "Ya, terima kasih."
+					},
+					"gloss_sources": {
+						"en": {
+							"source": "tatoeba",
+							"license": "CC BY 2.0 FR",
+							"author": "fixture_en",
+							"source_ref": "tatoeba:202"
+						},
+						"id": {
+							"source": "boso",
+							"license": "CC BY-SA 4.0"
+						}
+					},
+					"hints": [
+						{
+							"token": "고마워요",
+							"gloss": {
+								"en": "thank you",
+								"id": "terima kasih"
+							}
+						}
+					],
+					"source": "tatoeba",
+					"license": "CC BY 2.0 FR",
+					"author": "fixture_ko",
+					"source_ref": "tatoeba:102",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.s.k103-1-1",
+					"type": "sentence",
+					"text": "친구야, 미안해.",
+					"roman": "chinguya, mianhae.",
+					"tokens": ["친구야", "미안해"],
+					"gloss": {
+						"en": "Sorry, my friend.",
+						"id": "Maaf, temanku."
+					},
+					"gloss_sources": {
+						"en": {
+							"source": "boso",
+							"license": "CC BY-SA 4.0"
+						},
+						"id": {
+							"source": "boso",
+							"license": "CC BY-SA 4.0"
+						}
+					},
+					"source": "krdict",
+					"license": "CC BY-SA 2.0 KR",
+					"source_ref": "krdict:103#1/1",
 					"review": "needs_review"
 				}
 			]
@@ -194,6 +284,34 @@
 					"source": "krdict",
 					"license": "CC BY-SA 2.0 KR",
 					"source_ref": "krdict:23504#1",
+					"review": "needs_review"
+				},
+				{
+					"id": "ko.s.t104",
+					"type": "sentence",
+					"text": "엄마 친구예요.",
+					"roman": "eomma chinguyeyo.",
+					"tokens": ["엄마", "친구예요"],
+					"gloss": {
+						"en": "She's mom's friend.",
+						"id": "Dia teman ibu."
+					},
+					"gloss_sources": {
+						"en": {
+							"source": "tatoeba",
+							"license": "CC BY 2.0 FR",
+							"author": "fixture_en",
+							"source_ref": "tatoeba:204"
+						},
+						"id": {
+							"source": "boso",
+							"license": "CC BY-SA 4.0"
+						}
+					},
+					"source": "tatoeba",
+					"license": "CC BY 2.0 FR",
+					"author": "fixture_ko",
+					"source_ref": "tatoeba:104",
 					"review": "needs_review"
 				}
 			]
