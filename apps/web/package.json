@@ -22,7 +22,8 @@
 		"format": "prettier --write .",
 		"test:unit": "vitest",
 		"test": "vitest --run",
-		"test:e2e": "playwright test"
+		"test:e2e": "playwright test",
+		"shots": "playwright test -c playwright.shots.config.ts"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",

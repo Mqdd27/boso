@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
-import { mockSpeech } from './helpers';
+import { mockSpeech, openUnit } from './helpers';
 
 type Played = { src: string; rate: number };
 const played = (page: Page) =>
@@ -34,10 +34,10 @@ test('autoplay can be turned off', async ({ page }) => {
 	await page.goto('/settings');
 	await page.getByLabel('Play audio automatically').uncheck();
 	await page.getByRole('link', { name: 'Learn' }).click();
-	await page.locator('[data-unit="ko-010-greetings"] a').click();
+	await openUnit(page, 'ko-010-greetings');
 	await expect(page.getByTestId('intro')).toBeVisible();
 	await page.waitForTimeout(300);
 	expect(await played(page)).toEqual([]);
-	await page.getByRole('button', { name: /^🔊/ }).click();
+	await page.getByRole('button', { name: 'Listen', exact: true }).click();
 	await expect.poll(async () => (await played(page)).length).toBe(1);
 });

@@ -58,6 +58,15 @@ async function heard(page: Page): Promise<Item> {
 	return items.find((i) => i.text === src || src === `/packs/ko-en/audio/${i.audio}`)!;
 }
 
+/** On the home path: tap the unit's next lesson node (or a done one), then its Start/Practice. */
+export async function openUnit(page: Page, id: string) {
+	const unit = page.locator(`[data-unit="${id}"]`);
+	const node = unit.locator('[data-node="active"], [data-node="done"]').first();
+	await node.click();
+	await expect(node).toHaveAttribute('aria-expanded', 'true');
+	await unit.getByTestId('node-pop').getByRole('link').click();
+}
+
 /** Tap the tiles that make up `block` (각 = ㄱ + ㅏ + ㄱ) and wait for the live block to show it. */
 export async function buildSyllable(page: Page, block: string) {
 	const parts = decompose(block)!;
@@ -101,7 +110,6 @@ export async function playLesson(page: Page, steps = 60) {
 			await page.getByRole('button', { name: /Continue|Lanjut/ }).click();
 			continue;
 		}
-		const prompt = page.getByTestId('prompt');
 		if (kind === 'match') {
 			for (const button of await ex.locator('[data-item]').all()) {
 				const id = await button.getAttribute('data-item');
@@ -121,25 +129,40 @@ export async function playLesson(page: Page, steps = 60) {
 			await arrange(page, await asked(page));
 			await check.click();
 		} else {
-			let answer: string | undefined;
-			if (kind === 'meaning') {
-				const text = flat(await prompt.locator('[lang="ko"]').first().innerText());
-				answer = items.find((i) => flat(i.text) === text)?.id;
-			} else if (kind === 'listen') {
-				answer = (await heard(page)).id;
-			} else {
-				// word: the prompt is a gloss (a sound in Hangul units); exactly one option has it
-				const shown = (await prompt.locator('p').first().innerText()).trim();
-				for (const option of await ex.locator('[data-option]').all()) {
-					const id = await option.getAttribute('data-option');
-					const item = items.find((i) => i.id === id)!;
-					if ([item.gloss.en, item.gloss.id, item.roman].includes(shown)) answer = id!;
-				}
-			}
-			await ex.locator(`[data-option="${answer}"]`).click();
+			await ex.locator(`[data-option="${await choiceAnswer(page)}"]`).click();
 			await check.click();
 		}
 		await page.getByRole('button', { name: /^(Continue|Lanjut)$/ }).click();
 	}
 	if (steps === 60) throw new Error('lesson did not finish');
+}
+
+/** The id of the right option in a multiple-choice exercise (meaning, word, listen). */
+export async function choiceAnswer(page: Page): Promise<string | undefined> {
+	const ex = page.getByTestId('exercise');
+	const prompt = page.getByTestId('prompt');
+	const kind = await ex.getAttribute('data-kind');
+	if (kind === 'meaning') {
+		const text = flat(await prompt.locator('[lang="ko"]').first().innerText());
+		return items.find((i) => flat(i.text) === text)?.id;
+	}
+	if (kind === 'listen') return (await heard(page)).id;
+	// word: the prompt is a gloss (a sound in Hangul units); exactly one option has it
+	const shown = (await prompt.locator('p').first().innerText()).trim();
+	for (const option of await ex.locator('[data-option]').all()) {
+		const id = await option.getAttribute('data-option');
+		const item = items.find((i) => i.id === id)!;
+		if ([item.gloss.en, item.gloss.id, item.roman].includes(shown)) return id!;
+	}
+}
+
+/** Click through intro cards until a multiple-choice exercise shows. */
+export async function skipToChoice(page: Page) {
+	const ex = page.getByTestId('exercise');
+	for (let n = 0; n < 20; n++) {
+		await expect(ex).toBeVisible();
+		if (await ex.locator('[data-option]').count()) return;
+		await page.getByRole('button', { name: /^(Continue|Lanjut)$/ }).click();
+	}
+	throw new Error('no multiple-choice exercise');
 }

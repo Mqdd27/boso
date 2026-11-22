@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
-import { buildSyllable, course, mockSpeech, playLesson } from './helpers';
+import { buildSyllable, course, mockSpeech, playLesson, openUnit } from './helpers';
 
 const unit = (page: Page, id: string) => page.locator(`[data-unit="${id}"]`);
 
@@ -15,13 +15,13 @@ test('home has a Hangul and a vocabulary section that unlock separately', async 
 	await expect(unit(page, 'ko-002-basic-consonants-1')).toHaveAttribute('data-status', 'locked');
 	// Vocabulary does not wait for Hangul.
 	await expect(unit(page, 'ko-010-greetings')).toHaveAttribute('data-status', 'open');
-	await unit(page, 'ko-010-greetings').getByRole('link').click();
+	await openUnit(page, 'ko-010-greetings');
 	await expect(page.getByTestId('exercise')).toBeVisible();
 });
 
 test('finish unit 001 → unit 002 opens', async ({ page }) => {
 	await page.goto('/');
-	await unit(page, 'ko-001-basic-vowels').getByRole('link').click();
+	await openUnit(page, 'ko-001-basic-vowels');
 	// Intro card of a letter: sound always shown, explanation, listen buttons.
 	await expect(page.getByText('New letter')).toBeVisible();
 	await expect(page.getByTestId('intro').getByTestId('roman')).toHaveText('a');

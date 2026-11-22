@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { mockSpeech, playLesson } from './helpers';
+import { mockSpeech, playLesson, openUnit } from './helpers';
 
 test.beforeEach(async ({ page }) => {
 	await mockSpeech(page);
@@ -12,7 +12,7 @@ test('finish the first unit → next unit opens → heatmap shows today', async 
 	await expect(first).toHaveAttribute('data-status', 'open');
 	await expect(second).toHaveAttribute('data-status', 'locked');
 
-	await first.getByRole('link').click();
+	await openUnit(page, 'ko-010-greetings');
 	await playLesson(page);
 	await expect(page.getByText('+15 XP')).toBeVisible();
 	await page.getByRole('button', { name: 'Next lesson' }).click();
@@ -55,7 +55,7 @@ test('romanization toggle hides romanization', async ({ page }) => {
 	await page.getByLabel('Show romanization').uncheck();
 	// In-app navigation (a reload could beat the IndexedDB save).
 	await page.getByRole('link', { name: 'Learn' }).click();
-	await page.locator('[data-unit="ko-010-greetings"] a').click();
+	await openUnit(page, 'ko-010-greetings');
 	await expect(page.getByTestId('intro')).toBeVisible();
 	await expect(page.getByTestId('roman')).toHaveCount(0);
 });
@@ -78,12 +78,13 @@ test('unreviewed badge is hidden by default and shown in contributor mode', asyn
 	await page.getByText('Advanced').click();
 	await page.getByLabel(/Contributor mode/).check();
 	await page.getByRole('link', { name: 'Learn' }).click();
-	await page.locator('[data-unit="ko-010-greetings"] a').click();
+	await openUnit(page, 'ko-010-greetings');
 	await expect(page.getByTestId('unreviewed')).toBeVisible(); // 안녕 is needs_review
 });
 
 test('credits list the sources from the manifest', async ({ page }) => {
 	await page.goto('/');
+	await page.getByRole('link', { name: 'Settings' }).click(); // credits live in Settings
 	await page.getByRole('link', { name: 'Credits' }).click();
 	const credits = page.getByTestId('credits-ko-en');
 	await expect(credits).toContainText('CC BY-SA 2.0 KR');

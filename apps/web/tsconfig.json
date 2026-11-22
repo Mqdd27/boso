@@ -10,6 +10,7 @@
 		"prettier.config.js",
 		"eslint.config.js",
 		"playwright.config.ts",
+		"playwright.shots.config.ts",
 		"e2e",
 		"scripts"
 	]
