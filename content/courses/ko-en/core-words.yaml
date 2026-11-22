@@ -1,0 +1,62 @@
+# Words `pipeline build` always offers to the unit grouping step, before the automatic pool,
+# so beginner basics (greetings, numbers, family) can't fall out of it.
+# A plain word must match exactly one 초급 krdict entry; pin homographs as word#target_code.
+words:
+  # greetings and polite words
+  - 안녕
+  - 안녕히
+  - 고맙다
+  - 감사하다#63820
+  - 미안하다
+  - 죄송하다
+  - 네#17294
+  - 아니요
+  - 괜찮다
+  - 반갑다
+  # native Korean numbers
+  - 하나#20279
+  - 둘
+  - 셋
+  - 넷
+  - 다섯#58111
+  - 여섯#29614
+  - 일곱#70778
+  - 여덟#17284
+  - 아홉#29609
+  - 열#67805
+  # Sino-Korean numbers
+  - 일#31523
+  - 이#71125
+  - 삼#61854
+  - 사#58114
+  - 오#31635
+  - 육#70820
+  - 칠#71470
+  - 팔#31598
+  - 구#34882
+  - 십#28847
+  - 백#36019
+  - 천#17167
+  - 만#64558
+  # family
+  - 가족
+  - 부모님
+  - 아버지
+  - 어머니
+  - 아빠
+  - 엄마
+  - 형
+  - 오빠
+  - 누나
+  - 언니
+  - 동생
+  - 할아버지
+  - 할머니
+  - 아들
+  - 딸
+  # people
+  - 나
+  - 저#44506
+  - 우리
+  - 친구
+  - 사람
