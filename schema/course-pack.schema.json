@@ -117,6 +117,25 @@
         "license": { "type": "string", "minLength": 1 },
         "author": { "type": "string", "minLength": 1 },
         "source_ref": { "type": "string", "minLength": 1 },
+        "gloss_sources": {
+          "description": "Where each gloss language comes from, when it differs from the item's own source (e.g. a Tatoeba translation by another author, or a translation made by boso).",
+          "type": "object",
+          "propertyNames": { "enum": ["en", "id"] },
+          "additionalProperties": { "$ref": "#/$defs/credit" }
+        },
+        "hints": {
+          "description": "Sentences: meanings of words the learner has not met yet, shown on tap.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "token": { "type": "string", "minLength": 1 },
+              "gloss": { "$ref": "#/$defs/localizedText" }
+            },
+            "required": ["token", "gloss"],
+            "additionalProperties": false
+          }
+        },
         "review": { "$ref": "#/$defs/review" }
       },
       "required": ["id", "type", "text", "roman", "gloss", "source", "license", "review"],
@@ -143,6 +162,17 @@
           "then": { "not": { "required": ["tones"] } }
         }
       ]
+    },
+    "credit": {
+      "type": "object",
+      "properties": {
+        "source": { "type": "string", "minLength": 1 },
+        "license": { "type": "string", "minLength": 1 },
+        "author": { "type": "string", "minLength": 1 },
+        "source_ref": { "type": "string", "minLength": 1 }
+      },
+      "required": ["source", "license"],
+      "additionalProperties": false
     },
     "grammarNote": {
       "type": "object",

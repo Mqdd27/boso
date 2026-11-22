@@ -4,7 +4,7 @@
   "title": { "en": "Korean for English speakers", "id": "Bahasa Korea untuk penutur bahasa Inggris" },
   "glosses": ["en", "id"],
   "levels": ["topik1", "topik2"],
-  "version": "0.1.0",
+  "version": "0.2.0",
   "units": [
     {
       "id": "ko-001-basic-vowels",
@@ -60,6 +60,24 @@
           "source": "example",
           "license": "CC BY-SA 4.0",
           "source_ref": "example:1",
+          "review": "needs_review"
+        },
+        {
+          "id": "ko.s.t1",
+          "type": "sentence",
+          "text": "밥 먹었어요?",
+          "roman": "bap meogeosseoyo?",
+          "gloss": { "en": "Have you eaten?", "id": "Sudah makan?" },
+          "tokens": ["밥", "먹었어요"],
+          "gloss_sources": {
+            "en": { "source": "tatoeba", "license": "CC BY 2.0 FR", "author": "example-user", "source_ref": "tatoeba:2" },
+            "id": { "source": "boso", "license": "CC BY-SA 4.0" }
+          },
+          "hints": [{ "token": "밥", "gloss": { "en": "rice", "id": "nasi" } }],
+          "source": "tatoeba",
+          "license": "CC BY 2.0 FR",
+          "author": "example-user",
+          "source_ref": "tatoeba:1",
           "review": "needs_review"
         }
       ],
