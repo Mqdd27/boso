@@ -65,8 +65,8 @@ items:
   roman: man
   gloss:
     en: ten thousand
-    id: puluh ribu
-  source: krdict
+    id: sepuluh ribu
+  source: krdict (modified)
   license: CC BY-SA 2.0 KR
   source_ref: krdict:64558#1
   review: needs_review

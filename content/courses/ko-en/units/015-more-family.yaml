@@ -10,8 +10,8 @@ items:
   roman: nuna
   gloss:
     en: elder sister
-    id: kakak perempuan
-  source: krdict
+    id: kakak perempuan (dipanggil oleh laki-laki)
+  source: krdict (modified)
   license: CC BY-SA 2.0 KR
   source_ref: krdict:32205#1
   review: needs_review
@@ -21,8 +21,8 @@ items:
   roman: eonni
   gloss:
     en: older sister
-    id: kakak perempuan
-  source: krdict
+    id: kakak perempuan (dipanggil oleh perempuan)
+  source: krdict (modified)
   license: CC BY-SA 2.0 KR
   source_ref: krdict:31971#1
   review: needs_review

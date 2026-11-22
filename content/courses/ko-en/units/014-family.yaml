@@ -54,8 +54,8 @@ items:
   roman: appa
   gloss:
     en: dad, daddy
-    id: ayah, bapak
-  source: krdict
+    id: ayah (panggilan akrab, papa)
+  source: krdict (modified)
   license: CC BY-SA 2.0 KR
   source_ref: krdict:26148#1
   review: needs_review

@@ -1,0 +1,21 @@
+# Gloss fixes for krdict glosses that are wrong or ambiguous. `pipeline build` applies them to items
+# that still hold their generated value (never to reviewed or hand-edited items) and marks those
+# items `source: krdict (modified)`, as CC BY-SA requires. Every entry needs a one-sentence reason.
+# `item` is an item id, or `text#krdict target_code`.
+overrides:
+  - item: 만#64558
+    gloss:
+      id: sepuluh ribu
+    reason: krdict writes "puluh ribu", which drops the "se-" of "sepuluh ribu" (10,000).
+  - item: 누나#32205
+    gloss:
+      id: kakak perempuan (dipanggil oleh laki-laki)
+    reason: krdict gives 누나 and 언니 the same Indonesian gloss; 누나 is what a male calls an older sister.
+  - item: 언니#31971
+    gloss:
+      id: kakak perempuan (dipanggil oleh perempuan)
+    reason: krdict gives 누나 and 언니 the same Indonesian gloss; 언니 is what a female calls an older sister.
+  - item: 아빠#26148
+    gloss:
+      id: ayah (panggilan akrab, papa)
+    reason: krdict gives 아빠 and 아버지 the same Indonesian gloss; 아빠 is the familiar form, like "papa".
