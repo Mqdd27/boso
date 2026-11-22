@@ -33,6 +33,7 @@ target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+ignore = ["SIM905"]  # "a b c".split() tables read better than long list literals
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
