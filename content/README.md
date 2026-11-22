@@ -61,8 +61,13 @@ uv run pipeline pack ko-en            # validate + write dist/ko-en/{course,mani
   (`prompts/pick-senses.v1.md`: 시키다 in a food unit → "order (food)"). It only picks a sense
   number; the gloss text is still krdict's.
 - Every Claude reply is validated (only offered IDs / sense numbers), retried once, and cached in
-  `cache/llm/`, so rebuilds don't call Claude again. Generated items are `review: needs_review`;
-  set `review: reviewed` after checking them.
+  `cache/llm/`, so rebuilds don't call Claude again.
+- **Review status:** generated items are `review: needs_review`. That is metadata, not a gate: they
+  are used in lessons normally. Only fluent contributors set `review: reviewed`, via PR (see
+  [CONTRIBUTING.md](../CONTRIBUTING.md)); the pipeline never does.
+- **Lint:** `uv run pipeline lint ko-en` warns about empty glosses, cut-off or odd number glosses
+  ("puluh ribu"), identical glosses within a unit, and core words missing from every unit, with
+  other krdict senses as suggestions. It never edits files. `--strict` exits 1 on warnings.
 - **Merging:** `build` only appends new units. Existing unit files, reviewed items and manual edits
   are never rewritten, and words already in the course are not offered again.
 
