@@ -37,7 +37,10 @@
 				{@const prev = n === 0 || !!s.progress.get(units[n - 1].id)?.completedAt}
 				{#if !prev}
 					<p class="py-8">
-						🔒 {m.unit_locked()} · <a class="underline" href={resolve('/')}>{m.done_home()}</a>
+						🔒 {m.unit_locked()} ·
+						<a class="font-bold text-blue-ink underline underline-offset-4" href={resolve('/')}>
+							{m.done_home()}
+						</a>
 					</p>
 				{:else}
 					<Player
@@ -53,7 +56,11 @@
 					/>
 				{/if}
 			{:else}
-				<p class="py-8">404 · <a class="underline" href={resolve('/')}>{m.done_home()}</a></p>
+				<p class="py-8">
+					404 · <a class="font-bold text-blue-ink underline underline-offset-4" href={resolve('/')}>
+						{m.done_home()}
+					</a>
+				</p>
 			{/if}
 		{/await}
 	{/snippet}

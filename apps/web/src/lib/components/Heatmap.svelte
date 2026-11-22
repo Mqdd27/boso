@@ -63,7 +63,7 @@
 			{/each}
 		</div>
 	</div>
-	<figcaption class="mt-1 flex items-center justify-end gap-1 text-xs opacity-70">
+	<figcaption class="mt-2 flex items-center justify-end gap-1 text-xs font-bold text-muted">
 		{m.heatmap_less()}
 		{#each [0, 1, 2, 3, 4] as l (l)}<span class="cell" data-level={l} aria-hidden="true"
 			></span>{/each}
@@ -74,18 +74,18 @@
 <style>
 	.heatmap {
 		display: grid;
-		grid-template-rows: repeat(7, 12px);
+		grid-template-rows: repeat(7, 13px);
 		grid-auto-flow: column;
-		grid-auto-columns: 12px;
+		grid-auto-columns: 13px;
 		gap: 3px;
 		width: max-content;
 	}
 	.cell,
 	.cell-empty {
 		display: inline-block;
-		width: 12px;
-		height: 12px;
-		border-radius: 2px;
+		width: 13px;
+		height: 13px;
+		border-radius: 4px;
 	}
 	.cell {
 		background: var(--heat-0);

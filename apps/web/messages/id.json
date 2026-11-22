@@ -134,5 +134,14 @@
 	"done_xp_label": "Total XP",
 	"done_accuracy_label": "Akurasi",
 	"done_time_label": "Waktu",
-	"done_percent": "{percent}%"
+	"done_percent": "{percent}%",
+	"settings_group_language": "Bahasa",
+	"settings_group_reading": "Bantuan membaca",
+	"settings_group_lessons": "Lesson",
+	"settings_group_look": "Tampilan",
+	"settings_group_about": "Tentang",
+	"stats_card_streak": "Hari beruntun",
+	"stats_card_xp": "Total XP",
+	"stats_card_units": "Unit selesai",
+	"stats_card_lessons": "Lesson"
 }

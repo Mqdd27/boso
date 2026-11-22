@@ -11,7 +11,7 @@
 </script>
 
 {#await packs}
-	<p class="py-8 text-center opacity-70">{m.loading()}</p>
+	<p class="py-8 text-center font-bold text-muted">{m.loading()}</p>
 {:then list}
 	{#if list.length}
 		{@render children(list)}
@@ -19,7 +19,7 @@
 		<section class="py-8">
 			<h1 class="mb-3 text-2xl font-bold">{m.no_course_title()}</h1>
 			<p class="mb-3">{m.no_course_body()}</p>
-			<pre class="overflow-x-auto rounded-xl bg-zinc-100 p-3 text-sm dark:bg-zinc-800"><code
+			<pre class="overflow-x-auto rounded-xl bg-raised p-3 text-sm"><code
 					>cd content && uv run pipeline pack ko-en</code
 				></pre>
 		</section>
@@ -28,8 +28,7 @@
 	<section class="py-8" role="alert">
 		<h1 class="mb-3 text-2xl font-bold">{m.pack_error_title()}</h1>
 		<p class="mb-3">{m.pack_error_body()}</p>
-		<pre
-			class="overflow-x-auto rounded-xl bg-zinc-100 p-3 text-sm whitespace-pre-wrap dark:bg-zinc-800">{String(
+		<pre class="overflow-x-auto rounded-xl bg-raised p-3 text-sm whitespace-pre-wrap">{String(
 				error.message ?? error
 			)}</pre>
 	</section>
