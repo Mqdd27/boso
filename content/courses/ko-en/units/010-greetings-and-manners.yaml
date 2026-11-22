@@ -42,11 +42,11 @@ items:
   text: 감사하다
   roman: gamsahada
   gloss:
-    en: thankful, grateful
-    id: terima kasih, berterima kasih
+    en: appreciate
+    id: berterima kasih, terima kasih
   source: krdict
   license: CC BY-SA 2.0 KR
-  source_ref: krdict:63820#1
+  source_ref: krdict:71728#1
   review: needs_review
 - id: ko.w.mianhada
   type: word
