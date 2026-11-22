@@ -53,11 +53,16 @@ uv run pipeline pack ko-en            # validate + write dist/ko-en/{course,mani
 - **Words:** 초급 (TOPIK I) single words with an English equivalent; affixes, particles, auxiliary
   verbs and phrases are dropped. `en` / `id` glosses are krdict's equivalents for the first sense,
   `roman` is Revised Romanization from krdict's pronunciation.
-- **Units:** a deterministic pool of 250 basic words (spread over krdict's semantic categories, most
-  senses first) is grouped into themed units of 5–8 words by `claude -p` (Claude Code CLI) with
-  `prompts/group-units.v1.md`. The reply is validated (only pool IDs, no duplicates) and cached in
-  `cache/llm/`, so rebuilds don't call Claude again. Generated items are `review: needs_review`; set
-  `review: reviewed` after checking them.
+- **Units:** a deterministic pool of 250 words is grouped into themed units of 5–8 words by
+  `claude -p` (Claude Code CLI) with `prompts/group-units.v1.md`. The pool starts with
+  `courses/ko-en/core-words.yaml` (greetings, numbers, family: edit it to add must-have words) and
+  is filled up from krdict's semantic categories, most senses first.
+- **Senses:** for words with several krdict senses, `claude -p` picks the one that fits the unit
+  (`prompts/pick-senses.v1.md`: 시키다 in a food unit → "order (food)"). It only picks a sense
+  number; the gloss text is still krdict's.
+- Every Claude reply is validated (only offered IDs / sense numbers), retried once, and cached in
+  `cache/llm/`, so rebuilds don't call Claude again. Generated items are `review: needs_review`;
+  set `review: reviewed` after checking them.
 - **Merging:** `build` only appends new units. Existing unit files, reviewed items and manual edits
   are never rewritten, and words already in the course are not offered again.
 
