@@ -34,11 +34,11 @@
 	}
 
 	const base =
-		'min-h-11 w-full rounded-xl border-2 px-3 py-2 text-left disabled:opacity-40 aria-pressed:border-sky-500 aria-pressed:bg-sky-50 dark:aria-pressed:bg-sky-950';
+		'card flex min-h-16 w-full flex-col items-center justify-center px-2 py-2 text-center font-bold disabled:opacity-35';
 </script>
 
-<div class="grid grid-cols-2 gap-2" data-testid="match">
-	<ul class="flex flex-col gap-2">
+<div class="grid grid-cols-2 gap-3" data-testid="match">
+	<ul class="flex flex-col gap-3">
 		{#each items as item (item.id)}
 			<li>
 				<button
@@ -49,21 +49,22 @@
 					data-item={item.id}
 					onclick={() => (picked = item.id)}
 				>
-					<span class="text-lg font-semibold" lang="ko">{item.text}</span>
-					{#if roman}<span class="block text-xs opacity-70" data-testid="roman">
+					<span class="text-xl" lang="ko">{item.text}</span>
+					{#if roman}<span class="block text-xs font-semibold opacity-75" data-testid="roman">
 							{item.roman}
 						</span>{/if}
 				</button>
 			</li>
 		{/each}
 	</ul>
-	<ul class="flex flex-col gap-2">
+	<ul class="flex flex-col gap-3">
 		{#each right as item (item.id)}
 			<li>
 				<button
 					type="button"
-					class="{base} {wrong === item.id ? 'border-red-500' : ''}"
+					class="{base} {wrong === item.id ? 'shake' : ''}"
 					disabled={matched.has(item.id)}
+					data-state={wrong === item.id ? 'wrong' : matched.has(item.id) ? 'right' : undefined}
 					data-gloss={item.id}
 					onclick={() => pickRight(item.id)}
 				>
@@ -74,3 +75,17 @@
 		{/each}
 	</ul>
 </div>
+
+<style>
+	.shake {
+		animation: shake 300ms;
+	}
+	@keyframes shake {
+		25% {
+			transform: translateX(-5px);
+		}
+		75% {
+			transform: translateX(5px);
+		}
+	}
+</style>

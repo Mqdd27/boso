@@ -122,5 +122,17 @@
 	"node_practice": "Latihan",
 	"node_lesson": "Lesson {lesson} dari {total}",
 	"node_label": "Lesson {lesson}, {unit}",
-	"node_locked": "Selesaikan lesson sebelumnya untuk membuka yang ini."
+	"node_locked": "Selesaikan lesson sebelumnya untuk membuka yang ini.",
+	"praise_1": "Bagus!",
+	"praise_2": "Hebat!",
+	"praise_3": "Benar!",
+	"praise_4": "Mantap!",
+	"miss_1": "Belum tepat",
+	"miss_2": "Hampir!",
+	"miss_3": "Terus coba!",
+	"correct_answer": "Jawaban yang benar:",
+	"done_xp_label": "Total XP",
+	"done_accuracy_label": "Akurasi",
+	"done_time_label": "Waktu",
+	"done_percent": "{percent}%"
 }

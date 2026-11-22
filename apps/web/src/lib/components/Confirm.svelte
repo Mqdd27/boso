@@ -11,20 +11,20 @@
 
 {#if open}
 	<div
-		class="fixed inset-0 z-20 flex items-end justify-center bg-black/40 p-4 sm:items-center"
+		class="fixed inset-0 z-40 flex items-end justify-center bg-black/50 p-4 sm:items-center"
 		role="presentation"
 	>
 		<div
-			class="w-full max-w-sm rounded-2xl bg-white p-5 shadow-xl dark:bg-zinc-900"
+			class="w-full max-w-sm rounded-card border-2 border-line bg-bg p-5 shadow-[0_12px_32px_rgb(0_0_0/0.3)]"
 			role="alertdialog"
 			aria-modal="true"
 			aria-labelledby="confirm-message"
 		>
-			<p id="confirm-message" class="mb-4">{message}</p>
-			<div class="flex flex-col gap-2 sm:flex-row-reverse">
+			<p id="confirm-message" class="mb-5 text-lg font-bold">{message}</p>
+			<div class="flex flex-col gap-3">
 				<button
 					type="button"
-					class="min-h-11 rounded-xl bg-red-600 px-4 font-semibold text-white"
+					class="btn btn-red"
 					onclick={() => {
 						open = false;
 						onyes();
@@ -33,12 +33,7 @@
 					{yes}
 				</button>
 				<!-- svelte-ignore a11y_autofocus -->
-				<button
-					type="button"
-					autofocus
-					class="min-h-11 rounded-xl border px-4 font-semibold"
-					onclick={() => (open = false)}
-				>
+				<button type="button" autofocus class="btn btn-outline" onclick={() => (open = false)}>
 					{no}
 				</button>
 			</div>

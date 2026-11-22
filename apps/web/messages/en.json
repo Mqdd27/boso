@@ -122,5 +122,17 @@
 	"node_practice": "Practice",
 	"node_lesson": "Lesson {lesson} of {total}",
 	"node_label": "Lesson {lesson}, {unit}",
-	"node_locked": "Finish the lessons before this one to unlock it."
+	"node_locked": "Finish the lessons before this one to unlock it.",
+	"praise_1": "Nice!",
+	"praise_2": "Great job!",
+	"praise_3": "Correct!",
+	"praise_4": "You got it!",
+	"miss_1": "Not quite",
+	"miss_2": "Almost!",
+	"miss_3": "Keep going!",
+	"correct_answer": "Correct answer:",
+	"done_xp_label": "Total XP",
+	"done_accuracy_label": "Accuracy",
+	"done_time_label": "Time",
+	"done_percent": "{percent}%"
 }

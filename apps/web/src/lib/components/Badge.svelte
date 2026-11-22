@@ -8,7 +8,7 @@
 
 {#if item.review === 'needs_review' && showReview()}
 	<span
-		class="rounded-full border border-amber-500 px-2 py-0.5 text-xs text-amber-700 dark:text-amber-300"
+		class="rounded-full border-2 border-gold-fill px-2 py-0.5 text-xs font-bold text-gold-ink"
 		data-testid="unreviewed"
 	>
 		{m.unreviewed()}

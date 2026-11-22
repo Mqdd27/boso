@@ -3,6 +3,7 @@
 	import { gloss, type GlossLang, type Item } from '#lib/types.js';
 	import { SLOW } from '#lib/audio.js';
 	import Badge from './Badge.svelte';
+	import Icon from './Icon.svelte';
 
 	let {
 		item,
@@ -12,22 +13,25 @@
 	}: { item: Item; lang: GlossLang; roman: boolean; onlisten?: (rate?: number) => void } = $props();
 </script>
 
-<div class="flex flex-col items-center gap-3 py-6 text-center" data-testid="intro">
-	<p class="text-sm font-semibold tracking-wide uppercase opacity-70">
+<div class="flex flex-col items-center gap-4 py-4 text-center" data-testid="intro">
+	<p class="label rounded-full bg-purple-soft px-3 py-1 text-purple-ink">
 		{item.type === 'char' ? m.new_letter() : m.new_word()}
 	</p>
-	<p class="text-6xl font-bold" lang="ko">{item.text}</p>
-	{#if roman}<p class="text-xl opacity-80" data-testid="roman">{item.roman}</p>{/if}
-	<p class="text-2xl">{gloss(item, lang)}</p>
-	<Badge {item} />
+	<div class="card flex w-full max-w-sm flex-col items-center gap-2 px-6 py-8">
+		<p class="text-7xl font-bold" lang="ko">{item.text}</p>
+		{#if roman}<p class="text-xl font-bold text-muted" data-testid="roman">{item.roman}</p>{/if}
+		<p class="text-2xl font-extrabold">{gloss(item, lang)}</p>
+		<Badge {item} />
+	</div>
 	{#if onlisten}
-		<div class="flex gap-2">
-			<button type="button" class="min-h-11 rounded-xl border px-4" onclick={() => onlisten()}>
-				🔊 {m.listen()}
+		<div class="flex items-end gap-3">
+			<button type="button" class="btn btn-blue" onclick={() => onlisten()}>
+				<Icon name="speaker" />
+				{m.listen()}
 			</button>
 			<button
 				type="button"
-				class="min-h-11 min-w-11 rounded-xl border"
+				class="btn btn-outline size-12 !p-0 text-2xl"
 				aria-label={m.listen_slow()}
 				data-testid="listen-slow"
 				onclick={() => onlisten(SLOW)}

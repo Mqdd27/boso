@@ -20,6 +20,8 @@
 	import Sentence from './Sentence.svelte';
 	import WordBank from './WordBank.svelte';
 	import Badge from './Badge.svelte';
+	import Confetti from './Confetti.svelte';
+	import Icon from './Icon.svelte';
 	import Confirm from './Confirm.svelte';
 	import IntroCard from './IntroCard.svelte';
 	import MatchPairs from './MatchPairs.svelte';
@@ -66,9 +68,14 @@
 	let checked = $state(false);
 	let matchMistakes = $state<Set<string> | null>(null);
 	let confirmExit = $state(false);
-	let done = $state<{ xp: number; accuracy: number; streak: number; perfect: boolean } | null>(
-		null
-	);
+	let done = $state<{
+		xp: number;
+		accuracy: number;
+		streak: number;
+		perfect: boolean;
+		seconds: number;
+	} | null>(null);
+	const started = Date.now();
 
 	let answers = 0;
 	let rightAnswers = 0;
@@ -152,7 +159,8 @@
 			xp,
 			accuracy: Math.round((100 * rightAnswers) / Math.max(answers, 1)),
 			streak: streak(totals, settings.dailyGoal, localDate(new Date())).current,
-			perfect: mistakes === 0
+			perfect: mistakes === 0,
+			seconds: Math.round((Date.now() - started) / 1000)
 		};
 	}
 
@@ -172,14 +180,23 @@
 		}
 	}
 
-	const optionClass = (n: number) => {
-		if (!ex || !('options' in ex)) return '';
+	const optionState = (n: number) => {
+		if (!ex || !('options' in ex)) return undefined;
 		const isAnswer = ex.options[n].id === ex.item.id;
-		if (checked && isAnswer) return 'border-green-600 bg-green-50 dark:bg-green-950';
-		if (checked && n === selected) return 'border-red-600 bg-red-50 dark:bg-red-950';
-		if (n === selected) return 'border-sky-500 bg-sky-50 dark:bg-sky-950';
-		return 'border-zinc-300 dark:border-zinc-700';
+		if (checked && isAnswer) return 'right';
+		if (checked && n === selected) return 'wrong';
+		return n === selected ? 'selected' : undefined;
 	};
+	// Feedback headline: a short rotating message, varied by step.
+	const praise = [m.praise_1, m.praise_2, m.praise_3, m.praise_4];
+	const miss = [m.miss_1, m.miss_2, m.miss_3];
+	const headline = (ok: boolean) => (ok ? praise : miss)[index % (ok ? 4 : 3)]();
+	const clock = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+	const sheet = $derived(
+		(checked && ex && ex.kind !== 'intro' && ex.kind !== 'match') ||
+			(ex?.kind === 'match' && matchMistakes !== null)
+	);
+	const sheetOk = $derived(ex?.kind === 'match' ? !matchMistakes?.size : correct);
 	const title = $derived(
 		practice
 			? m.practice_title({ unit: localized(unit.title, lang) })
@@ -190,25 +207,47 @@
 <svelte:window {onkeydown} />
 
 {#if done}
-	<section class="flex flex-col items-center gap-3 py-10 text-center" data-testid="lesson-done">
-		<h1 class="text-3xl font-bold">🎉 {m.done_title()}</h1>
-		<p class="text-4xl font-bold text-amber-500">{m.done_xp({ xp: done.xp })}</p>
-		{#if done.perfect}<p>{m.done_perfect()}</p>{/if}
-		<p>{m.done_accuracy({ percent: done.accuracy })}</p>
-		<p>🔥 {m.done_streak({ days: done.streak })}</p>
-		<div class="mt-4 flex w-full flex-col gap-2">
-			{#if lesson === 1 && !practice}
-				<button
-					type="button"
-					class="min-h-12 rounded-xl bg-green-600 font-semibold text-white"
-					onclick={() => location.reload()}
+	<Confetti />
+	<section
+		class="flex flex-1 flex-col items-center justify-center gap-6 py-10 text-center"
+		data-testid="lesson-done"
+	>
+		<div
+			class="done-pop flex size-28 items-center justify-center rounded-full bg-gold-fill text-gold-on"
+		>
+			<Icon name="star" size={64} filled />
+		</div>
+		<h1 class="text-3xl font-black text-gold-ink">{m.done_title()}</h1>
+		{#if done.perfect}<p class="font-bold text-muted">{m.done_perfect()}</p>{/if}
+		<ul class="grid w-full max-w-md grid-cols-3 gap-3">
+			{#each [{ label: m.done_xp_label(), value: m.done_xp( { xp: done.xp } ), icon: 'bolt', tone: 'border-gold-fill bg-gold-fill text-gold-ink' }, { label: m.done_accuracy_label(), value: m.done_percent( { percent: done.accuracy } ), icon: 'target', tone: 'border-green-fill bg-green-fill text-green-ink' }, { label: m.done_time_label(), value: clock(done.seconds), icon: 'clock', tone: 'border-blue-fill bg-blue-fill text-blue-ink' }] as const as card, n (n)}
+				<li
+					class="done-card overflow-hidden rounded-card border-2 {card.tone}"
+					style:animation-delay="{150 + n * 120}ms"
 				>
+					<p class="label px-1 py-1 text-[0.7rem] text-white {n === 0 ? '!text-gold-on' : ''}">
+						{card.label}
+					</p>
+					<p
+						class="flex items-center justify-center gap-1 rounded-t-xl bg-bg py-3 text-xl font-black"
+					>
+						<Icon name={card.icon} size={20} filled={card.icon === 'bolt'} />{card.value}
+					</p>
+				</li>
+			{/each}
+		</ul>
+		<p class="flex items-center gap-1 font-extrabold text-orange-ink">
+			<Icon name="flame" filled />{m.done_streak({ days: done.streak })}
+		</p>
+		<div class="mt-2 flex w-full max-w-md flex-col gap-3">
+			{#if lesson === 1 && !practice}
+				<button type="button" class="btn w-full" onclick={() => location.reload()}>
 					{m.done_next()}
 				</button>
 			{/if}
 			<a
 				href={resolve('/')}
-				class="flex min-h-12 items-center justify-center rounded-xl border font-semibold"
+				class="btn w-full {lesson === 1 && !practice ? 'btn-outline' : ''}"
 				data-testid="back-home"
 			>
 				{m.done_home()}
@@ -216,17 +255,17 @@
 		</div>
 	</section>
 {:else if ex}
-	<header class="flex items-center gap-3 py-3">
+	<header class="flex items-center gap-3 pt-4 pb-2">
 		<button
 			type="button"
-			class="min-h-11 min-w-11 rounded-xl border px-3"
+			class="flex size-11 items-center justify-center rounded-xl text-muted hover:bg-raised"
 			aria-label={m.exit()}
 			onclick={() => (confirmExit = true)}
 		>
-			✕
+			<Icon name="x" size={28} />
 		</button>
 		<div
-			class="h-3 flex-1 overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-800"
+			class="h-4 flex-1 overflow-hidden rounded-full bg-locked-fill"
 			role="progressbar"
 			aria-label={m.progress_label()}
 			aria-valuemin={0}
@@ -234,12 +273,12 @@
 			aria-valuenow={index}
 		>
 			<div
-				class="h-full bg-green-500 transition-all"
+				class="progress h-full rounded-full bg-green-fill"
 				style:width="{(100 * index) / queue.length}%"
 			></div>
 		</div>
 	</header>
-	<p class="mb-2 text-sm opacity-70">{title}</p>
+	<p class="label mb-3 text-muted">{title}</p>
 
 	<section
 		class="flex flex-1 flex-col"
@@ -256,14 +295,14 @@
 				onlisten={audible(ex.item) ? (rate?: number) => say(ex.item, rate) : undefined}
 			/>
 		{:else if ex.kind === 'match'}
-			<h2 class="mb-3 text-xl font-semibold">
+			<h2 class="mb-5 text-2xl font-extrabold">
 				{script ? m.prompt_match_sound() : m.prompt_match()}
 			</h2>
 			{#key index}
 				<MatchPairs items={ex.items} right={ex.right} label={sound} {roman} ondone={onMatchDone} />
 			{/key}
 		{:else}
-			<h2 class="mb-3 text-xl font-semibold">
+			<h2 class="mb-5 text-2xl font-extrabold">
 				{ex.kind === 'arrange'
 					? ex.listen
 						? m.prompt_arrange_listen()
@@ -284,36 +323,41 @@
 									? m.prompt_listen_letter()
 									: m.prompt_listen()}
 			</h2>
-			<div class="mb-5 flex flex-col items-center gap-2 text-center" data-testid="prompt">
+			<div class="mb-6 flex flex-col items-center gap-2 text-center" data-testid="prompt">
 				{#if ex.kind === 'meaning'}
 					{#if ex.item.type === 'sentence'}
 						<Sentence item={ex.item} {lang} />
 					{:else}
 						<p class="text-5xl font-bold" lang="ko">{ex.item.text}</p>
 					{/if}
-					{#if roman}<p class="opacity-80" data-testid="roman">{ex.item.roman}</p>{/if}
+					{#if roman}<p class="text-lg text-muted" data-testid="roman">{ex.item.roman}</p>{/if}
 				{:else if ex.kind === 'word' || ((ex.kind === 'build' || ex.kind === 'arrange') && !ex.listen)}
-					<p class="text-3xl font-semibold" data-testid={script ? 'sound' : undefined}>
+					<p
+						class="rounded-card border-2 border-line px-5 py-3 text-2xl font-extrabold"
+						data-testid={script ? 'sound' : undefined}
+					>
 						{sound(ex.item)}
 					</p>
 				{:else}
-					<button
-						type="button"
-						class="min-h-16 min-w-16 rounded-full bg-sky-500 text-3xl text-white"
-						aria-label={m.play_again()}
-						onclick={() => say(ex.item)}
-					>
-						🔊
-					</button>
-					<button
-						type="button"
-						class="min-h-11 min-w-11 rounded-full border text-xl"
-						aria-label={m.listen_slow()}
-						data-testid="listen-slow"
-						onclick={() => say(ex.item, SLOW)}
-					>
-						🐢
-					</button>
+					<div class="flex items-end gap-3">
+						<button
+							type="button"
+							class="btn btn-blue size-24 !p-0"
+							aria-label={m.play_again()}
+							onclick={() => say(ex.item)}
+						>
+							<Icon name="speaker" size={48} />
+						</button>
+						<button
+							type="button"
+							class="btn btn-outline size-14 !p-0 text-2xl"
+							aria-label={m.listen_slow()}
+							data-testid="listen-slow"
+							onclick={() => say(ex.item, SLOW)}
+						>
+							🐢
+						</button>
+					</div>
 				{/if}
 				<Badge item={ex.item} />
 			</div>
@@ -326,25 +370,28 @@
 					<WordBank bank={ex.bank} disabled={checked} bind:value={arranged} />
 				{/key}
 			{:else}
-				<ol class="flex flex-col gap-2">
+				<ol class="flex flex-col gap-3">
 					{#each ex.options as option, n (option.id)}
 						<li>
 							<button
 								type="button"
-								class="flex min-h-12 w-full items-center gap-3 rounded-xl border-2 px-3 py-2 text-left {optionClass(
-									n
-								)}"
+								class="card flex min-h-14 w-full items-center gap-3 px-3 py-2 text-left"
 								disabled={checked}
 								aria-pressed={n === selected}
+								data-state={optionState(n)}
 								data-option={option.id}
 								onclick={() => (selected = n)}
 							>
-								<kbd class="hidden rounded border px-1.5 text-xs opacity-60 sm:inline">{n + 1}</kbd>
+								<kbd
+									class="hidden size-7 shrink-0 items-center justify-center rounded-lg border-2 border-current text-sm font-bold opacity-60 sm:flex"
+								>
+									{n + 1}
+								</kbd>
 								{#if ex.kind === 'meaning'}
-									<span class={script ? 'text-lg font-semibold' : ''}>{sound(option)}</span>
+									<span class="text-lg font-bold">{sound(option)}</span>
 								{:else}
-									<span class="text-lg font-semibold" lang="ko">{option.text}</span>
-									{#if roman}<span class="text-sm opacity-70" data-testid="roman">
+									<span class="text-xl font-bold" lang="ko">{option.text}</span>
+									{#if roman}<span class="text-sm opacity-75" data-testid="roman">
 											{option.roman}
 										</span>{/if}
 								{/if}
@@ -352,55 +399,81 @@
 						</li>
 					{/each}
 				</ol>
-				<p class="mt-3 hidden text-xs opacity-60 sm:block">{m.keyboard_hint()}</p>
+				<p class="mt-4 hidden text-sm text-muted sm:block">{m.keyboard_hint()}</p>
 			{/if}
 		{/if}
 	</section>
 
-	<footer class="sticky bottom-0 mt-4 bg-white pt-2 pb-4 dark:bg-zinc-950">
-		{#if checked && ex.kind !== 'intro' && ex.kind !== 'match'}
-			<div
-				class="mb-2 rounded-xl p-3 {correct
-					? 'bg-green-100 text-green-900 dark:bg-green-950 dark:text-green-100'
-					: 'bg-red-100 text-red-900 dark:bg-red-950 dark:text-red-100'}"
-				role="status"
-				data-testid="feedback"
-				data-correct={correct}
-			>
-				<p class="font-semibold">{correct ? `✓ ${m.correct()}` : `✗ ${m.wrong()}`}</p>
-				{#if !correct}
-					<p>
-						<span lang="ko">{ex.item.text}</span>
-						{#if roman}({ex.item.roman}){/if} = {script
-							? `${ex.item.roman} · ${localized(ex.item.gloss, lang)}`
-							: sound(ex.item)}
-					</p>
-				{/if}
-			</div>
-		{/if}
-		{#if ex.kind === 'match' && matchMistakes}
-			<p class="mb-2 rounded-xl bg-zinc-100 p-3 font-semibold dark:bg-zinc-800" role="status">
-				{matchMistakes.size ? `✗ ${m.match_mistakes()}` : `✓ ${m.match_done()}`}
-			</p>
-		{/if}
-		{#if canContinue}
-			<button
-				type="button"
-				class="min-h-12 w-full rounded-xl bg-green-600 font-semibold text-white"
-				onclick={next}
-			>
-				{m.continue()}
-			</button>
-		{:else if ex.kind !== 'match'}
-			<button
-				type="button"
-				class="min-h-12 w-full rounded-xl bg-green-600 font-semibold text-white disabled:opacity-40"
-				disabled={!answered}
-				onclick={check}
-			>
-				{m.check()}
-			</button>
-		{/if}
+	<!-- Spacer so the fixed footer never covers the last answer. -->
+	<div class="h-36" aria-hidden="true"></div>
+	<footer
+		class="fixed inset-x-0 bottom-0 z-10 border-t-2 pb-[env(safe-area-inset-bottom)] {sheet
+			? sheetOk
+				? 'sheet border-transparent bg-green-soft'
+				: 'sheet border-transparent bg-red-soft'
+			: 'border-line bg-bg'}"
+	>
+		<div class="mx-auto flex max-w-2xl flex-col gap-4 px-4 py-5">
+			{#if sheet}
+				<div
+					class="flex items-start gap-3 {sheetOk ? 'text-green-ink' : 'text-red-ink'}"
+					role="status"
+					aria-live="polite"
+					data-testid={ex.kind === 'match' ? 'match-feedback' : 'feedback'}
+					data-correct={ex.kind === 'match' ? undefined : correct}
+				>
+					<span
+						class="flex size-10 shrink-0 items-center justify-center rounded-full bg-bg"
+						aria-hidden="true"
+					>
+						<Icon name={sheetOk ? 'check' : 'x'} size={26} />
+					</span>
+					<div class="min-w-0 flex-1">
+						{#if ex.kind === 'match'}
+							<p class="text-xl font-black">{headline(sheetOk)}</p>
+							<p class="font-semibold">{sheetOk ? m.match_done() : m.match_mistakes()}</p>
+						{:else}
+							<p class="text-xl font-black">{headline(correct)}</p>
+							{#if !correct}
+								<p class="font-bold">{m.correct_answer()}</p>
+								<p class="flex flex-wrap items-center gap-x-2">
+									<span class="text-lg font-bold" lang="ko">{ex.item.text}</span>
+									{#if roman}<span>({ex.item.roman})</span>{/if}
+									<span>
+										= {script
+											? `${ex.item.roman} · ${localized(ex.item.gloss, lang)}`
+											: sound(ex.item)}
+									</span>
+									{#if audible(ex.item)}
+										<button
+											type="button"
+											class="flex size-11 items-center justify-center rounded-full hover:bg-bg/60"
+											aria-label={m.listen()}
+											onclick={() => say(ex.item)}
+										>
+											<Icon name="speaker" />
+										</button>
+									{/if}
+								</p>
+							{/if}
+						{/if}
+					</div>
+				</div>
+			{/if}
+			{#if canContinue}
+				<button
+					type="button"
+					class="btn w-full {sheet && !sheetOk ? 'btn-red' : ''}"
+					onclick={next}
+				>
+					{m.continue()}
+				</button>
+			{:else if ex.kind !== 'match'}
+				<button type="button" class="btn w-full" disabled={!answered} onclick={check}>
+					{m.check()}
+				</button>
+			{/if}
+		</div>
 	</footer>
 {/if}
 
@@ -411,3 +484,38 @@
 	no={m.exit_no()}
 	onyes={() => goto(resolve('/'))}
 />
+
+<style>
+	.progress {
+		position: relative;
+		transition: width 300ms var(--ease-out-expo);
+	}
+	.progress::after {
+		content: '';
+		position: absolute;
+		inset: 3px 8px auto;
+		height: 4px;
+		border-radius: 9999px;
+		background: rgb(255 255 255 / 0.3);
+	}
+	.sheet {
+		animation: rise 250ms var(--ease-out-expo);
+	}
+	@keyframes rise {
+		from {
+			transform: translateY(100%);
+		}
+	}
+	.done-pop {
+		animation: pop 400ms var(--ease-out-expo);
+	}
+	.done-card {
+		animation: pop 300ms var(--ease-out-expo) backwards;
+	}
+	@keyframes pop {
+		from {
+			opacity: 0;
+			transform: scale(0.8);
+		}
+	}
+</style>

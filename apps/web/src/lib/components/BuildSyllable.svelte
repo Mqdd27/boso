@@ -26,7 +26,7 @@
 
 <div class="flex flex-col gap-4" data-testid="build">
 	<p
-		class="mx-auto flex size-28 items-center justify-center rounded-2xl border-2 border-dashed text-6xl font-bold"
+		class="mx-auto flex size-28 items-center justify-center rounded-card border-[3px] border-dashed border-line text-6xl font-bold"
 		lang="ko"
 		aria-live="polite"
 		data-testid="block"
@@ -35,16 +35,12 @@
 	</p>
 	{#each slots as slot (slot)}
 		<div>
-			<p class="mb-1 text-sm opacity-70">{names[slot]()}</p>
+			<p class="label mb-2 text-muted">{names[slot]()}</p>
 			<div class="grid grid-cols-4 gap-2">
 				{#each tiles[slot] as letter (letter)}
 					<button
 						type="button"
-						class="min-h-12 rounded-xl border-2 text-2xl font-semibold disabled:opacity-60 {picked[
-							slot
-						] === letter
-							? 'border-sky-500 bg-sky-50 dark:bg-sky-950'
-							: 'border-zinc-300 dark:border-zinc-700'}"
+						class="card chip min-h-14 text-2xl font-bold disabled:opacity-60"
 						lang="ko"
 						{disabled}
 						aria-pressed={picked[slot] === letter}

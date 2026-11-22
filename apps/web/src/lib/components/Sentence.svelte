@@ -16,7 +16,7 @@
 		{#if hints.has(bare(word))}
 			<button
 				type="button"
-				class="underline decoration-dotted decoration-2 underline-offset-8"
+				class="rounded-md underline decoration-muted decoration-dotted decoration-[3px] underline-offset-8 hover:bg-raised"
 				aria-expanded={open === bare(word)}
 				aria-label={m.hint_label({ word: bare(word) })}
 				data-hint={bare(word)}
@@ -28,7 +28,11 @@
 	{/each}
 </p>
 {#if open && hints.get(open)}
-	<p class="rounded-xl bg-amber-50 px-3 py-2 dark:bg-amber-950" role="status" data-testid="hint">
+	<p
+		class="rounded-card border-2 border-line bg-raised px-4 py-2 font-bold"
+		role="status"
+		data-testid="hint"
+	>
 		<span lang="ko">{open}</span> = {localized(hints.get(open)!, lang)}
 	</p>
 {/if}
