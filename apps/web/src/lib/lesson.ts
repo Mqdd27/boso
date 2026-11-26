@@ -10,7 +10,7 @@ export type Exercise =
 	| { kind: Kind; item: Item; options: Item[] }
 	| { kind: 'match'; items: Item[]; right: Item[] }
 	| { kind: 'build'; item: Item; listen: boolean; tiles: Tiles }
-	| { kind: 'arrange'; item: Item; listen: boolean; bank: string[] }; // sentence from a word bank
+	| { kind: 'arrange'; item: Item; listen: boolean; bank: string[]; roman: string[] }; // sentence from a word bank
 
 export type ItemStat = {
 	id: string;
@@ -39,6 +39,25 @@ export const isSentence = (item: Item) => item.type === 'sentence';
 
 /** Word-bank cards of a sentence (its eojeols without punctuation). */
 export const cards = (item: Item) => item.tokens ?? [item.text];
+
+const bare = (word: string) => word.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, '');
+
+/** Romanization per card: `roman` has one word per eojeol, like `text`, so they line up. */
+export function cardRoman(item: Item): Map<string, string> {
+	const roman = item.roman.split(' ').map(bare);
+	const words = item.text.split(' ');
+	const tokens = cards(item);
+	if (roman.length !== words.length || tokens.length !== words.length) return new Map();
+	return new Map(tokens.map((t, n) => [t, roman[n]]));
+}
+
+/** A sentence's new (hinted) word as an intro-card item. */
+function hintItem(item: Item, token: string, gloss: Item['gloss']): Item {
+	const { source, license, author, review } = item;
+	const roman = cardRoman(item).get(token) ?? '';
+	const id = `${item.id.split('.')[0]}.hint.${token}`;
+	return { id, type: 'word', text: token, roman, gloss, source, license, author, review };
+}
 
 /** A word-bank answer is right when it reads as the sentence: duplicate cards can go either way. */
 export const arrangedRight = (picked: string[], item: Item) =>
@@ -169,6 +188,13 @@ function bank(item: Item, sentences: Item[], rand: () => number): string[] {
 	return shuffle([...own, ...decoys], rand);
 }
 
+/** Romanization of each bank card, from whichever sentence it came from. */
+function bankRoman(bank: string[], item: Item, sentences: Item[]): string[] {
+	const known = new Map(sentences.flatMap((s) => [...cardRoman(s)]));
+	for (const [t, r] of cardRoman(item)) known.set(t, r);
+	return bank.map((t) => known.get(t) ?? '');
+}
+
 type Mode = Kind | 'build';
 
 export function generateLesson(input: LessonInput): Exercise[] {
@@ -252,8 +278,18 @@ export function generateLesson(input: LessonInput): Exercise[] {
 			if (mode === 'meaning') {
 				out.push({ kind: 'meaning', item, options: shuffle([item, ...others], rand) });
 			} else {
+				// The English prompt doesn't show the new word, so introduce it first (once per sentence).
+				if (!stats[item.id]?.seen)
+					for (const h of item.hints ?? []) {
+						const intro = hintItem(item, h.token, h.gloss);
+						if (introduced.has(intro.id)) continue;
+						introduced.add(intro.id);
+						out.push({ kind: 'intro', item: intro });
+					}
 				const listen = canListen && n % 3 === 2;
-				out.push({ kind: 'arrange', item, listen, bank: bank(item, sentencePool, rand) });
+				const cardsOf = bank(item, sentencePool, rand);
+				const roman = bankRoman(cardsOf, item, sentencePool);
+				out.push({ kind: 'arrange', item, listen, bank: cardsOf, roman });
 			}
 			graded++;
 		});

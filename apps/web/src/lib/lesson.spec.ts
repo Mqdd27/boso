@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import pack from '../../testdata/packs/ko-en/course.json';
 import {
 	arrangedRight,
+	cardRoman,
 	distractors,
 	generateLesson,
 	LESSON_SIZE,
@@ -197,6 +198,51 @@ describe('sentences', () => {
 				expect(e.bank.length - own.length).toBeLessThanOrEqual(2);
 				expect(arrangedRight(own, e.item)).toBe(true);
 			}
+		}
+	});
+
+	it('word-bank cards carry their romanization', () => {
+		const banks = Array.from({ length: 30 }, (_, seed) => lesson2(seed))
+			.flat()
+			.filter((e) => e.kind === 'arrange');
+		expect(banks.length).toBeGreaterThan(0);
+		for (const e of banks) {
+			if (e.kind !== 'arrange') continue;
+			expect(e.roman).toHaveLength(e.bank.length);
+			expect(e.roman.every(Boolean)).toBe(true);
+		}
+		expect(cardRoman(sentences.find((s) => s.text === '친구야, 미안해.')!)).toEqual(
+			new Map([
+				['친구야', 'chinguya'],
+				['미안해', 'mianhae']
+			])
+		);
+	});
+
+	it('introduce a new (hinted) word before a word bank that uses it, unless seen', () => {
+		for (let seed = 0; seed < 30; seed++) {
+			const lesson = lesson2(seed);
+			lesson.forEach((e, n) => {
+				if (e.kind !== 'arrange') return;
+				for (const h of e.item.hints ?? []) {
+					const intro = lesson
+						.slice(0, n)
+						.find((x) => x.kind === 'intro' && x.item.text === h.token);
+					expect(intro && 'item' in intro && intro.item.gloss).toEqual(h.gloss);
+				}
+			});
+			const seen = Object.fromEntries(
+				sentences.map((s) => [s.id, { id: s.id, seen: 1, correct: 1, wrong: 0, lastSeen: '' }])
+			);
+			const again = generateLesson({
+				...base,
+				stats: seen,
+				earlier: [],
+				unit: greetings,
+				lesson: 2,
+				seed
+			});
+			expect(again.some((e) => e.kind === 'intro' && e.item.id.includes('.hint.'))).toBe(false);
 		}
 	});
 

@@ -92,7 +92,10 @@ export async function arrange(page: Page, item: Item) {
 	for (const token of item.tokens!) {
 		await page.locator(`[data-card="${token}"]:not([disabled])`).first().click();
 	}
-	await expect(page.getByTestId('arranged')).toHaveText(new RegExp(item.tokens!.join('\\s*')));
+	const placed = page.getByTestId('arranged').locator('[data-placed]');
+	await expect
+		.poll(() => placed.evaluateAll((els) => els.map((e) => e.getAttribute('data-placed'))))
+		.toEqual(item.tokens);
 }
 
 /** The sentence an arrange exercise asks for: from its gloss, or by ear. */

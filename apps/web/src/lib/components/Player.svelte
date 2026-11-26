@@ -367,7 +367,12 @@
 				{/key}
 			{:else if ex.kind === 'arrange'}
 				{#key index}
-					<WordBank bank={ex.bank} disabled={checked} bind:value={arranged} />
+					<WordBank
+						bank={ex.bank}
+						roman={roman ? ex.roman : undefined}
+						disabled={checked}
+						bind:value={arranged}
+					/>
 				{/key}
 			{:else}
 				<ol class="flex flex-col gap-3">

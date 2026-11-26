@@ -9,9 +9,10 @@
 	// answer line (FLIP via crossfade); its empty slot stays behind in the bank.
 	let {
 		bank,
+		roman,
 		disabled,
 		value = $bindable([])
-	}: { bank: string[]; disabled: boolean; value?: string[] } = $props();
+	}: { bank: string[]; roman?: string[]; disabled: boolean; value?: string[] } = $props();
 
 	let picked = $state<number[]>([]);
 	$effect(() => {
@@ -21,12 +22,27 @@
 	const reduced =
 		typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
 	const [send, receive] = crossfade({ duration: reduced ? 0 : 250, easing: cubicOut });
-	const card = 'card chip min-h-12 min-w-12 px-3.5 text-lg font-bold disabled:opacity-60';
+	// Cards with romanization are taller; the answer lines follow them (--row).
+	const tall = $derived(!!roman?.some(Boolean));
+	const size = $derived(tall ? 'min-h-16 leading-tight' : 'min-h-12');
+	const card = $derived(
+		`card chip flex ${size} min-w-12 flex-col items-center justify-center px-3.5 text-lg font-bold whitespace-nowrap disabled:opacity-60`
+	);
 </script>
+
+{#snippet face(n: number)}
+	<span lang="ko">{bank[n]}</span>
+	{#if roman?.[n]}<span class="text-xs font-semibold opacity-70" data-testid="roman">
+			{roman[n]}
+		</span>{/if}
+{/snippet}
 
 <div class="flex flex-col gap-6" data-testid="wordbank">
 	<ol
-		class="lines flex min-h-[7.5rem] flex-wrap content-start gap-x-2 gap-y-3 pt-1"
+		style:--row={tall ? '4rem' : '3rem'}
+		class="lines flex {tall
+			? 'min-h-[9.5rem]'
+			: 'min-h-[7.5rem]'} flex-wrap content-start gap-x-2 gap-y-3 pt-1"
 		aria-label={m.arrange_answer()}
 		data-testid="arranged"
 	>
@@ -39,12 +55,11 @@
 				<button
 					type="button"
 					class={card}
-					lang="ko"
 					{disabled}
 					data-placed={bank[n]}
 					onclick={() => (picked = picked.filter((_, i) => i !== at))}
 				>
-					{bank[n]}
+					{@render face(n)}
 				</button>
 			</li>
 		{/each}
@@ -53,24 +68,22 @@
 		{#each bank as word, n (n)}
 			<li class="relative">
 				<span
-					class="chip block min-h-12 min-w-12 bg-locked-fill px-3.5 py-2.5 text-lg font-bold text-transparent"
-					lang="ko"
+					class="chip flex {size} min-w-12 flex-col items-center justify-center bg-locked-fill px-3.5 py-2.5 text-lg font-bold whitespace-nowrap text-transparent"
 					aria-hidden="true"
 				>
-					{word}
+					{@render face(n)}
 				</span>
 				{#if !picked.includes(n)}
 					<button
 						type="button"
 						class="{card} absolute inset-0"
-						lang="ko"
 						{disabled}
 						data-card={word}
 						in:receive={{ key: n }}
 						out:send={{ key: n }}
 						onclick={() => (picked = [...picked, n])}
 					>
-						{word}
+						{@render face(n)}
 					</button>
 				{/if}
 			</li>
@@ -81,13 +94,14 @@
 <style>
 	/* Ruled answer lines, one per row of cards. */
 	.lines {
+		--at: calc(var(--row) + 0.4rem);
 		background-image: linear-gradient(
 			to bottom,
-			transparent 3.4rem,
-			var(--line) 3.4rem,
-			var(--line) calc(3.4rem + 2px),
-			transparent calc(3.4rem + 2px)
+			transparent var(--at),
+			var(--line) var(--at),
+			var(--line) calc(var(--at) + 2px),
+			transparent calc(var(--at) + 2px)
 		);
-		background-size: 100% 3.75rem;
+		background-size: 100% calc(var(--row) + 0.75rem);
 	}
 </style>

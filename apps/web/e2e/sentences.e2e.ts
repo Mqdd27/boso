@@ -47,6 +47,9 @@ test('arrange a sentence from the word bank (cards go back on tap)', async ({ pa
 	const bank = page.getByTestId('wordbank');
 	// Decoys are in the bank too; a placed card goes back when tapped.
 	expect(await bank.locator('[data-card]').count()).toBeGreaterThan(item.tokens!.length);
+	// Every card shows its romanization (on by default).
+	const first = bank.locator(`[data-card="${item.tokens![0]}"]`).first();
+	await expect(first.getByTestId('roman')).toHaveText(item.roman.split(' ')[0].replace(/\W+$/, ''));
 	await bank.locator(`[data-card="${item.tokens![1]}"]`).first().click();
 	await page.locator(`[data-placed="${item.tokens![1]}"]`).click();
 	await expect(page.locator('[data-placed]')).toHaveCount(0);
