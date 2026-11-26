@@ -9,6 +9,7 @@ import (
 	"io/fs"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/pressly/goose/v3"
 	_ "github.com/tursodatabase/libsql-client-go/libsql" // registers "libsql" (remote Turso)
@@ -39,6 +40,9 @@ func Open(dataDir string) (*sql.DB, error) {
 // OpenRemote opens a Turso (libSQL) database by URL and auth token and migrates it. Used on
 // Vercel, where there is no disk. Same schema and SQL as the local file.
 func OpenRemote(url, token string) (*sql.DB, error) {
+	// libsql:// would use a WebSocket, which drops mid-migration on serverless ("stream is
+	// closed"); https:// is stateless HTTP against the same database.
+	url = strings.Replace(url, "libsql://", "https://", 1)
 	db, err := sql.Open("libsql", url+"?authToken="+token)
 	if err != nil {
 		return nil, fmt.Errorf("open turso: %w", err)
