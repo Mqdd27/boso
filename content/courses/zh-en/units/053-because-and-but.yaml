@@ -1,0 +1,253 @@
+id: zh-053-because-and-but
+title:
+  en: Because and But
+  id: Karena dan Tetapi
+level: hsk2
+items:
+- id: zh.w.yin1wei4
+  type: word
+  text: 因为
+  roman: yīnwèi
+  tones: yin1 wei4
+  gloss:
+    en: because; owing to; on account of
+    id: karena; disebabkan oleh; oleh karena
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:因为[yin1 wei4]
+  review: needs_review
+- id: zh.w.suo3yi3
+  type: word
+  text: 所以
+  roman: suǒyǐ
+  tones: suo3 yi3
+  gloss:
+    en: so
+    id: jadi; maka
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:所以[suo3 yi3]
+  review: needs_review
+- id: zh.w.sui1ran2
+  type: word
+  text: 虽然
+  roman: suīrán
+  tones: sui1 ran2
+  gloss:
+    en: although; even though (often used correlatively with 可是 or 但是 etc)
+    id: meskipun; walaupun (sering berpasangan dengan 可是 atau 但是 dll.)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:虽然[sui1 ran2]
+  review: needs_review
+- id: zh.w.dan4shi4
+  type: word
+  text: 但是
+  roman: dànshì
+  tones: dan4 shi4
+  gloss:
+    en: but; however
+    id: tetapi; namun
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:但是[dan4 shi4]
+  review: needs_review
+- id: zh.w.wei4shen2me5
+  type: word
+  text: 为什么
+  roman: wèishénme
+  tones: wei4 shen2 me5
+  gloss:
+    en: why?
+    id: mengapa?
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:为什么[wei4 shen2 me5]
+  review: needs_review
+- id: zh.w.ye3
+  type: word
+  text: 也
+  roman: yě
+  tones: ye3
+  gloss:
+    en: also; too; as well; (not ...) either
+    id: juga; pula; (tidak ...) juga
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:也[ye3]
+  review: needs_review
+- id: zh.s.t2635835
+  type: sentence
+  text: 你也是。
+  roman: Nǐ yě shì.
+  tokens:
+  - 你
+  - 也
+  - 是
+  gloss:
+    en: You too.
+    id: Kamu juga.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: iainmb93
+      source_ref: tatoeba:2682234
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: cienias
+  source_ref: tatoeba:2635835
+  review: needs_review
+- id: zh.s.t5995701
+  type: sentence
+  text: 我也不。
+  roman: Wǒ yě bù.
+  tokens:
+  - 我
+  - 也
+  - 不
+  gloss:
+    en: Me neither.
+    id: Aku juga tidak.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: lukaszpp
+      source_ref: tatoeba:456389
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: xjjAstrus
+  source_ref: tatoeba:5995701
+  review: needs_review
+- id: zh.s.t793651
+  type: sentence
+  text: 我也是。
+  roman: Wǒ yě shì.
+  tokens:
+  - 我
+  - 也
+  - 是
+  gloss:
+    en: So do I.
+    id: Aku juga.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: AlanF_US
+      source_ref: tatoeba:262324
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Vortarulo
+  source_ref: tatoeba:793651
+  review: needs_review
+- id: zh.s.t10460856
+  type: sentence
+  text: 我也不忙。
+  roman: Wǒ yě bùmáng.
+  tokens:
+  - 我
+  - 也
+  - 不忙
+  gloss:
+    en: I'm not busy either.
+    id: Aku juga nggak sibuk.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2647677
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: DaoSeng
+  source_ref: tatoeba:10460856
+  review: needs_review
+- id: zh.s.t12218066
+  type: sentence
+  text: 我也想吃！
+  roman: Wǒ yě xiǎng chī!
+  tokens:
+  - 我
+  - 也
+  - 想
+  - 吃
+  gloss:
+    en: I want to eat too!
+    id: Aku juga mau makan!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: megamanenm
+      source_ref: tatoeba:12218060
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: megamanenm
+  source_ref: tatoeba:12218066
+  review: needs_review
+- id: zh.s.t3378129
+  type: sentence
+  text: 我也喝茶。
+  roman: Wǒ yě hēchá.
+  tokens:
+  - 我
+  - 也
+  - 喝茶
+  gloss:
+    en: I drink tea, too.
+    id: Aku juga minum teh.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:3378130
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:3378129
+  review: needs_review

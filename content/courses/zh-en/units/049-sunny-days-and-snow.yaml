@@ -1,0 +1,258 @@
+id: zh-049-sunny-days-and-snow
+title:
+  en: Sunny Days and Snow
+  id: Hari Cerah dan Salju
+level: hsk2
+items:
+- id: zh.w.qing2
+  type: word
+  text: 晴
+  roman: qíng
+  tones: qing2
+  gloss:
+    en: fine (weather)
+    id: cerah (cuaca)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:晴[qing2]
+  review: needs_review
+- id: zh.w.yin1
+  type: word
+  text: 阴
+  roman: yīn
+  tones: yin1
+  gloss:
+    en: overcast (weather)
+    id: mendung (cuaca)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:阴[yin1]
+  review: needs_review
+- id: zh.w.xue3
+  type: word
+  text: 雪
+  roman: xuě
+  tones: xue3
+  gloss:
+    en: snow
+    id: salju
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:雪[xue3]
+  review: needs_review
+- id: zh.w.ri4
+  type: word
+  text: 日
+  roman: rì
+  tones: ri4
+  gloss:
+    en: day
+    id: hari
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:日[ri4]
+  review: needs_review
+- id: zh.w.qu4nian2
+  type: word
+  text: 去年
+  roman: qùnián
+  tones: qu4 nian2
+  gloss:
+    en: last year
+    id: tahun lalu
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:去年[qu4 nian2]
+  review: needs_review
+- id: zh.w.mei3
+  type: word
+  text: 每
+  roman: měi
+  tones: mei3
+  gloss:
+    en: every
+    id: setiap
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:每[mei3]
+  review: needs_review
+- id: zh.s.t510751
+  type: sentence
+  text: 你喜欢雪吗？
+  roman: Nǐ xǐhuan xuě ma?
+  tokens:
+  - 你
+  - 喜欢
+  - 雪
+  - 吗
+  gloss:
+    en: Do you like snow?
+    id: Kamu suka salju?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: lukaszpp
+      source_ref: tatoeba:434606
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:510751
+  review: needs_review
+- id: zh.s.t9980175
+  type: sentence
+  text: 我们喜欢雪。
+  roman: Wǒmen xǐhuan xuě.
+  tokens:
+  - 我们
+  - 喜欢
+  - 雪
+  gloss:
+    en: We like snow.
+    id: Kami suka salju.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Amastan
+      source_ref: tatoeba:2858657
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Arania
+  source_ref: tatoeba:9980175
+  review: needs_review
+- id: zh.s.t759541
+  type: sentence
+  text: 下了很多的雪。
+  roman: Xià le hěnduō de xuě.
+  tokens:
+  - 下
+  - 了
+  - 很多
+  - 的
+  - 雪
+  gloss:
+    en: It snowed a lot.
+    id: Salju turun banyak sekali.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: tatomeimei
+      source_ref: tatoeba:1045510
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Martha
+  source_ref: tatoeba:759541
+  review: needs_review
+- id: zh.s.t336618
+  type: sentence
+  text: 去年下了很多雪。
+  roman: Qùnián xià le hěnduō xuě.
+  tokens:
+  - 去年
+  - 下
+  - 了
+  - 很多
+  - 雪
+  gloss:
+    en: We had a lot of snow last year.
+    id: Tahun lalu salju turun banyak sekali.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:19421
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:336618
+  review: needs_review
+- id: zh.s.t332787
+  type: sentence
+  text: 去年她离开了日本。
+  roman: Qùnián tā líkāi le rìběn.
+  tokens:
+  - 去年
+  - 她
+  - 离开
+  - 了
+  - 日本
+  gloss:
+    en: She was out of Japan last year.
+    id: Tahun lalu dia meninggalkan Jepang.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:313215
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:332787
+  review: needs_review
+- id: zh.s.t5550237
+  type: sentence
+  text: 我好喜欢雪。
+  roman: Wǒ hǎo xǐhuan xuě.
+  tokens:
+  - 我
+  - 好
+  - 喜欢
+  - 雪
+  gloss:
+    en: I really like snow.
+    id: Aku suka banget sama salju.
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: verdastelo9604
+  source_ref: tatoeba:5550237
+  review: needs_review

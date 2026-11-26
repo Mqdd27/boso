@@ -1,0 +1,287 @@
+id: zh-037-daily-routine
+title:
+  en: Daily Routine
+  id: Rutinitas Harian
+level: hsk2
+items:
+- id: zh.w.qi3chuang2
+  type: word
+  text: 起床
+  roman: qǐchuáng
+  tones: qi3 chuang2
+  gloss:
+    en: to get out of bed; to get up
+    id: bangun dari tempat tidur; bangun
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:起床[qi3 chuang2]
+  review: needs_review
+- id: zh.w.zao3shang5
+  type: word
+  text: 早上
+  roman: zǎoshang
+  tones: zao3 shang5
+  gloss:
+    en: early morning
+    id: pagi
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:早上[zao3 shang5]
+  review: needs_review
+- id: zh.w.wan3shang5
+  type: word
+  text: 晚上
+  roman: wǎnshang
+  tones: wan3 shang5
+  gloss:
+    en: evening
+    id: malam
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:晚上[wan3 shang5]
+  review: needs_review
+- id: zh.w.xi3
+  type: word
+  text: 洗
+  roman: xǐ
+  tones: xi3
+  gloss:
+    en: to wash; to bathe
+    id: mencuci; mandi
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:洗[xi3]
+  review: needs_review
+- id: zh.w.shang4ban1
+  type: word
+  text: 上班
+  roman: shàngbān
+  tones: shang4 ban1
+  gloss:
+    en: to go to work
+    id: pergi bekerja
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:上班[shang4 ban1]
+  review: needs_review
+- id: zh.w.gong1si1
+  type: word
+  text: 公司
+  roman: gōngsī
+  tones: gong1 si1
+  gloss:
+    en: company; firm; corporation
+    id: perusahaan; firma; korporasi
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:公司[gong1 si1]
+  review: needs_review
+- id: zh.w.mang2
+  type: word
+  text: 忙
+  roman: máng
+  tones: mang2
+  gloss:
+    en: busy
+    id: sibuk
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:忙[mang2]
+  review: needs_review
+- id: zh.w.zhun3bei4
+  type: word
+  text: 准备
+  roman: zhǔnbèi
+  tones: zhun3 bei4
+  gloss:
+    en: to prepare
+    id: mempersiapkan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:准备[zhun3 bei4]
+  review: needs_review
+- id: zh.s.t1278516
+  type: sentence
+  text: 她很忙。
+  roman: Tā hěn máng.
+  tokens:
+  - 她
+  - 很
+  - 忙
+  gloss:
+    en: She is very busy.
+    id: Dia sibuk banget.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:315715
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Vortarulo
+  source_ref: tatoeba:1278516
+  review: needs_review
+- id: zh.s.t2881090
+  type: sentence
+  text: 您忙吗？
+  roman: Nín máng ma?
+  tokens:
+  - 您
+  - 忙
+  - 吗
+  gloss:
+    en: Are you busy?
+    id: Apakah anda sedang sibuk?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: adjusting
+      source_ref: tatoeba:68948
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: estimator
+      source_ref: tatoeba:14049900
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Kiwi
+  source_ref: tatoeba:2881090
+  review: needs_review
+- id: zh.s.t343715
+  type: sentence
+  text: 他很忙。
+  roman: Tā hěn máng.
+  tokens:
+  - 他
+  - 很
+  - 忙
+  gloss:
+    en: He has been busy.
+    id: Dia sibuk sekali.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:290296
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:343715
+  review: needs_review
+- id: zh.s.t819333
+  type: sentence
+  text: 我很忙。
+  roman: Wǒ hěn máng.
+  tokens:
+  - 我
+  - 很
+  - 忙
+  gloss:
+    en: I'm busy.
+    id: Aku sibuk.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:261721
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Martha
+  source_ref: tatoeba:819333
+  review: needs_review
+- id: zh.s.t2300033
+  type: sentence
+  text: 我洗好了。
+  roman: Wǒ xǐ hǎo le.
+  tokens:
+  - 我
+  - 洗
+  - 好
+  - 了
+  gloss:
+    en: I'm all washed up.
+    id: Aku sudah selesai mandi.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: FeuDRenais2
+      source_ref: tatoeba:2301461
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:2300033
+  review: needs_review
+- id: zh.s.t6047459
+  type: sentence
+  text: 是晚上了。
+  roman: Shì wǎnshang le.
+  tokens:
+  - 是
+  - 晚上
+  - 了
+  gloss:
+    en: It's night.
+    id: Sudah malam.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2187224
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: verdastelo9604
+  source_ref: tatoeba:6047459
+  review: needs_review

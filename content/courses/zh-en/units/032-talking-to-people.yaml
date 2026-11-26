@@ -1,0 +1,268 @@
+id: zh-032-talking-to-people
+title:
+  en: Talking to People
+  id: Berbicara dengan Orang
+level: hsk2
+items:
+- id: zh.w.nin2
+  type: word
+  text: 您
+  roman: nín
+  tones: nin2
+  gloss:
+    en: you (courteous, as opposed to informal 你)
+    id: Anda (sopan, lawan dari 你 yang informal)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:您[nin2]
+  review: needs_review
+- id: zh.w.da4jia1
+  type: word
+  text: 大家
+  roman: dàjiā
+  tones: da4 jia1
+  gloss:
+    en: everyone
+    id: semua orang
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:大家[da4 jia1]
+  review: needs_review
+- id: zh.w.shuo1hua4
+  type: word
+  text: 说话
+  roman: shuōhuà
+  tones: shuo1 hua4
+  gloss:
+    en: to speak
+    id: berbicara
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:说话[shuo1 hua4]
+  review: needs_review
+- id: zh.w.gao4su4
+  type: word
+  text: 告诉
+  roman: gàosu
+  tones: gao4 su5
+  gloss:
+    en: to tell; to inform; to let know
+    id: memberi tahu; menginformasikan; mengabari
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:告诉[gao4 su5]
+  review: needs_review
+- id: zh.w.wen4
+  type: word
+  text: 问
+  roman: wèn
+  tones: wen4
+  gloss:
+    en: to ask; to inquire
+    id: bertanya; menanyakan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:问[wen4]
+  review: needs_review
+- id: zh.w.jie4shao4
+  type: word
+  text: 介绍
+  roman: jièshào
+  tones: jie4 shao4
+  gloss:
+    en: to introduce (sb to sb)
+    id: memperkenalkan (seseorang kepada orang lain)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:介绍[jie4 shao4]
+  review: needs_review
+- id: zh.w.xing4
+  type: word
+  text: 姓
+  roman: xìng
+  tones: xing4
+  gloss:
+    en: to be surnamed ...
+    id: bermarga ...
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:姓[xing4]
+  review: needs_review
+- id: zh.s.t380195
+  type: sentence
+  text: 我爱您。
+  roman: Wǒ ài nín.
+  tokens:
+  - 我
+  - 爱
+  - 您
+  gloss:
+    en: I love you.
+    id: Aku sayang Anda.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: awael58
+      source_ref: tatoeba:1434
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Martha
+  source_ref: tatoeba:380195
+  review: needs_review
+- id: zh.s.t5321371
+  type: sentence
+  text: 我想说话
+  roman: Wǒ xiǎng shuōhuà
+  tokens:
+  - 我
+  - 想
+  - 说话
+  gloss:
+    en: I want to speak.
+    id: Aku mau bicara
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Jeannierocket
+      source_ref: tatoeba:5327624
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: boyhero
+  source_ref: tatoeba:5321371
+  review: needs_review
+- id: zh.s.t5584076
+  type: sentence
+  text: 您在家吗
+  roman: Nín zàijiā ma
+  tokens:
+  - 您
+  - 在家
+  - 吗
+  gloss:
+    en: Are you home?
+    id: Anda ada di rumah?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:1126543
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: grindeldore
+  source_ref: tatoeba:5584076
+  review: needs_review
+- id: zh.s.t10252146
+  type: sentence
+  text: 我们问他。
+  roman: Wǒmen wèn tā.
+  tokens:
+  - 我们
+  - 问
+  - 他
+  gloss:
+    en: We'll ask him.
+    id: Kami tanya dia.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CH
+      source_ref: tatoeba:3920154
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:10252146
+  review: needs_review
+- id: zh.s.t10747502
+  type: sentence
+  text: 他告诉她。
+  roman: Tā gàosu tā.
+  tokens:
+  - 他
+  - 告诉
+  - 她
+  gloss:
+    en: He told her.
+    id: Dia memberi tahu dia.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Amastan
+      source_ref: tatoeba:2862602
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: megamanenm
+  source_ref: tatoeba:10747502
+  review: needs_review
+- id: zh.s.t11510495
+  type: sentence
+  text: 她不说话。
+  roman: Tā bù shuōhuà.
+  tokens:
+  - 她
+  - 不
+  - 说话
+  gloss:
+    en: She doesn't talk.
+    id: Dia tidak bicara.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: megamanenm
+      source_ref: tatoeba:11510492
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: megamanenm
+  source_ref: tatoeba:11510495
+  review: needs_review

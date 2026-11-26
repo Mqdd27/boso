@@ -1,0 +1,288 @@
+id: zh-034-siblings-and-spouses
+title:
+  en: Siblings and Spouses
+  id: Saudara dan Pasangan
+level: hsk2
+items:
+- id: zh.w.ge1ge5
+  type: word
+  text: 哥哥
+  roman: gēge
+  tones: ge1 ge5
+  gloss:
+    en: older brother
+    id: kakak laki-laki
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:哥哥[ge1 ge5]
+  review: needs_review
+- id: zh.w.jie3jie5
+  type: word
+  text: 姐姐
+  roman: jiějie
+  tones: jie3 jie5
+  gloss:
+    en: older sister
+    id: kakak perempuan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:姐姐[jie3 jie5]
+  review: needs_review
+- id: zh.w.di4di5
+  type: word
+  text: 弟弟
+  roman: dìdi
+  tones: di4 di5
+  gloss:
+    en: younger brother
+    id: adik laki-laki
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:弟弟[di4 di5]
+  review: needs_review
+- id: zh.w.mei4mei5
+  type: word
+  text: 妹妹
+  roman: mèimei
+  tones: mei4 mei5
+  gloss:
+    en: younger sister
+    id: adik perempuan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:妹妹[mei4 mei5]
+  review: needs_review
+- id: zh.w.zhang4fu5
+  type: word
+  text: 丈夫
+  roman: zhàngfu
+  tones: zhang4 fu5
+  gloss:
+    en: husband
+    id: suami
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:丈夫[zhang4 fu5]
+  review: needs_review
+- id: zh.w.qi1zi3
+  type: word
+  text: 妻子
+  roman: qīzi
+  tones: qi1 zi5
+  gloss:
+    en: wife
+    id: istri
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:妻子[qi1 zi5]
+  review: needs_review
+- id: zh.w.nan2
+  type: word
+  text: 男
+  roman: nán
+  tones: nan2
+  gloss:
+    en: (bound form) male
+    id: (bentuk terikat) laki-laki
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:男[nan2]
+  review: needs_review
+- id: zh.w.nv3
+  type: word
+  text: 女
+  roman: nǚ
+  tones: nü3
+  gloss:
+    en: female
+    id: perempuan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:女[nu:3]
+  review: needs_review
+- id: zh.s.t10913658
+  type: sentence
+  text: 我妻子在家。
+  roman: Wǒ qīzi zàijiā.
+  tokens:
+  - 我
+  - 妻子
+  - 在家
+  gloss:
+    en: My wife is at home.
+    id: Istriku ada di rumah.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: timmartin
+      source_ref: tatoeba:11987152
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: xjjAstrus
+  source_ref: tatoeba:10913658
+  review: needs_review
+- id: zh.s.t1325183
+  type: sentence
+  text: 她是我妻子。
+  roman: Tā shì wǒ qīzi.
+  tokens:
+  - 她
+  - 是
+  - 我
+  - 妻子
+  gloss:
+    en: She's my wife.
+    id: Dia istriku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Scott
+      source_ref: tatoeba:1325177
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Vortarulo
+  source_ref: tatoeba:1325183
+  review: needs_review
+- id: zh.s.t13260802
+  type: sentence
+  text: 他是我丈夫。
+  roman: Tā shì wǒ zhàngfu.
+  tokens:
+  - 他
+  - 是
+  - 我
+  - 丈夫
+  gloss:
+    en: He is my husband.
+    id: Dia suamiku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: nurendra
+      source_ref: tatoeba:3534048
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: atitarev
+  source_ref: tatoeba:13260802
+  review: needs_review
+- id: zh.s.t13942570
+  type: sentence
+  text: 我没有妹妹。
+  roman: Wǒ méiyǒu mèimei.
+  tokens:
+  - 我
+  - 没有
+  - 妹妹
+  gloss:
+    en: I don't have a younger sister.
+    id: Aku nggak punya adik perempuan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Vortarulo
+      source_ref: tatoeba:1183190
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: jan_OkulaJu
+  source_ref: tatoeba:13942570
+  review: needs_review
+- id: zh.s.t3699585
+  type: sentence
+  text: 你哥哥是谁？
+  roman: Nǐ gēge shì shéi?
+  tokens:
+  - 你
+  - 哥哥
+  - 是
+  - 谁
+  gloss:
+    en: Who is your brother?
+    id: Kakak laki-lakimu yang mana?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2647280
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: katshi94
+  source_ref: tatoeba:3699585
+  review: needs_review
+- id: zh.s.t5691647
+  type: sentence
+  text: 你的妹妹呢？
+  roman: Nǐ de mèimei ne?
+  tokens:
+  - 你
+  - 的
+  - 妹妹
+  - 呢
+  gloss:
+    en: Where did your sister just go?
+    id: Adik perempuanmu mana?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: DaoSeng
+      source_ref: tatoeba:10612053
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: xjjAstrus
+  source_ref: tatoeba:5691647
+  review: needs_review

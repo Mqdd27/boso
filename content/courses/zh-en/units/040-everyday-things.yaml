@@ -1,0 +1,284 @@
+id: zh-040-everyday-things
+title:
+  en: Everyday Things and Prices
+  id: Barang Sehari-hari dan Harga
+level: hsk2
+items:
+- id: zh.w.shou3ji1
+  type: word
+  text: 手机
+  roman: shǒujī
+  tones: shou3 ji1
+  gloss:
+    en: cell phone; mobile phone
+    id: ponsel; telepon genggam
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:手机[shou3 ji1]
+  review: needs_review
+- id: zh.w.shou3biao3
+  type: word
+  text: 手表
+  roman: shǒubiǎo
+  tones: shou3 biao3
+  gloss:
+    en: wristwatch
+    id: jam tangan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:手表[shou3 biao3]
+  review: needs_review
+- id: zh.w.qian1bi3
+  type: word
+  text: 铅笔
+  roman: qiānbǐ
+  tones: qian1 bi3
+  gloss:
+    en: (lead) pencil
+    id: pensil (timah)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:铅笔[qian1 bi3]
+  review: needs_review
+- id: zh.w.bao4zhi3
+  type: word
+  text: 报纸
+  roman: bàozhǐ
+  tones: bao4 zhi3
+  gloss:
+    en: newspaper
+    id: koran
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:报纸[bao4 zhi3]
+  review: needs_review
+- id: zh.w.gui4
+  type: word
+  text: 贵
+  roman: guì
+  tones: gui4
+  gloss:
+    en: expensive
+    id: mahal
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:贵[gui4]
+  review: needs_review
+- id: zh.w.bian4yi2
+  type: word
+  text: 便宜
+  roman: piányi
+  tones: pian2 yi5
+  gloss:
+    en: cheap; inexpensive
+    id: murah; tidak mahal
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:便宜[pian2 yi5]
+  review: needs_review
+- id: zh.w.mai4
+  type: word
+  text: 卖
+  roman: mài
+  tones: mai4
+  gloss:
+    en: to sell
+    id: menjual
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:卖[mai4]
+  review: needs_review
+- id: zh.w.ta1-5b83
+  type: word
+  text: 它
+  roman: tā
+  tones: ta1
+  gloss:
+    en: it
+    id: itu (kata ganti benda/hewan)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:它[ta1]
+  review: needs_review
+- id: zh.s.t10182737
+  type: sentence
+  text: 谁想要它？
+  roman: Shéi xiǎngyào tā?
+  tokens:
+  - 谁
+  - 想要
+  - 它
+  gloss:
+    en: Who wants it?
+    id: Siapa yang mau itu?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2011277
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: slo_oth
+  source_ref: tatoeba:10182737
+  review: needs_review
+- id: zh.s.t4887708
+  type: sentence
+  text: 它是什么？
+  roman: Tā shì shénme?
+  tokens:
+  - 它
+  - 是
+  - 什么
+  gloss:
+    en: What is it?
+    id: Itu apa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: brauliobezerra
+      source_ref: tatoeba:42849
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: musclegirlxyp
+  source_ref: tatoeba:4887708
+  review: needs_review
+- id: zh.s.t5580921
+  type: sentence
+  text: 它没有吃。
+  roman: Tā méiyǒu chī.
+  tokens:
+  - 它
+  - 没有
+  - 吃
+  gloss:
+    en: It didn't eat.
+    id: Dia tidak makan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: zacbennett
+      source_ref: tatoeba:9628288
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: grindeldore
+  source_ref: tatoeba:5580921
+  review: needs_review
+- id: zh.s.t7768273
+  type: sentence
+  text: 他卖水果。
+  roman: Tā mài shuǐguǒ.
+  tokens:
+  - 他
+  - 卖
+  - 水果
+  gloss:
+    en: He sells fruit.
+    id: Dia jualan buah.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: lukaszpp
+      source_ref: tatoeba:434998
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: jiangche
+  source_ref: tatoeba:7768273
+  review: needs_review
+- id: zh.s.t824484
+  type: sentence
+  text: 它太大了。
+  roman: Tā tàidà le.
+  tokens:
+  - 它
+  - 太大
+  - 了
+  gloss:
+    en: It's too big.
+    id: Itu terlalu besar.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:435409
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Martha
+  source_ref: tatoeba:824484
+  review: needs_review
+- id: zh.s.t924018
+  type: sentence
+  text: 这个不贵。
+  roman: Zhège bù guì.
+  tokens:
+  - 这个
+  - 不
+  - 贵
+  gloss:
+    en: This is not expensive.
+    id: Yang ini tidak mahal.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: jared1981
+      source_ref: tatoeba:1216159
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: jessie0422
+  source_ref: tatoeba:924018
+  review: needs_review

@@ -1,0 +1,254 @@
+id: zh-052-already-and-still
+title:
+  en: Already, Still and Again
+  id: Sudah, Masih dan Lagi
+level: hsk2
+items:
+- id: zh.w.yi3jing1
+  type: word
+  text: 已经
+  roman: yǐjīng
+  tones: yi3 jing1
+  gloss:
+    en: already
+    id: sudah
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:已经[yi3 jing1]
+  review: needs_review
+- id: zh.w.zheng4zai4
+  type: word
+  text: 正在
+  roman: zhèngzài
+  tones: zheng4 zai4
+  gloss:
+    en: to be in the process of (doing sth); to be currently ...-ing
+    id: sedang dalam proses (melakukan sesuatu); sedang ...
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:正在[zheng4 zai4]
+  review: needs_review
+- id: zh.w.zhao1
+  type: word
+  text: 着
+  roman: zháo
+  tones: zhao2
+  gloss:
+    en: to touch
+    id: menyentuh
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:着[zhao2]
+  review: needs_review
+- id: zh.w.hai2
+  type: word
+  text: 还
+  roman: hái
+  tones: hai2
+  gloss:
+    en: still
+    id: masih
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:还[hai2]
+  review: needs_review
+- id: zh.w.jiu4
+  type: word
+  text: 就
+  roman: jiù
+  tones: jiu4
+  gloss:
+    en: (after a clause of action) as soon as; immediately after
+    id: (setelah klausa tindakan) begitu; segera setelah
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:就[jiu4]
+  review: needs_review
+- id: zh.w.zai4-518d
+  type: word
+  text: 再
+  roman: zài
+  tones: zai4
+  gloss:
+    en: again; once more; re-
+    id: lagi; sekali lagi; ulang-
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:再[zai4]
+  review: needs_review
+- id: zh.s.t10083986
+  type: sentence
+  text: 还不快走！
+  roman: Hái bùkuài zǒu!
+  tokens:
+  - 还
+  - 不快
+  - 走
+  gloss:
+    en: Hurry, pick up your pace!
+    id: Ayo, cepat jalan!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Aphima
+      source_ref: tatoeba:11291136
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: ColawithIce
+  source_ref: tatoeba:10083986
+  review: needs_review
+- id: zh.s.t1077784
+  type: sentence
+  text: 再来一次！
+  roman: Zài lái yīcì!
+  tokens:
+  - 再
+  - 来
+  - 一次
+  gloss:
+    en: One more time!
+    id: Sekali lagi!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: paper1n0
+      source_ref: tatoeba:4736846
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Vortarulo
+  source_ref: tatoeba:1077784
+  review: needs_review
+- id: zh.s.t13878983
+  type: sentence
+  text: 在这等着！
+  roman: Zài zhè děng zháo!
+  tokens:
+  - 在
+  - 这
+  - 等
+  - 着
+  gloss:
+    en: Wait here!
+    id: Tunggu di sini!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: ToxicFriu
+      source_ref: tatoeba:10565466
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: jan_OkulaJu
+  source_ref: tatoeba:13878983
+  review: needs_review
+- id: zh.s.t1636195
+  type: sentence
+  text: 我就知道！
+  roman: Wǒ jiù zhīdào!
+  tokens:
+  - 我
+  - 就
+  - 知道
+  gloss:
+    en: I knew it!
+    id: Sudah kuduga!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: ozzie
+      source_ref: tatoeba:1953109
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fengli
+  source_ref: tatoeba:1636195
+  review: needs_review
+- id: zh.s.t2141720
+  type: sentence
+  text: 这就对了。
+  roman: Zhè jiù duì le.
+  tokens:
+  - 这
+  - 就
+  - 对
+  - 了
+  gloss:
+    en: Now that's right.
+    id: Nah, begitu baru benar.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: FeuDRenais2
+      source_ref: tatoeba:2162673
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sysko
+  source_ref: tatoeba:2141720
+  review: needs_review
+- id: zh.s.t336262
+  type: sentence
+  text: 现在就做！
+  roman: Xiànzài jiù zuò!
+  tokens:
+  - 现在
+  - 就
+  - 做
+  gloss:
+    en: Do it now!
+    id: Kerjakan sekarang juga!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Miktsoanit
+      source_ref: tatoeba:12436924
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:336262
+  review: needs_review

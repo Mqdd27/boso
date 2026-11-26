@@ -1,0 +1,257 @@
+id: zh-038-hours-and-birthdays
+title:
+  en: Hours and Birthdays
+  id: Jam dan Ulang Tahun
+level: hsk2
+items:
+- id: zh.w.shi2jian1
+  type: word
+  text: 时间
+  roman: shíjiān
+  tones: shi2 jian1
+  gloss:
+    en: (concept of) time
+    id: (konsep) waktu
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:时间[shi2 jian1]
+  review: needs_review
+- id: zh.w.xiao3shi2
+  type: word
+  text: 小时
+  roman: xiǎoshí
+  tones: xiao3 shi2
+  gloss:
+    en: hour
+    id: jam (satuan waktu)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:小时[xiao3 shi2]
+  review: needs_review
+- id: zh.w.sheng1ri4
+  type: word
+  text: 生日
+  roman: shēngrì
+  tones: sheng1 ri4
+  gloss:
+    en: birthday
+    id: ulang tahun
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:生日[sheng1 ri4]
+  review: needs_review
+- id: zh.w.kuai4le4
+  type: word
+  text: 快乐
+  roman: kuàilè
+  tones: kuai4 le4
+  gloss:
+    en: happy; joyful
+    id: bahagia; gembira
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:快乐[kuai4 le4]
+  review: needs_review
+- id: zh.w.kai1shi3
+  type: word
+  text: 开始
+  roman: kāishǐ
+  tones: kai1 shi3
+  gloss:
+    en: to begin; to start
+    id: mulai; memulai
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:开始[kai1 shi3]
+  review: needs_review
+- id: zh.w.wan2
+  type: word
+  text: 完
+  roman: wán
+  tones: wan2
+  gloss:
+    en: to finish
+    id: menyelesaikan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:完[wan2]
+  review: needs_review
+- id: zh.s.t12686968
+  type: sentence
+  text: 谁的生日？
+  roman: Shéi de shēngrì?
+  tokens:
+  - 谁
+  - 的
+  - 生日
+  gloss:
+    en: Whose birthday is it?
+    id: Ulang tahun siapa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: megamanenm
+      source_ref: tatoeba:10626796
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: soueihin
+  source_ref: tatoeba:12686968
+  review: needs_review
+- id: zh.s.t1361961
+  type: sentence
+  text: 我很快乐。
+  roman: Wǒ hěn kuàilè.
+  tokens:
+  - 我
+  - 很
+  - 快乐
+  gloss:
+    en: I'm very happy.
+    id: Aku senang sekali.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:255245
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sadhen
+  source_ref: tatoeba:1361961
+  review: needs_review
+- id: zh.s.t4859550
+  type: sentence
+  text: 我有时间。
+  roman: Wǒ yǒu shíjiān.
+  tokens:
+  - 我
+  - 有
+  - 时间
+  gloss:
+    en: I have time.
+    id: Aku punya waktu.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2245901
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: HAGNi
+      source_ref: tatoeba:10008934
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: musclegirlxyp
+  source_ref: tatoeba:4859550
+  review: needs_review
+- id: zh.s.t3367336
+  type: sentence
+  text: 时间不等人。
+  roman: Shíjiān bù děng rén.
+  tokens:
+  - 时间
+  - 不
+  - 等
+  - 人
+  gloss:
+    en: Time waits for no one.
+    id: Waktu tidak menunggu siapa pun.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: belgavox
+      source_ref: tatoeba:1744302
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: go_oo
+  source_ref: tatoeba:3367336
+  review: needs_review
+- id: zh.s.t4104783
+  type: sentence
+  text: 给她点时间。
+  roman: Gěi tā diǎn shíjiān.
+  tokens:
+  - 给
+  - 她
+  - 点
+  - 时间
+  gloss:
+    en: Give her a moment.
+    id: Kasih dia sedikit waktu.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CH
+      source_ref: tatoeba:3915885
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: maple
+  source_ref: tatoeba:4104783
+  review: needs_review
+- id: zh.s.t813630
+  type: sentence
+  text: 我时间不多。
+  roman: Wǒ shíjiān bù duō.
+  tokens:
+  - 我
+  - 时间
+  - 不
+  - 多
+  gloss:
+    en: I don't have much time.
+    id: Waktuku tidak banyak.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:67690
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:813630
+  review: needs_review

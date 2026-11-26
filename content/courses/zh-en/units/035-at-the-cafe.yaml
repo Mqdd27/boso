@@ -1,0 +1,255 @@
+id: zh-035-at-the-cafe
+title:
+  en: At the Café
+  id: Di Kafe
+level: hsk2
+items:
+- id: zh.w.ka1fei1
+  type: word
+  text: 咖啡
+  roman: kāfēi
+  tones: ka1 fei1
+  gloss:
+    en: (loanword) coffee
+    id: (kata serapan) kopi
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:咖啡[ka1 fei1]
+  review: needs_review
+- id: zh.w.niu2nai3
+  type: word
+  text: 牛奶
+  roman: niúnǎi
+  tones: niu2 nai3
+  gloss:
+    en: cow's milk
+    id: susu sapi
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:牛奶[niu2 nai3]
+  review: needs_review
+- id: zh.w.fu2wu4yuan2
+  type: word
+  text: 服务员
+  roman: fúwùyuán
+  tones: fu2 wu4 yuan2
+  gloss:
+    en: waiter
+    id: pelayan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:服务员[fu2 wu4 yuan2]
+  review: needs_review
+- id: zh.w.yao1
+  type: word
+  text: 要
+  roman: yào
+  tones: yao4
+  gloss:
+    en: to want; to need; to ask for
+    id: ingin; perlu; meminta
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:要[yao4]
+  review: needs_review
+- id: zh.w.gei3
+  type: word
+  text: 给
+  roman: gěi
+  tones: gei3
+  gloss:
+    en: to give
+    id: memberi
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:给[gei3]
+  review: needs_review
+- id: zh.w.deng3
+  type: word
+  text: 等
+  roman: děng
+  tones: deng3
+  gloss:
+    en: to wait for; to await
+    id: menunggu; menantikan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:等[deng3]
+  review: needs_review
+- id: zh.s.t12554578
+  type: sentence
+  text: 都给我。
+  roman: Dōu gěi wǒ.
+  tokens:
+  - 都
+  - 给
+  - 我
+  gloss:
+    en: Give me everything.
+    id: Kasih aku semuanya.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:6113980
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: AlexandreDupont
+  source_ref: tatoeba:12554578
+  review: needs_review
+- id: zh.s.t1227093
+  type: sentence
+  text: 我在等他。
+  roman: Wǒ zài děng tā.
+  tokens:
+  - 我
+  - 在
+  - 等
+  - 他
+  gloss:
+    en: I'm waiting for him.
+    id: Aku lagi nunggu dia.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:260962
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: tsayng
+  source_ref: tatoeba:1227093
+  review: needs_review
+- id: zh.s.t3377929
+  type: sentence
+  text: 请给我钱。
+  roman: Qǐng gěi wǒ qián.
+  tokens:
+  - 请
+  - 给
+  - 我
+  - 钱
+  gloss:
+    en: Please give me money.
+    id: Tolong kasih aku uang.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Jesse
+      source_ref: tatoeba:3377930
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:3377929
+  review: needs_review
+- id: zh.s.t419994
+  type: sentence
+  text: 给，给你！
+  roman: Gěi, gěi nǐ!
+  tokens:
+  - 给
+  - 给
+  - 你
+  gloss:
+    en: Here, this is for you!
+    id: Nih, buat kamu!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: itsthejazzkid
+      source_ref: tatoeba:894934
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sysko
+  source_ref: tatoeba:419994
+  review: needs_review
+- id: zh.s.t420070
+  type: sentence
+  text: 我不等谁。
+  roman: Wǒ bù děng shéi.
+  tokens:
+  - 我
+  - 不
+  - 等
+  - 谁
+  gloss:
+    en: I'm not waiting for anyone.
+    id: Aku nggak nunggu siapa-siapa.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: U2FS
+      source_ref: tatoeba:822097
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sysko
+  source_ref: tatoeba:420070
+  review: needs_review
+- id: zh.s.t4761392
+  type: sentence
+  text: 要下雨了。
+  roman: Yào xiàyǔ le.
+  tokens:
+  - 要
+  - 下雨
+  - 了
+  gloss:
+    en: It's about to rain.
+    id: Mau hujan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: lukaszpp
+      source_ref: tatoeba:456201
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: billt_estates
+  source_ref: tatoeba:4761392
+  review: needs_review

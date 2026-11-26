@@ -1,0 +1,258 @@
+id: zh-036-meals
+title:
+  en: Meals and Fruit
+  id: Makanan dan Buah
+level: hsk2
+items:
+- id: zh.w.ji1dan4
+  type: word
+  text: 鸡蛋
+  roman: jīdàn
+  tones: ji1 dan4
+  gloss:
+    en: (chicken) egg
+    id: telur (ayam)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:鸡蛋[ji1 dan4]
+  review: needs_review
+- id: zh.w.mian4tiao2
+  type: word
+  text: 面条
+  roman: miàntiáo
+  tones: mian4 tiao2
+  gloss:
+    en: noodles
+    id: mi
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:面条[mian4 tiao2]
+  review: needs_review
+- id: zh.w.yang2rou4
+  type: word
+  text: 羊肉
+  roman: yángròu
+  tones: yang2 rou4
+  gloss:
+    en: mutton
+    id: daging domba
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:羊肉[yang2 rou4]
+  review: needs_review
+- id: zh.w.yu2
+  type: word
+  text: 鱼
+  roman: yú
+  tones: yu2
+  gloss:
+    en: fish
+    id: ikan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:鱼[yu2]
+  review: needs_review
+- id: zh.w.xi1gua1
+  type: word
+  text: 西瓜
+  roman: xīguā
+  tones: xi1 gua1
+  gloss:
+    en: watermelon
+    id: semangka
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:西瓜[xi1 gua1]
+  review: needs_review
+- id: zh.w.hao3chi1
+  type: word
+  text: 好吃
+  roman: hǎochī
+  tones: hao3 chi1
+  gloss:
+    en: tasty; delicious
+    id: enak; lezat
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:好吃[hao3 chi1]
+  review: needs_review
+- id: zh.s.t1242069
+  type: sentence
+  text: 你吃面条。
+  roman: Nǐ chī miàntiáo.
+  tokens:
+  - 你
+  - 吃
+  - 面条
+  gloss:
+    en: Eat noodles.
+    id: Kamu makan mi.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: eastasiastudent
+      source_ref: tatoeba:1242070
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: eastasiastudent
+  source_ref: tatoeba:1242069
+  review: needs_review
+- id: zh.s.t5551033
+  type: sentence
+  text: 我喜欢鱼。
+  roman: Wǒ xǐhuan yú.
+  tokens:
+  - 我
+  - 喜欢
+  - 鱼
+  gloss:
+    en: I like fish.
+    id: Aku suka ikan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:256891
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: verdastelo9604
+  source_ref: tatoeba:5551033
+  review: needs_review
+- id: zh.s.t5722738
+  type: sentence
+  text: 这不是鱼。
+  roman: Zhè búshì yú.
+  tokens:
+  - 这
+  - 不是
+  - 鱼
+  gloss:
+    en: This is not fish.
+    id: Ini bukan ikan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: mztae
+      source_ref: tatoeba:5722389
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: orion17
+      source_ref: tatoeba:3806618
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: chloe77
+  source_ref: tatoeba:5722738
+  review: needs_review
+- id: zh.s.t10613902
+  type: sentence
+  text: 我在吃西瓜。
+  roman: Wǒ zài chī xīguā.
+  tokens:
+  - 我
+  - 在
+  - 吃
+  - 西瓜
+  gloss:
+    en: I am eating a watermelon.
+    id: Aku lagi makan semangka.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: francaisr0wlet
+      source_ref: tatoeba:8826929
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: DaoSeng
+  source_ref: tatoeba:10613902
+  review: needs_review
+- id: zh.s.t2336793
+  type: sentence
+  text: 我想吃点鱼。
+  roman: Wǒ xiǎng chī diǎn yú.
+  tokens:
+  - 我
+  - 想
+  - 吃
+  - 点
+  - 鱼
+  gloss:
+    en: I would like some fish.
+    id: Aku mau makan sedikit ikan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:481631
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: anndiana
+  source_ref: tatoeba:2336793
+  review: needs_review
+- id: zh.s.t4673809
+  type: sentence
+  text: 我不喜欢鸡蛋。
+  roman: Wǒ bù xǐhuan jīdàn.
+  tokens:
+  - 我
+  - 不
+  - 喜欢
+  - 鸡蛋
+  gloss:
+    en: I don't care for eggs.
+    id: Aku nggak suka telur.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:325226
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: McMeao
+  source_ref: tatoeba:4673809
+  review: needs_review

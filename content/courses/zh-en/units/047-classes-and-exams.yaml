@@ -1,0 +1,269 @@
+id: zh-047-classes-and-exams
+title:
+  en: Classes and Exams
+  id: Pelajaran dan Ujian
+level: hsk2
+items:
+- id: zh.w.jiao4shi4
+  type: word
+  text: 教室
+  roman: jiàoshì
+  tones: jiao4 shi4
+  gloss:
+    en: classroom
+    id: ruang kelas
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:教室[jiao4 shi4]
+  review: needs_review
+- id: zh.w.ke4
+  type: word
+  text: 课
+  roman: kè
+  tones: ke4
+  gloss:
+    en: class
+    id: kelas
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:课[ke4]
+  review: needs_review
+- id: zh.w.kao3shi4
+  type: word
+  text: 考试
+  roman: kǎoshì
+  tones: kao3 shi4
+  gloss:
+    en: exam
+    id: ujian
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:考试[kao3 shi4]
+  review: needs_review
+- id: zh.w.ti2
+  type: word
+  text: 题
+  roman: tí
+  tones: ti2
+  gloss:
+    en: exam question
+    id: soal ujian
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:题[ti2]
+  review: needs_review
+- id: zh.w.wen4ti2
+  type: word
+  text: 问题
+  roman: wèntí
+  tones: wen4 ti2
+  gloss:
+    en: question
+    id: pertanyaan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:问题[wen4 ti2]
+  review: needs_review
+- id: zh.w.dui4-5bf9
+  type: word
+  text: 对
+  roman: duì
+  tones: dui4
+  gloss:
+    en: right; correct
+    id: benar; betul
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:对[dui4]
+  review: needs_review
+- id: zh.w.cuo4
+  type: word
+  text: 错
+  roman: cuò
+  tones: cuo4
+  gloss:
+    en: wrong
+    id: salah
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:错[cuo4]
+  review: needs_review
+- id: zh.s.t13998047
+  type: sentence
+  text: 对了吗？
+  roman: Duì le ma?
+  tokens:
+  - 对
+  - 了
+  - 吗
+  gloss:
+    en: Am I right?
+    id: Sudah benar?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Spamster
+      source_ref: tatoeba:1934796
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: jan_OkulaJu
+  source_ref: tatoeba:13998047
+  review: needs_review
+- id: zh.s.t13998048
+  type: sentence
+  text: 错了吗？
+  roman: Cuò le ma?
+  tokens:
+  - 错
+  - 了
+  - 吗
+  gloss:
+    en: Am I wrong?
+    id: Salah, ya?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:410779
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: jan_OkulaJu
+  source_ref: tatoeba:13998048
+  review: needs_review
+- id: zh.s.t9953366
+  type: sentence
+  text: 他对吗？
+  roman: Tā duì ma?
+  tokens:
+  - 他
+  - 对
+  - 吗
+  gloss:
+    en: Is he right?
+    id: Dia benar?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:300372
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:9953366
+  review: needs_review
+- id: zh.s.t11540171
+  type: sentence
+  text: 不要错了。
+  roman: Búyào cuò le.
+  tokens:
+  - 不要
+  - 错
+  - 了
+  gloss:
+    en: Don't be wrong.
+    id: Jangan sampai salah.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: megamanenm
+      source_ref: tatoeba:11540162
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: megamanenm
+  source_ref: tatoeba:11540171
+  review: needs_review
+- id: zh.s.t2318410
+  type: sentence
+  text: 对她好点。
+  roman: Duì tā hǎodiǎn.
+  tokens:
+  - 对
+  - 她
+  - 好点
+  gloss:
+    en: Be nice to her.
+    id: Baik-baik sama dia.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:308934
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: User5120
+  source_ref: tatoeba:2318410
+  review: needs_review
+- id: zh.s.t2367643
+  type: sentence
+  text: 我想错了。
+  roman: Wǒ xiǎng cuò le.
+  tokens:
+  - 我
+  - 想
+  - 错
+  - 了
+  gloss:
+    en: I was wrong.
+    id: Aku salah kira.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: blay_paul
+      source_ref: tatoeba:472431
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:2367643
+  review: needs_review

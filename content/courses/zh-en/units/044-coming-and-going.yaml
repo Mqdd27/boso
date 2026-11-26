@@ -1,0 +1,254 @@
+id: zh-044-coming-and-going
+title:
+  en: Coming and Going
+  id: Datang dan Pergi
+level: hsk2
+items:
+- id: zh.w.chu1
+  type: word
+  text: 出
+  roman: chū
+  tones: chu1
+  gloss:
+    en: to go out; to come out
+    id: pergi keluar; keluar
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:出[chu1]
+  review: needs_review
+- id: zh.w.jin4
+  type: word
+  text: 进
+  roman: jìn
+  tones: jin4
+  gloss:
+    en: to enter
+    id: masuk
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:进[jin4]
+  review: needs_review
+- id: zh.w.guo4
+  type: word
+  text: 过
+  roman: guò
+  tones: guo4
+  gloss:
+    en: to cross
+    id: menyeberang
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:过[guo4]
+  review: needs_review
+- id: zh.w.zhao3
+  type: word
+  text: 找
+  roman: zhǎo
+  tones: zhao3
+  gloss:
+    en: to look for
+    id: mencari
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:找[zhao3]
+  review: needs_review
+- id: zh.w.song4
+  type: word
+  text: 送
+  roman: sòng
+  tones: song4
+  gloss:
+    en: to see (sb) off
+    id: mengantar kepergian (seseorang)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:送[song4]
+  review: needs_review
+- id: zh.w.bie2
+  type: word
+  text: 别
+  roman: bié
+  tones: bie2
+  gloss:
+    en: don't ...!
+    id: jangan ...!
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:别[bie2]
+  review: needs_review
+- id: zh.s.t1636187
+  type: sentence
+  text: 快去找。
+  roman: Kuài qù zhǎo.
+  tokens:
+  - 快
+  - 去
+  - 找
+  gloss:
+    en: Quickly go find it.
+    id: Cepat cari.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: andrewfx51
+      source_ref: tatoeba:7766380
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fengli
+  source_ref: tatoeba:1636187
+  review: needs_review
+- id: zh.s.t5670735
+  type: sentence
+  text: 我找她。
+  roman: Wǒ zhǎo tā.
+  tokens:
+  - 我
+  - 找
+  - 她
+  gloss:
+    en: I looked for her.
+    id: Aku cari dia.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CH
+      source_ref: tatoeba:3917544
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: verdastelo9604
+  source_ref: tatoeba:5670735
+  review: needs_review
+- id: zh.s.t10570094
+  type: sentence
+  text: 别吃太多。
+  roman: Bié chī tài duō.
+  tokens:
+  - 别
+  - 吃
+  - 太
+  - 多
+  gloss:
+    en: Don't eat too much.
+    id: Jangan makan terlalu banyak.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:324760
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:10570094
+  review: needs_review
+- id: zh.s.t13153747
+  type: sentence
+  text: 回去找他。
+  roman: Huíqù zhǎo tā.
+  tokens:
+  - 回去
+  - 找
+  - 他
+  gloss:
+    en: Come back to him.
+    id: Balik cari dia.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: LeeSooHa
+      source_ref: tatoeba:11980860
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: LeviHighway
+  source_ref: tatoeba:13153747
+  review: needs_review
+- id: zh.s.t2062938
+  type: sentence
+  text: 有人找你。
+  roman: Yǒurén zhǎo nǐ.
+  tokens:
+  - 有人
+  - 找
+  - 你
+  gloss:
+    en: There is someone looking for you.
+    id: Ada orang yang cari kamu.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: mrtaistoi
+      source_ref: tatoeba:3349412
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: mrtaistoi
+  source_ref: tatoeba:2062938
+  review: needs_review
+- id: zh.s.t3537960
+  type: sentence
+  text: 我吃过了。
+  roman: Wǒ chī guò le.
+  tokens:
+  - 我
+  - 吃
+  - 过
+  - 了
+  gloss:
+    en: I've eaten it.
+    id: Aku sudah makan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: shekitten
+      source_ref: tatoeba:7248349
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: trieuho
+  source_ref: tatoeba:3537960
+  review: needs_review

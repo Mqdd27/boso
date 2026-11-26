@@ -1,0 +1,284 @@
+id: zh-041-directions
+title:
+  en: Directions
+  id: Arah
+level: hsk2
+items:
+- id: zh.w.zuo3bian5
+  type: word
+  text: 左边
+  roman: zuǒbian
+  tones: zuo3 bian5
+  gloss:
+    en: left
+    id: sisi kiri
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:左边[zuo3 bian5]
+  review: needs_review
+- id: zh.w.you4bian5
+  type: word
+  text: 右边
+  roman: yòubian
+  tones: you4 bian5
+  gloss:
+    en: right side
+    id: sisi kanan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:右边[you4 bian5]
+  review: needs_review
+- id: zh.w.pang2bian1
+  type: word
+  text: 旁边
+  roman: pángbiān
+  tones: pang2 bian1
+  gloss:
+    en: side; adjacent place
+    id: samping; tempat di sebelah
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:旁边[pang2 bian1]
+  review: needs_review
+- id: zh.w.wang3
+  type: word
+  text: 往
+  roman: wǎng
+  tones: wang3
+  gloss:
+    en: towards
+    id: ke arah; menuju
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:往[wang3]
+  review: needs_review
+- id: zh.w.lu4
+  type: word
+  text: 路
+  roman: lù
+  tones: lu4
+  gloss:
+    en: road
+    id: jalan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:路[lu4]
+  review: needs_review
+- id: zh.w.zou3
+  type: word
+  text: 走
+  roman: zǒu
+  tones: zou3
+  gloss:
+    en: to walk
+    id: berjalan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:走[zou3]
+  review: needs_review
+- id: zh.w.wai4
+  type: word
+  text: 外
+  roman: wài
+  tones: wai4
+  gloss:
+    en: outside
+    id: luar
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:外[wai4]
+  review: needs_review
+- id: zh.w.men2
+  type: word
+  text: 门
+  roman: mén
+  tones: men2
+  gloss:
+    en: gate; door; doorway; gateway; opening
+    id: gerbang; pintu; ambang pintu; gapura; bukaan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:门[men2]
+  review: needs_review
+- id: zh.s.t405498
+  type: sentence
+  text: 我走了。
+  roman: Wǒ zǒu le.
+  tokens:
+  - 我
+  - 走
+  - 了
+  gloss:
+    en: I'm outta here.
+    id: Aku pergi dulu.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: FeuDRenais
+      source_ref: tatoeba:405495
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:405498
+  review: needs_review
+- id: zh.s.t636220
+  type: sentence
+  text: 他走了。
+  roman: Tā zǒu le.
+  tokens:
+  - 他
+  - 走
+  - 了
+  gloss:
+    en: He walked away.
+    id: Dia sudah pergi.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:304646
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sysko
+  source_ref: tatoeba:636220
+  review: needs_review
+- id: zh.s.t10007048
+  type: sentence
+  text: 门在哪里？
+  roman: Mén zài nǎlǐ?
+  tokens:
+  - 门
+  - 在
+  - 哪里
+  gloss:
+    en: Where is the gate?
+    id: Pintunya di mana?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: lukaszpp
+      source_ref: tatoeba:687650
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:10007048
+  review: needs_review
+- id: zh.s.t10086133
+  type: sentence
+  text: 我问问路。
+  roman: Wǒ wènwèn lù.
+  tokens:
+  - 我
+  - 问问
+  - 路
+  gloss:
+    en: I'll ask for directions.
+    id: Aku tanya jalan dulu.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2546108
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: ColawithIce
+  source_ref: tatoeba:10086133
+  review: needs_review
+- id: zh.s.t10322371
+  type: sentence
+  text: 有人走了。
+  roman: Yǒurén zǒu le.
+  tokens:
+  - 有人
+  - 走
+  - 了
+  gloss:
+    en: Someone left.
+    id: Ada orang yang pergi.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: ddnktr
+      source_ref: tatoeba:10071214
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: DaoSeng
+  source_ref: tatoeba:10322371
+  review: needs_review
+- id: zh.s.t1424389
+  type: sentence
+  text: 坐我旁边。
+  roman: Zuò wǒ pángbiān.
+  tokens:
+  - 坐
+  - 我
+  - 旁边
+  gloss:
+    en: Sit beside me.
+    id: Duduk di sebelahku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:250344
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sadhen
+  source_ref: tatoeba:1424389
+  review: needs_review

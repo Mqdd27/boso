@@ -1,0 +1,254 @@
+id: zh-050-comparing-things
+title:
+  en: Comparing Things
+  id: Membandingkan Sesuatu
+level: hsk2
+items:
+- id: zh.w.bi3
+  type: word
+  text: 比
+  roman: bǐ
+  tones: bi3
+  gloss:
+    en: (followed by a noun and adjective) more {adj.} than {noun}
+    id: (diikuti kata benda dan kata sifat) lebih {sifat} daripada {benda}
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:比[bi3]
+  review: needs_review
+- id: zh.w.zui4
+  type: word
+  text: 最
+  roman: zuì
+  tones: zui4
+  gloss:
+    en: (before an adjective or verb) to the highest degree; (the) most ...; -est
+    id: (sebelum kata sifat atau kerja) paling ...; ter-
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:最[zui4]
+  review: needs_review
+- id: zh.w.gao1
+  type: word
+  text: 高
+  roman: gāo
+  tones: gao1
+  gloss:
+    en: tall
+    id: tinggi
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:高[gao1]
+  review: needs_review
+- id: zh.w.chang2
+  type: word
+  text: 长
+  roman: cháng
+  tones: chang2
+  gloss:
+    en: long
+    id: panjang
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:长[chang2]
+  review: needs_review
+- id: zh.w.fei1chang2
+  type: word
+  text: 非常
+  roman: fēicháng
+  tones: fei1 chang2
+  gloss:
+    en: very; really
+    id: sangat; sungguh
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:非常[fei1 chang2]
+  review: needs_review
+- id: zh.w.zhen1
+  type: word
+  text: 真
+  roman: zhēn
+  tones: zhen1
+  gloss:
+    en: really
+    id: sungguh; benar-benar
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:真[zhen1]
+  review: needs_review
+- id: zh.s.t11698419
+  type: sentence
+  text: 你真好。
+  roman: Nǐ zhēn hǎo.
+  tokens:
+  - 你
+  - 真
+  - 好
+  gloss:
+    en: You're too kind.
+    id: Kamu baik banget.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2218448
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Jokubas
+  source_ref: tatoeba:11698419
+  review: needs_review
+- id: zh.s.t1361951
+  type: sentence
+  text: 他很高。
+  roman: Tā hěn gāo.
+  tokens:
+  - 他
+  - 很
+  - 高
+  gloss:
+    en: He is very tall.
+    id: Dia tinggi sekali.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:292154
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sadhen
+  source_ref: tatoeba:1361951
+  review: needs_review
+- id: zh.s.t13964237
+  type: sentence
+  text: 她很高。
+  roman: Tā hěn gāo.
+  tokens:
+  - 她
+  - 很
+  - 高
+  gloss:
+    en: She is tall.
+    id: Dia tinggi.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: RobinvanderVliet
+      source_ref: tatoeba:8190292
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Adelpa
+  source_ref: tatoeba:13964237
+  review: needs_review
+- id: zh.s.t335417
+  type: sentence
+  text: 你多高？
+  roman: Nǐ duō gāo?
+  tokens:
+  - 你
+  - 多
+  - 高
+  gloss:
+    en: How tall are you?
+    id: Tinggi kamu berapa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: xtofu80
+      source_ref: tatoeba:16472
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:335417
+  review: needs_review
+- id: zh.s.t1178883
+  type: sentence
+  text: 她比他大。
+  roman: Tā bǐ tā dà.
+  tokens:
+  - 她
+  - 比
+  - 他
+  - 大
+  gloss:
+    en: She's older than him.
+    id: Dia lebih tua dari dia.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:887619
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: treskro3
+  source_ref: tatoeba:1178883
+  review: needs_review
+- id: zh.s.t11837729
+  type: sentence
+  text: 我比她高。
+  roman: Wǒ bǐ tā gāo.
+  tokens:
+  - 我
+  - 比
+  - 她
+  - 高
+  gloss:
+    en: I am taller than her.
+    id: Aku lebih tinggi dari dia.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Lemmih
+      source_ref: tatoeba:11837731
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Lemmih
+  source_ref: tatoeba:11837729
+  review: needs_review

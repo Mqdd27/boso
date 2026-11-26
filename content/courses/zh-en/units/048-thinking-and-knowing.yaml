@@ -1,0 +1,272 @@
+id: zh-048-thinking-and-knowing
+title:
+  en: Thinking and Knowing
+  id: Berpikir dan Mengetahui
+level: hsk2
+items:
+- id: zh.w.dong3
+  type: word
+  text: 懂
+  roman: dǒng
+  tones: dong3
+  gloss:
+    en: to understand
+    id: mengerti
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:懂[dong3]
+  review: needs_review
+- id: zh.w.zhi1dao4
+  type: word
+  text: 知道
+  roman: zhīdào
+  tones: zhi1 dao4
+  gloss:
+    en: to know; to become aware of
+    id: tahu; menjadi sadar akan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:知道[zhi1 dao4]
+  review: needs_review
+- id: zh.w.yi4si5
+  type: word
+  text: 意思
+  roman: yìsi
+  tones: yi4 si5
+  gloss:
+    en: meaning
+    id: arti
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:意思[yi4 si5]
+  review: needs_review
+- id: zh.w.jue2de5
+  type: word
+  text: 觉得
+  roman: juéde
+  tones: jue2 de5
+  gloss:
+    en: to think that ...; to feel that ...
+    id: berpikir bahwa ...; merasa bahwa ...
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:觉得[jue2 de5]
+  review: needs_review
+- id: zh.w.xi1wang4
+  type: word
+  text: 希望
+  roman: xīwàng
+  tones: xi1 wang4
+  gloss:
+    en: to hope
+    id: berharap
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:希望[xi1 wang4]
+  review: needs_review
+- id: zh.w.ke3neng2
+  type: word
+  text: 可能
+  roman: kěnéng
+  tones: ke3 neng2
+  gloss:
+    en: maybe
+    id: mungkin
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:可能[ke3 neng2]
+  review: needs_review
+- id: zh.w.shi4qing5
+  type: word
+  text: 事情
+  roman: shìqing
+  tones: shi4 qing5
+  gloss:
+    en: affair; matter; thing; business
+    id: urusan; perkara; hal; bisnis
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:事情[shi4 qing5]
+  review: needs_review
+- id: zh.s.t2032276
+  type: sentence
+  text: 懂了吗？
+  roman: Dǒng le ma?
+  tokens:
+  - 懂
+  - 了
+  - 吗
+  gloss:
+    en: Do you follow?
+    id: Sudah paham?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:319999
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: ydcok
+  source_ref: tatoeba:2032276
+  review: needs_review
+- id: zh.s.t2032283
+  type: sentence
+  text: 你不懂。
+  roman: Nǐ bù dǒng.
+  tokens:
+  - 你
+  - 不
+  - 懂
+  gloss:
+    en: You don't understand.
+    id: Kamu nggak ngerti.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:18073
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: ydcok
+  source_ref: tatoeba:2032283
+  review: needs_review
+- id: zh.s.t409679
+  type: sentence
+  text: 我不懂。
+  roman: Wǒ bù dǒng.
+  tokens:
+  - 我
+  - 不
+  - 懂
+  gloss:
+    en: I don't get it.
+    id: Saya tidak mengerti.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:38392
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: noniq
+      source_ref: tatoeba:638775
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: egg0073
+  source_ref: tatoeba:409679
+  review: needs_review
+- id: zh.s.t10
+  type: sentence
+  text: 我不知道。
+  roman: Wǒ bù zhīdào.
+  tokens:
+  - 我
+  - 不
+  - 知道
+  gloss:
+    en: I have no idea.
+    id: Saya tidak tahu.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:273786
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Archangelix
+      source_ref: tatoeba:1109561
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Sprachprofi
+  source_ref: tatoeba:10
+  review: needs_review
+- id: zh.s.t10320167
+  type: sentence
+  text: 他知道的。
+  roman: Tā zhīdào de.
+  tokens:
+  - 他
+  - 知道
+  - 的
+  gloss:
+    en: He knows that.
+    id: Dia tahu kok.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Amastan
+      source_ref: tatoeba:2851568
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: DaoSeng
+  source_ref: tatoeba:10320167
+  review: needs_review
+- id: zh.s.t11512354
+  type: sentence
+  text: 你知道吗？
+  roman: Nǐ zhīdào ma?
+  tokens:
+  - 你
+  - 知道
+  - 吗
+  gloss:
+    en: Do you know?
+    id: Kamu tahu nggak?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: ulyssemc1
+      source_ref: tatoeba:619875
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: megamanenm
+  source_ref: tatoeba:11512354
+  review: needs_review

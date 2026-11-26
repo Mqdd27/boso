@@ -1,0 +1,271 @@
+id: zh-051-suggestions-and-help
+title:
+  en: Suggestions and Help
+  id: Saran dan Bantuan
+level: hsk2
+items:
+- id: zh.w.ke3yi3
+  type: word
+  text: 可以
+  roman: kěyǐ
+  tones: ke3 yi3
+  gloss:
+    en: can; may; to be able to
+    id: bisa; boleh; dapat
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:可以[ke3 yi3]
+  review: needs_review
+- id: zh.w.rang4
+  type: word
+  text: 让
+  roman: ràng
+  tones: rang4
+  gloss:
+    en: to let sb do sth
+    id: membiarkan seseorang melakukan sesuatu
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:让[rang4]
+  review: needs_review
+- id: zh.w.ba1-5427
+  type: word
+  text: 吧
+  roman: ba
+  tones: ba5
+  gloss:
+    en: (modal particle indicating suggestion or surmise)
+    id: (partikel modal untuk saran atau dugaan)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:吧[ba5]
+  review: needs_review
+- id: zh.w.yi1qi3
+  type: word
+  text: 一起
+  roman: yīqǐ
+  tones: yi1 qi3
+  gloss:
+    en: together; in company (with)
+    id: bersama; bersama-sama (dengan)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:一起[yi1 qi3]
+  review: needs_review
+- id: zh.w.yi1xia4
+  type: word
+  text: 一下
+  roman: yīxià
+  tones: yi1 xia4
+  gloss:
+    en: (after a verb) a bit; a little (indicating brief duration, or softening the tone, or suggesting
+      giving sth a try)
+    id: (setelah kata kerja) sebentar; sedikit (melunakkan nada atau mencoba)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:一下[yi1 xia4]
+  review: needs_review
+- id: zh.w.de2
+  type: word
+  text: 得
+  roman: dé
+  tones: de2
+  gloss:
+    en: to get
+    id: mendapat
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:得[de2]
+  review: needs_review
+- id: zh.w.bang1zhu4
+  type: word
+  text: 帮助
+  roman: bāngzhù
+  tones: bang1 zhu4
+  gloss:
+    en: to help; to assist
+    id: membantu; menolong
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:帮助[bang1 zhu4]
+  review: needs_review
+- id: zh.s.t13994824
+  type: sentence
+  text: 让她走。
+  roman: Ràng tā zǒu.
+  tokens:
+  - 让
+  - 她
+  - 走
+  gloss:
+    en: Let her leave.
+    id: Biarkan dia pergi.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CH
+      source_ref: tatoeba:3913182
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: jan_OkulaJu
+  source_ref: tatoeba:13994824
+  review: needs_review
+- id: zh.s.t5092185
+  type: sentence
+  text: 让我来。
+  roman: Ràng wǒ lái.
+  tokens:
+  - 让
+  - 我
+  - 来
+  gloss:
+    en: Let me try.
+    id: Biar aku saja.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:1554612
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: mirrorvan
+  source_ref: tatoeba:5092185
+  review: needs_review
+- id: zh.s.t10042058
+  type: sentence
+  text: 她吃得慢。
+  roman: Tā chī dé màn.
+  tokens:
+  - 她
+  - 吃
+  - 得
+  - 慢
+  gloss:
+    en: She eats slowly.
+    id: Dia makannya pelan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CH
+      source_ref: tatoeba:8650366
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: slo_oth
+  source_ref: tatoeba:10042058
+  review: needs_review
+- id: zh.s.t13210549
+  type: sentence
+  text: 她得知道。
+  roman: Tā dé zhīdào.
+  tokens:
+  - 她
+  - 得
+  - 知道
+  gloss:
+    en: She needs to know.
+    id: Dia harus tahu.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Ussis
+      source_ref: tatoeba:12796902
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: LeviHighway
+  source_ref: tatoeba:13210549
+  review: needs_review
+- id: zh.s.t1776598
+  type: sentence
+  text: 做得很好。
+  roman: Zuò dé hěn hǎo.
+  tokens:
+  - 做
+  - 得
+  - 很
+  - 好
+  gloss:
+    en: It's well done.
+    id: Bagus sekali.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2366
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sadhen
+  source_ref: tatoeba:1776598
+  review: needs_review
+- id: zh.s.t3032023
+  type: sentence
+  text: 让他进来。
+  roman: Ràng tā jìnlái.
+  tokens:
+  - 让
+  - 他
+  - 进来
+  gloss:
+    en: Show him in.
+    id: Suruh dia masuk.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:307894
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sadhen
+  source_ref: tatoeba:3032023
+  review: needs_review

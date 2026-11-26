@@ -1,0 +1,255 @@
+id: zh-045-body-and-health
+title:
+  en: Body and Health
+  id: Tubuh dan Kesehatan
+level: hsk2
+items:
+- id: zh.w.shen1ti3
+  type: word
+  text: 身体
+  roman: shēntǐ
+  tones: shen1 ti3
+  gloss:
+    en: the body
+    id: tubuh
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:身体[shen1 ti3]
+  review: needs_review
+- id: zh.w.yan3jing5
+  type: word
+  text: 眼睛
+  roman: yǎnjing
+  tones: yan3 jing5
+  gloss:
+    en: eye
+    id: mata
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:眼睛[yan3 jing5]
+  review: needs_review
+- id: zh.w.sheng1bing4
+  type: word
+  text: 生病
+  roman: shēngbìng
+  tones: sheng1 bing4
+  gloss:
+    en: to fall ill
+    id: jatuh sakit
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:生病[sheng1 bing4]
+  review: needs_review
+- id: zh.w.yao4
+  type: word
+  text: 药
+  roman: yào
+  tones: yao4
+  gloss:
+    en: medicine
+    id: obat
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:药[yao4]
+  review: needs_review
+- id: zh.w.lei3
+  type: word
+  text: 累
+  roman: lèi
+  tones: lei4
+  gloss:
+    en: tired
+    id: lelah
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:累[lei4]
+  review: needs_review
+- id: zh.w.xiu1xi5
+  type: word
+  text: 休息
+  roman: xiūxi
+  tones: xiu1 xi5
+  gloss:
+    en: to rest
+    id: beristirahat
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:休息[xiu1 xi5]
+  review: needs_review
+- id: zh.s.t12278445
+  type: sentence
+  text: 我很累！
+  roman: Wǒ hěn lèi!
+  tokens:
+  - 我
+  - 很
+  - 累
+  gloss:
+    en: I'm so tired!
+    id: Aku capek banget!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CM
+      source_ref: tatoeba:967876
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: FishlandicFishy
+  source_ref: tatoeba:12278445
+  review: needs_review
+- id: zh.s.t397734
+  type: sentence
+  text: 我很累。
+  roman: Wǒ hěn lèi.
+  tokens:
+  - 我
+  - 很
+  - 累
+  gloss:
+    en: I'm tired.
+    id: Aku capek.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: brauliobezerra
+      source_ref: tatoeba:1705
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:397734
+  review: needs_review
+- id: zh.s.t785298
+  type: sentence
+  text: 我好累。
+  roman: Wǒ hǎo lèi.
+  tokens:
+  - 我
+  - 好
+  - 累
+  gloss:
+    en: I'm so tired.
+    id: Aku capek banget.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: hrin
+      source_ref: tatoeba:785435
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Martha
+  source_ref: tatoeba:785298
+  review: needs_review
+- id: zh.s.t10283157
+  type: sentence
+  text: 我在休息。
+  roman: Wǒ zài xiūxi.
+  tokens:
+  - 我
+  - 在
+  - 休息
+  gloss:
+    en: I'm resting.
+    id: Aku lagi istirahat.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Swift
+      source_ref: tatoeba:790043
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: DaoSeng
+  source_ref: tatoeba:10283157
+  review: needs_review
+- id: zh.s.t3378168
+  type: sentence
+  text: 她生病了。
+  roman: Tā shēngbìng le.
+  tokens:
+  - 她
+  - 生病
+  - 了
+  gloss:
+    en: She is sick.
+    id: Dia sakit.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: _undertoad
+      source_ref: tatoeba:3378169
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Pacific
+      source_ref: tatoeba:11260567
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:3378168
+  review: needs_review
+- id: zh.s.t713089
+  type: sentence
+  text: 他很累了。
+  roman: Tā hěn lèi le.
+  tokens:
+  - 他
+  - 很
+  - 累
+  - 了
+  gloss:
+    en: He was very tired.
+    id: Dia capek sekali.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CS
+      source_ref: tatoeba:292157
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sysko
+  source_ref: tatoeba:713089
+  review: needs_review

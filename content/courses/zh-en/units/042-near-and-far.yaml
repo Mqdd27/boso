@@ -1,0 +1,270 @@
+id: zh-042-near-and-far
+title:
+  en: Near and Far
+  id: Dekat dan Jauh
+level: hsk2
+items:
+- id: zh.w.chi1-79bb
+  type: word
+  text: 离
+  roman: lí
+  tones: li2
+  gloss:
+    en: (in giving distances) from
+    id: (dalam menyatakan jarak) dari
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:离[li2]
+  review: needs_review
+- id: zh.w.yuan3
+  type: word
+  text: 远
+  roman: yuǎn
+  tones: yuan3
+  gloss:
+    en: far
+    id: jauh
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:远[yuan3]
+  review: needs_review
+- id: zh.w.jin4-8fd1
+  type: word
+  text: 近
+  roman: jìn
+  tones: jin4
+  gloss:
+    en: near
+    id: dekat
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:近[jin4]
+  review: needs_review
+- id: zh.w.cong2
+  type: word
+  text: 从
+  roman: cóng
+  tones: cong2
+  gloss:
+    en: from; through; via
+    id: dari; melalui; lewat
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:从[cong2]
+  review: needs_review
+- id: zh.w.dao4
+  type: word
+  text: 到
+  roman: dào
+  tones: dao4
+  gloss:
+    en: to reach; to arrive
+    id: mencapai; tiba
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:到[dao4]
+  review: needs_review
+- id: zh.w.kuai4-5feb
+  type: word
+  text: 快
+  roman: kuài
+  tones: kuai4
+  gloss:
+    en: quick
+    id: cepat
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:快[kuai4]
+  review: needs_review
+- id: zh.w.man4
+  type: word
+  text: 慢
+  roman: màn
+  tones: man4
+  gloss:
+    en: slow
+    id: lambat
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:慢[man4]
+  review: needs_review
+- id: zh.s.t899617
+  type: sentence
+  text: 我到了。
+  roman: Wǒ dào le.
+  tokens:
+  - 我
+  - 到
+  - 了
+  gloss:
+    en: I came.
+    id: Aku sudah sampai.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: saasmath
+      source_ref: tatoeba:453551
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: shanghainese
+  source_ref: tatoeba:899617
+  review: needs_review
+- id: zh.s.t13175390
+  type: sentence
+  text: 四月到了。
+  roman: Sìyuè dào le.
+  tokens:
+  - 四月
+  - 到
+  - 了
+  gloss:
+    en: It's April.
+    id: Sudah bulan April.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: sundown
+      source_ref: tatoeba:10191132
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: LeviHighway
+  source_ref: tatoeba:13175390
+  review: needs_review
+- id: zh.s.t400812
+  type: sentence
+  text: 我快走了。
+  roman: Wǒ kuài zǒu le.
+  tokens:
+  - 我
+  - 快
+  - 走
+  - 了
+  gloss:
+    en: I'm about to leave.
+    id: Aku sebentar lagi pergi.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:40133
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: nickyeow
+  source_ref: tatoeba:400812
+  review: needs_review
+- id: zh.s.t4764659
+  type: sentence
+  text: 我家很远。
+  roman: Wǒjiā hěn yuǎn.
+  tokens:
+  - 我家
+  - 很
+  - 远
+  gloss:
+    en: My home is far away.
+    id: Rumahku jauh.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Doremi391
+      source_ref: tatoeba:4757673
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: ryanwoo
+  source_ref: tatoeba:4764659
+  review: needs_review
+- id: zh.s.t5094825
+  type: sentence
+  text: 时间到了。
+  roman: Shíjiān dào le.
+  tokens:
+  - 时间
+  - 到
+  - 了
+  gloss:
+    en: Time's up.
+    id: Waktunya habis.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Eccles17
+      source_ref: tatoeba:6611926
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Jin_Dehong
+  source_ref: tatoeba:5094825
+  review: needs_review
+- id: zh.s.t1888690
+  type: sentence
+  text: 快一点好吗？
+  roman: Kuài yìdiǎn hǎo ma?
+  tokens:
+  - 快
+  - 一点
+  - 好
+  - 吗
+  gloss:
+    en: Can you hurry up a bit?
+    id: Bisa lebih cepat sedikit?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: sharris123
+      source_ref: tatoeba:7844502
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Venki
+  source_ref: tatoeba:1888690
+  review: needs_review

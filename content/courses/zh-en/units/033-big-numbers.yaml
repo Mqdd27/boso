@@ -1,0 +1,252 @@
+id: zh-033-big-numbers
+title:
+  en: Big Numbers and Order
+  id: Angka Besar dan Urutan
+level: hsk2
+items:
+- id: zh.w.ling2
+  type: word
+  text: 零
+  roman: líng
+  tones: ling2
+  gloss:
+    en: zero
+    id: nol
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:零[ling2]
+  review: needs_review
+- id: zh.w.liang3
+  type: word
+  text: 两
+  roman: liǎng
+  tones: liang3
+  gloss:
+    en: two
+    id: dua
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:两[liang3]
+  review: needs_review
+- id: zh.w.bai3
+  type: word
+  text: 百
+  roman: bǎi
+  tones: bai3
+  gloss:
+    en: hundred
+    id: ratus
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:百[bai3]
+  review: needs_review
+- id: zh.w.qian1
+  type: word
+  text: 千
+  roman: qiān
+  tones: qian1
+  gloss:
+    en: thousand
+    id: ribu
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:千[qian1]
+  review: needs_review
+- id: zh.w.di4yi1
+  type: word
+  text: 第一
+  roman: dìyī
+  tones: di4 yi1
+  gloss:
+    en: first
+    id: pertama
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:第一[di4 yi1]
+  review: needs_review
+- id: zh.w.ci4
+  type: word
+  text: 次
+  roman: cì
+  tones: ci4
+  gloss:
+    en: next in sequence
+    id: berikutnya dalam urutan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:次[ci4]
+  review: needs_review
+- id: zh.s.t8686688
+  type: sentence
+  text: 我是第一。
+  roman: Wǒ shì dìyī.
+  tokens:
+  - 我
+  - 是
+  - 第一
+  gloss:
+    en: I'm first.
+    id: Aku yang pertama.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2202863
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: crescat
+  source_ref: tatoeba:8686688
+  review: needs_review
+- id: zh.s.t9473401
+  type: sentence
+  text: 你是第一。
+  roman: Nǐ shì dìyī.
+  tokens:
+  - 你
+  - 是
+  - 第一
+  gloss:
+    en: You're the first.
+    id: Kamu yang pertama.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2218427
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: BobbyLee
+  source_ref: tatoeba:9473401
+  review: needs_review
+- id: zh.s.t12686118
+  type: sentence
+  text: 有零钱吗？
+  roman: Yǒu língqián ma?
+  tokens:
+  - 有
+  - 零钱
+  - 吗
+  gloss:
+    en: Do you have any small change?
+    id: Ada uang kecil?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:267634
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: soueihin
+  source_ref: tatoeba:12686118
+  review: needs_review
+- id: zh.s.t524451
+  type: sentence
+  text: 你有两本书。
+  roman: Nǐ yǒu liǎngběnshū.
+  tokens:
+  - 你
+  - 有
+  - 两本书
+  gloss:
+    en: You have two books.
+    id: Kamu punya dua buku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Eldad
+      source_ref: tatoeba:69062
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Shishir
+  source_ref: tatoeba:524451
+  review: needs_review
+- id: zh.s.t719711
+  type: sentence
+  text: 我有两本书。
+  roman: Wǒ yǒu liǎngběnshū.
+  tokens:
+  - 我
+  - 有
+  - 两本书
+  gloss:
+    en: I have two books.
+    id: Aku punya dua buku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:259771
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Shishir
+  source_ref: tatoeba:719711
+  review: needs_review
+- id: zh.s.t816566
+  type: sentence
+  text: 零在一前面。
+  roman: Língzài yī qiánmiàn.
+  tokens:
+  - 零在
+  - 一
+  - 前面
+  gloss:
+    en: Zero comes before one.
+    id: Nol ada sebelum satu.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Source_VOA
+      source_ref: tatoeba:682520
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:816566
+  review: needs_review

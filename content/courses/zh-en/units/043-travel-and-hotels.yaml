@@ -1,0 +1,274 @@
+id: zh-043-travel-and-hotels
+title:
+  en: Travel and Hotels
+  id: Perjalanan dan Hotel
+level: hsk2
+items:
+- id: zh.w.lv3you2
+  type: word
+  text: 旅游
+  roman: lǚyóu
+  tones: lü3 you2
+  gloss:
+    en: travel
+    id: wisata; bepergian
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:旅游[lu:3 you2]
+  review: needs_review
+- id: zh.w.ji1chang3
+  type: word
+  text: 机场
+  roman: jīchǎng
+  tones: ji1 chang3
+  gloss:
+    en: airport; airfield
+    id: bandara; lapangan terbang
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:机场[ji1 chang3]
+  review: needs_review
+- id: zh.w.huo3che1zhan4
+  type: word
+  text: 火车站
+  roman: huǒchēzhàn
+  tones: huo3 che1 zhan4
+  gloss:
+    en: train station
+    id: stasiun kereta
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:火车站[huo3 che1 zhan4]
+  review: needs_review
+- id: zh.w.gong1gong4qi4che1
+  type: word
+  text: 公共汽车
+  roman: gōnggòngqìchē
+  tones: gong1 gong4 qi4 che1
+  gloss:
+    en: bus
+    id: bus
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:公共汽车[gong1 gong4 qi4 che1]
+  review: needs_review
+- id: zh.w.piao4
+  type: word
+  text: 票
+  roman: piào
+  tones: piao4
+  gloss:
+    en: ticket
+    id: tiket
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:票[piao4]
+  review: needs_review
+- id: zh.w.bin1guan3
+  type: word
+  text: 宾馆
+  roman: bīnguǎn
+  tones: bin1 guan3
+  gloss:
+    en: hotel
+    id: hotel
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:宾馆[bin1 guan3]
+  review: needs_review
+- id: zh.w.fang2jian1
+  type: word
+  text: 房间
+  roman: fángjiān
+  tones: fang2 jian1
+  gloss:
+    en: room
+    id: kamar
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:房间[fang2 jian1]
+  review: needs_review
+- id: zh.s.t5554545
+  type: sentence
+  text: 现在有票。
+  roman: Xiànzài yǒu piào.
+  tokens:
+  - 现在
+  - 有
+  - 票
+  gloss:
+    en: Tickets are available now.
+    id: Sekarang ada tiket.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:4494155
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Alieen
+  source_ref: tatoeba:5554545
+  review: needs_review
+- id: zh.s.t12615403
+  type: sentence
+  text: 这是给你的票
+  roman: Zhè shì gěi nǐ de piào
+  tokens:
+  - 这
+  - 是
+  - 给
+  - 你
+  - 的
+  - 票
+  gloss:
+    en: Here's a ticket for you.
+    id: Ini tiket buat kamu
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:10774379
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Enzo
+  source_ref: tatoeba:12615403
+  review: needs_review
+- id: zh.s.t1944777
+  type: sentence
+  text: 那是一家宾馆。
+  roman: Nà shì yījiā bīnguǎn.
+  tokens:
+  - 那
+  - 是
+  - 一家
+  - 宾馆
+  gloss:
+    en: That is a hotel.
+    id: Itu sebuah hotel.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: sadhen
+      source_ref: tatoeba:1467082
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: bigfatpanda
+  source_ref: tatoeba:1944777
+  review: needs_review
+- id: zh.s.t2137751
+  type: sentence
+  text: 你的房间很大。
+  roman: Nǐ de fángjiān hěndà.
+  tokens:
+  - 你
+  - 的
+  - 房间
+  - 很大
+  gloss:
+    en: Your room is big.
+    id: Kamarmu besar.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: faraway9911
+      source_ref: tatoeba:2166207
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sixtynine
+  source_ref: tatoeba:2137751
+  review: needs_review
+- id: zh.s.t344190
+  type: sentence
+  text: 到机场有多远？
+  roman: Dào jīchǎng yǒuduōyuǎn?
+  tokens:
+  - 到
+  - 机场
+  - 有多远
+  gloss:
+    en: How far is it to the airport?
+    id: Ke bandara seberapa jauh?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:18189
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:344190
+  review: needs_review
+- id: zh.s.t349657
+  type: sentence
+  text: 房间里有人吗？
+  roman: Fángjiān lǐ yǒurén ma?
+  tokens:
+  - 房间
+  - 里
+  - 有人
+  - 吗
+  gloss:
+    en: Was there anyone in the room?
+    id: Ada orang di dalam kamar?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:319501
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:349657
+  review: needs_review

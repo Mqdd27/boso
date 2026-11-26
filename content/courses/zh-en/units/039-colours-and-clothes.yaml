@@ -1,0 +1,276 @@
+id: zh-039-colours-and-clothes
+title:
+  en: Colours and Clothes
+  id: Warna dan Pakaian
+level: hsk2
+items:
+- id: zh.w.yan2se4
+  type: word
+  text: 颜色
+  roman: yánsè
+  tones: yan2 se4
+  gloss:
+    en: color
+    id: warna
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:颜色[yan2 se4]
+  review: needs_review
+- id: zh.w.hong2
+  type: word
+  text: 红
+  roman: hóng
+  tones: hong2
+  gloss:
+    en: red
+    id: merah
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:红[hong2]
+  review: needs_review
+- id: zh.w.bai2
+  type: word
+  text: 白
+  roman: bái
+  tones: bai2
+  gloss:
+    en: white
+    id: putih
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:白[bai2]
+  review: needs_review
+- id: zh.w.hei1
+  type: word
+  text: 黑
+  roman: hēi
+  tones: hei1
+  gloss:
+    en: black
+    id: hitam
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:黑[hei1]
+  review: needs_review
+- id: zh.w.chuan1
+  type: word
+  text: 穿
+  roman: chuān
+  tones: chuan1
+  gloss:
+    en: to wear; to put on (clothes, shoes etc.)
+    id: memakai; mengenakan (baju, sepatu, dll.)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:穿[chuan1]
+  review: needs_review
+- id: zh.w.jian4
+  type: word
+  text: 件
+  roman: jiàn
+  tones: jian4
+  gloss:
+    en: classifier for events, things, clothes etc
+    id: kata penggolong untuk peristiwa, barang, pakaian, dll.
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:件[jian4]
+  review: needs_review
+- id: zh.w.xin1
+  type: word
+  text: 新
+  roman: xīn
+  tones: xin1
+  gloss:
+    en: new
+    id: baru
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:新[xin1]
+  review: needs_review
+- id: zh.s.t13210529
+  type: sentence
+  text: 穿上衣服。
+  roman: Chuān shàng yīfu.
+  tokens:
+  - 穿
+  - 上
+  - 衣服
+  gloss:
+    en: Put on some clothes.
+    id: Pakai baju.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:5431156
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: LeviHighway
+  source_ref: tatoeba:13210529
+  review: needs_review
+- id: zh.s.t13210530
+  type: sentence
+  text: 穿上衣服！
+  roman: Chuān shàng yīfu!
+  tokens:
+  - 穿
+  - 上
+  - 衣服
+  gloss:
+    en: Dress up!
+    id: Pakai bajumu!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Nylez
+      source_ref: tatoeba:9756889
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: LeviHighway
+  source_ref: tatoeba:13210530
+  review: needs_review
+- id: zh.s.t822110
+  type: sentence
+  text: 这是新的。
+  roman: Zhè shì xīn de.
+  tokens:
+  - 这
+  - 是
+  - 新
+  - 的
+  gloss:
+    en: This is new.
+    id: Ini yang baru.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: papabear
+      source_ref: tatoeba:703077
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: U2FS
+  source_ref: tatoeba:822110
+  review: needs_review
+- id: zh.s.t10260739
+  type: sentence
+  text: 这不是新的。
+  roman: Zhè búshì xīn de.
+  tokens:
+  - 这
+  - 不是
+  - 新
+  - 的
+  gloss:
+    en: This isn't new.
+    id: Ini bukan yang baru.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2233758
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:10260739
+  review: needs_review
+- id: zh.s.t5911765
+  type: sentence
+  text: 穿你想穿的。
+  roman: Chuān nǐ xiǎng chuān de.
+  tokens:
+  - 穿
+  - 你
+  - 想
+  - 穿
+  - 的
+  gloss:
+    en: Wear whatever you want to wear.
+    id: Pakai apa saja yang ingin kamu pakai.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2852093
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: verdastelo9604
+  source_ref: tatoeba:5911765
+  review: needs_review
+- id: zh.s.t686937
+  type: sentence
+  text: 这些书是新的。
+  roman: Zhèxiē shū shì xīn de.
+  tokens:
+  - 这些
+  - 书
+  - 是
+  - 新
+  - 的
+  gloss:
+    en: These books are new.
+    id: Buku-buku ini baru.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:55079
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: HAGNi
+      source_ref: tatoeba:13434575
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sysko
+  source_ref: tatoeba:686937
+  review: needs_review
