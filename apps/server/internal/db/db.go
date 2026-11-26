@@ -56,16 +56,21 @@ func OpenRemote(url, token string) (*sql.DB, error) {
 	return db, nil
 }
 
+// migrate uses goose's *sql.DB API, not its Provider: the Provider pins one connection for the
+// whole run, and Turso closes an HTTP stream between requests ("stream is closed"). With the pool,
+// a dead connection is just replaced. ponytail: goose's settings are package globals; they are set
+// to the same values on every call, so that is harmless.
 func migrate(db *sql.DB) error {
 	dir, err := fs.Sub(migrations, "migrations")
 	if err != nil {
 		return fmt.Errorf("migrations dir: %w", err)
 	}
-	provider, err := goose.NewProvider(goose.DialectSQLite3, db, dir)
-	if err != nil {
-		return fmt.Errorf("goose provider: %w", err)
+	goose.SetBaseFS(dir)
+	goose.SetLogger(goose.NopLogger())
+	if err := goose.SetDialect("sqlite3"); err != nil {
+		return fmt.Errorf("goose dialect: %w", err)
 	}
-	if _, err := provider.Up(context.Background()); err != nil {
+	if err := goose.UpContext(context.Background(), db, "."); err != nil {
 		return fmt.Errorf("migrate: %w", err)
 	}
 	return nil
