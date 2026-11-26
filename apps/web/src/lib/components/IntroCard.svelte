@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { m } from '#lib/paraglide/messages.js';
-	import { gloss, type GlossLang, type Item } from '#lib/types.js';
+	import { gloss, langOf, type GlossLang, type Item } from '#lib/types.js';
+	import Roman from './Roman.svelte';
 	import { SLOW } from '#lib/audio.js';
 	import Badge from './Badge.svelte';
 	import Icon from './Icon.svelte';
@@ -18,8 +19,15 @@
 		{item.type === 'char' ? m.new_letter() : m.new_word()}
 	</p>
 	<div class="card flex w-full max-w-sm flex-col items-center gap-2 px-6 py-8">
-		<p class="text-7xl font-bold" lang="ko">{item.text}</p>
-		{#if roman}<p class="text-xl font-bold text-muted" data-testid="roman">{item.roman}</p>{/if}
+		{#if item.text === item.roman}
+			<!-- A pinyin syllable: the text is the sound. -->
+			<p class="text-7xl font-bold"><Roman {item} /></p>
+		{:else}
+			<p class="text-7xl font-bold" lang={langOf(item)}>{item.text}</p>
+			{#if roman}<p class="text-xl font-bold text-muted" data-testid="roman">
+					<Roman {item} />
+				</p>{/if}
+		{/if}
 		<p class="text-2xl font-extrabold">{gloss(item, lang)}</p>
 		<Badge {item} />
 	</div>

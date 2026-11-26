@@ -20,6 +20,9 @@ export type Item = {
 	review: 'needs_review' | 'reviewed';
 };
 
+/** The `lang` attribute for an item's text, from its ID ("zh.w.ni3" → zh-Hans). */
+export const langOf = (item: Item) => (item.id.startsWith('zh.') ? 'zh-Hans' : 'ko');
+
 export type Credit = { source: string; license: string; author?: string; source_ref?: string };
 
 export type Unit = {

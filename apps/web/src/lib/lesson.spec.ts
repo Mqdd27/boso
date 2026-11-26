@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import pack from '../../testdata/packs/ko-en/course.json';
 import {
 	arrangedRight,
+	asksSound,
 	cardRoman,
 	distractors,
 	generateLesson,
@@ -11,7 +12,7 @@ import {
 	rng
 } from './lesson.js';
 import { compose, decompose } from './hangul.js';
-import { gloss, type Course, type GlossLang } from './types.js';
+import { gloss, type Course, type GlossLang, type Item, type Unit } from './types.js';
 
 const course = pack as Course;
 const [greetings, family, vowels, consonants, blocks] = course.units;
@@ -38,7 +39,13 @@ describe('generateLesson', () => {
 					const graded = exercises.filter((e) => e.kind !== 'intro');
 					expect(graded.length).toBe(LESSON_SIZE);
 					for (const e of exercises) {
-						if (e.kind === 'intro' || e.kind === 'build' || e.kind === 'arrange') continue;
+						if (
+							e.kind === 'intro' ||
+							e.kind === 'build' ||
+							e.kind === 'arrange' ||
+							e.kind === 'tone'
+						)
+							continue;
 						const items = e.kind === 'match' ? e.items : e.options;
 						if (e.kind !== 'match') expect(items.map((o) => o.id)).toContain(e.item.id);
 						expect(new Set(items.map((o) => gloss(o, lang))).size).toBe(items.length);
@@ -132,7 +139,7 @@ describe('script units', () => {
 		for (let seed = 0; seed < 50; seed++) {
 			for (const lesson of [1, 2] as const) {
 				for (const e of graded(seed, lesson)) {
-					if (e.kind === 'build' || e.kind === 'arrange') continue;
+					if (e.kind === 'build' || e.kind === 'arrange' || e.kind === 'tone') continue;
 					const items = e.kind === 'match' ? e.items : e.options;
 					expect(new Set(items.map((o) => o.roman)).size).toBe(items.length);
 					expect(items.every((o) => o.type === 'char')).toBe(true);
@@ -264,5 +271,45 @@ describe('sentences', () => {
 		expect(arrangedRight(['네', '고마워요', '네'], item)).toBe(false);
 		expect(arrangedRight(['네', '고마워요'], item)).toBe(false);
 		expect(arrangedRight(['네', '네', '고마워요', '친구'], item)).toBe(false);
+	});
+});
+
+describe('pinyin units', () => {
+	const syl = (tones: string, text: string, en: string): Item => ({
+		id: `zh.c.${tones}`,
+		type: 'char',
+		text,
+		roman: text,
+		tones,
+		gloss: { en },
+		source: 'boso',
+		license: 'CC BY-SA 4.0',
+		review: 'needs_review'
+	});
+	const tones: Unit = {
+		id: 'zh-001-four-tones',
+		title: { en: 'Tones' },
+		level: 'hsk1',
+		kind: 'script',
+		items: [
+			syl('ma1', 'mā', 'tone 1'),
+			syl('ma2', 'má', 'tone 2'),
+			syl('ma3', 'mǎ', 'tone 3'),
+			syl('ma4', 'mà', 'tone 4'),
+			syl('ma5', 'ma', 'neutral')
+		]
+	};
+	const lesson = (canListen: boolean) =>
+		generateLesson({ ...base, earlier: [], unit: tones, lesson: 1, canListen });
+
+	it('ask for the meaning of a syllable, not its (visible) sound', () => {
+		expect(asksSound(tones)).toBe(false);
+		expect(asksSound(vowels)).toBe(true);
+	});
+
+	it('ask for the tone of each new syllable when it can be heard', () => {
+		const picks = lesson(true).filter((e) => e.kind === 'tone');
+		expect(new Set(picks.map((e) => e.item.id)).size).toBe(5);
+		expect(lesson(false).some((e) => e.kind === 'tone')).toBe(false);
 	});
 });

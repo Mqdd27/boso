@@ -1,15 +1,19 @@
 // Lesson generator: a pure function of (unit, earlier units, item stats, lesson number, seed).
-// Vocab units ask for meanings (glosses); script units (Hangul) ask for sounds (romanization).
+// Vocab units ask for meanings (glosses); Hangul units ask for sounds (romanization). Pinyin units
+// show the sound itself, so they ask what it is (the gloss) and which tone it has.
 import { decompose, FINALS, INITIALS, similar, VOWELS } from './hangul.js';
+import { oneSyllable } from './pinyin.js';
 import { gloss, type GlossLang, type Item, type Unit } from './types.js';
 
 export type Kind = 'meaning' | 'word' | 'listen';
+export const TONES = [1, 2, 3, 4, 5];
 export type Tiles = { initial: string[]; vowel: string[]; final: string[] }; // final: [] = none
 export type Exercise =
 	| { kind: 'intro'; item: Item }
 	| { kind: Kind; item: Item; options: Item[] }
 	| { kind: 'match'; items: Item[]; right: Item[] }
 	| { kind: 'build'; item: Item; listen: boolean; tiles: Tiles }
+	| { kind: 'tone'; item: Item } // hear a syllable, pick its tone from TONES
 	| { kind: 'arrange'; item: Item; listen: boolean; bank: string[]; roman: string[] }; // sentence from a word bank
 
 export type ItemStat = {
@@ -69,9 +73,13 @@ export const isScript = (unit: Unit) => unit.kind === 'script';
 export const section = (units: Unit[], script: boolean) =>
 	units.filter((u) => isScript(u) === script);
 
-/** What an item is matched against: its sound in script units, its meaning elsewhere. */
-export const label = (item: Item, lang: GlossLang, script: boolean) =>
-	script ? item.roman : gloss(item, lang);
+/** Hangul units ask for sounds; pinyin units are written as sounds already (text = roman). */
+export const asksSound = (unit: Unit) =>
+	isScript(unit) && unit.items.some((i) => i.text !== i.roman);
+
+/** What an item is matched against: its sound in Hangul units, its meaning elsewhere. */
+export const label = (item: Item, lang: GlossLang, sound: boolean) =>
+	sound ? item.roman : gloss(item, lang);
 
 /** mulberry32: small, fast, good enough for shuffling. */
 export function rng(seed: number): () => number {
@@ -195,13 +203,13 @@ function bankRoman(bank: string[], item: Item, sentences: Item[]): string[] {
 	return bank.map((t) => known.get(t) ?? '');
 }
 
-type Mode = Kind | 'build';
+type Mode = Kind | 'build' | 'tone';
 
 export function generateLesson(input: LessonInput): Exercise[] {
 	const { unit, earlier, stats, lesson, lang, canListen } = input;
 	const rand = rng(input.seed);
 	const script = isScript(unit);
-	const key = (item: Item) => label(item, lang, script);
+	const key = (item: Item) => label(item, lang, asksSound(unit));
 	// Options come from units of the same kind only: no Hangul letters among vocab answers.
 	const all = [unit, ...earlier.filter((u) => isScript(u) === script)].flatMap((u) => u.items);
 	// Words and sentences are asked separately: a sentence is never an option for a word.
@@ -211,9 +219,12 @@ export function generateLesson(input: LessonInput): Exercise[] {
 	const sentences = lesson === 2 ? unit.items.filter(isSentence) : [];
 	const size = LESSON_SIZE - Math.min(SENTENCES_PER_LESSON, sentences.length);
 	const block = (item: Item) => script && decompose(item.text) !== null;
+	// Tone pick needs the sound: single syllables only (a tone per item).
+	const tonal = (item: Item) => canListen && oneSyllable(item.tones);
 	const kindsOf = (item: Item): Mode[] => {
 		const base: Mode[] = block(item) ? ['build', 'meaning', 'word'] : ['meaning', 'word'];
-		return canListen ? [...base, 'listen'] : base;
+		if (!canListen) return base;
+		return tonal(item) ? ['tone', ...base, 'listen'] : [...base, 'listen'];
 	};
 	const out: Exercise[] = [];
 	const introduced = new Set<string>();
@@ -224,6 +235,7 @@ export function generateLesson(input: LessonInput): Exercise[] {
 			introduced.add(item.id);
 		}
 		if (mode === 'build') out.push(build(item, pool, canListen && rand() < 0.5, rand));
+		else if (mode === 'tone') out.push({ kind: 'tone', item });
 		else {
 			const from = script ? pool.filter((i) => shape(i.text) === shape(item.text)) : pool;
 			const options = shuffle([item, ...distractors(item, from, key, rand)], rand);
@@ -238,7 +250,9 @@ export function generateLesson(input: LessonInput): Exercise[] {
 
 	if (lesson === 1) {
 		// Every new item: intro card, then recognise (or build) it. Then pairs, then mixed practice.
-		words.forEach((item, n) => add(block(item) ? 'build' : n % 2 ? 'word' : 'meaning', item));
+		words.forEach((item, n) =>
+			add(block(item) ? 'build' : script && tonal(item) ? 'tone' : n % 2 ? 'word' : 'meaning', item)
+		);
 		const pairs = match(words, key, rand);
 		if (pairs) {
 			out.push(pairs);

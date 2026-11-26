@@ -6,7 +6,7 @@
 	import { db } from '#lib/db.js';
 	import { m } from '#lib/paraglide/messages.js';
 	import { getLocale } from '#lib/paraglide/runtime.js';
-	import { koreanVoice } from '#lib/audio.js';
+	import { voiceFor } from '#lib/audio.js';
 	import { isScript, section } from '#lib/lesson.js';
 	import type { Pack } from '#lib/types.js';
 
@@ -17,7 +17,7 @@
 	const setup = Promise.all([
 		db.unitProgress.toArray(),
 		db.itemStats.toArray(),
-		koreanVoice()
+		voiceFor(courseId.split('-')[0]) // course IDs are <target>-<gloss>
 	]).then(([progress, stats, voice]) => ({
 		progress: new Map(progress.filter((p) => p.course === courseId).map((p) => [p.unit, p])),
 		stats: Object.fromEntries(stats.map((s) => [s.id, s])),

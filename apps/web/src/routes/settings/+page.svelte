@@ -55,6 +55,7 @@
 {@render group(m.settings_group_reading())}
 <div class="divide-y-2 divide-line rounded-card border-2 border-line">
 	<Toggle label={m.settings_romanization()} bind:checked={settings.romanization} />
+	<Toggle label={m.settings_tone_colors()} bind:checked={settings.toneColors} />
 	{#each courses as course (course)}
 		<label class="flex min-h-14 items-center justify-between gap-3 px-4 py-2 font-bold">
 			{m.settings_romanization_course({ course })}

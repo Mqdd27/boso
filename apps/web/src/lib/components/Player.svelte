@@ -5,17 +5,21 @@
 	import {
 		generateLesson,
 		arrangedRight,
+		asksSound,
 		isScript,
 		label,
 		lessonXp,
 		requeue,
+		TONES,
 		type Exercise
 	} from '#lib/lesson.js';
 	import { m } from '#lib/paraglide/messages.js';
 	import { settings, showRoman } from '#lib/settings.svelte.js';
 	import { canListen, pickSource, play, SLOW } from '#lib/audio.js';
 	import { dailyTotals, localDate, streak } from '#lib/stats.js';
-	import { localized, type GlossLang, type Item, type Unit } from '#lib/types.js';
+	import { langOf, localized, type GlossLang, type Item, type Unit } from '#lib/types.js';
+	import { mark, toneless, toneOf } from '#lib/pinyin.js';
+	import Roman from './Roman.svelte';
 	import BuildSyllable from './BuildSyllable.svelte';
 	import Sentence from './Sentence.svelte';
 	import WordBank from './WordBank.svelte';
@@ -58,7 +62,11 @@
 			lesson,
 			seed,
 			lang,
-			canListen: canListen([...unit.items, ...earlier.flatMap((u) => u.items)], voice)
+			// The pool a lesson asks from: this unit and the earlier ones of the same section.
+			canListen: canListen(
+				[unit, ...earlier.filter((u) => isScript(u) === isScript(unit))].flatMap((u) => u.items),
+				voice
+			)
 		})
 	);
 	let index = $state(0);
@@ -83,17 +91,19 @@
 	const results: { id: string; correct: boolean }[] = [];
 
 	const ex = $derived(queue[index]);
-	// Script units (Hangul) ask for sounds, so romanization is the answer there: always shown where
-	// it is the answer, never where it would give the answer away.
-	const script = $derived(isScript(unit));
-	const roman = $derived(!script && showRoman(course));
+	// Hangul units ask for sounds, so romanization is the answer there: always shown where it is the
+	// answer, never where it would give the answer away. Pinyin units are written in pinyin already.
+	const script = $derived(asksSound(unit));
+	const roman = $derived(!isScript(unit) && showRoman(course));
 	const sound = (item: Item) => label(item, lang, script);
 	const correct = $derived(
 		ex?.kind === 'build'
 			? built === ex.item.text
 			: ex?.kind === 'arrange'
 				? arrangedRight(arranged, ex.item)
-				: !!ex && 'options' in ex && selected !== null && ex.options[selected].id === ex.item.id
+				: ex?.kind === 'tone'
+					? selected !== null && TONES[selected] === toneOf(ex.item.tones!)
+					: !!ex && 'options' in ex && selected !== null && ex.options[selected].id === ex.item.id
 	);
 	const answered = $derived(
 		ex?.kind === 'build'
@@ -110,7 +120,11 @@
 
 	$effect(() => {
 		// Autoplay once per exercise (listening always: it has nothing else to show).
-		if (ex?.kind === 'listen' || ((ex?.kind === 'build' || ex?.kind === 'arrange') && ex.listen))
+		if (
+			ex?.kind === 'listen' ||
+			ex?.kind === 'tone' ||
+			((ex?.kind === 'build' || ex?.kind === 'arrange') && ex.listen)
+		)
 			say(ex.item);
 		else if (ex?.kind === 'intro' && settings.autoplay) say(ex.item);
 	});
@@ -170,9 +184,10 @@
 
 	function onkeydown(e: KeyboardEvent) {
 		if (done || confirmExit || !ex) return;
-		if (/^[1-4]$/.test(e.key) && 'options' in ex && !checked) {
+		const count = ex.kind === 'tone' ? TONES.length : 'options' in ex ? ex.options.length : 0;
+		if (/^[1-5]$/.test(e.key) && !checked) {
 			const n = Number(e.key) - 1;
-			if (n < ex.options.length) selected = n;
+			if (n < count) selected = n;
 		} else if (e.key === 'Enter') {
 			e.preventDefault();
 			if (canContinue) void next();
@@ -181,8 +196,11 @@
 	}
 
 	const optionState = (n: number) => {
+		if (ex?.kind === 'tone') return choiceState(n, TONES[n] === toneOf(ex.item.tones!));
 		if (!ex || !('options' in ex)) return undefined;
-		const isAnswer = ex.options[n].id === ex.item.id;
+		return choiceState(n, ex.options[n].id === ex.item.id);
+	};
+	const choiceState = (n: number, isAnswer: boolean) => {
 		if (checked && isAnswer) return 'right';
 		if (checked && n === selected) return 'wrong';
 		return n === selected ? 'selected' : undefined;
@@ -205,6 +223,31 @@
 </script>
 
 <svelte:window {onkeydown} />
+
+{#snippet speakers()}
+	{#if ex && 'item' in ex}
+		{@const item = ex.item}
+		<div class="flex items-end gap-3">
+			<button
+				type="button"
+				class="btn btn-blue size-24 !p-0"
+				aria-label={m.play_again()}
+				onclick={() => say(item)}
+			>
+				<Icon name="speaker" size={48} />
+			</button>
+			<button
+				type="button"
+				class="btn btn-outline size-14 !p-0 text-2xl"
+				aria-label={m.listen_slow()}
+				data-testid="listen-slow"
+				onclick={() => say(item, SLOW)}
+			>
+				🐢
+			</button>
+		</div>
+	{/if}
+{/snippet}
 
 {#if done}
 	<Confetti />
@@ -303,34 +346,46 @@
 			{/key}
 		{:else}
 			<h2 class="mb-5 text-2xl font-extrabold">
-				{ex.kind === 'arrange'
-					? ex.listen
-						? m.prompt_arrange_listen()
-						: m.prompt_arrange()
-					: ex.kind === 'build'
-						? m.prompt_build()
-						: ex.kind === 'meaning'
-							? script
-								? m.prompt_sound()
-								: ex.item.type === 'sentence'
-									? m.prompt_sentence()
-									: m.prompt_meaning()
-							: ex.kind === 'word'
+				{ex.kind === 'tone'
+					? m.prompt_tone()
+					: ex.kind === 'arrange'
+						? ex.listen
+							? m.prompt_arrange_listen()
+							: m.prompt_arrange()
+						: ex.kind === 'build'
+							? m.prompt_build()
+							: ex.kind === 'meaning'
 								? script
-									? m.prompt_letter()
-									: m.prompt_word()
-								: script
-									? m.prompt_listen_letter()
-									: m.prompt_listen()}
+									? m.prompt_sound()
+									: ex.item.type === 'sentence'
+										? m.prompt_sentence()
+										: m.prompt_meaning()
+								: ex.kind === 'word'
+									? script
+										? m.prompt_letter()
+										: m.prompt_word()
+									: script
+										? m.prompt_listen_letter()
+										: m.prompt_listen()}
 			</h2>
 			<div class="mb-6 flex flex-col items-center gap-2 text-center" data-testid="prompt">
-				{#if ex.kind === 'meaning'}
+				{#if ex.kind === 'tone'}
+					{@render speakers()}
+					<p class="text-3xl font-bold" data-testid="toneless">
+						{#if ex.item.text !== ex.item.roman}<span lang={langOf(ex.item)}>{ex.item.text}</span>
+						{/if}{toneless(ex.item.tones!)}
+					</p>
+				{:else if ex.kind === 'meaning'}
 					{#if ex.item.type === 'sentence'}
 						<Sentence item={ex.item} {lang} />
 					{:else}
-						<p class="text-5xl font-bold" lang="ko">{ex.item.text}</p>
+						<p class="text-5xl font-bold" lang={langOf(ex.item)}>
+							{#if ex.item.text === ex.item.roman}<Roman item={ex.item} />{:else}{ex.item.text}{/if}
+						</p>
 					{/if}
-					{#if roman}<p class="text-lg text-muted" data-testid="roman">{ex.item.roman}</p>{/if}
+					{#if roman}<p class="text-lg text-muted" data-testid="roman">
+							<Roman item={ex.item} />
+						</p>{/if}
 				{:else if ex.kind === 'word' || ((ex.kind === 'build' || ex.kind === 'arrange') && !ex.listen)}
 					<p
 						class="rounded-card border-2 border-line px-5 py-3 text-2xl font-extrabold"
@@ -339,25 +394,7 @@
 						{sound(ex.item)}
 					</p>
 				{:else}
-					<div class="flex items-end gap-3">
-						<button
-							type="button"
-							class="btn btn-blue size-24 !p-0"
-							aria-label={m.play_again()}
-							onclick={() => say(ex.item)}
-						>
-							<Icon name="speaker" size={48} />
-						</button>
-						<button
-							type="button"
-							class="btn btn-outline size-14 !p-0 text-2xl"
-							aria-label={m.listen_slow()}
-							data-testid="listen-slow"
-							onclick={() => say(ex.item, SLOW)}
-						>
-							🐢
-						</button>
-					</div>
+					{@render speakers()}
 				{/if}
 				<Badge item={ex.item} />
 			</div>
@@ -370,10 +407,34 @@
 					<WordBank
 						bank={ex.bank}
 						roman={roman ? ex.roman : undefined}
+						lang={langOf(ex.item)}
 						disabled={checked}
 						bind:value={arranged}
 					/>
 				{/key}
+			{:else if ex.kind === 'tone'}
+				{@const base = toneless(ex.item.tones!)}
+				<ol class="grid grid-cols-2 gap-3 sm:grid-cols-5" data-testid="tones">
+					{#each TONES as tone, n (tone)}
+						<li class={n === TONES.length - 1 ? 'col-span-2 sm:col-span-1' : ''}>
+							<button
+								type="button"
+								class="card flex min-h-16 w-full flex-col items-center justify-center px-2 py-2"
+								disabled={checked}
+								aria-pressed={n === selected}
+								data-state={optionState(n)}
+								data-tone={tone}
+								onclick={() => (selected = n)}
+							>
+								<span class="text-2xl font-bold">{mark(`${base}${tone}`)}</span>
+								<span class="text-sm font-semibold opacity-75">
+									{tone === 5 ? m.tone_neutral() : m.tone_n({ n: tone })}
+								</span>
+							</button>
+						</li>
+					{/each}
+				</ol>
+				<p class="mt-4 hidden text-sm text-muted sm:block">{m.keyboard_hint_tone()}</p>
 			{:else}
 				<ol class="flex flex-col gap-3">
 					{#each ex.options as option, n (option.id)}
@@ -395,9 +456,13 @@
 								{#if ex.kind === 'meaning'}
 									<span class="text-lg font-bold">{sound(option)}</span>
 								{:else}
-									<span class="text-xl font-bold" lang="ko">{option.text}</span>
+									<span class="text-xl font-bold" lang={langOf(option)}>
+										{#if option.text === option.roman}<Roman
+												item={option}
+											/>{:else}{option.text}{/if}
+									</span>
 									{#if roman}<span class="text-sm opacity-75" data-testid="roman">
-											{option.roman}
+											<Roman item={option} />
 										</span>{/if}
 								{/if}
 							</button>
@@ -442,8 +507,8 @@
 							{#if !correct}
 								<p class="font-bold">{m.correct_answer()}</p>
 								<p class="flex flex-wrap items-center gap-x-2">
-									<span class="text-lg font-bold" lang="ko">{ex.item.text}</span>
-									{#if roman}<span>({ex.item.roman})</span>{/if}
+									<span class="text-lg font-bold" lang={langOf(ex.item)}>{ex.item.text}</span>
+									{#if roman || ex.kind === 'tone'}<span>(<Roman item={ex.item} />)</span>{/if}
 									<span>
 										= {script
 											? `${ex.item.roman} · ${localized(ex.item.gloss, lang)}`

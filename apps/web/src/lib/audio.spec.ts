@@ -84,3 +84,11 @@ describe('play', () => {
 		expect(await play(item(), 'ko-en', null)).toBe('none');
 	});
 });
+
+describe('pinyin items', () => {
+	it('are never read by a speech voice', () => {
+		const ma = { ...item(), id: 'zh.c.ma3', text: 'mǎ', roman: 'mǎ' };
+		expect(pickSource(ma, voice)).toBe('none');
+		expect(pickSource({ ...ma, audio: 'zh/c.ma3.opus' }, voice)).toBe('file');
+	});
+});

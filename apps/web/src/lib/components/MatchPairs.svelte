@@ -1,5 +1,6 @@
 <script lang="ts">
-	import type { Item } from '#lib/types.js';
+	import { langOf, type Item } from '#lib/types.js';
+	import Roman from './Roman.svelte';
 
 	let {
 		items,
@@ -49,9 +50,9 @@
 					data-item={item.id}
 					onclick={() => (picked = item.id)}
 				>
-					<span class="text-xl" lang="ko">{item.text}</span>
+					<span class="text-xl" lang={langOf(item)}>{item.text}</span>
 					{#if roman}<span class="block text-xs font-semibold opacity-75" data-testid="roman">
-							{item.roman}
+							<Roman {item} />
 						</span>{/if}
 				</button>
 			</li>

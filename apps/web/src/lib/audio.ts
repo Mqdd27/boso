@@ -1,11 +1,11 @@
-// Item audio: the pack's pre-generated .opus file, else the Web Speech API (ko-KR), else nothing.
+// Item audio: the pack's pre-generated .opus file, else the Web Speech API, else nothing.
 import type { Item } from './types.js';
 
 export type Source = 'file' | 'speech' | 'none';
 export const SLOW = 0.7;
 
-/** A Korean voice, or null if the device has none. */
-export async function koreanVoice(): Promise<SpeechSynthesisVoice | null> {
+/** A voice for the course's language ('ko', 'zh'), or null if the device has none. */
+export async function voiceFor(target: string): Promise<SpeechSynthesisVoice | null> {
 	if (typeof speechSynthesis === 'undefined') return null;
 	let voices = speechSynthesis.getVoices();
 	if (!voices.length) {
@@ -16,11 +16,14 @@ export async function koreanVoice(): Promise<SpeechSynthesisVoice | null> {
 		});
 		voices = speechSynthesis.getVoices();
 	}
-	return voices.find((v) => v.lang.replace('_', '-').toLowerCase().startsWith('ko')) ?? null;
+	return voices.find((v) => v.lang.replace('_', '-').toLowerCase().startsWith(target)) ?? null;
 }
 
+// A voice can't read pinyin script items (mā) right, only characters.
+const speakable = (item: Item) => !/\p{Script=Latin}/u.test(item.text);
+
 export const pickSource = (item: Item, voice: SpeechSynthesisVoice | null): Source =>
-	item.audio ? 'file' : voice ? 'speech' : 'none';
+	item.audio ? 'file' : voice && speakable(item) ? 'speech' : 'none';
 
 /** Listening exercises need a sound for every item of the unit. */
 export const canListen = (items: Item[], voice: SpeechSynthesisVoice | null) =>
@@ -49,7 +52,7 @@ export async function play(
 			if ((e as Error).name === 'NotAllowedError') return 'none';
 		}
 	}
-	if (!voice) return 'none';
+	if (!voice || !speakable(item)) return 'none';
 	const u = new SpeechSynthesisUtterance(item.text);
 	u.voice = voice;
 	u.lang = voice.lang;

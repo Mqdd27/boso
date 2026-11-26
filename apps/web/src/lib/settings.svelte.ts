@@ -9,7 +9,9 @@ export type Settings = {
 	theme: Theme;
 	contributor: boolean;
 	autoplay: boolean;
-	learnScript: boolean; // show the script path (Hangul) on the home screen
+	learnScript: boolean; // show the script path (Hangul, pinyin) on the home screen
+	toneColors: boolean; // pinyin syllables coloured by tone
+	course: string | null; // the course on the home screen, null = the first one
 };
 
 export const DAILY_GOALS = [10, 20, 30, 50];
@@ -21,7 +23,9 @@ const defaults: Settings = {
 	theme: 'system',
 	contributor: false,
 	autoplay: true,
-	learnScript: true
+	learnScript: true,
+	toneColors: true,
+	course: null
 };
 
 export const settings: Settings = $state({ ...defaults });

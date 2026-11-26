@@ -10,9 +10,16 @@
 	let {
 		bank,
 		roman,
+		lang,
 		disabled,
 		value = $bindable([])
-	}: { bank: string[]; roman?: string[]; disabled: boolean; value?: string[] } = $props();
+	}: {
+		bank: string[];
+		roman?: string[];
+		lang: string;
+		disabled: boolean;
+		value?: string[];
+	} = $props();
 
 	let picked = $state<number[]>([]);
 	$effect(() => {
@@ -31,7 +38,7 @@
 </script>
 
 {#snippet face(n: number)}
-	<span lang="ko">{bank[n]}</span>
+	<span {lang}>{bank[n]}</span>
 	{#if roman?.[n]}<span class="text-xs font-semibold opacity-70" data-testid="roman">
 			{roman[n]}
 		</span>{/if}

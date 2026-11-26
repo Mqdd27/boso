@@ -74,7 +74,7 @@
 <CourseGate>
 	{#snippet children(packs: Pack[])}
 		{#await data then d}
-			{@const lead = packs[0].course}
+			{@const lead = (packs.find((p) => p.course.id === settings.course) ?? packs[0]).course}
 			<header
 				class="sticky top-0 z-10 -mx-4 flex h-14 items-center justify-between gap-3 border-b-2 border-line bg-bg px-4"
 				data-testid="topbar"
@@ -134,7 +134,28 @@
 				</div>
 			</section>
 
-			{#each packs as { course } (course.id)}
+			{#if packs.length > 1}
+				<div class="mt-4 flex gap-2" role="group" aria-label={m.course_pick()}>
+					{#each packs as { course } (course.id)}
+						{@const target = course.id.slice(0, 2)}
+						<button
+							type="button"
+							class="card chip flex min-h-11 flex-1 items-center justify-center gap-2 px-2 font-bold"
+							aria-pressed={course.id === lead.id}
+							data-course={course.id}
+							onclick={() => {
+								settings.course = course.id;
+								path = null;
+							}}
+						>
+							<span lang={target} aria-hidden="true">{BADGE[target] ?? target}</span>
+							{course.title ? localized(course.title, lang) : course.id}
+						</button>
+					{/each}
+				</div>
+			{/if}
+
+			{#each packs.filter((p) => p.course.id === lead.id) as { course } (course.id)}
 				{@const hasScript = settings.learnScript && course.units.some(isScript)}
 				{@const vocabStarted = section(course.units, false).some(
 					(u) => d.progress.get(`${course.id}/${u.id}`)?.lessons.length
@@ -154,7 +175,11 @@
 								data-path={p}
 								onclick={() => (path = p)}
 							>
-								{p === 'script' ? m.section_hangul() : m.section_vocab()}
+								{p === 'vocab'
+									? m.section_vocab()
+									: course.target === 'zh'
+										? m.section_pinyin()
+										: m.section_hangul()}
 							</button>
 						{/each}
 					</div>
@@ -163,7 +188,9 @@
 					{@const status = statuses(course.id, units, d.progress)}
 					{@const tone = script ? 'purple' : 'green'}
 					{#if script}
-						<p class="mt-3 text-center text-sm text-muted">{m.section_hangul_hint()}</p>
+						<p class="mt-3 text-center text-sm text-muted">
+							{course.target === 'zh' ? m.section_pinyin_hint() : m.section_hangul_hint()}
+						</p>
 					{/if}
 					<ol class="flex flex-col" data-testid="units" data-section={script ? 'script' : 'vocab'}>
 						{#each units as unit, n (unit.id)}

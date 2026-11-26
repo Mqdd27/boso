@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { m } from '#lib/paraglide/messages.js';
-	import { localized, type GlossLang, type Item } from '#lib/types.js';
+	import { langOf, localized, type GlossLang, type Item } from '#lib/types.js';
 
 	// A Korean sentence; words not taught yet are dotted, tap one to see its meaning.
 	let { item, lang }: { item: Item; lang: GlossLang } = $props();
@@ -11,7 +11,10 @@
 	const bare = (word: string) => word.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, '');
 </script>
 
-<p class="flex flex-wrap justify-center gap-x-[0.3em] text-3xl leading-relaxed font-bold" lang="ko">
+<p
+	class="flex flex-wrap justify-center gap-x-[0.3em] text-3xl leading-relaxed font-bold"
+	lang={langOf(item)}
+>
 	{#each words as word, n (n)}
 		{#if hints.has(bare(word))}
 			<button
@@ -33,6 +36,6 @@
 		role="status"
 		data-testid="hint"
 	>
-		<span lang="ko">{open}</span> = {localized(hints.get(open)!, lang)}
+		<span lang={langOf(item)}>{open}</span> = {localized(hints.get(open)!, lang)}
 	</p>
 {/if}

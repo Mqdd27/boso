@@ -24,7 +24,7 @@ test('home has separate Hangul and vocabulary paths that unlock separately', asy
 
 test('the Hangul path can be turned off in Settings', async ({ page }) => {
 	await page.goto('/settings');
-	await page.getByLabel('Show the Hangul (alphabet) path').uncheck();
+	await page.getByLabel('Show the script path (Hangul, pinyin)').uncheck();
 	await page.getByRole('link', { name: 'Learn' }).click();
 	await expect(unit(page, 'ko-010-greetings')).toHaveAttribute('data-status', 'open');
 	await expect(page.locator('[data-path]')).toHaveCount(0);
