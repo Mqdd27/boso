@@ -155,5 +155,8 @@
 	"settings_tone_colors": "Warnai pinyin sesuai nada",
 	"course_pick": "Kursus",
 	"lang_ko": "Bahasa Korea",
-	"lang_zh": "Bahasa Mandarin"
+	"lang_zh": "Bahasa Mandarin",
+	"review_title": "Ulasan",
+	"review_due": "Ulasan · {count} menunggu",
+	"review_none": "Belum ada yang perlu diulas. Kembali besok!"
 }

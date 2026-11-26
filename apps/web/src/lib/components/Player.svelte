@@ -39,7 +39,8 @@
 		lang,
 		voice,
 		stats,
-		seed
+		seed,
+		review = false
 	}: {
 		course: string;
 		unit: Unit;
@@ -50,6 +51,7 @@
 		voice: SpeechSynthesisVoice | null;
 		stats: Record<string, import('#lib/lesson.js').ItemStat>;
 		seed: number;
+		review?: boolean; // a review session: `unit` holds the due items
 	} = $props();
 
 	// The lesson is generated once, when the player mounts.
@@ -167,7 +169,7 @@
 			return;
 		}
 		const xp = lessonXp(mistakes);
-		await recordLesson({ course, unit: unit.id, lesson, xp, results });
+		await recordLesson({ course, unit: unit.id, lesson, xp, results, review });
 		const totals = dailyTotals(await db.activity.toArray());
 		done = {
 			xp,
@@ -216,9 +218,11 @@
 	);
 	const sheetOk = $derived(ex?.kind === 'match' ? !matchMistakes?.size : correct);
 	const title = $derived(
-		practice
-			? m.practice_title({ unit: localized(unit.title, lang) })
-			: m.lesson_title({ unit: localized(unit.title, lang), lesson })
+		review
+			? m.review_title()
+			: practice
+				? m.practice_title({ unit: localized(unit.title, lang) })
+				: m.lesson_title({ unit: localized(unit.title, lang), lesson })
 	);
 </script>
 

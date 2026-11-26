@@ -155,5 +155,8 @@
 	"settings_tone_colors": "Colour pinyin by tone",
 	"course_pick": "Course",
 	"lang_ko": "Korean",
-	"lang_zh": "Mandarin"
+	"lang_zh": "Mandarin",
+	"review_title": "Review",
+	"review_due": "Review · {count} due",
+	"review_none": "Nothing to review right now. Come back tomorrow!"
 }

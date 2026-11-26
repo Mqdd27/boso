@@ -1,5 +1,6 @@
 import { Dexie, type Table } from 'dexie';
 import type { ItemStat } from './lesson.js';
+import { grades, schedule, type ReviewEvent, type SrsCard } from './srs.js';
 import { localDate, type Activity } from './stats.js';
 
 export type UnitProgress = {
@@ -15,6 +16,8 @@ class BosoDB extends Dexie {
 	unitProgress!: Table<UnitProgress, [string, string]>;
 	itemStats!: Table<ItemStat, string>;
 	settings!: Table<Setting, string>;
+	cards!: Table<SrsCard, string>;
+	reviews!: Table<ReviewEvent, string>;
 
 	constructor() {
 		super('boso');
@@ -24,6 +27,10 @@ class BosoDB extends Dexie {
 			itemStats: 'id',
 			settings: 'key'
 		});
+		this.version(2).stores({
+			cards: 'id, due, [course+due]',
+			reviews: 'id, ts, course' // append-only, like activity
+		});
 	}
 }
 
@@ -31,18 +38,27 @@ export const db = new BosoDB();
 
 export const LESSONS_PER_UNIT = 2;
 
-/** Record a finished lesson: one activity event, unit progress, per-item stats. */
+/** Record a finished lesson or review session: one activity event, unit progress (lessons only),
+ *  per-item stats, and the items' next review dates. */
 export async function recordLesson(r: {
 	course: string;
 	unit: string;
 	lesson: number;
 	xp: number;
 	results: { id: string; correct: boolean }[];
+	review?: boolean;
 	now?: Date;
 }) {
 	const now = r.now ?? new Date();
 	const ts = now.toISOString();
-	await db.transaction('rw', db.activity, db.unitProgress, db.itemStats, async () => {
+	// Scheduling is async (ts-fsrs), so it happens before the transaction.
+	const again = grades(r.results);
+	const previous = await db.cards.bulkGet([...again.keys()]);
+	const cards = await Promise.all(
+		[...again].map(([id, a], n) => schedule(previous[n], id, r.course, a, now))
+	);
+	const tables = [db.activity, db.unitProgress, db.itemStats, db.cards, db.reviews];
+	await db.transaction('rw', tables, async () => {
 		await db.activity.add({
 			id: crypto.randomUUID(),
 			ts,
@@ -50,9 +66,20 @@ export async function recordLesson(r: {
 			course: r.course,
 			unit: r.unit,
 			xp: r.xp,
-			lessons: 1,
-			reviews: 0
+			lessons: r.review ? 0 : 1,
+			reviews: r.review ? again.size : 0
 		});
+		await db.cards.bulkPut(cards);
+		await db.reviews.bulkAdd(
+			[...again].map(([item, a]) => ({
+				id: crypto.randomUUID(),
+				ts,
+				course: r.course,
+				item,
+				again: a
+			}))
+		);
+		if (r.review) return itemStats(r.results, ts);
 		const p = (await db.unitProgress.get([r.course, r.unit])) ?? {
 			course: r.course,
 			unit: r.unit,
@@ -61,18 +88,23 @@ export async function recordLesson(r: {
 		if (!p.lessons.includes(r.lesson)) p.lessons = [...p.lessons, r.lesson].sort();
 		if (!p.completedAt && p.lessons.length >= LESSONS_PER_UNIT) p.completedAt = ts;
 		await db.unitProgress.put(p);
-		for (const { id, correct } of r.results) {
-			const s = (await db.itemStats.get(id)) ?? { id, seen: 0, correct: 0, wrong: 0, lastSeen: ts };
-			s.seen++;
-			s[correct ? 'correct' : 'wrong']++;
-			s.lastSeen = ts;
-			await db.itemStats.put(s);
-		}
+		await itemStats(r.results, ts);
 	});
 }
 
+async function itemStats(results: { id: string; correct: boolean }[], ts: string) {
+	for (const { id, correct } of results) {
+		const s = (await db.itemStats.get(id)) ?? { id, seen: 0, correct: 0, wrong: 0, lastSeen: ts };
+		s.seen++;
+		s[correct ? 'correct' : 'wrong']++;
+		s.lastSeen = ts;
+		await db.itemStats.put(s);
+	}
+}
+
 export async function resetProgress() {
-	await db.transaction('rw', db.activity, db.unitProgress, db.itemStats, async () => {
-		await Promise.all([db.activity.clear(), db.unitProgress.clear(), db.itemStats.clear()]);
+	const tables = [db.activity, db.unitProgress, db.itemStats, db.cards, db.reviews];
+	await db.transaction('rw', tables, async () => {
+		await Promise.all(tables.map((t) => t.clear()));
 	});
 }

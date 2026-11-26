@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { tick } from 'svelte';
+	import { resolve } from '$app/paths';
 	import CourseGate from '#lib/components/CourseGate.svelte';
 	import Icon from '#lib/components/Icon.svelte';
 	import LessonNode from '#lib/components/LessonNode.svelte';
@@ -12,18 +13,21 @@
 	import { localized, type NodeState, type Pack, type Unit } from '#lib/types.js';
 
 	const lang = getLocale();
-	const data = Promise.all([db.activity.toArray(), db.unitProgress.toArray()]).then(
-		([activity, progress]) => {
-			const totals = dailyTotals(activity);
-			const today = localDate(new Date());
-			return {
-				today: totals.get(today)?.xp ?? 0,
-				total: [...totals.values()].reduce((n, t) => n + t.xp, 0),
-				streak: streak(totals, settings.dailyGoal, today),
-				progress: new Map(progress.map((p) => [`${p.course}/${p.unit}`, p]))
-			};
-		}
-	);
+	const data = Promise.all([
+		db.activity.toArray(),
+		db.unitProgress.toArray(),
+		db.cards.where('due').belowOrEqual(Date.now()).toArray()
+	]).then(([activity, progress, due]) => {
+		const totals = dailyTotals(activity);
+		const today = localDate(new Date());
+		return {
+			today: totals.get(today)?.xp ?? 0,
+			total: [...totals.values()].reduce((n, t) => n + t.xp, 0),
+			streak: streak(totals, settings.dailyGoal, today),
+			progress: new Map(progress.map((p) => [`${p.course}/${p.unit}`, p])),
+			due
+		};
+	});
 
 	type Status = 'locked' | 'open' | 'done';
 	function statuses(course: string, units: Unit[], progress: Map<string, UnitProgress>) {
@@ -199,6 +203,17 @@
 					.map((script) => ({ script, units: section(course.units, script) }))
 					.filter((s) => s.units.length && (s.script ? 'script' : 'vocab') === shown)}
 				<h1 class="sr-only">{course.title ? localized(course.title, lang) : course.id}</h1>
+				{@const ids = new Set(course.units.flatMap((u) => u.items.map((i) => i.id)))}
+				{@const due = d.due.filter((c) => c.course === course.id && ids.has(c.id)).length}
+				{#if due}
+					<a
+						href={resolve('/learn/[course]/review', { course: course.id })}
+						class="btn btn-gold mt-4 w-full"
+						data-testid="review"
+					>
+						<Icon name="clock" />{m.review_due({ count: due })}
+					</a>
+				{/if}
 				{#if hasScript}
 					<div class="mt-6 flex gap-2" role="group" aria-label={m.section_pick()}>
 						{#each ['script', 'vocab'] as const as p (p)}
