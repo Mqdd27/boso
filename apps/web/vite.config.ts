@@ -6,7 +6,8 @@ import { sveltekit } from '@sveltejs/kit/vite';
 
 export default defineConfig({
 	// The course-pack schema lives at the repo root (schema/) and is imported, not copied.
-	server: { fs: { allow: ['../../schema'] } },
+	// /api goes to the Go server in dev (npm run dev starts both).
+	server: { fs: { allow: ['../../schema'] }, proxy: { '/api': 'http://localhost:8080' } },
 	plugins: [
 		tailwindcss(),
 		sveltekit({

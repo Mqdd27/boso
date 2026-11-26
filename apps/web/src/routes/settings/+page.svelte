@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Account from '#lib/components/Account.svelte';
 	import { resolve } from '$app/paths';
 	import Confirm from '#lib/components/Confirm.svelte';
 	import Toggle from '#lib/components/Toggle.svelte';
@@ -134,6 +135,9 @@
 		{/each}
 	</div>
 </fieldset>
+
+{@render group(m.settings_group_account())}
+<Account />
 
 {@render group(m.settings_group_about())}
 <div class="divide-y-2 divide-line rounded-card border-2 border-line">

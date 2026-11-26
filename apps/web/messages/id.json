@@ -158,5 +158,19 @@
 	"lang_zh": "Bahasa Mandarin",
 	"review_title": "Ulasan",
 	"review_due": "Ulasan · {count} menunggu",
-	"review_none": "Belum ada yang perlu diulas. Kembali besok!"
+	"review_none": "Belum ada yang perlu diulas. Kembali besok!",
+	"settings_group_account": "Akun",
+	"account_why": "Opsional. Dengan akun, progresmu akan tersinkron di semua perangkat.",
+	"account_unavailable": "Akun butuh server boso. Progresmu tetap tersimpan di perangkat ini.",
+	"account_email": "Email",
+	"account_password": "Kata sandi",
+	"account_login": "Masuk",
+	"account_signup": "Buat akun",
+	"account_logout": "Keluar",
+	"account_logged_in": "Masuk sebagai {email}",
+	"account_err_invalid_email": "Alamat email itu sepertinya salah.",
+	"account_err_weak_password": "Kata sandi minimal 8 karakter.",
+	"account_err_email_taken": "Email ini sudah punya akun. Masuk saja.",
+	"account_err_wrong_login": "Email atau kata sandi salah.",
+	"account_err_other": "Ada yang salah. Coba lagi."
 }

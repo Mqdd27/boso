@@ -158,5 +158,19 @@
 	"lang_zh": "Mandarin",
 	"review_title": "Review",
 	"review_due": "Review · {count} due",
-	"review_none": "Nothing to review right now. Come back tomorrow!"
+	"review_none": "Nothing to review right now. Come back tomorrow!",
+	"settings_group_account": "Account",
+	"account_why": "Optional. An account will sync your progress across devices.",
+	"account_unavailable": "Accounts need a boso server. Your progress stays on this device.",
+	"account_email": "Email",
+	"account_password": "Password",
+	"account_login": "Log in",
+	"account_signup": "Create account",
+	"account_logout": "Log out",
+	"account_logged_in": "Logged in as {email}",
+	"account_err_invalid_email": "That email address doesn't look right.",
+	"account_err_weak_password": "Use at least 8 characters for the password.",
+	"account_err_email_taken": "There is already an account with this email. Log in instead.",
+	"account_err_wrong_login": "Wrong email or password.",
+	"account_err_other": "Something went wrong. Try again."
 }
