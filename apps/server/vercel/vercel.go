@@ -4,11 +4,9 @@
 package vercel
 
 import (
-	"encoding/json"
 	"log/slog"
 	"net/http"
 	"os"
-	"strings"
 	"sync"
 
 	"github.com/Mqdd27/boso/apps/server/internal/db"
@@ -25,21 +23,13 @@ var (
 func Handler(w http.ResponseWriter, r *http.Request) {
 	mu.Lock()
 	if handler == nil {
-		url, token := os.Getenv("TURSO_DATABASE_URL"), os.Getenv("TURSO_AUTH_TOKEN")
-		database, err := db.OpenRemote(url, token)
+		database, err := db.OpenRemote(os.Getenv("TURSO_DATABASE_URL"), os.Getenv("TURSO_AUTH_TOKEN"))
 		if err != nil {
 			mu.Unlock()
 			slog.Error("turso", "err", err)
-			// TODO(debug): remove "detail" once Turso works on Vercel. The token is redacted.
-			detail := err.Error()
-			if token != "" {
-				detail = strings.ReplaceAll(detail, token, "***")
-			}
 			w.Header().Set("Content-Type", "application/json")
 			w.WriteHeader(http.StatusServiceUnavailable)
-			_ = json.NewEncoder(w).Encode(map[string]any{
-				"error": "database", "detail": detail, "url_set": url != "", "token_set": token != "",
-			})
+			_, _ = w.Write([]byte(`{"error":"database"}`))
 			return
 		}
 		handler = httpapi.New(database, nil)
