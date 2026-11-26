@@ -2,20 +2,29 @@
 package httpapi
 
 import (
+	"database/sql"
 	"io/fs"
 	"net/http"
 	"path"
 	"strings"
+	"time"
 )
 
-// New returns the root handler: API routes plus the SPA in web (may be empty before a web build).
-func New(web fs.FS) http.Handler {
+// New returns the root handler: API routes plus the SPA in web (may be empty before a web build;
+// nil on Vercel, which serves the web app itself).
+func New(db *sql.DB, web fs.FS) http.Handler {
 	mux := http.NewServeMux()
+	(&accounts{db: db, now: time.Now}).routes(mux)
+	notFound := func(w http.ResponseWriter, _ *http.Request) { fail(w, http.StatusNotFound, "not_found") }
+	mux.HandleFunc("GET /api/", notFound) // not the SPA's index.html
+	mux.HandleFunc("POST /api/", notFound)
 	mux.HandleFunc("GET /healthz", func(w http.ResponseWriter, _ *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
 		_, _ = w.Write([]byte(`{"status":"ok"}`))
 	})
-	mux.Handle("GET /", spa(web))
+	if web != nil {
+		mux.Handle("GET /", spa(web))
+	}
 	return mux
 }
 

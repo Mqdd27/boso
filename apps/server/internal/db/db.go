@@ -11,7 +11,8 @@ import (
 	"path/filepath"
 
 	"github.com/pressly/goose/v3"
-	_ "modernc.org/sqlite" // registers the "sqlite" driver
+	_ "github.com/tursodatabase/libsql-client-go/libsql" // registers "libsql" (remote Turso)
+	_ "modernc.org/sqlite"                               // registers "sqlite" (local file)
 )
 
 //go:embed migrations/*.sql
@@ -28,6 +29,22 @@ func Open(dataDir string) (*sql.DB, error) {
 	if err != nil {
 		return nil, fmt.Errorf("open db: %w", err)
 	}
+	if err := migrate(db); err != nil {
+		db.Close()
+		return nil, err
+	}
+	return db, nil
+}
+
+// OpenRemote opens a Turso (libSQL) database by URL and auth token and migrates it. Used on
+// Vercel, where there is no disk. Same schema and SQL as the local file.
+func OpenRemote(url, token string) (*sql.DB, error) {
+	db, err := sql.Open("libsql", url+"?authToken="+token)
+	if err != nil {
+		return nil, fmt.Errorf("open turso: %w", err)
+	}
+	// ponytail: migrates on every cold start without a lock; two cold starts racing a new
+	// migration could collide. Fine at this size; run migrations from CI if it ever matters.
 	if err := migrate(db); err != nil {
 		db.Close()
 		return nil, err

@@ -31,7 +31,7 @@ func TestRoutes(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			rec := httptest.NewRecorder()
-			New(tt.web).ServeHTTP(rec, httptest.NewRequest(http.MethodGet, tt.path, nil))
+			New(nil, tt.web).ServeHTTP(rec, httptest.NewRequest(http.MethodGet, tt.path, nil))
 			if rec.Code != tt.wantCode {
 				t.Fatalf("code = %d, want %d", rec.Code, tt.wantCode)
 			}

@@ -42,7 +42,7 @@ func run() error {
 
 	srv := &http.Server{
 		Addr:              cfg.Addr,
-		Handler:           httpapi.New(web),
+		Handler:           httpapi.New(database, web),
 		ReadHeaderTimeout: 10 * time.Second,
 	}
 
