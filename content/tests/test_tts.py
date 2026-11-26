@@ -141,3 +141,6 @@ def test_single_mandarin_syllables_get_their_tone_redrawn():
     # Korean and multi-syllable keys don't change (their cached audio stays valid).
     assert tts.cache_key("你好", "zh") == tts.cache_key("你好", "zh", None)
     assert tts.cache_key("马", "zh", 3) != tts.cache_key("马", "zh")
+    # pack looks audio up with the same key tts wrote it under.
+    item = {"id": "zh.w.ma3", "text": "马", "tones": "ma3"}
+    assert tts.item_key(item, "zh", {}) == tts.cache_key("马", "zh", 3)

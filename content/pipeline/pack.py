@@ -97,7 +97,7 @@ def add_audio(course: dict, course_dir: Path, out: Path, cache: Path) -> int:
     n = 0
     for unit in course["units"]:
         for item in unit["items"]:
-            src = cache / f"{tts.cache_key(read.get(item['id'], item['text']), lang)}.opus"
+            src = cache / f"{tts.item_key(item, lang, read)}.opus"
             if not src.is_file():
                 continue
             rel = tts.audio_path(item["id"])

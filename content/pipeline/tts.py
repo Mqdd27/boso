@@ -104,6 +104,11 @@ def readings(course_dir: Path) -> dict[str, str]:
     return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
 
 
+def item_key(item: dict, lang: str, read: dict[str, str]) -> str:
+    """Cache key of an item's audio. `tts` and `pack` both use it, so they find the same file."""
+    return cache_key(read.get(item["id"], item["text"]), lang, tone_of(item))
+
+
 def jobs(course_dir: Path, lang: str) -> list[Job]:
     errors, units = validate_course_dir(course_dir)
     if errors:
@@ -113,8 +118,7 @@ def jobs(course_dir: Path, lang: str) -> list[Job]:
     for unit in units:
         for item in unit["items"]:
             text = read.get(item["id"], item["text"])
-            tone = tone_of(item)
-            out.append(Job(item["id"], text, cache_key(text, lang, tone), tone))
+            out.append(Job(item["id"], text, item_key(item, lang, read), tone_of(item)))
     return out
 
 
