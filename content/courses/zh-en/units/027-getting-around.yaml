@@ -1,0 +1,102 @@
+id: zh-027-getting-around
+title:
+  en: Getting Around
+  id: Bepergian
+level: hsk1
+items:
+- id: zh.w.qu4
+  type: word
+  text: 去
+  roman: qù
+  tones: qu4
+  gloss:
+    en: to go to (a place)
+    id: pergi ke (suatu tempat)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:去[qu4]
+  review: needs_review
+- id: zh.w.lai2
+  type: word
+  text: 来
+  roman: lái
+  tones: lai2
+  gloss:
+    en: to come
+    id: datang
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:来[lai2]
+  review: needs_review
+- id: zh.w.hui2
+  type: word
+  text: 回
+  roman: huí
+  tones: hui2
+  gloss:
+    en: to go back; to return; to turn back; to turn around
+    id: kembali; pulang; berbalik
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:回[hui2]
+  review: needs_review
+- id: zh.w.zuo4
+  type: word
+  text: 坐
+  roman: zuò
+  tones: zuo4
+  gloss:
+    en: to take (a bus, airplane etc)
+    id: naik (bus, pesawat, dsb.)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:坐[zuo4]
+  review: needs_review
+- id: zh.w.chu1zu1che1
+  type: word
+  text: 出租车
+  roman: chūzūchē
+  tones: chu1 zu1 che1
+  gloss:
+    en: taxi
+    id: taksi
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:出租车[chu1 zu1 che1]
+  review: needs_review
+- id: zh.w.fei1ji1
+  type: word
+  text: 飞机
+  roman: fēijī
+  tones: fei1 ji1
+  gloss:
+    en: airplane
+    id: pesawat terbang
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:飞机[fei1 ji1]
+  review: needs_review

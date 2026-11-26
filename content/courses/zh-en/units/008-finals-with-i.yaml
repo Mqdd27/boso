@@ -1,0 +1,95 @@
+id: zh-008-finals-with-i
+title:
+  en: Finals with i
+  id: Vokal dengan i
+level: hsk1
+kind: script
+items:
+- id: zh.c.jia1
+  type: char
+  text: jiā
+  roman: jiā
+  tones: jia1
+  gloss:
+    en: 'ia: i + a'
+    id: 'ia: i + a'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.xie4
+  type: char
+  text: xiè
+  roman: xiè
+  tones: xie4
+  gloss:
+    en: 'ie: i + e (like ''ye'' in ''yes'')'
+    id: 'ie: i + e (seperti ''ye'')'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.yao4
+  type: char
+  text: yào
+  roman: yào
+  tones: yao4
+  gloss:
+    en: 'iao: i + ao (written yao alone)'
+    id: 'iao: i + ao (ditulis yao bila sendiri)'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.liu4
+  type: char
+  text: liù
+  roman: liù
+  tones: liu4
+  gloss:
+    en: 'iu: i + ou, written iu'
+    id: 'iu: i + ou, ditulis iu'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.tian1
+  type: char
+  text: tiān
+  roman: tiān
+  tones: tian1
+  gloss:
+    en: 'ian: sounds like ''yen'''
+    id: 'ian: dibaca seperti ''yen'''
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.jin1
+  type: char
+  text: jīn
+  roman: jīn
+  tones: jin1
+  gloss:
+    en: 'in: like ''een'' in ''seen'''
+    id: 'in: seperti in pada ''ingin'''
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.liang3
+  type: char
+  text: liǎng
+  roman: liǎng
+  tones: liang3
+  gloss:
+    en: 'iang: i + ang'
+    id: 'iang: i + ang'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.ming2
+  type: char
+  text: míng
+  roman: míng
+  tones: ming2
+  gloss:
+    en: 'ing: like ''ing'' in ''sing'''
+    id: 'ing: seperti ing pada ''kuning'''
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review

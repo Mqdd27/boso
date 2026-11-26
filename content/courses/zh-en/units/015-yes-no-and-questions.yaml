@@ -1,0 +1,135 @@
+id: zh-015-yes-no-and-questions
+title:
+  en: Yes, No and Questions
+  id: Ya, Tidak, dan Pertanyaan
+level: hsk1
+items:
+- id: zh.w.bu4
+  type: word
+  text: 不
+  roman: bù
+  tones: bu4
+  gloss:
+    en: no; not so
+    id: tidak; bukan begitu
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:不[bu4]
+  review: needs_review
+- id: zh.w.you3
+  type: word
+  text: 有
+  roman: yǒu
+  tones: you3
+  gloss:
+    en: to have; there is
+    id: punya; memiliki; ada
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:有[you3]
+  review: needs_review
+- id: zh.w.mei2you3
+  type: word
+  text: 没有
+  roman: méiyǒu
+  tones: mei2 you3
+  gloss:
+    en: to not have
+    id: tidak punya
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:没有[mei2 you3]
+  review: needs_review
+- id: zh.w.ne5
+  type: word
+  text: 呢
+  roman: ne
+  tones: ne5
+  gloss:
+    en: (sentence-final particle) used in questions to link back to prior discourse or context ("what
+      about...?", "and...?")
+    id: '(partikel akhir kalimat) dalam pertanyaan: "bagaimana dengan...?"'
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:呢[ne5]
+  review: needs_review
+- id: zh.w.le5
+  type: word
+  text: 了
+  roman: le
+  tones: le5
+  gloss:
+    en: (completed action marker)
+    id: (penanda tindakan selesai)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:了[le5]
+  review: needs_review
+- id: zh.w.dou1
+  type: word
+  text: 都
+  roman: dōu
+  tones: dou1
+  gloss:
+    en: all; both; entirely
+    id: semua; keduanya; sepenuhnya
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:都[dou1]
+  review: needs_review
+- id: zh.w.neng2
+  type: word
+  text: 能
+  roman: néng
+  tones: neng2
+  gloss:
+    en: can
+    id: bisa; dapat
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:能[neng2]
+  review: needs_review
+- id: zh.w.zen3me5
+  type: word
+  text: 怎么
+  roman: zěnme
+  tones: zen3 me5
+  gloss:
+    en: how?
+    id: bagaimana?
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:怎么[zen3 me5]
+  review: needs_review

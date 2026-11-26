@@ -1,0 +1,84 @@
+id: zh-005-initials-zh-to-s
+title:
+  en: Initials zh ch sh r z c s
+  id: Konsonan zh ch sh r z c s
+level: hsk1
+kind: script
+items:
+- id: zh.c.zhi1
+  type: char
+  text: zhī
+  roman: zhī
+  tones: zhi1
+  gloss:
+    en: 'zh: like j in ''jerk'', tongue curled back'
+    id: 'zh: seperti j, lidah ditekuk ke belakang'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.chi1
+  type: char
+  text: chī
+  roman: chī
+  tones: chi1
+  gloss:
+    en: 'ch: like ch in ''church'', tongue curled back'
+    id: 'ch: seperti c, lidah ditekuk ke belakang'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.shi1
+  type: char
+  text: shī
+  roman: shī
+  tones: shi1
+  gloss:
+    en: 'sh: like sh in ''shirt'', tongue curled back'
+    id: 'sh: seperti sy, lidah ditekuk ke belakang'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.ri4
+  type: char
+  text: rì
+  roman: rì
+  tones: ri4
+  gloss:
+    en: 'r: like r in ''rude'', tongue curled back'
+    id: 'r: seperti r lembut, lidah ditekuk ke belakang'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.zi4
+  type: char
+  text: zì
+  roman: zì
+  tones: zi4
+  gloss:
+    en: 'z: like ds in ''beds'''
+    id: 'z: seperti ds pada ''beds'''
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.ci2
+  type: char
+  text: cí
+  roman: cí
+  tones: ci2
+  gloss:
+    en: 'c: like ts in ''cats'', with a puff of air'
+    id: 'c: seperti ts, dengan hembusan napas'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.si4
+  type: char
+  text: sì
+  roman: sì
+  tones: si4
+  gloss:
+    en: 's: as in English'
+    id: 's: seperti biasa'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review

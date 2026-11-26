@@ -23,6 +23,11 @@ SOURCES = {
         "author": "국립국어원 (National Institute of Korean Language)",
         "url": "https://krdict.korean.go.kr",
     },
+    "cc-cedict": {
+        "name": "CC-CEDICT",
+        "author": "MDBG and CC-CEDICT contributors",
+        "url": "https://cc-cedict.org/wiki/",
+    },
     "tatoeba": {
         "name": "Tatoeba",
         "url": "https://tatoeba.org",

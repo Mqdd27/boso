@@ -1,0 +1,102 @@
+id: zh-023-at-school
+title:
+  en: At School
+  id: Di Sekolah
+level: hsk1
+items:
+- id: zh.w.xue2xiao4
+  type: word
+  text: 学校
+  roman: xuéxiào
+  tones: xue2 xiao4
+  gloss:
+    en: school
+    id: sekolah
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:学校[xue2 xiao4]
+  review: needs_review
+- id: zh.w.tong2xue2
+  type: word
+  text: 同学
+  roman: tóngxué
+  tones: tong2 xue2
+  gloss:
+    en: classmate
+    id: teman sekelas
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:同学[tong2 xue2]
+  review: needs_review
+- id: zh.w.xue2xi2
+  type: word
+  text: 学习
+  roman: xuéxí
+  tones: xue2 xi2
+  gloss:
+    en: to learn; to study
+    id: belajar; mempelajari
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:学习[xue2 xi2]
+  review: needs_review
+- id: zh.w.peng2you5
+  type: word
+  text: 朋友
+  roman: péngyou
+  tones: peng2 you5
+  gloss:
+    en: friend
+    id: teman
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:朋友[peng2 you5]
+  review: needs_review
+- id: zh.w.shu1
+  type: word
+  text: 书
+  roman: shū
+  tones: shu1
+  gloss:
+    en: book
+    id: buku
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:书[shu1]
+  review: needs_review
+- id: zh.w.ben3
+  type: word
+  text: 本
+  roman: běn
+  tones: ben3
+  gloss:
+    en: (bound form) one's own; this
+    id: (bentuk terikat) milik sendiri; ini
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:本[ben3]
+  review: needs_review

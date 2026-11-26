@@ -128,6 +128,7 @@ def group(
     run: Callable[[str], str] = run_claude,
     cache_dir: Path = LLM_CACHE,
     required: frozenset[str] = frozenset(),
+    template: str = GROUP_TEMPLATE,
 ) -> list[UnitPlan]:
     """Plan `n_units` units from `candidates` ({id, text, pos, gloss, category}).
 
@@ -137,7 +138,7 @@ def group(
         f"{c['id']} | {c['text']} | {c['pos']} | {c['gloss']} | {c['category'] or '-'}"
         for c in candidates
     ]
-    prompt = _template(GROUP_TEMPLATE).format(
+    prompt = _template(template).format(
         n_units=n_units,
         existing_titles=", ".join(existing_titles) or "(none)",
         required=", ".join(f"{i} ({words[i]})" for i in sorted(required)) or "(none)",
@@ -145,7 +146,7 @@ def group(
     )
     pool = {c["id"] for c in candidates}
     parse = lambda t: parse_plan(t, pool, n_units, required)  # noqa: E731
-    return _ask(GROUP_TEMPLATE, prompt, parse, run, cache_dir)
+    return _ask(template, prompt, parse, run, cache_dir)
 
 
 def parse_senses(text: str, choices: dict[str, set[int]]) -> dict[str, int]:
@@ -167,6 +168,7 @@ def pick_senses(
     units: list[dict],
     run: Callable[[str], str] = run_claude,
     cache_dir: Path = LLM_CACHE,
+    template: str = SENSE_TEMPLATE,
 ) -> dict[str, int]:
     """{item id: sense number} for every word with more than one sense offered.
 
@@ -187,5 +189,5 @@ def pick_senses(
             blocks.append(f"Unit: {unit['title']}\n" + "\n".join(lines))
     if not choices:
         return {}
-    prompt = _template(SENSE_TEMPLATE).format(units="\n\n".join(blocks))
-    return _ask(SENSE_TEMPLATE, prompt, lambda t: parse_senses(t, choices), run, cache_dir)
+    prompt = _template(template).format(units="\n\n".join(blocks))
+    return _ask(template, prompt, lambda t: parse_senses(t, choices), run, cache_dir)

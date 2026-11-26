@@ -1,0 +1,118 @@
+id: zh-012-numbers-six-to-ten
+title:
+  en: Numbers 6 to 10
+  id: Angka 6 sampai 10
+level: hsk1
+items:
+- id: zh.w.liu4
+  type: word
+  text: 六
+  roman: liù
+  tones: liu4
+  gloss:
+    en: six
+    id: enam
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:六[liu4]
+  review: needs_review
+- id: zh.w.qi1
+  type: word
+  text: 七
+  roman: qī
+  tones: qi1
+  gloss:
+    en: seven
+    id: tujuh
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:七[qi1]
+  review: needs_review
+- id: zh.w.ba1
+  type: word
+  text: 八
+  roman: bā
+  tones: ba1
+  gloss:
+    en: eight
+    id: delapan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:八[ba1]
+  review: needs_review
+- id: zh.w.jiu3
+  type: word
+  text: 九
+  roman: jiǔ
+  tones: jiu3
+  gloss:
+    en: nine
+    id: sembilan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:九[jiu3]
+  review: needs_review
+- id: zh.w.shi2
+  type: word
+  text: 十
+  roman: shí
+  tones: shi2
+  gloss:
+    en: ten
+    id: sepuluh
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:十[shi2]
+  review: needs_review
+- id: zh.w.ji1
+  type: word
+  text: 几
+  roman: jǐ
+  tones: ji3
+  gloss:
+    en: how many; how much
+    id: berapa; berapa banyak
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:几[ji3]
+  review: needs_review
+- id: zh.w.duo1shao3
+  type: word
+  text: 多少
+  roman: duōshao
+  tones: duo1 shao5
+  gloss:
+    en: how much?; how many?
+    id: berapa?; berapa banyak?
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:多少[duo1 shao5]
+  review: needs_review

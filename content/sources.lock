@@ -58,5 +58,23 @@
     "sha256": "ffece08afdd32f25cf1ae12040a41991e757df322eef93fbde40d51f0cd205bb",
     "url": "https://downloads.tatoeba.org/exports/sentences_CC0.tar.bz2",
     "fetched": "2026-11-22"
+  },
+  "cedict": {
+    "file": "cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+    "sha256": "9594e10b88f5dde3003133f20f216ff9ae66e9f4441ee94f13b56d14e4043118",
+    "url": "https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+    "fetched": "2026-11-26"
+  },
+  "hsk:l1": {
+    "file": "hsk/hsk2012-l1.txt",
+    "sha256": "3b0607aefc850813d7c7805e97ff21d22ec3fa0a26e86f72fb4c13cb3353f5d7",
+    "url": "https://raw.githubusercontent.com/glxxyz/hskhsk.com/8a6f229c699e2fd7ac8708156c55c3afb2be7e1f/data/lists/HSK%20Official%202012%20L1.txt",
+    "fetched": "2026-11-26"
+  },
+  "hsk:l2": {
+    "file": "hsk/hsk2012-l2.txt",
+    "sha256": "492285c166573094ce51bc70d78fa1ee83b21b8afdccbe7fd0e8bacb803a08c1",
+    "url": "https://raw.githubusercontent.com/glxxyz/hskhsk.com/8a6f229c699e2fd7ac8708156c55c3afb2be7e1f/data/lists/HSK%20Official%202012%20L2.txt",
+    "fetched": "2026-11-26"
   }
 }

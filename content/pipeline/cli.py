@@ -21,6 +21,14 @@ def cmd_validate(args: argparse.Namespace) -> int:
 def cmd_fetch(args: argparse.Namespace) -> int:
     from pipeline import fetch
 
+    if args.source == "cedict":
+        path = fetch.fetch_cedict(force=args.force)
+        print(f"cedict: {path.name} ({path.stat().st_size // 1024} KB)")
+        return 0
+    if args.source == "hsk":
+        for path in fetch.fetch_hsk(force=args.force):
+            print(f"hsk: {path.name} ({len(path.read_text(encoding='utf-8-sig').split())} words)")
+        return 0
     if args.source == "tatoeba":
         for path in fetch.fetch_tatoeba(force=args.force):
             print(f"tatoeba: {path.name} ({path.stat().st_size // 1024} KB)")
@@ -31,9 +39,14 @@ def cmd_fetch(args: argparse.Namespace) -> int:
 
 
 def cmd_build(args: argparse.Namespace) -> int:
-    from pipeline.build import build
+    if args.course == "zh-en":
+        from pipeline.build_zh import build as build_zh
 
-    summary = build(args.course, n_units=args.units, dry_run=args.dry_run)
+        summary = build_zh(args.course, level=args.level, dry_run=args.dry_run)
+    else:
+        from pipeline.build import build
+
+        summary = build(args.course, n_units=args.units, dry_run=args.dry_run)
     for key, value in sorted(summary.stats.items()):
         print(f"{key}: {value}")
     print(f"pool: {summary.pool}, existing units: {summary.existing_units}")
@@ -69,6 +82,20 @@ def cmd_hangul(args: argparse.Namespace) -> int:
         print(f"{prefix} {rel}")
     for rel in summary.kept:
         print(f"kept {rel}: differs from hangul.yaml (edited by hand?), not rewritten")
+    print(f"{len(summary.unchanged)} unit(s) unchanged, {summary.readings} new reading(s)")
+    return 0
+
+
+def cmd_pinyin(args: argparse.Namespace) -> int:
+    from pipeline.build import COURSES
+    from pipeline.pinyin import generate
+
+    summary = generate(COURSES / args.course, dry_run=args.dry_run)
+    prefix = "would write" if args.dry_run else "wrote"
+    for rel in summary.written:
+        print(f"{prefix} {rel}")
+    for rel in summary.kept:
+        print(f"kept {rel}: differs from pinyin.yaml (edited by hand?), not rewritten")
     print(f"{len(summary.unchanged)} unit(s) unchanged, {summary.readings} new reading(s)")
     return 0
 
@@ -140,13 +167,14 @@ def main(argv: list[str] | None = None) -> int:
     validate.add_argument("--root", type=Path, default=ROOT, help="repo root (default: this repo)")
     validate.set_defaults(func=cmd_validate)
     fetch = sub.add_parser("fetch", help="download a source into sources/ and pin it")
-    fetch.add_argument("source", choices=["krdict", "tatoeba"])
-    fetch.add_argument("--force", action="store_true", help="download again (tatoeba)")
+    fetch.add_argument("source", choices=["krdict", "tatoeba", "cedict", "hsk"])
+    fetch.add_argument("--force", action="store_true", help="download again")
     fetch.add_argument("--from", dest="src", type=Path, help="use a manually downloaded file")
     fetch.set_defaults(func=cmd_fetch)
     build = sub.add_parser("build", help="generate new units into courses/<course>/")
-    build.add_argument("course", choices=["ko-en"])
-    build.add_argument("--units", type=int, default=12, help="total vocab units wanted")
+    build.add_argument("course", choices=["ko-en", "zh-en"])
+    build.add_argument("--units", type=int, default=12, help="total vocab units wanted (ko-en)")
+    build.add_argument("--level", type=int, default=1, choices=[1, 2], help="HSK level (zh-en)")
     build.add_argument("--dry-run", action="store_true", help="print, don't write")
     build.set_defaults(func=cmd_build)
     pack = sub.add_parser("pack", help="write dist/<course>/course.json + manifest.json")
@@ -156,6 +184,10 @@ def main(argv: list[str] | None = None) -> int:
     hangul.add_argument("course", choices=["ko-en"])
     hangul.add_argument("--dry-run", action="store_true", help="print, don't write")
     hangul.set_defaults(func=cmd_hangul)
+    pinyin = sub.add_parser("pinyin", help="write the pinyin + tones units from pinyin.yaml")
+    pinyin.add_argument("course", choices=["zh-en"])
+    pinyin.add_argument("--dry-run", action="store_true", help="print, don't write")
+    pinyin.set_defaults(func=cmd_pinyin)
     sentences = sub.add_parser("sentences", help="add Tatoeba + krdict sentences to vocab units")
     sentences.add_argument("course", choices=["ko-en"])
     sentences.add_argument("--max-unknown", type=int, default=1, help="new content words allowed")

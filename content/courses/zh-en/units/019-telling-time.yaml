@@ -1,0 +1,118 @@
+id: zh-019-telling-time
+title:
+  en: Telling Time
+  id: Menyebut Waktu
+level: hsk1
+items:
+- id: zh.w.xian4zai4
+  type: word
+  text: 现在
+  roman: xiànzài
+  tones: xian4 zai4
+  gloss:
+    en: now; at present; currently
+    id: sekarang; saat ini
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:现在[xian4 zai4]
+  review: needs_review
+- id: zh.w.dian3
+  type: word
+  text: 点
+  roman: diǎn
+  tones: dian3
+  gloss:
+    en: to order (food etc); to select
+    id: memesan (makanan dsb.); memilih
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:点[dian3]
+  review: needs_review
+- id: zh.w.fen1zhong1
+  type: word
+  text: 分钟
+  roman: fēnzhōng
+  tones: fen1 zhong1
+  gloss:
+    en: minute
+    id: menit
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:分钟[fen1 zhong1]
+  review: needs_review
+- id: zh.w.shang4wu3
+  type: word
+  text: 上午
+  roman: shàngwǔ
+  tones: shang4 wu3
+  gloss:
+    en: morning
+    id: pagi
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:上午[shang4 wu3]
+  review: needs_review
+- id: zh.w.zhong1wu3
+  type: word
+  text: 中午
+  roman: zhōngwǔ
+  tones: zhong1 wu3
+  gloss:
+    en: noon
+    id: tengah hari; siang
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:中午[zhong1 wu3]
+  review: needs_review
+- id: zh.w.xia4wu3
+  type: word
+  text: 下午
+  roman: xiàwǔ
+  tones: xia4 wu3
+  gloss:
+    en: afternoon
+    id: sore; siang hari
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:下午[xia4 wu3]
+  review: needs_review
+- id: zh.w.shi2hou5
+  type: word
+  text: 时候
+  roman: shíhou
+  tones: shi2 hou5
+  gloss:
+    en: time
+    id: waktu
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:时候[shi2 hou5]
+  review: needs_review

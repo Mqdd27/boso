@@ -1,0 +1,73 @@
+id: zh-002-simple-finals
+title:
+  en: Simple Vowels
+  id: Vokal Sederhana
+level: hsk1
+kind: script
+items:
+- id: zh.c.a1
+  type: char
+  text: ā
+  roman: ā
+  tones: a1
+  gloss:
+    en: 'a: as in ''father'''
+    id: 'a: seperti a pada ''apa'''
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.o1
+  type: char
+  text: ō
+  roman: ō
+  tones: o1
+  gloss:
+    en: 'o: rounded, like ''or'' with a w-glide'
+    id: 'o: bulat, seperti ''uo'''
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.e4
+  type: char
+  text: è
+  roman: è
+  tones: e4
+  gloss:
+    en: 'e: like ''uh'', lips not rounded'
+    id: 'e: seperti e pada ''emas'', bibir datar'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.yi1
+  type: char
+  text: yī
+  roman: yī
+  tones: yi1
+  gloss:
+    en: 'i: as in ''see'' (written yi alone)'
+    id: 'i: seperti i (ditulis yi bila sendiri)'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.wu3
+  type: char
+  text: wǔ
+  roman: wǔ
+  tones: wu3
+  gloss:
+    en: 'u: as in ''moon'' (written wu alone)'
+    id: 'u: seperti u (ditulis wu bila sendiri)'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.yu2
+  type: char
+  text: yú
+  roman: yú
+  tones: yu2
+  gloss:
+    en: 'ü: say ''ee'' with rounded lips (written yu alone)'
+    id: 'ü: ucapkan ''i'' dengan bibir bulat (ditulis yu bila sendiri)'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review

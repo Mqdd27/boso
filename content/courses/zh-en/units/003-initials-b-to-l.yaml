@@ -1,0 +1,95 @@
+id: zh-003-initials-b-to-l
+title:
+  en: Initials b p m f d t n l
+  id: Konsonan b p m f d t n l
+level: hsk1
+kind: script
+items:
+- id: zh.c.ba1
+  type: char
+  text: bā
+  roman: bā
+  tones: ba1
+  gloss:
+    en: 'b: like p in ''spin'', no puff of air'
+    id: 'b: seperti p, tanpa hembusan napas'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.pa4
+  type: char
+  text: pà
+  roman: pà
+  tones: pa4
+  gloss:
+    en: 'p: p with a strong puff of air'
+    id: 'p: p dengan hembusan napas kuat'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.mi3
+  type: char
+  text: mǐ
+  roman: mǐ
+  tones: mi3
+  gloss:
+    en: 'm: as in English'
+    id: 'm: seperti biasa'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.fei1
+  type: char
+  text: fēi
+  roman: fēi
+  tones: fei1
+  gloss:
+    en: 'f: as in English'
+    id: 'f: seperti biasa'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.da4
+  type: char
+  text: dà
+  roman: dà
+  tones: da4
+  gloss:
+    en: 'd: like t in ''stop'', no puff of air'
+    id: 'd: seperti t, tanpa hembusan napas'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.ta1
+  type: char
+  text: tā
+  roman: tā
+  tones: ta1
+  gloss:
+    en: 't: t with a strong puff of air'
+    id: 't: t dengan hembusan napas kuat'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.ni3
+  type: char
+  text: nǐ
+  roman: nǐ
+  tones: ni3
+  gloss:
+    en: 'n: as in English'
+    id: 'n: seperti biasa'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.lai2
+  type: char
+  text: lái
+  roman: lái
+  tones: lai2
+  gloss:
+    en: 'l: as in English'
+    id: 'l: seperti biasa'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review

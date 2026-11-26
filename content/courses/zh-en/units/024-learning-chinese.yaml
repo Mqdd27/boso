@@ -1,0 +1,118 @@
+id: zh-024-learning-chinese
+title:
+  en: Learning Chinese
+  id: Belajar Bahasa Mandarin
+level: hsk1
+items:
+- id: zh.w.han4yu3
+  type: word
+  text: 汉语
+  roman: Hànyǔ
+  tones: han4 yu3
+  gloss:
+    en: Chinese language
+    id: bahasa Tionghoa; bahasa Mandarin
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:汉语[Han4 yu3]
+  review: needs_review
+- id: zh.w.shui4
+  type: word
+  text: 说
+  roman: shuō
+  tones: shuo1
+  gloss:
+    en: to speak; to talk; to say
+    id: berbicara; berkata; mengatakan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:说[shuo1]
+  review: needs_review
+- id: zh.w.xie3
+  type: word
+  text: 写
+  roman: xiě
+  tones: xie3
+  gloss:
+    en: to write
+    id: menulis
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:写[xie3]
+  review: needs_review
+- id: zh.w.zi4
+  type: word
+  text: 字
+  roman: zì
+  tones: zi4
+  gloss:
+    en: character
+    id: aksara; huruf
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:字[zi4]
+  review: needs_review
+- id: zh.w.dou4
+  type: word
+  text: 读
+  roman: dú
+  tones: du2
+  gloss:
+    en: to read
+    id: membaca
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:读[du2]
+  review: needs_review
+- id: zh.w.yin3
+  type: word
+  text: 听
+  roman: tīng
+  tones: ting1
+  gloss:
+    en: to listen to; to hear
+    id: mendengarkan; mendengar
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:听[ting1]
+  review: needs_review
+- id: zh.w.hui4
+  type: word
+  text: 会
+  roman: huì
+  tones: hui4
+  gloss:
+    en: can; to have the skill; to know how to
+    id: bisa; mampu; tahu cara
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:会[hui4]
+  review: needs_review

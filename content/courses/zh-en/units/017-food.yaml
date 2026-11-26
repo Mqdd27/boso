@@ -1,0 +1,102 @@
+id: zh-017-food
+title:
+  en: Food
+  id: Makanan
+level: hsk1
+items:
+- id: zh.w.chi1
+  type: word
+  text: 吃
+  roman: chī
+  tones: chi1
+  gloss:
+    en: to eat; to consume
+    id: makan; mengonsumsi
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:吃[chi1]
+  review: needs_review
+- id: zh.w.cai4
+  type: word
+  text: 菜
+  roman: cài
+  tones: cai4
+  gloss:
+    en: dish (of food)
+    id: hidangan (makanan)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:菜[cai4]
+  review: needs_review
+- id: zh.w.mi3fan4
+  type: word
+  text: 米饭
+  roman: mǐfàn
+  tones: mi3 fan4
+  gloss:
+    en: (cooked) rice
+    id: nasi
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:米饭[mi3 fan4]
+  review: needs_review
+- id: zh.w.fan4dian4
+  type: word
+  text: 饭店
+  roman: fàndiàn
+  tones: fan4 dian4
+  gloss:
+    en: restaurant
+    id: restoran
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:饭店[fan4 dian4]
+  review: needs_review
+- id: zh.w.ping2guo3
+  type: word
+  text: 苹果
+  roman: píngguǒ
+  tones: ping2 guo3
+  gloss:
+    en: apple
+    id: apel
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:苹果[ping2 guo3]
+  review: needs_review
+- id: zh.w.shui3guo3
+  type: word
+  text: 水果
+  roman: shuǐguǒ
+  tones: shui3 guo3
+  gloss:
+    en: fruit
+    id: buah
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:水果[shui3 guo3]
+  review: needs_review

@@ -1,0 +1,118 @@
+id: zh-013-me-you-and-others
+title:
+  en: Me, You and Others
+  id: Aku, Kamu, dan Orang Lain
+level: hsk1
+items:
+- id: zh.w.wo3
+  type: word
+  text: 我
+  roman: wǒ
+  tones: wo3
+  gloss:
+    en: I; me; my
+    id: saya; aku; -ku
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:我[wo3]
+  review: needs_review
+- id: zh.w.wo3men5
+  type: word
+  text: 我们
+  roman: wǒmen
+  tones: wo3 men5
+  gloss:
+    en: we; us; ourselves
+    id: kami; kita; diri kami
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:我们[wo3 men5]
+  review: needs_review
+- id: zh.w.ta1
+  type: word
+  text: 他
+  roman: tā
+  tones: ta1
+  gloss:
+    en: (third-person singular) (since the early 20th century, usu. male) he; him; his
+    id: (orang ketiga tunggal, biasanya laki-laki) dia; -nya
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:他[ta1]
+  review: needs_review
+- id: zh.w.ta1-5979
+  type: word
+  text: 她
+  roman: tā
+  tones: ta1
+  gloss:
+    en: she
+    id: dia (perempuan)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:她[ta1]
+  review: needs_review
+- id: zh.w.ren2
+  type: word
+  text: 人
+  roman: rén
+  tones: ren2
+  gloss:
+    en: person; people
+    id: orang; manusia
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:人[ren2]
+  review: needs_review
+- id: zh.w.shi4
+  type: word
+  text: 是
+  roman: shì
+  tones: shi4
+  gloss:
+    en: to be (followed by substantives only)
+    id: adalah (hanya diikuti kata benda)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:是[shi4]
+  review: needs_review
+- id: zh.w.de5
+  type: word
+  text: 的
+  roman: de
+  tones: de5
+  gloss:
+    en: of; ~'s (possessive particle)
+    id: dari; milik ~ (partikel kepemilikan)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:的[de5]
+  review: needs_review

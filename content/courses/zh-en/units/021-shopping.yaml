@@ -1,0 +1,134 @@
+id: zh-021-shopping
+title:
+  en: Shopping
+  id: Berbelanja
+level: hsk1
+items:
+- id: zh.w.mai3
+  type: word
+  text: 买
+  roman: mǎi
+  tones: mai3
+  gloss:
+    en: to buy
+    id: membeli
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:买[mai3]
+  review: needs_review
+- id: zh.w.qian2
+  type: word
+  text: 钱
+  roman: qián
+  tones: qian2
+  gloss:
+    en: money
+    id: uang
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:钱[qian2]
+  review: needs_review
+- id: zh.w.kuai4
+  type: word
+  text: 块
+  roman: kuài
+  tones: kuai4
+  gloss:
+    en: (coll.) classifier for money and currency units
+    id: (sehari-hari) kata penggolong untuk uang dan satuan mata uang
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:块[kuai4]
+  review: needs_review
+- id: zh.w.shang1dian4
+  type: word
+  text: 商店
+  roman: shāngdiàn
+  tones: shang1 dian4
+  gloss:
+    en: store; shop
+    id: toko
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:商店[shang1 dian4]
+  review: needs_review
+- id: zh.w.dong1xi1
+  type: word
+  text: 东西
+  roman: dōngxi
+  tones: dong1 xi5
+  gloss:
+    en: thing
+    id: barang; benda
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:东西[dong1 xi5]
+  review: needs_review
+- id: zh.w.yi1fu5
+  type: word
+  text: 衣服
+  roman: yīfu
+  tones: yi1 fu5
+  gloss:
+    en: clothes
+    id: pakaian; baju
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:衣服[yi1 fu5]
+  review: needs_review
+- id: zh.w.ge4
+  type: word
+  text: 个
+  roman: gè
+  tones: ge4
+  gloss:
+    en: (classifier used before a noun that has no specific classifier)
+    id: (kata penggolong umum untuk benda tanpa penggolong khusus)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:个[ge4]
+  review: needs_review
+- id: zh.w.xie1
+  type: word
+  text: 些
+  roman: xiē
+  tones: xie1
+  gloss:
+    en: 'classifier indicating a small amount or small number greater than 1: some, a few, several'
+    id: (kata penggolong) beberapa; sedikit (lebih dari satu)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:些[xie1]
+  review: needs_review

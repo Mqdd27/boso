@@ -1,0 +1,100 @@
+# Pinyin + tones script course (units 001–009), written by boso (CC BY-SA 4.0), no external source,
+# no LLM. `uv run pipeline pinyin zh-en` turns this into units/001-…yaml to 009-…yaml + readings.yaml.
+# Each item is one syllable: [numbered pinyin, a common character read that way (for audio),
+# English explanation, Indonesian explanation]. Tone marks and IDs (zh.c.<pinyin>) are generated.
+
+units:
+  - number: 1
+    slug: four-tones
+    title: { en: The Four Tones, id: Empat Nada }
+    items:
+      - [ma1, 妈, "tone 1: high and level", "nada 1: tinggi dan datar"]
+      - [ma2, 麻, "tone 2: rising, like asking 'huh?'", "nada 2: naik, seperti bertanya 'hah?'"]
+      - [ma3, 马, "tone 3: low, dips then rises", "nada 3: rendah, turun lalu naik"]
+      - [ma4, 骂, "tone 4: falling sharply, like 'No!'", "nada 4: turun tajam, seperti 'Tidak!'"]
+      - [ma5, 吗, "neutral tone: short and light", "nada netral: pendek dan ringan"]
+  - number: 2
+    slug: simple-finals
+    title: { en: Simple Vowels, id: Vokal Sederhana }
+    items:
+      - [a1, 啊, "a: as in 'father'", "a: seperti a pada 'apa'"]
+      - [o1, 噢, "o: rounded, like 'or' with a w-glide", "o: bulat, seperti 'uo'"]
+      - [e4, 饿, "e: like 'uh', lips not rounded", "e: seperti e pada 'emas', bibir datar"]
+      - [yi1, 一, "i: as in 'see' (written yi alone)", "i: seperti i (ditulis yi bila sendiri)"]
+      - [wu3, 五, "u: as in 'moon' (written wu alone)", "u: seperti u (ditulis wu bila sendiri)"]
+      - [yu2, 鱼, "ü: say 'ee' with rounded lips (written yu alone)", "ü: ucapkan 'i' dengan bibir bulat (ditulis yu bila sendiri)"]
+  - number: 3
+    slug: initials-b-to-l
+    title: { en: "Initials b p m f d t n l", id: "Konsonan b p m f d t n l" }
+    items:
+      - [ba1, 八, "b: like p in 'spin', no puff of air", "b: seperti p, tanpa hembusan napas"]
+      - [pa4, 怕, "p: p with a strong puff of air", "p: p dengan hembusan napas kuat"]
+      - [mi3, 米, "m: as in English", "m: seperti biasa"]
+      - [fei1, 飞, "f: as in English", "f: seperti biasa"]
+      - [da4, 大, "d: like t in 'stop', no puff of air", "d: seperti t, tanpa hembusan napas"]
+      - [ta1, 他, "t: t with a strong puff of air", "t: t dengan hembusan napas kuat"]
+      - [ni3, 你, "n: as in English", "n: seperti biasa"]
+      - [lai2, 来, "l: as in English", "l: seperti biasa"]
+  - number: 4
+    slug: initials-g-to-x
+    title: { en: "Initials g k h j q x", id: "Konsonan g k h j q x" }
+    items:
+      - [ge1, 哥, "g: like k in 'sky', no puff of air", "g: seperti k, tanpa hembusan napas"]
+      - [ke3, 可, "k: k with a strong puff of air", "k: k dengan hembusan napas kuat"]
+      - [he1, 喝, "h: rough, from the back of the throat", "h: kasar, dari belakang tenggorokan"]
+      - [ji1, 鸡, "j: like j in 'jeep', tongue flat", "j: seperti j pada 'jip', lidah datar"]
+      - [qi1, 七, "q: like ch in 'cheap', with a puff of air", "q: seperti c pada 'cicak', dengan hembusan"]
+      - [xi1, 西, "x: like sh in 'sheep', tongue flat", "x: seperti sy pada 'syarat', lidah datar"]
+  - number: 5
+    slug: initials-zh-to-s
+    title: { en: "Initials zh ch sh r z c s", id: "Konsonan zh ch sh r z c s" }
+    items:
+      - [zhi1, 知, "zh: like j in 'jerk', tongue curled back", "zh: seperti j, lidah ditekuk ke belakang"]
+      - [chi1, 吃, "ch: like ch in 'church', tongue curled back", "ch: seperti c, lidah ditekuk ke belakang"]
+      - [shi1, 师, "sh: like sh in 'shirt', tongue curled back", "sh: seperti sy, lidah ditekuk ke belakang"]
+      - [ri4, 日, "r: like r in 'rude', tongue curled back", "r: seperti r lembut, lidah ditekuk ke belakang"]
+      - [zi4, 字, "z: like ds in 'beds'", "z: seperti ds pada 'beds'"]
+      - [ci2, 词, "c: like ts in 'cats', with a puff of air", "c: seperti ts, dengan hembusan napas"]
+      - [si4, 四, "s: as in English", "s: seperti biasa"]
+  - number: 6
+    slug: compound-finals
+    title: { en: "Finals ai ei ao ou er", id: "Vokal ai ei ao ou er" }
+    items:
+      - [ai4, 爱, "ai: like 'eye'", "ai: seperti ai pada 'pantai'"]
+      - [lei4, 累, "ei: like 'ay' in 'say'", "ei: seperti ei pada 'survei'"]
+      - [hao3, 好, "ao: like 'ow' in 'cow'", "ao: seperti au pada 'pulau'"]
+      - [gou3, 狗, "ou: like 'o' in 'go'", "ou: seperti ou, o yang meluncur ke u"]
+      - [er4, 二, "er: like 'ar' in American 'bar'", "er: seperti 'er' dengan lidah ditekuk"]
+  - number: 7
+    slug: nasal-finals
+    title: { en: "Finals an en ang eng ong", id: "Vokal an en ang eng ong" }
+    items:
+      - [an1, 安, "an: like 'an' in 'fan' (ending in n)", "an: seperti an pada 'makan'"]
+      - [en1, 恩, "en: like 'un' in 'under' + n", "en: seperti en pada 'enam'"]
+      - [mang2, 忙, "ang: like 'ahng' (ending in ng)", "ang: seperti ang pada 'abang'"]
+      - [leng3, 冷, "eng: like 'ung' in 'lung'", "eng: seperti eng pada 'lengan'"]
+      - [hong2, 红, "ong: like 'ung' with rounded lips", "ong: seperti ong pada 'bohong'"]
+  - number: 8
+    slug: finals-with-i
+    title: { en: Finals with i, id: Vokal dengan i }
+    items:
+      - [jia1, 家, "ia: i + a", "ia: i + a"]
+      - [xie4, 谢, "ie: i + e (like 'ye' in 'yes')", "ie: i + e (seperti 'ye')"]
+      - [yao4, 要, "iao: i + ao (written yao alone)", "iao: i + ao (ditulis yao bila sendiri)"]
+      - [liu4, 六, "iu: i + ou, written iu", "iu: i + ou, ditulis iu"]
+      - [tian1, 天, "ian: sounds like 'yen'", "ian: dibaca seperti 'yen'"]
+      - [jin1, 今, "in: like 'een' in 'seen'", "in: seperti in pada 'ingin'"]
+      - [liang3, 两, "iang: i + ang", "iang: i + ang"]
+      - [ming2, 名, "ing: like 'ing' in 'sing'", "ing: seperti ing pada 'kuning'"]
+  - number: 9
+    slug: finals-with-u-and-u-umlaut
+    title: { en: Finals with u and ü, id: Vokal dengan u dan ü }
+    items:
+      - [duo1, 多, "uo: u + o (like 'wo')", "uo: u + o (seperti 'wo')"]
+      - [hua1, 花, "ua: u + a (like 'wa')", "ua: u + a (seperti 'wa')"]
+      - [kuai4, 快, "uai: u + ai (like 'why')", "uai: u + ai (seperti 'wai')"]
+      - [dui4, 对, "ui: u + ei, written ui (like 'way')", "ui: u + ei, ditulis ui (seperti 'wei')"]
+      - [chun1, 春, "un: u + en, written un", "un: u + en, ditulis un"]
+      - [huang2, 黄, "uang: u + ang", "uang: u + ang"]
+      - [xue2, 学, "üe: ü + e; after j q x the dots are dropped", "üe: ü + e; setelah j q x titiknya tidak ditulis"]
+      - [qu4, 去, "ü after q: written u, still said ü", "ü setelah q: ditulis u, tetap dibaca ü"]

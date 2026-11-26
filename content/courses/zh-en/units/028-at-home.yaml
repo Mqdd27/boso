@@ -1,0 +1,102 @@
+id: zh-028-at-home
+title:
+  en: At Home
+  id: Di Rumah
+level: hsk1
+items:
+- id: zh.w.zhuo1zi5
+  type: word
+  text: 桌子
+  roman: zhuōzi
+  tones: zhuo1 zi5
+  gloss:
+    en: table
+    id: meja
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:桌子[zhuo1 zi5]
+  review: needs_review
+- id: zh.w.yi3zi5
+  type: word
+  text: 椅子
+  roman: yǐzi
+  tones: yi3 zi5
+  gloss:
+    en: chair
+    id: kursi
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:椅子[yi3 zi5]
+  review: needs_review
+- id: zh.w.dian4nao3
+  type: word
+  text: 电脑
+  roman: diànnǎo
+  tones: dian4 nao3
+  gloss:
+    en: computer
+    id: komputer
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:电脑[dian4 nao3]
+  review: needs_review
+- id: zh.w.dian4shi4
+  type: word
+  text: 电视
+  roman: diànshì
+  tones: dian4 shi4
+  gloss:
+    en: television; TV
+    id: televisi; TV
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:电视[dian4 shi4]
+  review: needs_review
+- id: zh.w.shui4jiao4
+  type: word
+  text: 睡觉
+  roman: shuìjiào
+  tones: shui4 jiao4
+  gloss:
+    en: to sleep
+    id: tidur
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:睡觉[shui4 jiao4]
+  review: needs_review
+- id: zh.w.kai1
+  type: word
+  text: 开
+  roman: kāi
+  tones: kai1
+  gloss:
+    en: to open (transitive or intransitive)
+    id: membuka; terbuka
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:开[kai1]
+  review: needs_review

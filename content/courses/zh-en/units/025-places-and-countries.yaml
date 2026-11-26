@@ -1,0 +1,102 @@
+id: zh-025-places-and-countries
+title:
+  en: Places and Countries
+  id: Tempat dan Negara
+level: hsk1
+items:
+- id: zh.w.zhong1guo2
+  type: word
+  text: 中国
+  roman: Zhōngguó
+  tones: zhong1 guo2
+  gloss:
+    en: China
+    id: Tiongkok; Cina
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:中国[Zhong1 guo2]
+  review: needs_review
+- id: zh.w.bei3jing1
+  type: word
+  text: 北京
+  roman: Běijīng
+  tones: bei3 jing1
+  gloss:
+    en: Beijing municipality, capital of the People's Republic of China (short name 京)
+    id: Beijing, ibu kota Republik Rakyat Tiongkok (singkatan 京)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:北京[Bei3 jing1]
+  review: needs_review
+- id: zh.w.zhu4
+  type: word
+  text: 住
+  roman: zhù
+  tones: zhu4
+  gloss:
+    en: to live; to reside; to stay
+    id: tinggal; menetap; menginap
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:住[zhu4]
+  review: needs_review
+- id: zh.w.na3r5
+  type: word
+  text: 哪儿
+  roman: nǎr
+  tones: na3 r5
+  gloss:
+    en: where?
+    id: di mana?
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:哪儿[na3 r5]
+  review: needs_review
+- id: zh.w.zai4
+  type: word
+  text: 在
+  roman: zài
+  tones: zai4
+  gloss:
+    en: (of sb or sth) to be (located) at
+    id: berada di
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:在[zai4]
+  review: needs_review
+- id: zh.w.na3
+  type: word
+  text: 哪
+  roman: nǎ
+  tones: na3
+  gloss:
+    en: which
+    id: yang mana
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:哪[na3]
+  review: needs_review

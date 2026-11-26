@@ -1,0 +1,73 @@
+id: zh-004-initials-g-to-x
+title:
+  en: Initials g k h j q x
+  id: Konsonan g k h j q x
+level: hsk1
+kind: script
+items:
+- id: zh.c.ge1
+  type: char
+  text: gē
+  roman: gē
+  tones: ge1
+  gloss:
+    en: 'g: like k in ''sky'', no puff of air'
+    id: 'g: seperti k, tanpa hembusan napas'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.ke3
+  type: char
+  text: kě
+  roman: kě
+  tones: ke3
+  gloss:
+    en: 'k: k with a strong puff of air'
+    id: 'k: k dengan hembusan napas kuat'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.he1
+  type: char
+  text: hē
+  roman: hē
+  tones: he1
+  gloss:
+    en: 'h: rough, from the back of the throat'
+    id: 'h: kasar, dari belakang tenggorokan'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.ji1
+  type: char
+  text: jī
+  roman: jī
+  tones: ji1
+  gloss:
+    en: 'j: like j in ''jeep'', tongue flat'
+    id: 'j: seperti j pada ''jip'', lidah datar'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.qi1
+  type: char
+  text: qī
+  roman: qī
+  tones: qi1
+  gloss:
+    en: 'q: like ch in ''cheap'', with a puff of air'
+    id: 'q: seperti c pada ''cicak'', dengan hembusan'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.xi1
+  type: char
+  text: xī
+  roman: xī
+  tones: xi1
+  gloss:
+    en: 'x: like sh in ''sheep'', tongue flat'
+    id: 'x: seperti sy pada ''syarat'', lidah datar'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review

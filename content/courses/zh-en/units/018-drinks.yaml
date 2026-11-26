@@ -1,0 +1,102 @@
+id: zh-018-drinks
+title:
+  en: Drinks
+  id: Minuman
+level: hsk1
+items:
+- id: zh.w.he1
+  type: word
+  text: 喝
+  roman: hē
+  tones: he1
+  gloss:
+    en: to drink
+    id: minum
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:喝[he1]
+  review: needs_review
+- id: zh.w.cha2
+  type: word
+  text: 茶
+  roman: chá
+  tones: cha2
+  gloss:
+    en: tea
+    id: teh
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:茶[cha2]
+  review: needs_review
+- id: zh.w.shui3
+  type: word
+  text: 水
+  roman: shuǐ
+  tones: shui3
+  gloss:
+    en: water
+    id: air
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:水[shui3]
+  review: needs_review
+- id: zh.w.bei1zi5
+  type: word
+  text: 杯子
+  roman: bēizi
+  tones: bei1 zi5
+  gloss:
+    en: cup
+    id: cangkir; gelas
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:杯子[bei1 zi5]
+  review: needs_review
+- id: zh.w.xiang3
+  type: word
+  text: 想
+  roman: xiǎng
+  tones: xiang3
+  gloss:
+    en: to desire; to want (to)
+    id: ingin; mau
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:想[xiang3]
+  review: needs_review
+- id: zh.w.yi1dian3r5
+  type: word
+  text: 一点儿
+  roman: yīdiǎnr
+  tones: yi1 dian3 r5
+  gloss:
+    en: a bit; a little bit
+    id: sedikit; sedikit saja
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:一点儿[yi1 dian3 r5]
+  review: needs_review

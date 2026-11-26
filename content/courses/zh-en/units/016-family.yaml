@@ -1,0 +1,118 @@
+id: zh-016-family
+title:
+  en: Family
+  id: Keluarga
+level: hsk1
+items:
+- id: zh.w.ba4ba5
+  type: word
+  text: 爸爸
+  roman: bàba
+  tones: ba4 ba5
+  gloss:
+    en: (coll.) father; dad
+    id: (sehari-hari) ayah; bapak
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:爸爸[ba4 ba5]
+  review: needs_review
+- id: zh.w.ma1ma5
+  type: word
+  text: 妈妈
+  roman: māma
+  tones: ma1 ma5
+  gloss:
+    en: mother
+    id: ibu
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:妈妈[ma1 ma5]
+  review: needs_review
+- id: zh.w.er2zi5
+  type: word
+  text: 儿子
+  roman: érzi
+  tones: er2 zi5
+  gloss:
+    en: son
+    id: anak laki-laki
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:儿子[er2 zi5]
+  review: needs_review
+- id: zh.w.nv3er2
+  type: word
+  text: 女儿
+  roman: nǚ'ér
+  tones: nü3 er2
+  gloss:
+    en: daughter
+    id: anak perempuan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:女儿[nu:3 er2]
+  review: needs_review
+- id: zh.w.jia1
+  type: word
+  text: 家
+  roman: jiā
+  tones: jia1
+  gloss:
+    en: family
+    id: keluarga
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:家[jia1]
+  review: needs_review
+- id: zh.w.he2
+  type: word
+  text: 和
+  roman: hé
+  tones: he2
+  gloss:
+    en: (joining two nouns) and; together with; with
+    id: (menghubungkan dua kata benda) dan; bersama; dengan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:和[he2]
+  review: needs_review
+- id: zh.w.sui4
+  type: word
+  text: 岁
+  roman: suì
+  tones: sui4
+  gloss:
+    en: years old
+    id: tahun (umur)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:岁[sui4]
+  review: needs_review

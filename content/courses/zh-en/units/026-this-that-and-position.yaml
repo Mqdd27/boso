@@ -1,0 +1,118 @@
+id: zh-026-this-that-and-position
+title:
+  en: This, That and Position
+  id: Ini, Itu, dan Posisi
+level: hsk1
+items:
+- id: zh.w.zhe4
+  type: word
+  text: 这
+  roman: zhè
+  tones: zhe4
+  gloss:
+    en: (pronoun) this; these
+    id: (kata ganti) ini
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:这[zhe4]
+  review: needs_review
+- id: zh.w.na4
+  type: word
+  text: 那
+  roman: nà
+  tones: na4
+  gloss:
+    en: (pronoun) that (referring to persons, things or situations)
+    id: (kata ganti) itu (untuk orang, benda, atau situasi)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:那[na4]
+  review: needs_review
+- id: zh.w.qian2mian4
+  type: word
+  text: 前面
+  roman: qiánmiàn
+  tones: qian2 mian4
+  gloss:
+    en: in front
+    id: di depan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:前面[qian2 mian4]
+  review: needs_review
+- id: zh.w.hou4mian5
+  type: word
+  text: 后面
+  roman: hòumian
+  tones: hou4 mian5
+  gloss:
+    en: behind; near the end; at the back
+    id: di belakang; menjelang akhir; di bagian belakang
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:后面[hou4 mian5]
+  review: needs_review
+- id: zh.w.li3
+  type: word
+  text: 里
+  roman: lǐ
+  tones: li3
+  gloss:
+    en: inside
+    id: di dalam
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:里[li3]
+  review: needs_review
+- id: zh.w.shang4
+  type: word
+  text: 上
+  roman: shàng
+  tones: shang4
+  gloss:
+    en: (bound form) up; upper; above; previous
+    id: (bentuk terikat) naik; atas; di atas; sebelumnya
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:上[shang4]
+  review: needs_review
+- id: zh.w.xia4
+  type: word
+  text: 下
+  roman: xià
+  tones: xia4
+  gloss:
+    en: below
+    id: di bawah
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:下[xia4]
+  review: needs_review

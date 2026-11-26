@@ -1,0 +1,118 @@
+id: zh-022-jobs-and-titles
+title:
+  en: Jobs and Titles
+  id: Pekerjaan dan Sapaan
+level: hsk1
+items:
+- id: zh.w.lao3shi1
+  type: word
+  text: 老师
+  roman: lǎoshī
+  tones: lao3 shi1
+  gloss:
+    en: teacher
+    id: guru
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:老师[lao3 shi1]
+  review: needs_review
+- id: zh.w.xue2sheng5
+  type: word
+  text: 学生
+  roman: xuésheng
+  tones: xue2 sheng5
+  gloss:
+    en: student
+    id: murid; pelajar
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:学生[xue2 sheng5]
+  review: needs_review
+- id: zh.w.yi1sheng1
+  type: word
+  text: 医生
+  roman: yīshēng
+  tones: yi1 sheng1
+  gloss:
+    en: doctor; medical practitioner
+    id: dokter
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:医生[yi1 sheng1]
+  review: needs_review
+- id: zh.w.yi1yuan4
+  type: word
+  text: 医院
+  roman: yīyuàn
+  tones: yi1 yuan4
+  gloss:
+    en: hospital
+    id: rumah sakit
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:医院[yi1 yuan4]
+  review: needs_review
+- id: zh.w.gong1zuo4
+  type: word
+  text: 工作
+  roman: gōngzuò
+  tones: gong1 zuo4
+  gloss:
+    en: job
+    id: pekerjaan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:工作[gong1 zuo4]
+  review: needs_review
+- id: zh.w.xian1sheng5
+  type: word
+  text: 先生
+  roman: xiānsheng
+  tones: xian1 sheng5
+  gloss:
+    en: gentleman; sir; mister (Mr.)
+    id: tuan; bapak (Tn.)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:先生[xian1 sheng5]
+  review: needs_review
+- id: zh.w.xiao3jie5
+  type: word
+  text: 小姐
+  roman: xiǎojie
+  tones: xiao3 jie5
+  gloss:
+    en: miss
+    id: nona
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:小姐[xiao3 jie5]
+  review: needs_review

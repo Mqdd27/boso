@@ -32,6 +32,21 @@ TATOEBA_FILES = [
 ]
 
 
+CEDICT_URL = "https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz"
+CEDICT_FILE = "cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz"
+# HSK 2.0 (2012) lists, pinned to one commit. Only word → level is used (LICENSES.md decision 1).
+HSK_COMMIT = "8a6f229c699e2fd7ac8708156c55c3afb2be7e1f"
+HSK_URL = (
+    "https://raw.githubusercontent.com/glxxyz/hskhsk.com/{commit}/data/lists/"
+    "HSK%20Official%202012%20L{level}.txt"
+)
+HSK_LEVELS = (1, 2)
+
+
+def hsk_key(level: int) -> str:
+    return f"hsk:l{level}"
+
+
 def sha256(path: Path) -> str:
     h = hashlib.sha256()
     with path.open("rb") as f:
@@ -78,6 +93,45 @@ def fetch_krdict(src: Path | None = None, sources: Path = SOURCES, lock: Path = 
     }
     lock.write_text(json.dumps(entries, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return dest
+
+
+def _download(name: str, url: str, rel: str, sources: Path, lock: Path, force: bool) -> Path:
+    """Download `url` to sources/`rel` (unless already there) and pin it in sources.lock."""
+    dest = sources / rel
+    downloaded = force or not dest.is_file()
+    if downloaded:
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        with urllib.request.urlopen(_get(url), timeout=600) as r, dest.open("wb") as f:
+            shutil.copyfileobj(r, f)
+    entries = read_lock(lock)
+    today = datetime.now(UTC).date().isoformat()
+    old = entries.get(name, {}).get("fetched", today)
+    entries[name] = {
+        "file": rel,
+        "sha256": sha256(dest),
+        "url": url,
+        "fetched": today if downloaded else old,
+    }
+    lock.write_text(json.dumps(entries, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return dest
+
+
+def fetch_cedict(sources: Path = SOURCES, lock: Path = LOCK, force: bool = False) -> Path:
+    return _download("cedict", CEDICT_URL, CEDICT_FILE, sources, lock, force)
+
+
+def fetch_hsk(sources: Path = SOURCES, lock: Path = LOCK, force: bool = False) -> list[Path]:
+    return [
+        _download(
+            hsk_key(n),
+            HSK_URL.format(commit=HSK_COMMIT, level=n),
+            f"hsk/hsk2012-l{n}.txt",
+            sources,
+            lock,
+            force,
+        )
+        for n in HSK_LEVELS
+    ]
 
 
 def tatoeba_key(remote: str) -> str:

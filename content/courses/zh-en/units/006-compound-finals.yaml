@@ -1,0 +1,62 @@
+id: zh-006-compound-finals
+title:
+  en: Finals ai ei ao ou er
+  id: Vokal ai ei ao ou er
+level: hsk1
+kind: script
+items:
+- id: zh.c.ai4
+  type: char
+  text: ài
+  roman: ài
+  tones: ai4
+  gloss:
+    en: 'ai: like ''eye'''
+    id: 'ai: seperti ai pada ''pantai'''
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.lei4
+  type: char
+  text: lèi
+  roman: lèi
+  tones: lei4
+  gloss:
+    en: 'ei: like ''ay'' in ''say'''
+    id: 'ei: seperti ei pada ''survei'''
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.hao3
+  type: char
+  text: hǎo
+  roman: hǎo
+  tones: hao3
+  gloss:
+    en: 'ao: like ''ow'' in ''cow'''
+    id: 'ao: seperti au pada ''pulau'''
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.gou3
+  type: char
+  text: gǒu
+  roman: gǒu
+  tones: gou3
+  gloss:
+    en: 'ou: like ''o'' in ''go'''
+    id: 'ou: seperti ou, o yang meluncur ke u'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.er4
+  type: char
+  text: èr
+  roman: èr
+  tones: er4
+  gloss:
+    en: 'er: like ''ar'' in American ''bar'''
+    id: 'er: seperti ''er'' dengan lidah ditekuk'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review

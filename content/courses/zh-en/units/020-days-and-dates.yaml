@@ -1,0 +1,118 @@
+id: zh-020-days-and-dates
+title:
+  en: Days and Dates
+  id: Hari dan Tanggal
+level: hsk1
+items:
+- id: zh.w.jin1tian1
+  type: word
+  text: 今天
+  roman: jīntiān
+  tones: jin1 tian1
+  gloss:
+    en: today
+    id: hari ini
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:今天[jin1 tian1]
+  review: needs_review
+- id: zh.w.ming2tian1
+  type: word
+  text: 明天
+  roman: míngtiān
+  tones: ming2 tian1
+  gloss:
+    en: tomorrow
+    id: besok
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:明天[ming2 tian1]
+  review: needs_review
+- id: zh.w.zuo2tian1
+  type: word
+  text: 昨天
+  roman: zuótiān
+  tones: zuo2 tian1
+  gloss:
+    en: yesterday
+    id: kemarin
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:昨天[zuo2 tian1]
+  review: needs_review
+- id: zh.w.xing1qi1
+  type: word
+  text: 星期
+  roman: xīngqī
+  tones: xing1 qi1
+  gloss:
+    en: week
+    id: minggu (pekan)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:星期[xing1 qi1]
+  review: needs_review
+- id: zh.w.hao2
+  type: word
+  text: 号
+  roman: hào
+  tones: hao4
+  gloss:
+    en: (after a numeral) number designation (e.g. 237号房间 "Room 237")
+    id: (setelah angka) nomor (mis. 237号房间 "Kamar 237")
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:号[hao4]
+  review: needs_review
+- id: zh.w.yue4
+  type: word
+  text: 月
+  roman: yuè
+  tones: yue4
+  gloss:
+    en: month
+    id: bulan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:月[yue4]
+  review: needs_review
+- id: zh.w.nian2
+  type: word
+  text: 年
+  roman: nián
+  tones: nian2
+  gloss:
+    en: year
+    id: tahun
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:年[nian2]
+  review: needs_review

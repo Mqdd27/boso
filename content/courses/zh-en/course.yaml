@@ -1,7 +1,44 @@
 id: zh-en
 target: zh
-title: { en: Mandarin for English speakers, id: Bahasa Mandarin untuk penutur bahasa Inggris }
-glosses: [en, id]
-levels: [hsk1, hsk2]
+title:
+  en: Mandarin for English speakers
+  id: Bahasa Mandarin untuk penutur bahasa Inggris
+glosses:
+- en
+- id
+levels:
+- hsk1
+- hsk2
 version: 0.0.1
-units: []
+units:
+- units/001-four-tones.yaml
+- units/002-simple-finals.yaml
+- units/003-initials-b-to-l.yaml
+- units/004-initials-g-to-x.yaml
+- units/005-initials-zh-to-s.yaml
+- units/006-compound-finals.yaml
+- units/007-nasal-finals.yaml
+- units/008-finals-with-i.yaml
+- units/009-finals-with-u-and-u-umlaut.yaml
+- units/010-greetings-and-courtesy.yaml
+- units/011-numbers-one-to-five.yaml
+- units/012-numbers-six-to-ten.yaml
+- units/013-me-you-and-others.yaml
+- units/014-names-and-introductions.yaml
+- units/015-yes-no-and-questions.yaml
+- units/016-family.yaml
+- units/017-food.yaml
+- units/018-drinks.yaml
+- units/019-telling-time.yaml
+- units/020-days-and-dates.yaml
+- units/021-shopping.yaml
+- units/022-jobs-and-titles.yaml
+- units/023-at-school.yaml
+- units/024-learning-chinese.yaml
+- units/025-places-and-countries.yaml
+- units/026-this-that-and-position.yaml
+- units/027-getting-around.yaml
+- units/028-at-home.yaml
+- units/029-free-time-and-likes.yaml
+- units/030-weather.yaml
+- units/031-pets-and-describing.yaml

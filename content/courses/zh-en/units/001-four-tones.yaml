@@ -1,0 +1,62 @@
+id: zh-001-four-tones
+title:
+  en: The Four Tones
+  id: Empat Nada
+level: hsk1
+kind: script
+items:
+- id: zh.c.ma1
+  type: char
+  text: mā
+  roman: mā
+  tones: ma1
+  gloss:
+    en: 'tone 1: high and level'
+    id: 'nada 1: tinggi dan datar'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.ma2
+  type: char
+  text: má
+  roman: má
+  tones: ma2
+  gloss:
+    en: 'tone 2: rising, like asking ''huh?'''
+    id: 'nada 2: naik, seperti bertanya ''hah?'''
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.ma3
+  type: char
+  text: mǎ
+  roman: mǎ
+  tones: ma3
+  gloss:
+    en: 'tone 3: low, dips then rises'
+    id: 'nada 3: rendah, turun lalu naik'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.ma4
+  type: char
+  text: mà
+  roman: mà
+  tones: ma4
+  gloss:
+    en: 'tone 4: falling sharply, like ''No!'''
+    id: 'nada 4: turun tajam, seperti ''Tidak!'''
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.ma5
+  type: char
+  text: ma
+  roman: ma
+  tones: ma5
+  gloss:
+    en: 'neutral tone: short and light'
+    id: 'nada netral: pendek dan ringan'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review

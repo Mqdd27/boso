@@ -1,0 +1,118 @@
+id: zh-031-pets-and-describing
+title:
+  en: Pets and Describing Things
+  id: Hewan Peliharaan dan Sifat Benda
+level: hsk1
+items:
+- id: zh.w.gou3
+  type: word
+  text: 狗
+  roman: gǒu
+  tones: gou3
+  gloss:
+    en: dog
+    id: anjing
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:狗[gou3]
+  review: needs_review
+- id: zh.w.mao1
+  type: word
+  text: 猫
+  roman: māo
+  tones: mao1
+  gloss:
+    en: cat
+    id: kucing
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:猫[mao1]
+  review: needs_review
+- id: zh.w.da4
+  type: word
+  text: 大
+  roman: dà
+  tones: da4
+  gloss:
+    en: big; large; great
+    id: besar; agung
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:大[da4]
+  review: needs_review
+- id: zh.w.xiao3
+  type: word
+  text: 小
+  roman: xiǎo
+  tones: xiao3
+  gloss:
+    en: small
+    id: kecil
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:小[xiao3]
+  review: needs_review
+- id: zh.w.duo1
+  type: word
+  text: 多
+  roman: duō
+  tones: duo1
+  gloss:
+    en: many; much; more; a lot of
+    id: banyak; lebih
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:多[duo1]
+  review: needs_review
+- id: zh.w.shao3
+  type: word
+  text: 少
+  roman: shǎo
+  tones: shao3
+  gloss:
+    en: few
+    id: sedikit
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:少[shao3]
+  review: needs_review
+- id: zh.w.piao4liang5
+  type: word
+  text: 漂亮
+  roman: piàoliang
+  tones: piao4 liang5
+  gloss:
+    en: pretty; beautiful
+    id: cantik; indah
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:漂亮[piao4 liang5]
+  review: needs_review

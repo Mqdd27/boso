@@ -1,0 +1,134 @@
+id: zh-029-free-time-and-likes
+title:
+  en: Free Time and Likes
+  id: Waktu Luang dan Kesukaan
+level: hsk1
+items:
+- id: zh.w.xi3huan5
+  type: word
+  text: 喜欢
+  roman: xǐhuan
+  tones: xi3 huan5
+  gloss:
+    en: to like; to be fond of
+    id: suka; menyukai
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:喜欢[xi3 huan5]
+  review: needs_review
+- id: zh.w.ai4
+  type: word
+  text: 爱
+  roman: ài
+  tones: ai4
+  gloss:
+    en: to love; to be fond of; to like
+    id: mencintai; menyukai; suka
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:爱[ai4]
+  review: needs_review
+- id: zh.w.kan1
+  type: word
+  text: 看
+  roman: kàn
+  tones: kan4
+  gloss:
+    en: to see; to look at
+    id: melihat; memandang
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:看[kan4]
+  review: needs_review
+- id: zh.w.kan4jian4
+  type: word
+  text: 看见
+  roman: kànjiàn
+  tones: kan4 jian4
+  gloss:
+    en: to see; to catch sight of
+    id: melihat; terlihat
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:看见[kan4 jian4]
+  review: needs_review
+- id: zh.w.dian4ying3
+  type: word
+  text: 电影
+  roman: diànyǐng
+  tones: dian4 ying3
+  gloss:
+    en: movie; film
+    id: film
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:电影[dian4 ying3]
+  review: needs_review
+- id: zh.w.da3dian4hua4
+  type: word
+  text: 打电话
+  roman: dǎdiànhuà
+  tones: da3 dian4 hua4
+  gloss:
+    en: to make a telephone call
+    id: menelepon
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:打电话[da3 dian4 hua4]
+  review: needs_review
+- id: zh.w.wei2
+  type: word
+  text: 喂
+  roman: wéi
+  tones: wei2
+  gloss:
+    en: hello (when answering the phone)
+    id: halo (saat mengangkat telepon)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:喂[wei2]
+  review: needs_review
+- id: zh.w.zuo4-505a
+  type: word
+  text: 做
+  roman: zuò
+  tones: zuo4
+  gloss:
+    en: to do; to engage in; to hold (a party etc)
+    id: melakukan; mengerjakan; mengadakan (pesta dsb.)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:做[zuo4]
+  review: needs_review

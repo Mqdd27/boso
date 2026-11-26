@@ -1,0 +1,118 @@
+id: zh-030-weather
+title:
+  en: Weather
+  id: Cuaca
+level: hsk1
+items:
+- id: zh.w.tian1qi4
+  type: word
+  text: 天气
+  roman: tiānqì
+  tones: tian1 qi4
+  gloss:
+    en: weather
+    id: cuaca
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:天气[tian1 qi4]
+  review: needs_review
+- id: zh.w.leng3
+  type: word
+  text: 冷
+  roman: lěng
+  tones: leng3
+  gloss:
+    en: cold
+    id: dingin
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:冷[leng3]
+  review: needs_review
+- id: zh.w.re4
+  type: word
+  text: 热
+  roman: rè
+  tones: re4
+  gloss:
+    en: hot (of weather)
+    id: panas (cuaca)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:热[re4]
+  review: needs_review
+- id: zh.w.xia4yu3
+  type: word
+  text: 下雨
+  roman: xiàyǔ
+  tones: xia4 yu3
+  gloss:
+    en: to rain
+    id: hujan; turun hujan
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:下雨[xia4 yu3]
+  review: needs_review
+- id: zh.w.tai4
+  type: word
+  text: 太
+  roman: tài
+  tones: tai4
+  gloss:
+    en: too (much)
+    id: terlalu
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:太[tai4]
+  review: needs_review
+- id: zh.w.hen3
+  type: word
+  text: 很
+  roman: hěn
+  tones: hen3
+  gloss:
+    en: very; quite
+    id: sangat; cukup
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:很[hen3]
+  review: needs_review
+- id: zh.w.zen3me5yang4
+  type: word
+  text: 怎么样
+  roman: zěnmeyàng
+  tones: zen3 me5 yang4
+  gloss:
+    en: how about?
+    id: bagaimana kalau?
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:怎么样[zen3 me5 yang4]
+  review: needs_review

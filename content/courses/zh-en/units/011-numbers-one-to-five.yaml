@@ -1,0 +1,86 @@
+id: zh-011-numbers-one-to-five
+title:
+  en: Numbers 1 to 5
+  id: Angka 1 sampai 5
+level: hsk1
+items:
+- id: zh.w.yi1
+  type: word
+  text: 一
+  roman: yī
+  tones: yi1
+  gloss:
+    en: one
+    id: satu
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:一[yi1]
+  review: needs_review
+- id: zh.w.er4
+  type: word
+  text: 二
+  roman: èr
+  tones: er4
+  gloss:
+    en: two
+    id: dua
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:二[er4]
+  review: needs_review
+- id: zh.w.san1
+  type: word
+  text: 三
+  roman: sān
+  tones: san1
+  gloss:
+    en: three
+    id: tiga
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:三[san1]
+  review: needs_review
+- id: zh.w.si4
+  type: word
+  text: 四
+  roman: sì
+  tones: si4
+  gloss:
+    en: four
+    id: empat
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:四[si4]
+  review: needs_review
+- id: zh.w.wu3
+  type: word
+  text: 五
+  roman: wǔ
+  tones: wu3
+  gloss:
+    en: five
+    id: lima
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:五[wu3]
+  review: needs_review

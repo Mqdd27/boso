@@ -1,0 +1,95 @@
+id: zh-009-finals-with-u-and-u-umlaut
+title:
+  en: Finals with u and ü
+  id: Vokal dengan u dan ü
+level: hsk1
+kind: script
+items:
+- id: zh.c.duo1
+  type: char
+  text: duō
+  roman: duō
+  tones: duo1
+  gloss:
+    en: 'uo: u + o (like ''wo'')'
+    id: 'uo: u + o (seperti ''wo'')'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.hua1
+  type: char
+  text: huā
+  roman: huā
+  tones: hua1
+  gloss:
+    en: 'ua: u + a (like ''wa'')'
+    id: 'ua: u + a (seperti ''wa'')'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.kuai4
+  type: char
+  text: kuài
+  roman: kuài
+  tones: kuai4
+  gloss:
+    en: 'uai: u + ai (like ''why'')'
+    id: 'uai: u + ai (seperti ''wai'')'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.dui4
+  type: char
+  text: duì
+  roman: duì
+  tones: dui4
+  gloss:
+    en: 'ui: u + ei, written ui (like ''way'')'
+    id: 'ui: u + ei, ditulis ui (seperti ''wei'')'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.chun1
+  type: char
+  text: chūn
+  roman: chūn
+  tones: chun1
+  gloss:
+    en: 'un: u + en, written un'
+    id: 'un: u + en, ditulis un'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.huang2
+  type: char
+  text: huáng
+  roman: huáng
+  tones: huang2
+  gloss:
+    en: 'uang: u + ang'
+    id: 'uang: u + ang'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.xue2
+  type: char
+  text: xué
+  roman: xué
+  tones: xue2
+  gloss:
+    en: 'üe: ü + e; after j q x the dots are dropped'
+    id: 'üe: ü + e; setelah j q x titiknya tidak ditulis'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.qu4
+  type: char
+  text: qù
+  roman: qù
+  tones: qu4
+  gloss:
+    en: 'ü after q: written u, still said ü'
+    id: 'ü setelah q: ditulis u, tetap dibaca ü'
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review

@@ -1,0 +1,118 @@
+id: zh-014-names-and-introductions
+title:
+  en: Names and Introductions
+  id: Nama dan Perkenalan
+level: hsk1
+items:
+- id: zh.w.jiao4
+  type: word
+  text: 叫
+  roman: jiào
+  tones: jiao4
+  gloss:
+    en: to be called
+    id: bernama; dipanggil
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:叫[jiao4]
+  review: needs_review
+- id: zh.w.ming2zi5
+  type: word
+  text: 名字
+  roman: míngzi
+  tones: ming2 zi5
+  gloss:
+    en: name (of a person or thing)
+    id: nama (orang atau benda)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:名字[ming2 zi5]
+  review: needs_review
+- id: zh.w.shen2me5
+  type: word
+  text: 什么
+  roman: shénme
+  tones: shen2 me5
+  gloss:
+    en: what?
+    id: apa?
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:什么[shen2 me5]
+  review: needs_review
+- id: zh.w.ren4shi5
+  type: word
+  text: 认识
+  roman: rènshi
+  tones: ren4 shi5
+  gloss:
+    en: to know
+    id: kenal; mengenal
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:认识[ren4 shi5]
+  review: needs_review
+- id: zh.w.gao1xing4
+  type: word
+  text: 高兴
+  roman: gāoxìng
+  tones: gao1 xing4
+  gloss:
+    en: happy
+    id: senang; gembira
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:高兴[gao1 xing4]
+  review: needs_review
+- id: zh.w.shei2
+  type: word
+  text: 谁
+  roman: shéi
+  tones: shei2
+  gloss:
+    en: who
+    id: siapa
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:谁[shei2]
+  review: needs_review
+- id: zh.w.ma2
+  type: word
+  text: 吗
+  roman: ma
+  tones: ma5
+  gloss:
+    en: (question particle for "yes-no" questions)
+    id: (partikel tanya untuk pertanyaan ya/tidak)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:吗[ma5]
+  review: needs_review

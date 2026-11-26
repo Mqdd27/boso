@@ -1,0 +1,62 @@
+id: zh-007-nasal-finals
+title:
+  en: Finals an en ang eng ong
+  id: Vokal an en ang eng ong
+level: hsk1
+kind: script
+items:
+- id: zh.c.an1
+  type: char
+  text: ān
+  roman: ān
+  tones: an1
+  gloss:
+    en: 'an: like ''an'' in ''fan'' (ending in n)'
+    id: 'an: seperti an pada ''makan'''
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.en1
+  type: char
+  text: ēn
+  roman: ēn
+  tones: en1
+  gloss:
+    en: 'en: like ''un'' in ''under'' + n'
+    id: 'en: seperti en pada ''enam'''
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.mang2
+  type: char
+  text: máng
+  roman: máng
+  tones: mang2
+  gloss:
+    en: 'ang: like ''ahng'' (ending in ng)'
+    id: 'ang: seperti ang pada ''abang'''
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.leng3
+  type: char
+  text: lěng
+  roman: lěng
+  tones: leng3
+  gloss:
+    en: 'eng: like ''ung'' in ''lung'''
+    id: 'eng: seperti eng pada ''lengan'''
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review
+- id: zh.c.hong2
+  type: char
+  text: hóng
+  roman: hóng
+  tones: hong2
+  gloss:
+    en: 'ong: like ''ung'' with rounded lips'
+    id: 'ong: seperti ong pada ''bohong'''
+  source: boso
+  license: CC BY-SA 4.0
+  review: needs_review

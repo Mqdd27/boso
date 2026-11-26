@@ -1,0 +1,134 @@
+id: zh-010-greetings-and-courtesy
+title:
+  en: Greetings and Courtesy
+  id: Salam dan Sopan Santun
+level: hsk1
+items:
+- id: zh.w.ni3
+  type: word
+  text: 你
+  roman: nǐ
+  tones: ni3
+  gloss:
+    en: you (informal, as opposed to courteous 您)
+    id: kamu (tidak formal, bukan sopan 您)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:你[ni3]
+  review: needs_review
+- id: zh.w.hao3
+  type: word
+  text: 好
+  roman: hǎo
+  tones: hao3
+  gloss:
+    en: good
+    id: baik; bagus
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:好[hao3]
+  review: needs_review
+- id: zh.w.zai4jian4
+  type: word
+  text: 再见
+  roman: zàijiàn
+  tones: zai4 jian4
+  gloss:
+    en: goodbye
+    id: sampai jumpa; selamat tinggal
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:再见[zai4 jian4]
+  review: needs_review
+- id: zh.w.xie4xie5
+  type: word
+  text: 谢谢
+  roman: xièxie
+  tones: xie4 xie5
+  gloss:
+    en: thank you
+    id: terima kasih
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:谢谢[xie4 xie5]
+  review: needs_review
+- id: zh.w.bu4ke4qi5
+  type: word
+  text: 不客气
+  roman: bùkèqi
+  tones: bu4 ke4 qi5
+  gloss:
+    en: you're welcome
+    id: sama-sama; kembali
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:不客气[bu4 ke4 qi5]
+  review: needs_review
+- id: zh.w.dui4bu5qi3
+  type: word
+  text: 对不起
+  roman: duìbuqǐ
+  tones: dui4 bu5 qi3
+  gloss:
+    en: I'm sorry; excuse me; I beg your pardon
+    id: maaf; permisi; mohon maaf
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:对不起[dui4 bu5 qi3]
+  review: needs_review
+- id: zh.w.mei2guan1xi5
+  type: word
+  text: 没关系
+  roman: méiguānxi
+  tones: mei2 guan1 xi5
+  gloss:
+    en: it doesn't matter
+    id: tidak apa-apa
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:没关系[mei2 guan1 xi5]
+  review: needs_review
+- id: zh.w.qing3
+  type: word
+  text: 请
+  roman: qǐng
+  tones: qing3
+  gloss:
+    en: please (do sth)
+    id: silakan; tolong (lakukan sesuatu)
+  gloss_sources:
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: cc-cedict
+  license: CC BY-SA 4.0
+  source_ref: cc-cedict:请[qing3]
+  review: needs_review
