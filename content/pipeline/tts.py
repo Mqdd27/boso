@@ -5,7 +5,7 @@ pipeline and CI never install it. Audio is a build artefact: it goes to cache/tt
 dist/ via `pipeline pack`, never into courses/.
 
 Settings (change one and only the affected files are rebuilt, the cache key covers them all):
-- MeloTTS-Korean, speaker KR, speed 0.9: a touch slower than default, clearer for beginners.
+- MeloTTS-Korean (KR) / -Chinese (ZH), speed 0.9: a touch slower than default, clearer for learners.
 - ffmpeg: trim leading/trailing silence, loudnorm to -16 LUFS (same loudness for every word),
   mono Opus 32 kbps in VoIP mode. 24 kbps starts to smear Korean aspirated consonants
   (ㅋ/ㅌ/ㅊ); 32 kbps keeps a word at ~3–6 KB.
@@ -13,6 +13,7 @@ Settings (change one and only the affected files are rebuilt, the cache key cove
 
 import hashlib
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -31,14 +32,21 @@ TTS_ENV = CONTENT / "tts"
 CACHE = CONTENT / "cache" / "tts"
 SAMPLES = CONTENT / "cache" / "tts-sample"
 
-VOICES = {"ko": {"model": "myshell-ai/MeloTTS-Korean", "language": "KR", "speaker": "KR"}}
+VOICES = {
+    "ko": {"model": "myshell-ai/MeloTTS-Korean", "language": "KR", "speaker": "KR"},
+    # Pinyin script items are read from readings.yaml (a character per syllable: ma3 → 马).
+    "zh": {"model": "myshell-ai/MeloTTS-Chinese", "language": "ZH", "speaker": "ZH"},
+}
 SPEED = 0.9
 TRIM = "silenceremove=start_periods=1:start_threshold=-50dB"
 FILTER = f"{TRIM},areverse,{TRIM},areverse,loudnorm=I=-16:TP=-1.5:LRA=11"
+# MeloTTS-Chinese comes out ~20 dB quieter than Korean (peak around -34 dB): without gain the
+# -50 dB silence trim eats most of a syllable.
+GAIN = {"zh": "volume=20dB"}
 ENCODE = ["-ac", "1", "-c:a", "libopus", "-b:a", "32k", "-application", "voip"]
 
-Synth = Callable[[str, list[dict]], None]  # (target language, [{text, wav}]) → writes WAVs
-Encode = Callable[[Path, Path], None]  # wav → opus
+Synth = Callable[[str, list[dict]], None]  # (target language, [{text, wav, tone?}]) → WAVs
+Encode = Callable[[Path, Path, str], None]  # (wav, opus, ffmpeg filter)
 
 
 @dataclass
@@ -46,6 +54,7 @@ class Job:
     item_id: str
     text: str  # what is read aloud: item.text, or readings.yaml
     key: str
+    tone: int | None = None  # a single Mandarin syllable: its pitch is redrawn (tts/synth.py)
 
 
 @dataclass
@@ -62,12 +71,27 @@ def audio_path(item_id: str) -> str:
     return f"{lang}/{rest}.opus"
 
 
+def audio_filter(lang: str) -> str:
+    return ",".join(f for f in (GAIN.get(lang), FILTER) if f)
+
+
 def settings(lang: str) -> dict:
-    return {**VOICES[lang], "speed": SPEED, "filter": FILTER, "encode": ENCODE}
+    return {**VOICES[lang], "speed": SPEED, "filter": audio_filter(lang), "encode": ENCODE}
 
 
-def cache_key(text: str, lang: str) -> str:
-    blob = json.dumps({"text": text, **settings(lang)}, ensure_ascii=False, sort_keys=True)
+# Bump when tts/synth.py's tone SHAPES change, so reshaped syllables are made again.
+RESHAPE = "world-v1"
+
+
+def tone_of(item: dict) -> int | None:
+    """Tone 1–4 of a single-syllable item (ma3 → 3); None otherwise (also neutral ma5)."""
+    m = re.fullmatch(r"[a-zü]+([1-4])", item.get("tones", ""))
+    return int(m[1]) if m else None
+
+
+def cache_key(text: str, lang: str, tone: int | None = None) -> str:
+    extra = {"tone": tone, "reshape": RESHAPE} if tone else {}
+    blob = json.dumps({"text": text, **settings(lang), **extra}, ensure_ascii=False, sort_keys=True)
     return hashlib.sha256(blob.encode()).hexdigest()
 
 
@@ -89,7 +113,8 @@ def jobs(course_dir: Path, lang: str) -> list[Job]:
     for unit in units:
         for item in unit["items"]:
             text = read.get(item["id"], item["text"])
-            out.append(Job(item["id"], text, cache_key(text, lang)))
+            tone = tone_of(item)
+            out.append(Job(item["id"], text, cache_key(text, lang, tone), tone))
     return out
 
 
@@ -117,9 +142,9 @@ def run_melo(lang: str, batch: list[dict]) -> None:
     )  # fmt: skip
 
 
-def run_ffmpeg(wav: Path, opus: Path) -> None:
+def run_ffmpeg(wav: Path, opus: Path, af: str = FILTER) -> None:
     subprocess.run(
-        ["ffmpeg", "-v", "error", "-y", "-i", str(wav), "-af", FILTER, *ENCODE, str(opus)],
+        ["ffmpeg", "-v", "error", "-y", "-i", str(wav), "-af", af, *ENCODE, str(opus)],
         check=True,
     )
 
@@ -154,10 +179,14 @@ def generate(
         cache.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory() as tmp:
             wavs = {j.key: Path(tmp) / f"{j.key}.wav" for j in missing}
-            synth(lang, [{"text": j.text, "wav": str(wavs[j.key])} for j in missing])
+            synth(
+                lang,
+                [{"text": j.text, "wav": str(wavs[j.key])} | ({"tone": j.tone} if j.tone else {})
+                 for j in missing],
+            )  # fmt: skip
             for j in missing:
                 part = cache / f"{j.key}.part.opus"  # never leave a half-written cache entry
-                encode(wavs[j.key], part)
+                encode(wavs[j.key], part, audio_filter(lang))
                 part.rename(cache / f"{j.key}.opus")
                 report.made.append(j.item_id)
                 print(f"made {j.item_id} ({j.text})", file=sys.stderr)

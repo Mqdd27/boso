@@ -100,3 +100,153 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:哪[na3]
   review: needs_review
+- id: zh.s.t10787289
+  type: sentence
+  text: 谁在听？
+  roman: Shéi zài tīng?
+  tokens:
+  - 谁
+  - 在
+  - 听
+  gloss:
+    en: Who's listening?
+    id: Siapa yang lagi dengar?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: shekitten
+      source_ref: tatoeba:8983057
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: megamanenm
+  source_ref: tatoeba:10787289
+  review: needs_review
+- id: zh.s.t1740889
+  type: sentence
+  text: 他不在。
+  roman: Tā bù zài.
+  tokens:
+  - 他
+  - 不
+  - 在
+  gloss:
+    en: He is not here.
+    id: Dia nggak ada.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Eldad
+      source_ref: tatoeba:1310692
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: etala
+  source_ref: tatoeba:1740889
+  review: needs_review
+- id: zh.s.t2357609
+  type: sentence
+  text: 我在听。
+  roman: Wǒ zài tīng.
+  tokens:
+  - 我
+  - 在
+  - 听
+  gloss:
+    en: I'm listening.
+    id: Aku lagi dengar.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:1891022
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: anndiana
+  source_ref: tatoeba:2357609
+  review: needs_review
+- id: zh.s.t479053
+  type: sentence
+  text: 你在吗？
+  roman: Nǐ zài ma?
+  tokens:
+  - 你
+  - 在
+  - 吗
+  gloss:
+    en: Are you there?
+    id: Kamu ada?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:30970
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:479053
+  review: needs_review
+- id: zh.s.t5918597
+  type: sentence
+  text: 她不在。
+  roman: Tā bù zài.
+  tokens:
+  - 她
+  - 不
+  - 在
+  gloss:
+    en: She is absent.
+    id: Dia nggak ada.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: astru
+      source_ref: tatoeba:5917149
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Sethlang
+  source_ref: tatoeba:5918597
+  review: needs_review
+- id: zh.s.t11514881
+  type: sentence
+  text: 你在学校。
+  roman: Nǐ zài xuéxiào.
+  tokens:
+  - 你
+  - 在
+  - 学校
+  gloss:
+    en: You are at school.
+    id: Kamu di sekolah.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Danika_Dakika
+      source_ref: tatoeba:11004611
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: megamanenm
+  source_ref: tatoeba:11514881
+  review: needs_review

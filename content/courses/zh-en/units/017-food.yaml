@@ -100,3 +100,155 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:水果[shui3 guo3]
   review: needs_review
+- id: zh.s.t13519203
+  type: sentence
+  text: 我吃了。
+  roman: Wǒ chī le.
+  tokens:
+  - 我
+  - 吃
+  - 了
+  gloss:
+    en: I ate them.
+    id: Aku sudah makan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: atitarev
+      source_ref: tatoeba:13237570
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: LeviHighway
+  source_ref: tatoeba:13519203
+  review: needs_review
+- id: zh.s.t5580911
+  type: sentence
+  text: 你没有吃。
+  roman: Nǐ méiyǒu chī.
+  tokens:
+  - 你
+  - 没有
+  - 吃
+  gloss:
+    en: You haven't eaten.
+    id: Kamu belum makan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Sethlang
+      source_ref: tatoeba:6139119
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: grindeldore
+  source_ref: tatoeba:5580911
+  review: needs_review
+- id: zh.s.t5580915
+  type: sentence
+  text: 他没有吃。
+  roman: Tā méiyǒu chī.
+  tokens:
+  - 他
+  - 没有
+  - 吃
+  gloss:
+    en: He hasn't eaten.
+    id: Dia belum makan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Sethlang
+      source_ref: tatoeba:6139120
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: grindeldore
+  source_ref: tatoeba:5580915
+  review: needs_review
+- id: zh.s.t5580917
+  type: sentence
+  text: 她没有吃。
+  roman: Tā méiyǒu chī.
+  tokens:
+  - 她
+  - 没有
+  - 吃
+  gloss:
+    en: She hasn't eaten.
+    id: Dia belum makan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Sethlang
+      source_ref: tatoeba:6139121
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: grindeldore
+  source_ref: tatoeba:5580917
+  review: needs_review
+- id: zh.s.t2298224
+  type: sentence
+  text: 你吃了什么？
+  roman: Nǐ chī le shénme?
+  tokens:
+  - 你
+  - 吃
+  - 了
+  - 什么
+  gloss:
+    en: What did you eat?
+    id: Kamu makan apa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:1830499
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sysko
+  source_ref: tatoeba:2298224
+  review: needs_review
+- id: zh.s.t3378091
+  type: sentence
+  text: 我吃苹果了。
+  roman: Wǒ chī píngguǒ le.
+  tokens:
+  - 我
+  - 吃
+  - 苹果
+  - 了
+  gloss:
+    en: I ate apples.
+    id: Aku makan apel.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: _undertoad
+      source_ref: tatoeba:3378092
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:3378091
+  review: needs_review

@@ -116,3 +116,159 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:漂亮[piao4 liang5]
   review: needs_review
+- id: zh.s.t2195322
+  type: sentence
+  text: 我是猫。
+  roman: Wǒ shì māo.
+  tokens:
+  - 我
+  - 是
+  - 猫
+  gloss:
+    en: I'm a cat.
+    id: Aku seekor kucing.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: shekitten
+      source_ref: tatoeba:2068371
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: HAGNi
+      source_ref: tatoeba:13772815
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: linzilyu
+  source_ref: tatoeba:2195322
+  review: needs_review
+- id: zh.s.t2482139
+  type: sentence
+  text: 狗在叫。
+  roman: Gǒu zài jiào.
+  tokens:
+  - 狗
+  - 在
+  - 叫
+  gloss:
+    en: The dog is barking.
+    id: Anjingnya sedang menggonggong.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Amastan
+      source_ref: tatoeba:1662194
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: alvations
+  source_ref: tatoeba:2482139
+  review: needs_review
+- id: zh.s.t10508845
+  type: sentence
+  text: 好大的狗！
+  roman: Hǎodà de gǒu!
+  tokens:
+  - 好大
+  - 的
+  - 狗
+  gloss:
+    en: What a huge dog!
+    id: Anjingnya besar sekali!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: fliegster
+      source_ref: tatoeba:572577
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: DaoSeng
+  source_ref: tatoeba:10508845
+  review: needs_review
+- id: zh.s.t10790114
+  type: sentence
+  text: 你想多了！
+  roman: Nǐ xiǎng duō le!
+  tokens:
+  - 你
+  - 想
+  - 多
+  - 了
+  gloss:
+    en: You're overthinking it!
+    id: Kamu terlalu banyak mikir!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: megamanenm
+      source_ref: tatoeba:10790115
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: megamanenm
+  source_ref: tatoeba:10790114
+  review: needs_review
+- id: zh.s.t11046276
+  type: sentence
+  text: 我吃多了。
+  roman: Wǒ chī duō le.
+  tokens:
+  - 我
+  - 吃
+  - 多
+  - 了
+  gloss:
+    en: I ate too much.
+    id: Aku kebanyakan makan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:953366
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: DaoSeng
+  source_ref: tatoeba:11046276
+  review: needs_review
+- id: zh.s.t11077429
+  type: sentence
+  text: 八点多了。
+  roman: Bādiǎn duō le.
+  tokens:
+  - 八点
+  - 多
+  - 了
+  gloss:
+    en: It's past eight.
+    id: Sekarang lewat jam delapan.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:5825535
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: HAGNi
+      source_ref: tatoeba:10744623
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: LeeSooHa
+  source_ref: tatoeba:11077429
+  review: needs_review

@@ -132,3 +132,153 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:做[zuo4]
   review: needs_review
+- id: zh.s.t1192448
+  type: sentence
+  text: 我爱她。
+  roman: Wǒ ài tā.
+  tokens:
+  - 我
+  - 爱
+  - 她
+  gloss:
+    en: I love her.
+    id: Aku cinta dia.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:261221
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: dandan4doris
+  source_ref: tatoeba:1192448
+  review: needs_review
+- id: zh.s.t1880459
+  type: sentence
+  text: 你爱谁？
+  roman: Nǐ ài shéi?
+  tokens:
+  - 你
+  - 爱
+  - 谁
+  gloss:
+    en: Who do you love?
+    id: Kamu cinta siapa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Sharaf78
+      source_ref: tatoeba:1568786
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fercheung
+  source_ref: tatoeba:1880459
+  review: needs_review
+- id: zh.s.t349701
+  type: sentence
+  text: 她看我。
+  roman: Tā kàn wǒ.
+  tokens:
+  - 她
+  - 看
+  - 我
+  gloss:
+    en: She looked at me.
+    id: Dia melihatku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:314431
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: zhouj1955
+  source_ref: tatoeba:349701
+  review: needs_review
+- id: zh.s.t5092226
+  type: sentence
+  text: 爱谁谁。
+  roman: Ài shéi shéi.
+  tokens:
+  - 爱
+  - 谁
+  - 谁
+  gloss:
+    en: Who cares?
+    id: Bodo amat.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:40434
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: mirrorvan
+  source_ref: tatoeba:5092226
+  review: needs_review
+- id: zh.s.t9409426
+  type: sentence
+  text: 谁会做？
+  roman: Shéi huì zuò?
+  tokens:
+  - 谁
+  - 会
+  - 做
+  gloss:
+    en: Who's going to do that?
+    id: Siapa yang bakal mengerjakannya?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:6049299
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: BobbyLee
+  source_ref: tatoeba:9409426
+  review: needs_review
+- id: zh.s.t9958609
+  type: sentence
+  text: 谁爱谁？
+  roman: Shéi ài shéi?
+  tokens:
+  - 谁
+  - 爱
+  - 谁
+  gloss:
+    en: Who loved who?
+    id: Siapa cinta siapa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2254860
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:9958609
+  review: needs_review

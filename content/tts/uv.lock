@@ -81,6 +81,7 @@ dependencies = [
     { name = "melotts" },
     { name = "numpy" },
     { name = "python-mecab-ko" },
+    { name = "pyworld" },
     { name = "setuptools" },
 ]
 
@@ -89,6 +90,7 @@ requires-dist = [
     { name = "melotts", git = "https://github.com/myshell-ai/MeloTTS?rev=209145371cff8fc3bd60d7be902ea69cbdb7965a" },
     { name = "numpy", specifier = "<2" },
     { name = "python-mecab-ko" },
+    { name = "pyworld", specifier = ">=0.3.5" },
     { name = "setuptools", specifier = "<81" },
 ]
 
@@ -1666,6 +1668,18 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/f5/b0/168030b0bfcc334cf09fa3313afdb888d892c8a0027324683d1de0ec277e/pytz-2026.6.tar.gz", hash = "sha256:3b0fc2727707663d6e517936f444fd8a8b240f1fc32f4bf7ee03274245945284", size = 318520, upload-time = "2026-10-29T09:05:47.011Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b6/25/564f3fc5b70c1398d706c51f2b1470d0ea0b1b2f96fee67877b6f5bdf3b6/pytz-2026.6-py2.py3-none-any.whl", hash = "sha256:7fed3fee8fd6bd4a2b7b75a8d56021d0624127bf69bd5691f115db929ac570b3", size = 506321, upload-time = "2026-10-29T09:05:45.14Z" },
+]
+
+[[package]]
+name = "pyworld"
+version = "0.3.5"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a5/0f/c78d631ffbb4c1aaebf80ff2bf9e791213b381dbe404f9ce1a3eb3672931/pyworld-0.3.5.tar.gz", hash = "sha256:1b93e53cddb67a0e4faa34d6cf919ac6c662feb1c8c0ed901d71b595ab396aa3", size = 261021, upload-time = "2025-01-20T16:07:51.261Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7f/fe/761706a26807c703e6c4e4f47b2d36e644214f6392e8bc20e79845a55808/pyworld-0.3.5-cp310-cp310-win_amd64.whl", hash = "sha256:829876828de51c7f5fdd06efa0283d69f9897b592e034db9ded857e378bf625c", size = 224164, upload-time = "2025-01-21T15:53:30.684Z" },
 ]
 
 [[package]]

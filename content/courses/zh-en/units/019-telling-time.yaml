@@ -116,3 +116,159 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:时候[shi2 hou5]
   review: needs_review
+- id: zh.s.t3377949
+  type: sentence
+  text: 现在几点了？
+  roman: Xiànzài jǐdiǎn le?
+  tokens:
+  - 现在
+  - 几点
+  - 了
+  gloss:
+    en: What time is it?
+    id: Jam berapa sekarang?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: laofmoonster
+      source_ref: tatoeba:428402
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: purichan
+      source_ref: tatoeba:7021377
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:3377949
+  review: needs_review
+- id: zh.s.t5983647
+  type: sentence
+  text: 你现在高兴吗？
+  roman: Nǐ xiànzài gāoxìng ma?
+  tokens:
+  - 你
+  - 现在
+  - 高兴
+  - 吗
+  gloss:
+    en: Are you happy now?
+    id: Kamu senang sekarang?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: DJ_Saidez
+      source_ref: tatoeba:971988
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: verdastelo9604
+  source_ref: tatoeba:5983647
+  review: needs_review
+- id: zh.s.t5097672
+  type: sentence
+  text: 我想吃点好吃的。
+  roman: Wǒ xiǎng chī diǎn hǎochī de.
+  tokens:
+  - 我
+  - 想
+  - 吃
+  - 点
+  - 好吃
+  - 的
+  gloss:
+    en: I want to eat something tasty.
+    id: Aku mau makan yang enak-enak.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: andymakespasta
+      source_ref: tatoeba:4091863
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: mirrorvan
+  source_ref: tatoeba:5097672
+  review: needs_review
+- id: zh.s.t2298229
+  type: sentence
+  text: 你中午吃了什么？
+  roman: Nǐ zhōngwǔ chī le shénme?
+  tokens:
+  - 你
+  - 中午
+  - 吃
+  - 了
+  - 什么
+  gloss:
+    en: What did you eat for lunch?
+    id: Tadi siang kamu makan apa?
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sysko
+  source_ref: tatoeba:2298229
+  review: needs_review
+- id: zh.s.t332915
+  type: sentence
+  text: 你现在好点了吗？
+  roman: Nǐ xiànzài hǎodiǎn le ma?
+  tokens:
+  - 你
+  - 现在
+  - 好点
+  - 了
+  - 吗
+  gloss:
+    en: Are you feeling better now?
+    id: Kamu sudah mendingan sekarang?
+  gloss_sources:
+    en:
+      source: boso
+      license: CC BY-SA 4.0
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:332915
+  review: needs_review
+- id: zh.s.t10966717
+  type: sentence
+  text: 六点四十五了。
+  roman: Liùdiǎn sìshíwǔ le.
+  tokens:
+  - 六点
+  - 四十五
+  - 了
+  gloss:
+    en: It's a quarter to seven.
+    id: Sudah jam tujuh kurang seperempat.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: ddnktr
+      source_ref: tatoeba:11840805
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: xjjAstrus
+  source_ref: tatoeba:10966717
+  review: needs_review

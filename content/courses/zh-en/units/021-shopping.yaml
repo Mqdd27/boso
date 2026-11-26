@@ -132,3 +132,153 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:些[xie1]
   review: needs_review
+- id: zh.s.t10356050
+  type: sentence
+  text: 我想买。
+  roman: Wǒ xiǎng mǎi.
+  tokens:
+  - 我
+  - 想
+  - 买
+  gloss:
+    en: I want to buy.
+    id: Aku mau beli.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: king999
+      source_ref: tatoeba:536457
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: grindeldore
+  source_ref: tatoeba:10356050
+  review: needs_review
+- id: zh.s.t389383
+  type: sentence
+  text: 我买了。
+  roman: Wǒ mǎi le.
+  tokens:
+  - 我
+  - 买
+  - 了
+  gloss:
+    en: I'm buying.
+    id: Aku sudah beli.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:1844179
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:389383
+  review: needs_review
+- id: zh.s.t8930191
+  type: sentence
+  text: 我想钱。
+  roman: Wǒ xiǎng qián.
+  tokens:
+  - 我
+  - 想
+  - 钱
+  gloss:
+    en: I want money.
+    id: Aku mau uang.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:64620
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: iiujik
+  source_ref: tatoeba:8930191
+  review: needs_review
+- id: zh.s.t10961157
+  type: sentence
+  text: 多少个了？
+  roman: Duōshao gè le?
+  tokens:
+  - 多少
+  - 个
+  - 了
+  gloss:
+    en: This is how many?
+    id: Sudah berapa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Aphima
+      source_ref: tatoeba:11291141
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: xjjAstrus
+  source_ref: tatoeba:10961157
+  review: needs_review
+- id: zh.s.t1862268
+  type: sentence
+  text: 他没有钱。
+  roman: Tā méiyǒu qián.
+  tokens:
+  - 他
+  - 没有
+  - 钱
+  gloss:
+    en: He had no money.
+    id: Dia nggak punya uang.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:289446
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sysko
+  source_ref: tatoeba:1862268
+  review: needs_review
+- id: zh.s.t5663459
+  type: sentence
+  text: 我有些钱。
+  roman: Wǒ yǒuxiē qián.
+  tokens:
+  - 我
+  - 有些
+  - 钱
+  gloss:
+    en: I have a certain amount of money on me.
+    id: Aku punya sedikit uang.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:3822672
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: verdastelo9604
+  source_ref: tatoeba:5663459
+  review: needs_review

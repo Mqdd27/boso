@@ -116,3 +116,155 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:吗[ma5]
   review: needs_review
+- id: zh.s.t10696048
+  type: sentence
+  text: 是你吗？
+  roman: Shì nǐ ma?
+  tokens:
+  - 是
+  - 你
+  - 吗
+  gloss:
+    en: Is it you?
+    id: Kamu ya?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Scott
+      source_ref: tatoeba:1259560
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:10696048
+  review: needs_review
+- id: zh.s.t347334
+  type: sentence
+  text: 他是谁？
+  roman: Tā shì shéi?
+  tokens:
+  - 他
+  - 是
+  - 谁
+  gloss:
+    en: Who is he?
+    id: Dia siapa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: sysko
+      source_ref: tatoeba:347331
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sysko
+  source_ref: tatoeba:347334
+  review: needs_review
+- id: zh.s.t395853
+  type: sentence
+  text: 你是谁？
+  roman: Nǐ shì shéi?
+  tokens:
+  - 你
+  - 是
+  - 谁
+  gloss:
+    en: Who are you?
+    id: Kamu siapa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: yorickvidal
+      source_ref: tatoeba:356200
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: dbahasa
+      source_ref: tatoeba:4556409
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:395853
+  review: needs_review
+- id: zh.s.t4887707
+  type: sentence
+  text: 她是谁？
+  roman: Tā shì shéi?
+  tokens:
+  - 她
+  - 是
+  - 谁
+  gloss:
+    en: Who is she?
+    id: Dia siapa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:315731
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: musclegirlxyp
+  source_ref: tatoeba:4887707
+  review: needs_review
+- id: zh.s.t10966808
+  type: sentence
+  text: 你叫什么？
+  roman: Nǐ jiào shénme?
+  tokens:
+  - 你
+  - 叫
+  - 什么
+  gloss:
+    en: What is your name?
+    id: Nama kamu siapa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: frpzzd
+      source_ref: tatoeba:70623
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: xjjAstrus
+  source_ref: tatoeba:10966808
+  review: needs_review
+- id: zh.s.t11837643
+  type: sentence
+  text: 我认识他。
+  roman: Wǒ rènshi tā.
+  tokens:
+  - 我
+  - 认识
+  - 他
+  gloss:
+    en: I know him.
+    id: Aku kenal dia.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:71751
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Lemmih
+  source_ref: tatoeba:11837643
+  review: needs_review

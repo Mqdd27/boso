@@ -116,3 +116,154 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:的[de5]
   review: needs_review
+- id: zh.s.t10121659
+  type: sentence
+  text: 我是你。
+  roman: Wǒ shì nǐ.
+  tokens:
+  - 我
+  - 是
+  - 你
+  gloss:
+    en: I am you.
+    id: Aku adalah kamu.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: espamatics
+      source_ref: tatoeba:10121391
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:10121659
+  review: needs_review
+- id: zh.s.t13614516
+  type: sentence
+  text: 是我的。
+  roman: Shì wǒ de.
+  tokens:
+  - 是
+  - 我
+  - 的
+  gloss:
+    en: It's mine.
+    id: Itu punyaku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2123592
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: LeviHighway
+  source_ref: tatoeba:13614516
+  review: needs_review
+- id: zh.s.t335261
+  type: sentence
+  text: 你是人。
+  roman: Nǐ shì rén.
+  tokens:
+  - 你
+  - 是
+  - 人
+  gloss:
+    en: You're a human.
+    id: Kamu manusia.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Scott
+      source_ref: tatoeba:416544
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:335261
+  review: needs_review
+- id: zh.s.t335262
+  type: sentence
+  text: 我们是人。
+  roman: Wǒmen shì rén.
+  tokens:
+  - 我们
+  - 是
+  - 人
+  gloss:
+    en: We are human.
+    id: Kita manusia.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: sundown
+      source_ref: tatoeba:247772
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:335262
+  review: needs_review
+- id: zh.s.t374175
+  type: sentence
+  text: 我是好人。
+  roman: Wǒ shì hǎorén.
+  tokens:
+  - 我
+  - 是
+  - 好人
+  gloss:
+    en: I'm a nice guy.
+    id: Aku orang baik.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Scott
+      source_ref: tatoeba:838729
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: zmoo
+  source_ref: tatoeba:374175
+  review: needs_review
+- id: zh.s.t8686674
+  type: sentence
+  text: 你是我的。
+  roman: Nǐ shì wǒ de.
+  tokens:
+  - 你
+  - 是
+  - 我
+  - 的
+  gloss:
+    en: You're mine.
+    id: Kamu milikku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2217883
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: crescat
+  source_ref: tatoeba:8686674
+  review: needs_review

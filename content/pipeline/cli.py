@@ -101,16 +101,27 @@ def cmd_pinyin(args: argparse.Namespace) -> int:
 
 
 def cmd_sentences(args: argparse.Namespace) -> int:
-    from pipeline.sentences import generate
+    if args.course == "zh-en":
+        from pipeline.sentences_zh import generate as generate_zh
 
-    s = generate(
-        args.course,
-        max_unknown=args.max_unknown,
-        min_known_ratio=args.min_known_ratio,
-        max_eojeol=args.max_eojeol,
-        per_unit=args.per_unit,
-        dry_run=args.dry_run,
-    )
+        s = generate_zh(
+            max_unknown=args.max_unknown,
+            min_known_ratio=args.min_known_ratio,
+            max_words=args.max_eojeol,
+            per_unit=args.per_unit,
+            dry_run=args.dry_run,
+        )
+    else:
+        from pipeline.sentences import generate
+
+        s = generate(
+            args.course,
+            max_unknown=args.max_unknown,
+            min_known_ratio=args.min_known_ratio,
+            max_eojeol=args.max_eojeol,
+            per_unit=args.per_unit,
+            dry_run=args.dry_run,
+        )
     for key, value in s.sources.items():
         print(f"{key}: {value}")
     print("placed per vocab unit (tatoeba/krdict), by --max-unknown:")
@@ -189,7 +200,7 @@ def main(argv: list[str] | None = None) -> int:
     pinyin.add_argument("--dry-run", action="store_true", help="print, don't write")
     pinyin.set_defaults(func=cmd_pinyin)
     sentences = sub.add_parser("sentences", help="add Tatoeba + krdict sentences to vocab units")
-    sentences.add_argument("course", choices=["ko-en"])
+    sentences.add_argument("course", choices=["ko-en", "zh-en"])
     sentences.add_argument("--max-unknown", type=int, default=1, help="new content words allowed")
     sentences.add_argument("--min-known-ratio", type=float, default=0.9)
     sentences.add_argument("--max-eojeol", type=int, default=8, help="longest sentence, in words")
@@ -197,7 +208,7 @@ def main(argv: list[str] | None = None) -> int:
     sentences.add_argument("--dry-run", action="store_true", help="print, don't translate or write")
     sentences.set_defaults(func=cmd_sentences)
     tts = sub.add_parser("tts", help="generate missing audio (MeloTTS env in content/tts/)")
-    tts.add_argument("course", choices=["ko-en"])
+    tts.add_argument("course", choices=["ko-en", "zh-en"])
     tts.add_argument("--sample", type=int, metavar="N", help="only the first N items, to listen to")
     tts.add_argument("--only", metavar="ID", help="regenerate one item")
     tts.set_defaults(func=cmd_tts)

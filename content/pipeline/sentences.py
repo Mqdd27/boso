@@ -210,7 +210,7 @@ def select(placed: list[Placed], per_unit: int, units: list[dict]) -> dict[int, 
     return out
 
 
-def tatoeba_candidates(pairs: list[tatoeba.Pair]) -> list[Candidate]:
+def tatoeba_candidates(pairs: list[tatoeba.Pair], prefix: str = "ko") -> list[Candidate]:
     def credit(s: tatoeba.Sentence | None) -> dict | None:
         if s is None:
             return None
@@ -218,12 +218,12 @@ def tatoeba_candidates(pairs: list[tatoeba.Pair]) -> list[Candidate]:
 
     return [
         Candidate(
-            id=f"ko.s.t{p.kor.id}",
-            text=p.kor.text,
+            id=f"{prefix}.s.t{p.target.id}",
+            text=p.target.text,
             source=tatoeba.SOURCE,
-            license=p.kor.license,
-            source_ref=p.kor.source_ref,
-            author=p.kor.author,
+            license=p.target.license,
+            source_ref=p.target.source_ref,
+            author=p.target.author,
             en=credit(p.eng),
             ind=credit(p.ind),
         )
@@ -271,6 +271,7 @@ def translate(
     candidates: list[Candidate],
     run: Callable[[str], str] = run_claude,
     cache_dir: Path = LLM_CACHE,
+    template: str = TRANSLATE_TEMPLATE,
 ) -> dict[str, Translation]:
     """EN + ID for sentences missing either; batches of BATCH, cached, validated, retried once."""
     todo = [c for c in candidates if c.en is None or c.ind is None]
@@ -278,10 +279,10 @@ def translate(
     for start in range(0, len(todo), BATCH):
         batch = todo[start : start + BATCH]
         lines = [f"{c.id} | {c.text} | {c.en['text'] if c.en else '-'}" for c in batch]
-        prompt = _template(TRANSLATE_TEMPLATE).format(sentences="\n".join(lines))
+        prompt = _template(template).format(sentences="\n".join(lines))
         ids = {c.id for c in batch}
         parse = lambda t, ids=ids: parse_translations(t, ids)  # noqa: E731
-        out.update(_ask(TRANSLATE_TEMPLATE, prompt, parse, run, cache_dir))
+        out.update(_ask(template, prompt, parse, run, cache_dir))
     return out
 
 

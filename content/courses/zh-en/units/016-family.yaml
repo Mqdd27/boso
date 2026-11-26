@@ -116,3 +116,158 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:岁[sui4]
   review: needs_review
+- id: zh.s.t10966817
+  type: sentence
+  text: 你妈妈呢？
+  roman: Nǐ māma ne?
+  tokens:
+  - 你
+  - 妈妈
+  - 呢
+  gloss:
+    en: Where's your mom?
+    id: Ibumu mana?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2254687
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: xjjAstrus
+  source_ref: tatoeba:10966817
+  review: needs_review
+- id: zh.s.t1342264
+  type: sentence
+  text: 你是我妈妈。
+  roman: Nǐ shì wǒ māma.
+  tokens:
+  - 你
+  - 是
+  - 我
+  - 妈妈
+  gloss:
+    en: You are my mother.
+    id: Kamu ibuku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: cntrational
+      source_ref: tatoeba:1097988
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Shishir
+  source_ref: tatoeba:1342264
+  review: needs_review
+- id: zh.s.t1428124
+  type: sentence
+  text: 她是我女儿。
+  roman: Tā shì wǒ nǚ'ér.
+  tokens:
+  - 她
+  - 是
+  - 我
+  - 女儿
+  gloss:
+    en: She's my daughter.
+    id: Dia anak perempuanku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CM
+      source_ref: tatoeba:724401
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sadhen
+  source_ref: tatoeba:1428124
+  review: needs_review
+- id: zh.s.t6057860
+  type: sentence
+  text: 我是你爸爸。
+  roman: Wǒ shì nǐ bàba.
+  tokens:
+  - 我
+  - 是
+  - 你
+  - 爸爸
+  gloss:
+    en: I am your father.
+    id: Aku ayahmu.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: wwkudu
+      source_ref: tatoeba:1769470
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: verdastelo9604
+  source_ref: tatoeba:6057860
+  review: needs_review
+- id: zh.s.t8865619
+  type: sentence
+  text: 谁是你爸爸？
+  roman: Shéi shì nǐ bàba?
+  tokens:
+  - 谁
+  - 是
+  - 你
+  - 爸爸
+  gloss:
+    en: Who's your daddy?
+    id: Siapa ayahmu?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Hybrid
+      source_ref: tatoeba:3428703
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: iiujik
+  source_ref: tatoeba:8865619
+  review: needs_review
+- id: zh.s.t8888035
+  type: sentence
+  text: 我和他认识。
+  roman: Wǒ hé tā rènshi.
+  tokens:
+  - 我
+  - 和
+  - 他
+  - 认识
+  gloss:
+    en: I am acquainted with him.
+    id: Aku kenal dia.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CH
+      source_ref: tatoeba:260219
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: crescat
+  source_ref: tatoeba:8888035
+  review: needs_review

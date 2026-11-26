@@ -100,3 +100,155 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:飞机[fei1 ji1]
   review: needs_review
+- id: zh.s.t10961141
+  type: sentence
+  text: 不坐了。
+  roman: Bù zuò le.
+  tokens:
+  - 不
+  - 坐
+  - 了
+  gloss:
+    en: No more sitting.
+    id: Nggak duduk lagi.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: LeviHighway
+      source_ref: tatoeba:13112418
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: xjjAstrus
+  source_ref: tatoeba:10961141
+  review: needs_review
+- id: zh.s.t13243127
+  type: sentence
+  text: 我想去。
+  roman: Wǒ xiǎng qù.
+  tokens:
+  - 我
+  - 想
+  - 去
+  gloss:
+    en: I want to go.
+    id: Aku mau pergi.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Spamster
+      source_ref: tatoeba:1977717
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: atitarev
+  source_ref: tatoeba:13243127
+  review: needs_review
+- id: zh.s.t333982
+  type: sentence
+  text: 她来了！
+  roman: Tā lái le!
+  tokens:
+  - 她
+  - 来
+  - 了
+  gloss:
+    en: She's coming!
+    id: Dia datang!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: alec
+      source_ref: tatoeba:1211537
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:333982
+  review: needs_review
+- id: zh.s.t9007207
+  type: sentence
+  text: 我不去。
+  roman: Wǒ bù qù.
+  tokens:
+  - 我
+  - 不
+  - 去
+  gloss:
+    en: I will not go.
+    id: Aku nggak pergi.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: ddnktr
+      source_ref: tatoeba:9932288
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: ming2553
+  source_ref: tatoeba:9007207
+  review: needs_review
+- id: zh.s.t10966812
+  type: sentence
+  text: 你叫他来！
+  roman: Nǐ jiào tā lái!
+  tokens:
+  - 你
+  - 叫
+  - 他
+  - 来
+  gloss:
+    en: You call him over!
+    id: Kamu suruh dia ke sini!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: LeviHighway
+      source_ref: tatoeba:13112402
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: xjjAstrus
+  source_ref: tatoeba:10966812
+  review: needs_review
+- id: zh.s.t12569589
+  type: sentence
+  text: 她来了吗？
+  roman: Tā lái le ma?
+  tokens:
+  - 她
+  - 来
+  - 了
+  - 吗
+  gloss:
+    en: Has she come?
+    id: Dia sudah datang?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: BraveSentry
+      source_ref: tatoeba:1791289
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: lnvq
+  source_ref: tatoeba:12569589
+  review: needs_review

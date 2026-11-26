@@ -116,3 +116,153 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:怎么样[zen3 me5 yang4]
   review: needs_review
+- id: zh.s.t10961152
+  type: sentence
+  text: 都很好。
+  roman: Dōu hěn hǎo.
+  tokens:
+  - 都
+  - 很
+  - 好
+  gloss:
+    en: All good.
+    id: Semuanya baik.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Tatoebauser
+      source_ref: tatoeba:11841456
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: xjjAstrus
+  source_ref: tatoeba:10961152
+  review: needs_review
+- id: zh.s.t13968324
+  type: sentence
+  text: 她很好。
+  roman: Tā hěn hǎo.
+  tokens:
+  - 她
+  - 很
+  - 好
+  gloss:
+    en: She is kind.
+    id: Dia baik.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:315182
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Adelpa
+  source_ref: tatoeba:13968324
+  review: needs_review
+- id: zh.s.t13968327
+  type: sentence
+  text: 他很好。
+  roman: Tā hěn hǎo.
+  tokens:
+  - 他
+  - 很
+  - 好
+  gloss:
+    en: He is kind.
+    id: Dia baik.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:324290
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Adelpa
+  source_ref: tatoeba:13968327
+  review: needs_review
+- id: zh.s.t4881733
+  type: sentence
+  text: 你很好。
+  roman: Nǐ hěn hǎo.
+  tokens:
+  - 你
+  - 很
+  - 好
+  gloss:
+    en: You are good.
+    id: Kamu baik.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: cntrational
+      source_ref: tatoeba:1120755
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: musclegirlxyp
+  source_ref: tatoeba:4881733
+  review: needs_review
+- id: zh.s.t519740
+  type: sentence
+  text: 这很好。
+  roman: Zhè hěn hǎo.
+  tokens:
+  - 这
+  - 很
+  - 好
+  gloss:
+    en: This is very good.
+    id: Ini bagus sekali.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:55871
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:519740
+  review: needs_review
+- id: zh.s.t6059538
+  type: sentence
+  text: 我很冷。
+  roman: Wǒ hěn lěng.
+  tokens:
+  - 我
+  - 很
+  - 冷
+  gloss:
+    en: I was so cold.
+    id: Aku kedinginan sekali.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2549720
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: verdastelo9604
+  source_ref: tatoeba:6059538
+  review: needs_review

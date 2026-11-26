@@ -100,3 +100,158 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:本[ben3]
   review: needs_review
+- id: zh.s.t13825930
+  type: sentence
+  text: 我是朋友。
+  roman: Wǒ shì péngyou.
+  tokens:
+  - 我
+  - 是
+  - 朋友
+  gloss:
+    en: I'm a friend.
+    id: Aku teman.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2247890
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: LeviHighway
+  source_ref: tatoeba:13825930
+  review: needs_review
+- id: zh.s.t2241812
+  type: sentence
+  text: 他没有朋友。
+  roman: Tā méiyǒu péngyou.
+  tokens:
+  - 他
+  - 没有
+  - 朋友
+  gloss:
+    en: He doesn't have any friends.
+    id: Dia nggak punya teman.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:284930
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sadhen
+  source_ref: tatoeba:2241812
+  review: needs_review
+- id: zh.s.t333784
+  type: sentence
+  text: 我们是同学。
+  roman: Wǒmen shì tóngxué.
+  tokens:
+  - 我们
+  - 是
+  - 同学
+  gloss:
+    en: We're classmates.
+    id: Kita teman sekelas.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:247946
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: fuwafuwa
+      source_ref: tatoeba:940015
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:333784
+  review: needs_review
+- id: zh.s.t510745
+  type: sentence
+  text: 你有一些书。
+  roman: Nǐ yǒu yīxiē shū.
+  tokens:
+  - 你
+  - 有
+  - 一些
+  - 书
+  gloss:
+    en: You have some books.
+    id: Kamu punya beberapa buku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: LimeGreenTeknii
+      source_ref: tatoeba:16791
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:510745
+  review: needs_review
+- id: zh.s.t5624940
+  type: sentence
+  text: 我们是朋友。
+  roman: Wǒmen shì péngyou.
+  tokens:
+  - 我们
+  - 是
+  - 朋友
+  gloss:
+    en: We were friends.
+    id: Kita teman.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:1553332
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: verdastelo9604
+  source_ref: tatoeba:5624940
+  review: needs_review
+- id: zh.s.t7768285
+  type: sentence
+  text: 我没有朋友。
+  roman: Wǒ méiyǒu péngyou.
+  tokens:
+  - 我
+  - 没有
+  - 朋友
+  gloss:
+    en: I have no friends.
+    id: Aku tidak punya teman.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: BlueLagoon
+      source_ref: tatoeba:478568
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Pacific
+      source_ref: tatoeba:11349447
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: jiangche
+  source_ref: tatoeba:7768285
+  review: needs_review

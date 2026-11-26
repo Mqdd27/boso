@@ -116,3 +116,157 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:小姐[xiao3 jie5]
   review: needs_review
+- id: zh.s.t1050441
+  type: sentence
+  text: 我是老师。
+  roman: Wǒ shì lǎoshī.
+  tokens:
+  - 我
+  - 是
+  - 老师
+  gloss:
+    en: I'm a teacher.
+    id: Saya seorang guru.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:256929
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: HAGNi
+      source_ref: tatoeba:12297723
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: tatomeimei
+  source_ref: tatoeba:1050441
+  review: needs_review
+- id: zh.s.t1163561
+  type: sentence
+  text: 你是学生。
+  roman: Nǐ shì xuésheng.
+  tokens:
+  - 你
+  - 是
+  - 学生
+  gloss:
+    en: You are a student.
+    id: Kamu murid.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: cntrational
+      source_ref: tatoeba:1163562
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: cntrational
+  source_ref: tatoeba:1163561
+  review: needs_review
+- id: zh.s.t2370671
+  type: sentence
+  text: 我是医生。
+  roman: Wǒ shì yīshēng.
+  tokens:
+  - 我
+  - 是
+  - 医生
+  gloss:
+    en: I'm a doctor.
+    id: Saya dokter.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:256018
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: HAGNi
+      source_ref: tatoeba:12392763
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: anndiana
+  source_ref: tatoeba:2370671
+  review: needs_review
+- id: zh.s.t334971
+  type: sentence
+  text: 她是医生。
+  roman: Tā shì yīshēng.
+  tokens:
+  - 她
+  - 是
+  - 医生
+  gloss:
+    en: She is a doctor.
+    id: Dia dokter.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CC
+      source_ref: tatoeba:309938
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:334971
+  review: needs_review
+- id: zh.s.t348032
+  type: sentence
+  text: 他是医生。
+  roman: Tā shì yīshēng.
+  tokens:
+  - 他
+  - 是
+  - 医生
+  gloss:
+    en: He is a doctor.
+    id: Dia dokter.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:293611
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: zhouj1955
+  source_ref: tatoeba:348032
+  review: needs_review
+- id: zh.s.t5321363
+  type: sentence
+  text: 我不是医生
+  roman: Wǒ búshì yīshēng
+  tokens:
+  - 我
+  - 不是
+  - 医生
+  gloss:
+    en: I'm not a doctor.
+    id: Aku bukan dokter
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: FiRez
+      source_ref: tatoeba:1194034
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: boyhero
+  source_ref: tatoeba:5321363
+  review: needs_review

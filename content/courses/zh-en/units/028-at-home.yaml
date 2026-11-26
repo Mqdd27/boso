@@ -100,3 +100,155 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:开[kai1]
   review: needs_review
+- id: zh.s.t2357582
+  type: sentence
+  text: 你睡觉吗？
+  roman: Nǐ shuìjiào ma?
+  tokens:
+  - 你
+  - 睡觉
+  - 吗
+  gloss:
+    en: Are you sleeping?
+    id: Kamu tidur?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2244966
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: anndiana
+  source_ref: tatoeba:2357582
+  review: needs_review
+- id: zh.s.t380912
+  type: sentence
+  text: 我想睡觉。
+  roman: Wǒ xiǎng shuìjiào.
+  tokens:
+  - 我
+  - 想
+  - 睡觉
+  gloss:
+    en: I want to sleep.
+    id: Aku mau tidur.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:321870
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: ver
+  source_ref: tatoeba:380912
+  review: needs_review
+- id: zh.s.t5580848
+  type: sentence
+  text: 她在睡觉。
+  roman: Tā zài shuìjiào.
+  tokens:
+  - 她
+  - 在
+  - 睡觉
+  gloss:
+    en: She is sleeping.
+    id: Dia lagi tidur.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: TracyPoff
+      source_ref: tatoeba:7213191
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: grindeldore
+  source_ref: tatoeba:5580848
+  review: needs_review
+- id: zh.s.t5580849
+  type: sentence
+  text: 我在睡觉。
+  roman: Wǒ zài shuìjiào.
+  tokens:
+  - 我
+  - 在
+  - 睡觉
+  gloss:
+    en: I'm sleeping.
+    id: Aku sedang tidur.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2203803
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: HAGNi
+      source_ref: tatoeba:13732833
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: grindeldore
+  source_ref: tatoeba:5580849
+  review: needs_review
+- id: zh.s.t5580851
+  type: sentence
+  text: 你在睡觉。
+  roman: Nǐ zài shuìjiào.
+  tokens:
+  - 你
+  - 在
+  - 睡觉
+  gloss:
+    en: You are sleeping.
+    id: Kamu lagi tidur.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Apollogeist
+      source_ref: tatoeba:10808548
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: grindeldore
+  source_ref: tatoeba:5580851
+  review: needs_review
+- id: zh.s.t5581063
+  type: sentence
+  text: 我睡觉了。
+  roman: Wǒ shuìjiào le.
+  tokens:
+  - 我
+  - 睡觉
+  - 了
+  gloss:
+    en: I am going to sleep.
+    id: Aku tidur dulu.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Disconnect
+      source_ref: tatoeba:845539
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: grindeldore
+  source_ref: tatoeba:5581063
+  review: needs_review

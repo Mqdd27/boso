@@ -13,6 +13,7 @@ dependencies = [
     "numpy<2",
     # g2pkk (Korean G2P inside MeloTTS) needs a Korean mecab; it would pip-install this at runtime.
     "python-mecab-ko",
+    "pyworld>=0.3.5",
 ]
 
 [tool.uv]

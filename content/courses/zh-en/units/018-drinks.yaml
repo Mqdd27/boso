@@ -100,3 +100,156 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:一点儿[yi1 dian3 r5]
   review: needs_review
+- id: zh.s.t878337
+  type: sentence
+  text: 我想吃
+  roman: Wǒ xiǎng chī
+  tokens:
+  - 我
+  - 想
+  - 吃
+  gloss:
+    en: I would like to eat.
+    id: Aku mau makan
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: pauldhunt
+      source_ref: tatoeba:895907
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: aye1995
+  source_ref: tatoeba:878337
+  review: needs_review
+- id: zh.s.t813490
+  type: sentence
+  text: 我想你。
+  roman: Wǒ xiǎng nǐ.
+  tokens:
+  - 我
+  - 想
+  - 你
+  gloss:
+    en: I miss you.
+    id: Aku kangen kamu.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: brauliobezerra
+      source_ref: tatoeba:1308
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:813490
+  review: needs_review
+- id: zh.s.t10182785
+  type: sentence
+  text: 谁喝了水？
+  roman: Shéi hē le shuǐ?
+  tokens:
+  - 谁
+  - 喝
+  - 了
+  - 水
+  gloss:
+    en: Who drank the water?
+    id: Siapa yang minum airnya?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: ddnktr
+      source_ref: tatoeba:10181761
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: slo_oth
+  source_ref: tatoeba:10182785
+  review: needs_review
+- id: zh.s.t1325310
+  type: sentence
+  text: 我们想他。
+  roman: Wǒmen xiǎng tā.
+  tokens:
+  - 我们
+  - 想
+  - 他
+  gloss:
+    en: We think of him.
+    id: Kami kangen dia.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: BobbyLee
+      source_ref: tatoeba:9408752
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Vortarulo
+  source_ref: tatoeba:1325310
+  review: needs_review
+- id: zh.s.t1493378
+  type: sentence
+  text: 你想吃吗？
+  roman: Nǐ xiǎng chī ma?
+  tokens:
+  - 你
+  - 想
+  - 吃
+  - 吗
+  gloss:
+    en: Do you want to eat?
+    id: Kamu mau makan?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: marloncori
+      source_ref: tatoeba:773323
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: Shishir
+  source_ref: tatoeba:1493378
+  review: needs_review
+- id: zh.s.t334429
+  type: sentence
+  text: 你想我了？
+  roman: Nǐ xiǎng wǒ le?
+  tokens:
+  - 你
+  - 想
+  - 我
+  - 了
+  gloss:
+    en: Did you miss me?
+    id: Kamu kangen aku?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:1561
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:334429
+  review: needs_review

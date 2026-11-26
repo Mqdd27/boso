@@ -51,7 +51,7 @@ class Fake:
             self.read.append(job["text"])
             Path(job["wav"]).write_text(job["text"], encoding="utf-8")
 
-    def encode(self, wav: Path, opus: Path) -> None:
+    def encode(self, wav: Path, opus: Path, af: str = "") -> None:
         opus.write_text(f"opus:{wav.read_text(encoding='utf-8')}", encoding="utf-8")
 
 
@@ -128,3 +128,16 @@ def test_pack_without_audio_is_valid_and_drops_stale_files(courses, tmp_path):
     assert audio == 0 and not stale.exists()
     course = json.loads((out / "course.json").read_text(encoding="utf-8"))
     assert check(course, "course", "course.json") == []
+
+
+def test_single_mandarin_syllables_get_their_tone_redrawn():
+    assert [tts.tone_of({"tones": t}) for t in ["ma3", "ni3 hao3", "ma5", "nü3"]] == [
+        3,
+        None,
+        None,
+        3,
+    ]
+    assert tts.tone_of({}) is None
+    # Korean and multi-syllable keys don't change (their cached audio stays valid).
+    assert tts.cache_key("你好", "zh") == tts.cache_key("你好", "zh", None)
+    assert tts.cache_key("马", "zh", 3) != tts.cache_key("马", "zh")

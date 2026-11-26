@@ -84,3 +84,57 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:五[wu3]
   review: needs_review
+- id: zh.s.t13964382
+  type: sentence
+  text: 一，二，三！
+  roman: Yī, èr, sān!
+  tokens:
+  - 一
+  - 二
+  - 三
+  gloss:
+    en: One, two, three!
+    id: Satu, dua, tiga!
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: vxern
+      source_ref: tatoeba:12938295
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: jan_OkulaJu
+  source_ref: tatoeba:13964382
+  review: needs_review
+- id: zh.s.t12993361
+  type: sentence
+  text: 一，二，三，四，五。
+  roman: Yī, èr, sān, sì, wǔ.
+  tokens:
+  - 一
+  - 二
+  - 三
+  - 四
+  - 五
+  gloss:
+    en: One, two, three, four, five.
+    id: Satu, dua, tiga, empat, lima.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: XZJqz
+      source_ref: tatoeba:12993387
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: HAGNi
+      source_ref: tatoeba:13012298
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: XZJqz
+  source_ref: tatoeba:12993361
+  review: needs_review

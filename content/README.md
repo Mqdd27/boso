@@ -136,6 +136,21 @@ uv run pipeline pack ko-en            # copies audio into dist/ko-en/audio/ and 
 - `item.audio` is a build artefact: it is set in the pack only, never written into `courses/`.
   `pack` without generated audio still works (warning); the app then uses the browser's voice.
 
+### Mandarin (zh-en)
+
+```bash
+uv run pipeline fetch cedict && uv run pipeline fetch hsk   # CC-CEDICT + HSK 2.0 word lists
+uv run pipeline pinyin zh-en           # pinyin + tones units 001–009 from pinyin.yaml
+uv run pipeline build zh-en --level 1  # HSK1 vocab units (claude -p groups, picks senses, ID glosses)
+uv run pipeline sentences zh-en        # Tatoeba Mandarin sentences (jieba words, pypinyin)
+uv run pipeline tts zh-en && uv run pipeline pack zh-en
+```
+
+- Voice: MeloTTS-Chinese (`ZH`), +20 dB before trimming (it comes out much quieter than Korean).
+- MeloTTS says single syllables with unreliable tones, so every single-syllable item (pinyin units,
+  one-character words) gets its pitch redrawn to the textbook tone shape with WORLD (pyworld) in
+  `tts/synth.py`. Neutral-tone syllables keep MeloTTS's pitch.
+
 ## Course pack format
 
 `../schema/course-pack.schema.json` (JSON Schema draft 2020-12) defines:

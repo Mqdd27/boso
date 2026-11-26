@@ -116,3 +116,153 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:会[hui4]
   review: needs_review
+- id: zh.s.t9969972
+  type: sentence
+  text: 我想读。
+  roman: Wǒ xiǎng dú.
+  tokens:
+  - 我
+  - 想
+  - 读
+  gloss:
+    en: I want to read it.
+    id: Aku mau baca.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:3823485
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:9969972
+  review: needs_review
+- id: zh.s.t10756037
+  type: sentence
+  text: 你说什么？
+  roman: Nǐ shuō shénme?
+  tokens:
+  - 你
+  - 说
+  - 什么
+  gloss:
+    en: What did you say?
+    id: Kamu bilang apa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:433423
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: LeeSooHa
+  source_ref: tatoeba:10756037
+  review: needs_review
+- id: zh.s.t14067858
+  type: sentence
+  text: 我不会读。
+  roman: Wǒ búhuì dú.
+  tokens:
+  - 我
+  - 不会
+  - 读
+  gloss:
+    en: I can't pronounce it.
+    id: Aku nggak bisa bacanya.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: Eccles17
+      source_ref: tatoeba:6577442
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: CanonNi
+  source_ref: tatoeba:14067858
+  review: needs_review
+- id: zh.s.t1470423
+  type: sentence
+  text: 怎么会有？
+  roman: Zěnme huì yǒu?
+  tokens:
+  - 怎么
+  - 会
+  - 有
+  gloss:
+    en: Why would there be?
+    id: Kok bisa ada?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: francaisr0wlet
+      source_ref: tatoeba:8261956
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: bfsutian
+  source_ref: tatoeba:1470423
+  review: needs_review
+- id: zh.s.t4970124
+  type: sentence
+  text: 怎么会呢？
+  roman: Zěnme huì ne?
+  tokens:
+  - 怎么
+  - 会
+  - 呢
+  gloss:
+    en: How come?
+    id: Kok bisa begitu?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: freddy1
+      source_ref: tatoeba:2116272
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: wzhd
+  source_ref: tatoeba:4970124
+  review: needs_review
+- id: zh.s.t796833
+  type: sentence
+  text: 我不能说。
+  roman: Wǒ bùnéng shuō.
+  tokens:
+  - 我
+  - 不能
+  - 说
+  gloss:
+    en: I can't say.
+    id: Aku nggak bisa bilang.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:24897
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:796833
+  review: needs_review

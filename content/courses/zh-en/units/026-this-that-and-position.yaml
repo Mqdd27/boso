@@ -116,3 +116,156 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:下[xia4]
   review: needs_review
+- id: zh.s.t347291
+  type: sentence
+  text: 这是书。
+  roman: Zhè shì shū.
+  tokens:
+  - 这
+  - 是
+  - 书
+  gloss:
+    en: This is a book.
+    id: Ini buku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:55399
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: zhouj1955
+  source_ref: tatoeba:347291
+  review: needs_review
+- id: zh.s.t4789686
+  type: sentence
+  text: 那是谁？
+  roman: Nà shì shéi?
+  tokens:
+  - 那
+  - 是
+  - 谁
+  gloss:
+    en: Who is that?
+    id: Itu siapa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: dafp
+      source_ref: tatoeba:2176388
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: 400S
+  source_ref: tatoeba:4789686
+  review: needs_review
+- id: zh.s.t1314463
+  type: sentence
+  text: 这是谁的？
+  roman: Zhè shì shéi de?
+  tokens:
+  - 这
+  - 是
+  - 谁
+  - 的
+  gloss:
+    en: Whose is this?
+    id: Ini punya siapa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2302
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: vicch
+  source_ref: tatoeba:1314463
+  review: needs_review
+- id: zh.s.t465906
+  type: sentence
+  text: 那是什么？
+  roman: Nà shì shénme?
+  tokens:
+  - 那
+  - 是
+  - 什么
+  gloss:
+    en: What is over there?
+    id: Itu apa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:25235
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:465906
+  review: needs_review
+- id: zh.s.t4760167
+  type: sentence
+  text: 这是我的。
+  roman: Zhè shì wǒ de.
+  tokens:
+  - 这
+  - 是
+  - 我
+  - 的
+  gloss:
+    en: This is mine.
+    id: Ini punyaku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2233709
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: ryanwoo
+  source_ref: tatoeba:4760167
+  review: needs_review
+- id: zh.s.t6728904
+  type: sentence
+  text: 那是我的。
+  roman: Nà shì wǒ de.
+  tokens:
+  - 那
+  - 是
+  - 我
+  - 的
+  gloss:
+    en: That is mine.
+    id: Itu punyaku.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:67126
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: verdastelo9604
+  source_ref: tatoeba:6728904
+  review: needs_review

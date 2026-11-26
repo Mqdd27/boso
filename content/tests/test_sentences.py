@@ -52,13 +52,13 @@ def tatoeba_files(tmp_path) -> dict[str, Path]:
 
 def test_tatoeba_keeps_only_attributable_clean_sentences(tatoeba_files):
     pairs, stats = tatoeba.load(tatoeba_files)
-    assert [p.kor.id for p in pairs] == [1, 4]
+    assert [p.target.id for p in pairs] == [1, 4]
     assert stats["dropped: no author"] == 1 and stats["dropped: tag"] == 1
     first, cc0 = pairs
-    assert first.kor.author == "minsu" and first.kor.license == tatoeba.CC_BY
+    assert first.target.author == "minsu" and first.target.license == tatoeba.CC_BY
     assert first.eng.id == 10 and first.eng.author == "anna"  # oldest translation
     assert first.ind.text == "Sudah makan?" and first.ind.author == "budi"
-    assert cc0.kor.license == tatoeba.CC0
+    assert cc0.target.license == tatoeba.CC0
     assert cc0.eng.id == 13 and cc0.eng.license == tatoeba.CC0  # 12 is tagged
     assert cc0.ind is None
 

@@ -116,3 +116,162 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:年[nian2]
   review: needs_review
+- id: zh.s.t385098
+  type: sentence
+  text: 今天星期几？
+  roman: Jīntiān xīngqī jǐ?
+  tokens:
+  - 今天
+  - 星期
+  - 几
+  gloss:
+    en: What day is it today?
+    id: Hari ini hari apa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: minshirui
+      source_ref: tatoeba:476431
+    id:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: HAGNi
+      source_ref: tatoeba:13678462
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sysko
+  source_ref: tatoeba:385098
+  review: needs_review
+- id: zh.s.t408909
+  type: sentence
+  text: 今天是几号？
+  roman: Jīntiān shì jǐhào?
+  tokens:
+  - 今天
+  - 是
+  - 几号
+  gloss:
+    en: What's the date today?
+    id: Hari ini tanggal berapa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CM
+      source_ref: tatoeba:408906
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:408909
+  review: needs_review
+- id: zh.s.t10284565
+  type: sentence
+  text: 我昨天喝了茶。
+  roman: Wǒ zuótiān hē le chá.
+  tokens:
+  - 我
+  - 昨天
+  - 喝
+  - 了
+  - 茶
+  gloss:
+    en: I drank tea yesterday.
+    id: Kemarin aku minum teh.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CM
+      source_ref: tatoeba:3157604
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: DaoSeng
+  source_ref: tatoeba:10284565
+  review: needs_review
+- id: zh.s.t1920797
+  type: sentence
+  text: 今天我四岁了。
+  roman: Jīntiān wǒ sìsuì le.
+  tokens:
+  - 今天
+  - 我
+  - 四岁
+  - 了
+  gloss:
+    en: Today I turn four years old.
+    id: Hari ini aku umur empat tahun.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: lukaszpp
+      source_ref: tatoeba:464254
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fercheung
+  source_ref: tatoeba:1920797
+  review: needs_review
+- id: zh.s.t10171225
+  type: sentence
+  text: 昨天我吃了米饭。
+  roman: Zuótiān wǒ chī le mǐfàn.
+  tokens:
+  - 昨天
+  - 我
+  - 吃
+  - 了
+  - 米饭
+  gloss:
+    en: Yesterday I ate rice.
+    id: Kemarin aku makan nasi.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: MarijnKp
+      source_ref: tatoeba:7356202
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:10171225
+  review: needs_review
+- id: zh.s.t11088077
+  type: sentence
+  text: 今天你喝水了吗？
+  roman: Jīntiān nǐ hēshuǐ le ma?
+  tokens:
+  - 今天
+  - 你
+  - 喝水
+  - 了
+  - 吗
+  gloss:
+    en: Did you drink water today?
+    id: Hari ini kamu sudah minum air?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: MrJuice
+      source_ref: tatoeba:11088080
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: MrJuice
+  source_ref: tatoeba:11088077
+  review: needs_review

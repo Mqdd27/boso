@@ -76,5 +76,29 @@
     "sha256": "492285c166573094ce51bc70d78fa1ee83b21b8afdccbe7fd0e8bacb803a08c1",
     "url": "https://raw.githubusercontent.com/glxxyz/hskhsk.com/8a6f229c699e2fd7ac8708156c55c3afb2be7e1f/data/lists/HSK%20Official%202012%20L2.txt",
     "fetched": "2026-11-26"
+  },
+  "tatoeba:cmn_sentences_detailed": {
+    "file": "tatoeba/cmn_sentences_detailed.tsv.bz2",
+    "sha256": "48b42fd1531c8a75c1f586a9b287c07910f3dbc719219e62970bef70cfcd42eb",
+    "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn_sentences_detailed.tsv.bz2",
+    "fetched": "2026-11-26"
+  },
+  "tatoeba:cmn-eng_links": {
+    "file": "tatoeba/cmn-eng_links.tsv.bz2",
+    "sha256": "8f576a5de794ccc86ab7f8f4e156e3f37c72b1d24d43e57c50dcd8d35b22443f",
+    "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn-eng_links.tsv.bz2",
+    "fetched": "2026-11-26"
+  },
+  "tatoeba:cmn-ind_links": {
+    "file": "tatoeba/cmn-ind_links.tsv.bz2",
+    "sha256": "1da4f014dc68706cf4863088b9f91eff22eb0d08e6cde0011c1d97d72a1065ff",
+    "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn-ind_links.tsv.bz2",
+    "fetched": "2026-11-26"
+  },
+  "tatoeba:cmn_tags": {
+    "file": "tatoeba/cmn_tags.tsv.bz2",
+    "sha256": "ee4fa249518ae85641b5508d5100f3796c8833502175ae589fde81765c399e96",
+    "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn_tags.tsv.bz2",
+    "fetched": "2026-11-26"
   }
 }

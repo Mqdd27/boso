@@ -133,3 +133,155 @@ items:
   license: CC BY-SA 4.0
   source_ref: cc-cedict:怎么[zen3 me5]
   review: needs_review
+- id: zh.s.t1750497
+  type: sentence
+  text: 你二了。
+  roman: Nǐ èr le.
+  tokens:
+  - 你
+  - 二
+  - 了
+  gloss:
+    en: You're stupid.
+    id: Kamu bego.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2123495
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: sadhen
+  source_ref: tatoeba:1750497
+  review: needs_review
+- id: zh.s.t3378133
+  type: sentence
+  text: 我不高兴。
+  roman: Wǒ bù gāoxìng.
+  tokens:
+  - 我
+  - 不
+  - 高兴
+  gloss:
+    en: I am not happy.
+    id: Aku nggak senang.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CM
+      source_ref: tatoeba:3378134
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: GlossaMatik
+  source_ref: tatoeba:3378133
+  review: needs_review
+- id: zh.s.t5863313
+  type: sentence
+  text: 人人都好。
+  roman: Rénrén dōu hǎo.
+  tokens:
+  - 人人
+  - 都
+  - 好
+  gloss:
+    en: Everybody is fine.
+    id: Semua orang baik-baik saja.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:1495895
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: verdastelo9604
+  source_ref: tatoeba:5863313
+  review: needs_review
+- id: zh.s.t7771865
+  type: sentence
+  text: 你怎么了？
+  roman: Nǐ zěnme le?
+  tokens:
+  - 你
+  - 怎么
+  - 了
+  gloss:
+    en: What is the matter with you?
+    id: Kamu kenapa?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:25200
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: jiangche
+  source_ref: tatoeba:7771865
+  review: needs_review
+- id: zh.s.t799306
+  type: sentence
+  text: 我有了吗？
+  roman: Wǒ yǒu le ma?
+  tokens:
+  - 我
+  - 有
+  - 了
+  - 吗
+  gloss:
+    en: Am I pregnant?
+    id: Apa aku hamil?
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: lukaszpp
+      source_ref: tatoeba:434202
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: fucongcong
+  source_ref: tatoeba:799306
+  review: needs_review
+- id: zh.s.t8853827
+  type: sentence
+  text: 我叫了你。
+  roman: Wǒ jiào le nǐ.
+  tokens:
+  - 我
+  - 叫
+  - 了
+  - 你
+  gloss:
+    en: I called you.
+    id: Aku sudah memanggilmu.
+  gloss_sources:
+    en:
+      source: tatoeba
+      license: CC BY 2.0 FR
+      author: CK
+      source_ref: tatoeba:2245636
+    id:
+      source: boso
+      license: CC BY-SA 4.0
+  source: tatoeba
+  license: CC BY 2.0 FR
+  author: iiujik
+  source_ref: tatoeba:8853827
+  review: needs_review
