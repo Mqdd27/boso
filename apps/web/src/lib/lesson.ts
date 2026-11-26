@@ -46,11 +46,12 @@ export const cards = (item: Item) => item.tokens ?? [item.text];
 
 const bare = (word: string) => word.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, '');
 
-/** Romanization per card: `roman` has one word per eojeol, like `text`, so they line up. */
+/** Romanization per card: `roman` has one word per eojeol (Korean) or per card (Chinese, written
+ *  without spaces), so they line up. */
 export function cardRoman(item: Item): Map<string, string> {
 	const roman = item.roman.split(' ').map(bare);
-	const words = item.text.split(' ');
 	const tokens = cards(item);
+	const words = item.text.includes(' ') ? item.text.split(' ') : tokens;
 	if (roman.length !== words.length || tokens.length !== words.length) return new Map();
 	return new Map(tokens.map((t, n) => [t, roman[n]]));
 }

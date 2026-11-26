@@ -313,3 +313,22 @@ describe('pinyin units', () => {
 		expect(lesson(false).some((e) => e.kind === 'tone')).toBe(false);
 	});
 });
+
+describe('Chinese sentences', () => {
+	it('line pinyin up with the word-bank cards', () => {
+		const item = {
+			...course.units[1].items[0],
+			id: 'zh.s.t1',
+			type: 'sentence' as const,
+			text: '她是我女儿。',
+			roman: "Tā shì wǒ nǚ'ér.",
+			tokens: ['她', '是', '我', '女儿']
+		};
+		expect([...cardRoman(item)]).toEqual([
+			['她', 'Tā'],
+			['是', 'shì'],
+			['我', 'wǒ'],
+			['女儿', "nǚ'ér"]
+		]);
+	});
+});
