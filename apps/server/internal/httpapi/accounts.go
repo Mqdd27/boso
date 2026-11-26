@@ -43,6 +43,7 @@ func (a *accounts) routes(mux *http.ServeMux) {
 	mux.HandleFunc("POST /api/login", a.login)
 	mux.HandleFunc("POST /api/logout", a.logout)
 	mux.HandleFunc("GET /api/me", a.me)
+	mux.HandleFunc("POST /api/sync", a.sync)
 }
 
 func (a *accounts) signup(w http.ResponseWriter, r *http.Request) {
@@ -184,16 +185,22 @@ func cookie(r *http.Request, value string, maxAge int) *http.Cookie {
 // preflight, which this API never allows (CSRF protection together with SameSite=Lax).
 func readCredentials(w http.ResponseWriter, r *http.Request) (credentials, bool) {
 	var c credentials
+	ok := readJSON(w, r, 4096, &c)
+	c.Email = strings.TrimSpace(c.Email)
+	return c, ok
+}
+
+// readJSON decodes a JSON request body of at most limit bytes into v (JSON only, see above).
+func readJSON(w http.ResponseWriter, r *http.Request, limit int64, v any) bool {
 	if t, _, _ := mime.ParseMediaType(r.Header.Get("Content-Type")); t != "application/json" {
 		fail(w, http.StatusUnsupportedMediaType, "json_only")
-		return c, false
+		return false
 	}
-	if err := json.NewDecoder(http.MaxBytesReader(w, r.Body, 4096)).Decode(&c); err != nil {
+	if err := json.NewDecoder(http.MaxBytesReader(w, r.Body, limit)).Decode(v); err != nil {
 		fail(w, http.StatusBadRequest, "bad_json")
-		return c, false
+		return false
 	}
-	c.Email = strings.TrimSpace(c.Email)
-	return c, true
+	return true
 }
 
 func writeJSON(w http.ResponseWriter, code int, v any) {
