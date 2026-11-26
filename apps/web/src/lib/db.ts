@@ -8,6 +8,7 @@ export type UnitProgress = {
 	unit: string;
 	lessons: number[];
 	completedAt?: string;
+	updatedAt?: string; // sync version (missing on rows from before sync)
 };
 export type Setting = { key: string; value: unknown };
 
@@ -87,6 +88,7 @@ export async function recordLesson(r: {
 		};
 		if (!p.lessons.includes(r.lesson)) p.lessons = [...p.lessons, r.lesson].sort();
 		if (!p.completedAt && p.lessons.length >= LESSONS_PER_UNIT) p.completedAt = ts;
+		p.updatedAt = ts;
 		await db.unitProgress.put(p);
 		await itemStats(r.results, ts);
 	});

@@ -6,13 +6,24 @@
 	import { loadSettings, saveSettings, settings } from '#lib/settings.svelte.js';
 	import type { LayoutProps } from './$types';
 	import NavBar from '#lib/components/NavBar.svelte';
+	import { sync } from '#lib/sync.js';
 	import './layout.css';
 
 	let { children }: LayoutProps = $props();
 
 	const ready = loadSettings();
 	let loaded = $state(false);
-	void ready.then(() => (loaded = true));
+	void ready.then(() => {
+		loaded = true;
+		void sync();
+	});
+
+	// Progress syncs when the app opens, after each lesson (Player) and when back online.
+	$effect(() => {
+		const online = () => void sync();
+		addEventListener('online', online);
+		return () => removeEventListener('online', online);
+	});
 
 	$effect(() => {
 		document.documentElement.lang = getLocale();

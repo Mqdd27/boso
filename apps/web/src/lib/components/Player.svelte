@@ -2,6 +2,7 @@
 	import { resolve } from '$app/paths';
 	import { goto } from '$app/navigation';
 	import { db, recordLesson } from '#lib/db.js';
+	import { sync } from '#lib/sync.js';
 	import {
 		generateLesson,
 		arrangedRight,
@@ -170,6 +171,7 @@
 		}
 		const xp = lessonXp(mistakes);
 		await recordLesson({ course, unit: unit.id, lesson, xp, results, review });
+		void sync();
 		const totals = dailyTotals(await db.activity.toArray());
 		done = {
 			xp,

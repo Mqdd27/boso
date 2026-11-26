@@ -1,8 +1,13 @@
 import { expect, test, type Page } from '@playwright/test';
+import { mockSpeech, playLesson } from './helpers';
 
-/** A fake /api with one user (ana@example.com / hunter22!). */
-async function fakeServer(page: Page) {
+type Doc = { kind: string; id: string; v: string; data: unknown; seq?: number };
+
+/** A fake /api with one user (ana@example.com / hunter22!) and the server's sync rules
+ *  (larger v wins, changes pulled by seq). Pass the same `docs` to two pages = two devices. */
+async function fakeServer(page: Page, docs = new Map<string, Doc>()) {
 	let user: string | null = null;
+	let seq = Math.max(0, ...[...docs.values()].map((d) => d.seq ?? 0));
 	await page.route('**/api/**', async (route) => {
 		const req = route.request();
 		const path = new URL(req.url()).pathname;
@@ -11,6 +16,16 @@ async function fakeServer(page: Page) {
 		if (path === '/api/logout') {
 			user = null;
 			return route.fulfill({ status: 204 });
+		}
+		if (path === '/api/sync') {
+			if (!user) return send(401, { error: 'not_logged_in' });
+			const body = req.postDataJSON() as { since: number; docs: Doc[] };
+			for (const d of body.docs) {
+				const k = `${d.kind}/${d.id}`;
+				if (!docs.has(k) || d.v > docs.get(k)!.v) docs.set(k, { ...d, seq: ++seq });
+			}
+			const changed = [...docs.values()].filter((d) => d.seq! > body.since);
+			return send(200, { docs: changed, cursor: Math.max(body.since, seq), more: false });
 		}
 		const { email, password } = req.postDataJSON() as { email: string; password: string };
 		if (path === '/api/signup')
@@ -21,6 +36,15 @@ async function fakeServer(page: Page) {
 			return send(200, { email: (user = email) });
 		return send(401, { error: 'wrong_login' });
 	});
+}
+
+async function logIn(page: Page) {
+	await page.goto('/settings');
+	const account = page.getByTestId('account');
+	await account.getByLabel('Email').fill('ana@example.com');
+	await account.getByLabel('Password').fill('hunter22!');
+	await account.getByRole('button', { name: 'Log in' }).click();
+	await expect(page.getByTestId('account-synced')).toBeVisible();
 }
 
 test('log in, see the account, log out', async ({ page }) => {
@@ -45,6 +69,32 @@ test('log in, see the account, log out', async ({ page }) => {
 });
 
 test('without a server the app says progress stays on this device', async ({ page }) => {
-	await page.goto('/settings'); // vite preview: /api is not a server
+	// A static host: /api answers with the SPA's index.html (not JSON).
+	await page.route('**/api/**', (r) =>
+		r.fulfill({ status: 200, contentType: 'text/html', body: '<!doctype html>' })
+	);
+	await page.goto('/settings');
 	await expect(page.getByTestId('account-unavailable')).toBeVisible();
+});
+
+test('progress made on one device shows up on another', async ({ browser }) => {
+	const docs = new Map<string, Doc>();
+	const phone = await (await browser.newContext()).newPage();
+	await mockSpeech(phone);
+	await fakeServer(phone, docs);
+	await logIn(phone);
+	await phone.goto('/learn/ko-en/ko-010-greetings');
+	await playLesson(phone);
+	await phone.goto('/');
+	const xp = await phone.getByTestId('xp-today').textContent();
+	expect(xp).not.toMatch(/^0 XP/);
+	await expect.poll(() => [...docs.values()].filter((d) => d.kind === 'activity').length).toBe(1);
+
+	const laptop = await (await browser.newContext()).newPage();
+	await fakeServer(laptop, docs);
+	await laptop.goto('/');
+	await expect(laptop.getByTestId('xp-today')).toHaveText(/^0 XP/);
+	await logIn(laptop);
+	await laptop.goto('/');
+	await expect(laptop.getByTestId('xp-today')).toHaveText(xp!);
 });

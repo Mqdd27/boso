@@ -168,6 +168,8 @@
 	"account_signup": "Buat akun",
 	"account_logout": "Keluar",
 	"account_logged_in": "Masuk sebagai {email}",
+	"account_synced": "Progres tersinkron",
+	"account_sync_failed": "Belum bisa sinkron. Progresmu aman di perangkat ini dan akan tersinkron nanti.",
 	"account_err_invalid_email": "Alamat email itu sepertinya salah.",
 	"account_err_weak_password": "Kata sandi minimal 8 karakter.",
 	"account_err_email_taken": "Email ini sudah punya akun. Masuk saja.",

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { enter, logout, me, type AccountState } from '#lib/account.js';
+	import { sync } from '#lib/sync.js';
 	import { m } from '#lib/paraglide/messages.js';
 
 	let account = $state<AccountState | 'loading'>('loading');
@@ -7,8 +8,12 @@
 	let password = $state('');
 	let error = $state('');
 	let busy = $state(false);
+	let synced = $state<'synced' | 'off' | 'failed' | null>(null);
 
-	void me().then((s) => (account = s));
+	void me().then((s) => {
+		account = s;
+		if (s && s !== 'unavailable') void sync().then((r) => (synced = r));
+	});
 
 	const errors: Record<string, () => string> = {
 		invalid_email: m.account_err_invalid_email,
@@ -26,6 +31,7 @@
 		else {
 			account = r;
 			password = '';
+			synced = await sync();
 		}
 	}
 
@@ -41,12 +47,20 @@
 		<p class="font-bold" data-testid="account-email">
 			{m.account_logged_in({ email: account.email })}
 		</p>
+		{#if synced === 'synced'}
+			<p class="mt-1 text-sm text-green-ink" role="status" data-testid="account-synced">
+				{m.account_synced()}
+			</p>
+		{:else if synced === 'failed'}
+			<p class="mt-1 text-sm text-muted" role="status">{m.account_sync_failed()}</p>
+		{/if}
 		<button
 			type="button"
 			class="btn btn-outline mt-3 w-full"
 			onclick={async () => {
 				await logout();
 				account = null;
+				synced = null;
 			}}
 		>
 			{m.account_logout()}
