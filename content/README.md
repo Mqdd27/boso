@@ -65,7 +65,9 @@ uv run pipeline pack ko-en            # validate + write dist/ko-en/{course,mani
   `en`/`id` gloss and a one-sentence reason. `build` applies it to items that still hold their
   generated value (never to reviewed or hand-edited items) and sets `source: krdict (modified)`;
   `ATTRIBUTION.md` notes the change, as CC BY-SA requires. `validate` fails on an override that
-  matches no item.
+  matches no item. Its `hints` list fixes a sentence hint that took the wrong krdict sense (e.g.
+  빼면 = "take out" → sense 2 "subtract"): a `token`, a krdict `word#target_code/sense` and a
+  reason. The gloss is krdict's own text, so it isn't marked modified.
 - **Senses:** for words with several krdict senses, `claude -p` picks the one that fits the unit
   (`prompts/pick-senses.v1.md`: 시키다 in a food unit → "order (food)"). It only picks a sense
   number; the gloss text is still krdict's.

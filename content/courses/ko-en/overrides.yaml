@@ -2,6 +2,8 @@
 # that still hold their generated value (never to reviewed or hand-edited items) and marks those
 # items `source: krdict (modified)`, as CC BY-SA requires. Every entry needs a one-sentence reason.
 # `item` is an item id, or `text#krdict target_code`.
+# `hints` pick another krdict sense for a sentence hint (`token`, as written in the sentence), given
+# as `word#target_code/sense`. The gloss stays krdict's own text, so it is not marked modified.
 overrides:
   - item: 만#64558
     gloss:
@@ -19,3 +21,10 @@ overrides:
     gloss:
       id: ayah (panggilan akrab, papa)
     reason: krdict gives 아빠 and 아버지 the same Indonesian gloss; 아빠 is the familiar form, like "papa".
+hints:
+  - token: 빼면
+    sense: 빼다#85714/2
+    reason: The sentences are subtraction ("Five minus four is one"); sense 1 is "take out, draw".
+  - token: 교수야
+    sense: 교수#31684/2
+    reason: The sentence is "My brother is a professor"; sense 1 is "teaching, instruction".

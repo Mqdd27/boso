@@ -1,8 +1,11 @@
 """Gloss overrides (`courses/<course>/overrides.yaml`) for source glosses that are wrong.
 
 An overridden item gets `source: "<source> (modified)"` (CC BY-SA: changes must be indicated).
+A hint override picks another krdict sense for a sentence hint; the gloss is the source's own
+text, so nothing is marked modified.
 """
 
+import re
 from pathlib import Path
 from typing import Literal
 
@@ -19,12 +22,60 @@ class Override(BaseModel):
     reason: str = Field(min_length=1)
 
 
-def load(course_dir: Path) -> list[Override]:
+class HintOverride(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    token: str = Field(min_length=1)  # the hinted eojeol as in the sentence, e.g. 빼면
+    sense: str = Field(pattern=r"^[^#]+#\d+/\d+$")  # krdict `word#target_code/sense`
+    reason: str = Field(min_length=1)
+
+    @property
+    def code_sense(self) -> tuple[int, int]:
+        code, sense = re.fullmatch(r".+#(\d+)/(\d+)", self.sense).groups()
+        return int(code), int(sense)
+
+
+def _data(course_dir: Path) -> dict:
     path = course_dir / "overrides.yaml"
     if not path.is_file():
-        return []
-    data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-    return [Override.model_validate(o) for o in data.get("overrides") or []]
+        return {}
+    return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+
+
+def load(course_dir: Path) -> list[Override]:
+    return [Override.model_validate(o) for o in _data(course_dir).get("overrides") or []]
+
+
+def load_hints(course_dir: Path) -> list[HintOverride]:
+    return [HintOverride.model_validate(h) for h in _data(course_dir).get("hints") or []]
+
+
+def _gloss(sense) -> dict:
+    return {"en": sense.en} | ({"id": sense.id} if sense.id else {})
+
+
+def apply_hints(hs: list[HintOverride], item: dict, by_code: dict) -> tuple[dict, bool]:
+    """(item, kept): hint glosses swapped for the chosen krdict sense where the hint still holds
+    its generated value (the entry's first English sense). Reviewed or hand-edited: kept."""
+    hints, kept = [], False
+    for h in item.get("hints") or []:
+        o = next((o for o in hs if o.token == h["token"]), None)
+        if o:
+            code, number = o.code_sense
+            sense = next(
+                (s for s in getattr(by_code.get(code), "senses", []) if s.number == number), None
+            )
+            if not sense or not sense.en:
+                raise ValueError(f"hint override {o.token!r}: no krdict sense {o.sense}")
+            entry = by_code[code]
+            target = _gloss(sense)
+            generated = _gloss(next(s for s in entry.senses if s.en))
+            if h["gloss"] != target:
+                if item["review"] == "reviewed" or h["gloss"] != generated:
+                    kept = True
+                else:
+                    h = {**h, "gloss": target}
+        hints.append(h)
+    return ({**item, "hints": hints} if item.get("hints") else item), kept
 
 
 def matches(o: Override, item: dict) -> bool:
@@ -56,6 +107,7 @@ def check(course_dir: Path, units: list[dict]) -> list[str]:
     path = course_dir / "overrides.yaml"
     try:
         overrides = load(course_dir)
+        hints = load_hints(course_dir)
     except (ValidationError, yaml.YAMLError) as e:
         return [f"{path}: {e}"]
     items = [i for u in units for i in u["items"]]
@@ -63,4 +115,8 @@ def check(course_dir: Path, units: list[dict]) -> list[str]:
         f"{path}: override {o.item!r} matches no item in any unit"
         for o in overrides
         if not any(matches(o, i) for i in items)
+    ] + [
+        f"{path}: hint override {h.token!r} matches no sentence hint"
+        for h in hints
+        if not any(x["token"] == h.token for i in items for x in i.get("hints") or [])
     ]

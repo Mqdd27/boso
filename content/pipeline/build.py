@@ -108,9 +108,19 @@ def apply_overrides(
 
     Reviewed items and hand-edited items (anything else) are left alone.
     """
+    hs = overrides.load_hints(course_dir)
     for rel, unit in zip(rels, units, strict=True):
         changed = False
         for n, item in enumerate(unit["items"]):
+            if hs and item.get("hints"):
+                fixed, kept = overrides.apply_hints(hs, item, by_code)
+                if kept:
+                    summary.kept.append(item["id"])
+                if fixed != item:
+                    unit["items"][n] = fixed
+                    summary.overridden.append(item["id"])
+                    changed = True
+                continue
             o = overrides.find(ovs, item)
             if not o:
                 continue

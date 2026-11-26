@@ -163,8 +163,8 @@ items:
   hints:
   - token: 교수야
     gloss:
-      en: teaching, instruction
-      id: pengajaran
+      en: professor
+      id: dosen, guru besar
   source: tatoeba
   license: CC BY 2.0 FR
   author: Eunhee

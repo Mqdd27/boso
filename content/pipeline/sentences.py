@@ -19,7 +19,7 @@ from pathlib import Path
 
 from pydantic import BaseModel, Field, ValidationError
 
-from pipeline import fetch
+from pipeline import fetch, overrides
 from pipeline.build import CACHE, COURSES, dump_yaml, load_yaml
 from pipeline.group import LLM_CACHE, _ask, _json_object, _template, run_claude
 from pipeline.importers import krdict, tatoeba
@@ -410,11 +410,14 @@ def generate(
     trans = translate([p.candidate for p in new], run, cache_dir)
     summary.translated = len(trans)
     glosses = hint_glosses(beginner)
+    hs = overrides.load_hints(course_dir)
+    by_entry = {e.target_code: e for e in beginner}
+    fix = lambda item: overrides.apply_hints(hs, item, by_entry)[0]  # noqa: E731
     for k, ps in sorted(chosen.items()):
         if not ps:
             continue
         rel, unit = vocab[k]
-        unit["items"] += [to_item(p, trans.get(p.candidate.id), glosses) for p in ps]
+        unit["items"] += [fix(to_item(p, trans.get(p.candidate.id), glosses)) for p in ps]
         dump_yaml(unit, course_dir / rel)
         summary.added[rel] = [p.candidate.id for p in ps]
     return summary
