@@ -1,6 +1,7 @@
-// Root module only for the Vercel Go function in api/ (Vercel needs go.mod at the project root).
-// The server itself is the apps/server module.
 module github.com/Mqdd27/boso
+
+// Only for the Vercel Go function in api/ (Vercel needs go.mod at the project root).
+// The server code lives in apps/server.
 
 go 1.27.3
 

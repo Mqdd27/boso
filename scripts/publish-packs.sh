@@ -6,8 +6,8 @@ set -eu
 cd "$(dirname "$0")/.."
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
-# COPYFILE_DISABLE: no macOS ._ metadata files in the archive.
-COPYFILE_DISABLE=1 tar -czf "$tmp/packs.tar.gz" -C content/dist .
+# COPYFILE_DISABLE / --no-xattrs: no macOS metadata in the archive (GNU tar warns about it).
+COPYFILE_DISABLE=1 tar --no-xattrs -czf "$tmp/packs.tar.gz" -C content/dist .
 if gh release view packs >/dev/null 2>&1; then
 	gh release upload packs "$tmp/packs.tar.gz" --clobber
 else
