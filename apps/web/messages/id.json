@@ -98,6 +98,8 @@
 	"credits_audio": "Audio dibuat dengan MeloTTS (MIT) dari MyShell.ai.",
 	"section_hangul": "Hangul",
 	"section_vocab": "Kosakata",
+	"section_pick": "Jalur belajar",
+	"settings_learn_script": "Tampilkan jalur Hangul (huruf)",
 	"section_hangul_hint": "Mulai dari sini: belajar membaca huruf Korea. Tidak wajib, tapi membantu.",
 	"unit_letters": "{count} huruf",
 	"new_letter": "Huruf baru",

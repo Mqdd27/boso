@@ -98,6 +98,8 @@
 	"credits_audio": "Audio generated with MeloTTS (MIT) by MyShell.ai.",
 	"section_hangul": "Hangul",
 	"section_vocab": "Vocabulary",
+	"section_pick": "Learning path",
+	"settings_learn_script": "Show the Hangul (alphabet) path",
 	"section_hangul_hint": "Start here: learn to read Korean letters. Optional, but it helps.",
 	"unit_letters": "{count} characters",
 	"new_letter": "New letter",

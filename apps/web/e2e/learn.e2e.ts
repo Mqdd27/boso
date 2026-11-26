@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { mockSpeech, playLesson, openUnit } from './helpers';
+import { mockSpeech, playLesson, openUnit, showUnit } from './helpers';
 
 test.beforeEach(async ({ page }) => {
 	await mockSpeech(page);
@@ -7,6 +7,7 @@ test.beforeEach(async ({ page }) => {
 
 test('finish the first unit → next unit opens → heatmap shows today', async ({ page }) => {
 	await page.goto('/');
+	await showUnit(page, 'ko-010-greetings');
 	const first = page.locator('[data-unit="ko-010-greetings"]');
 	const second = page.locator('[data-unit="ko-011-family"]');
 	await expect(first).toHaveAttribute('data-status', 'open');

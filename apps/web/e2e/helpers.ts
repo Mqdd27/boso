@@ -58,9 +58,18 @@ async function heard(page: Page): Promise<Item> {
 	return items.find((i) => i.text === src || src === `/packs/ko-en/audio/${i.audio}`)!;
 }
 
+/** Home shows one path at a time (Hangul or vocabulary): switch to the one holding unit `id`. */
+export async function showUnit(page: Page, id: string) {
+	const unit = page.locator(`[data-unit="${id}"]`);
+	await page.locator('[data-path]').first().waitFor();
+	if (!(await unit.count())) await page.locator('[data-path][aria-pressed="false"]').click();
+	await expect(unit).toBeVisible();
+	return unit;
+}
+
 /** On the home path: tap the unit's next lesson node (or a done one), then its Start/Practice. */
 export async function openUnit(page: Page, id: string) {
-	const unit = page.locator(`[data-unit="${id}"]`);
+	const unit = await showUnit(page, id);
 	const node = unit.locator('[data-node="active"], [data-node="done"]').first();
 	await node.click();
 	await expect(node).toHaveAttribute('aria-expanded', 'true');

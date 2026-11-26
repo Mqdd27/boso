@@ -77,6 +77,7 @@
 
 {@render group(m.settings_group_lessons())}
 <div class="divide-y-2 divide-line rounded-card border-2 border-line">
+	<Toggle label={m.settings_learn_script()} bind:checked={settings.learnScript} />
 	<Toggle label={m.settings_autoplay()} bind:checked={settings.autoplay} />
 	<fieldset class="px-4 py-3">
 		<legend class="float-left mb-2 font-bold">{m.settings_daily_goal()}</legend>

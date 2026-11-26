@@ -1,12 +1,12 @@
 import { expect, test, type Page } from '@playwright/test';
-import { arrange, asked, mockSpeech, playLesson } from './helpers';
+import { arrange, asked, mockSpeech, playLesson, showUnit } from './helpers';
 
 const UNIT = 'ko-010-greetings';
 
 /** Lesson 1 of the greetings unit done, so the unit opens on lesson 2 (with sentences). */
 async function lessonTwo(page: Page) {
 	await page.goto('/');
-	await expect(page.locator(`[data-unit="${UNIT}"]`)).toBeVisible(); // the app has opened the DB
+	await showUnit(page, UNIT); // the app has opened the DB
 	await page.evaluate(
 		(unit) =>
 			new Promise<void>((done, fail) => {

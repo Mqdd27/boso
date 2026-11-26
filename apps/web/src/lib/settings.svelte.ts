@@ -9,6 +9,7 @@ export type Settings = {
 	theme: Theme;
 	contributor: boolean;
 	autoplay: boolean;
+	learnScript: boolean; // show the script path (Hangul) on the home screen
 };
 
 export const DAILY_GOALS = [10, 20, 30, 50];
@@ -19,7 +20,8 @@ const defaults: Settings = {
 	weekStart: 1,
 	theme: 'system',
 	contributor: false,
-	autoplay: true
+	autoplay: true,
+	learnScript: true
 };
 
 export const settings: Settings = $state({ ...defaults });

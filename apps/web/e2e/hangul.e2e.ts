@@ -7,16 +7,28 @@ test.beforeEach(async ({ page }) => {
 	await mockSpeech(page);
 });
 
-test('home has a Hangul and a vocabulary section that unlock separately', async ({ page }) => {
+test('home has separate Hangul and vocabulary paths that unlock separately', async ({ page }) => {
 	await page.goto('/');
-	await expect(page.getByRole('heading', { name: 'Hangul' })).toBeVisible();
-	await expect(page.getByRole('heading', { name: 'Vocabulary' })).toBeVisible();
+	// A new learner starts on the Hangul path; vocabulary is one tap away.
+	await expect(page.locator('[data-path="script"]')).toHaveAttribute('aria-pressed', 'true');
 	await expect(unit(page, 'ko-001-basic-vowels')).toHaveAttribute('data-status', 'open');
 	await expect(unit(page, 'ko-002-basic-consonants-1')).toHaveAttribute('data-status', 'locked');
+	await expect(unit(page, 'ko-010-greetings')).toHaveCount(0);
+	await page.locator('[data-path="vocab"]').click();
+	await expect(unit(page, 'ko-001-basic-vowels')).toHaveCount(0);
 	// Vocabulary does not wait for Hangul.
 	await expect(unit(page, 'ko-010-greetings')).toHaveAttribute('data-status', 'open');
 	await openUnit(page, 'ko-010-greetings');
 	await expect(page.getByTestId('exercise')).toBeVisible();
+});
+
+test('the Hangul path can be turned off in Settings', async ({ page }) => {
+	await page.goto('/settings');
+	await page.getByLabel('Show the Hangul (alphabet) path').uncheck();
+	await page.getByRole('link', { name: 'Learn' }).click();
+	await expect(unit(page, 'ko-010-greetings')).toHaveAttribute('data-status', 'open');
+	await expect(page.locator('[data-path]')).toHaveCount(0);
+	await expect(unit(page, 'ko-001-basic-vowels')).toHaveCount(0);
 });
 
 test('finish unit 001 → unit 002 opens', async ({ page }) => {

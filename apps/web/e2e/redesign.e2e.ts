@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { choiceAnswer, mockSpeech, openUnit, skipToChoice } from './helpers';
+import { choiceAnswer, mockSpeech, openUnit, showUnit, skipToChoice } from './helpers';
 
 test.beforeEach(async ({ page }) => {
 	await mockSpeech(page);
@@ -12,7 +12,7 @@ test('home path shows the active lesson node with a start tip', async ({ page })
 	await expect(next).toHaveAttribute('data-node', 'active');
 	await expect(next).toBeInViewport();
 	await expect(page.locator('[data-node-wrap]', { has: next })).toContainText('Start');
-	const unit = page.locator('[data-unit="ko-010-greetings"]');
+	const unit = await showUnit(page, 'ko-010-greetings');
 	await expect(unit.locator('[data-node="active"]')).toHaveCount(1);
 	await expect(page.locator('[data-unit="ko-011-family"] [data-node="locked"]')).toHaveCount(2);
 });

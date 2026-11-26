@@ -51,6 +51,8 @@
 	const BADGE: Record<string, string> = { ko: '한', zh: '中' };
 
 	let openNode = $state<string | null>(null);
+	// Which path the home screen shows: Hangul or vocabulary. null = pick from progress.
+	let path = $state<'script' | 'vocab' | null>(null);
 
 	function onclick(e: MouseEvent) {
 		if (!(e.target as Element).closest('[data-node-wrap]')) openNode = null;
@@ -133,27 +135,35 @@
 			</section>
 
 			{#each packs as { course } (course.id)}
-				{@const sections = [true, false]
-					.map((script) => ({ script, units: section(course.units, script) }))
-					.filter((s) => s.units.length)}
-				{@const hasScript = course.units.some(isScript)}
+				{@const hasScript = settings.learnScript && course.units.some(isScript)}
 				{@const vocabStarted = section(course.units, false).some(
 					(u) => d.progress.get(`${course.id}/${u.id}`)?.lessons.length
 				)}
+				{@const shown = hasScript ? (path ?? (vocabStarted ? 'vocab' : 'script')) : 'vocab'}
+				{@const sections = [true, false]
+					.map((script) => ({ script, units: section(course.units, script) }))
+					.filter((s) => s.units.length && (s.script ? 'script' : 'vocab') === shown)}
 				<h1 class="sr-only">{course.title ? localized(course.title, lang) : course.id}</h1>
-				{#each sections as { script, units }, s (script)}
+				{#if hasScript}
+					<div class="mt-6 flex gap-2" role="group" aria-label={m.section_pick()}>
+						{#each ['script', 'vocab'] as const as p (p)}
+							<button
+								type="button"
+								class="card chip min-h-11 flex-1 px-2 font-bold whitespace-nowrap"
+								aria-pressed={shown === p}
+								data-path={p}
+								onclick={() => (path = p)}
+							>
+								{p === 'script' ? m.section_hangul() : m.section_vocab()}
+							</button>
+						{/each}
+					</div>
+				{/if}
+				{#each sections as { script, units } (script)}
 					{@const status = statuses(course.id, units, d.progress)}
 					{@const tone = script ? 'purple' : 'green'}
-					{@const scrollHere = script ? !vocabStarted : vocabStarted || !hasScript}
-					{#if hasScript}
-						<div class="mt-8 mb-2 flex items-center gap-3 text-center">
-							<span class="h-0.5 flex-1 bg-line"></span>
-							<div>
-								<h2 class="label text-muted">{script ? m.section_hangul() : m.section_vocab()}</h2>
-								{#if script}<p class="text-sm text-muted">{m.section_hangul_hint()}</p>{/if}
-							</div>
-							<span class="h-0.5 flex-1 bg-line"></span>
-						</div>
+					{#if script}
+						<p class="mt-3 text-center text-sm text-muted">{m.section_hangul_hint()}</p>
 					{/if}
 					<ol class="flex flex-col" data-testid="units" data-section={script ? 'script' : 'vocab'}>
 						{#each units as unit, n (unit.id)}
@@ -172,7 +182,10 @@
 										data-testid="unit-banner"
 									>
 										<p class="label opacity-85">
-											{m.path_unit({ section: hasScript ? s + 1 : 1, unit: n + 1 })}
+											{m.path_unit({
+												section: !script && course.units.some(isScript) ? 2 : 1,
+												unit: n + 1
+											})}
 										</p>
 										<h3 class="text-xl leading-tight font-extrabold">{title}</h3>
 									</div>
@@ -203,7 +216,7 @@
 												: kind === 'active'
 													? m.node_start()
 													: undefined}
-											autoscroll={scrollHere && kind === 'active'}
+											autoscroll={kind === 'active'}
 										/>
 									{/each}
 								</div>
