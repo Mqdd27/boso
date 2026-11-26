@@ -51,14 +51,18 @@
 	const BADGE: Record<string, string> = { ko: '한', zh: '中' };
 
 	let openNode = $state<string | null>(null);
+	let courseMenu = $state(false);
+	const LANG_NAME: Record<string, () => string> = { ko: m.lang_ko, zh: m.lang_zh };
 	// Which path the home screen shows: Hangul or vocabulary. null = pick from progress.
 	let path = $state<'script' | 'vocab' | null>(null);
 
 	function onclick(e: MouseEvent) {
 		if (!(e.target as Element).closest('[data-node-wrap]')) openNode = null;
+		if (!(e.target as Element).closest('[data-course-menu]')) courseMenu = false;
 	}
 	function onkeydown(e: KeyboardEvent) {
 		if (e.key === 'Escape') openNode = null;
+		if (e.key === 'Escape') courseMenu = false;
 	}
 
 	// Bring the lesson to play next into view.
@@ -79,16 +83,67 @@
 				class="sticky top-0 z-10 -mx-4 flex h-14 items-center justify-between gap-3 border-b-2 border-line bg-bg px-4"
 				data-testid="topbar"
 			>
-				<span class="flex items-center gap-2 font-extrabold">
+				{#snippet badge(target: string, size: string)}
 					<span
-						class="flex size-9 items-center justify-center rounded-lg border-b-4 border-purple-shade bg-purple-fill text-lg text-white"
-						lang={lead.id.slice(0, 2)}
+						class="flex {size} shrink-0 items-center justify-center rounded-lg border-b-4 border-purple-shade bg-purple-fill text-white"
+						lang={target}
 						aria-hidden="true"
 					>
-						{BADGE[lead.id.slice(0, 2)] ?? lead.id.slice(0, 2)}
+						{BADGE[target] ?? target}
 					</span>
-					<span class="label text-muted">{lead.id}</span>
-				</span>
+				{/snippet}
+				<!-- Course switcher: the badge opens a row of course tiles, like Duolingo's flag menu. -->
+				<div data-course-menu>
+					{#if packs.length > 1}
+						<button
+							type="button"
+							class="-ml-1 flex min-h-11 items-center gap-2 rounded-xl px-1 font-extrabold hover:bg-raised"
+							aria-expanded={courseMenu}
+							aria-controls="course-menu"
+							aria-label={m.course_pick()}
+							data-testid="course-switch"
+							onclick={() => (courseMenu = !courseMenu)}
+						>
+							{@render badge(lead.target, 'size-9 text-lg')}
+							<span class="label text-muted">{LANG_NAME[lead.target]?.() ?? lead.id}</span>
+						</button>
+					{:else}
+						<span class="flex items-center gap-2 font-extrabold">
+							{@render badge(lead.target, 'size-9 text-lg')}
+							<span class="label text-muted">{LANG_NAME[lead.target]?.() ?? lead.id}</span>
+						</span>
+					{/if}
+					{#if courseMenu}
+						<div
+							id="course-menu"
+							class="absolute inset-x-0 top-full border-b-2 border-line bg-bg px-4 py-4 shadow-lg"
+						>
+							<p class="label mb-3 text-muted">{m.course_pick()}</p>
+							<ul class="flex gap-3 overflow-x-auto pb-1">
+								{#each packs as { course } (course.id)}
+									<li>
+										<button
+											type="button"
+											class="card flex w-28 flex-col items-center gap-2 px-2 py-3 font-bold"
+											aria-pressed={course.id === lead.id}
+											data-course={course.id}
+											onclick={() => {
+												settings.course = course.id;
+												path = null;
+												courseMenu = false;
+											}}
+										>
+											{@render badge(course.target, 'size-14 text-3xl')}
+											<span class="text-sm leading-tight">
+												{LANG_NAME[course.target]?.() ?? course.id}
+											</span>
+										</button>
+									</li>
+								{/each}
+							</ul>
+						</div>
+					{/if}
+				</div>
 				<span class="flex items-center gap-4 text-lg font-extrabold">
 					<span
 						class="flex items-center gap-1 {d.streak.current ? 'text-orange-ink' : 'text-muted'}"
@@ -133,27 +188,6 @@
 					</p>
 				</div>
 			</section>
-
-			{#if packs.length > 1}
-				<div class="mt-4 flex gap-2" role="group" aria-label={m.course_pick()}>
-					{#each packs as { course } (course.id)}
-						{@const target = course.id.slice(0, 2)}
-						<button
-							type="button"
-							class="card chip flex min-h-11 flex-1 items-center justify-center gap-2 px-2 font-bold"
-							aria-pressed={course.id === lead.id}
-							data-course={course.id}
-							onclick={() => {
-								settings.course = course.id;
-								path = null;
-							}}
-						>
-							<span lang={target} aria-hidden="true">{BADGE[target] ?? target}</span>
-							{course.title ? localized(course.title, lang) : course.id}
-						</button>
-					{/each}
-				</div>
-			{/if}
 
 			{#each packs.filter((p) => p.course.id === lead.id) as { course } (course.id)}
 				{@const hasScript = settings.learnScript && course.units.some(isScript)}

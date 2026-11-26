@@ -153,5 +153,7 @@
 	"section_pinyin": "Pinyin",
 	"section_pinyin_hint": "Start here: learn pinyin and the four tones. Optional, but it helps.",
 	"settings_tone_colors": "Colour pinyin by tone",
-	"course_pick": "Course"
+	"course_pick": "Course",
+	"lang_ko": "Korean",
+	"lang_zh": "Mandarin"
 }
